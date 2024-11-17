@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+	<!-- ================================ Adult Researcher BackstoryDef ====================== -->
+	<BackstoryDef>
+		<defName>AC_Researcher1</defName>
+		<title>neural researcher</title>
+		<titleShort>neurologist</titleShort>
+		<description>[PAWN_nameDef] specialised in neural digitalization and was considered the best of the best on their home planet. When laws and ethical guidelines started to impede [PAWN_possessive] research [PAWN_pronoun] put [PAWN_objective]self in service of a shadowy organisation where [PAWN_pronoun] no longer had to worry about bothersome committees or the public eye and its moral outrage.</description>
+		<slot>Adulthood</slot>
+		<workDisables>
+			<li>Social</li>
+			<li>Violent</li>
+		</workDisables>
+		<requiredWorkTags>
+			<li>Intellectual</li>
+		</requiredWorkTags>
+		<skillGains>
+			<Intellectual>13</Intellectual>
+		</skillGains>
+		<spawnCategories>
+			<li>AC_ResearcherQuest</li>
+		</spawnCategories>
+		<bodyTypeMale>Male</bodyTypeMale>
+		<bodyTypeFemale>Female</bodyTypeFemale>
+	</BackstoryDef>
+	<BackstoryDef>
+		<defName>AC_Digitizer1</defName>
+		<title>agency digitizer</title>
+		<titleShort>digitizer</titleShort>
+		<description>[PAWN_nameDef] worked as a digitizer for a government intelligence agency, digitising prisoners, political enemies and other assets at the request of [PAWN_possessive] employer. Over the years [PAWN_possessive] work took a mental toll on [PAWN_objective] until [PAWN_pronoun] decided to quit the agency.</description>
+		<slot>Adulthood</slot>
+		<workDisables>
+			<li>ManualDumb</li>
+		</workDisables>
+		<requiredWorkTags>
+			<li>Intellectual</li>
+		</requiredWorkTags>
+		<skillGains>
+			<Social>4</Social>
+			<Intellectual>8</Intellectual>
+		</skillGains>
+		<spawnCategories>
+			<li>AC_ResearcherQuest</li>
+		</spawnCategories>
+		<bodyTypeMale>Thin</bodyTypeMale>
+		<bodyTypeFemale>Thin</bodyTypeFemale>
+		<disallowedTraits>
+			<Psychopath>0</Psychopath>
+		</disallowedTraits>
+	</BackstoryDef>
+	<BackstoryDef>
+		<defName>AC_Digitizer2</defName>
+		<title>neural bootlegger</title>
+		<titleShort>bootlegger</titleShort>
+		<description>Living in the underbelly of a thriving glitterworld, [PAWN_nameDef] sold duplicated neural prints of hacked celebrities neural-backups to anyone who could afford them. [PAWN_possessive] services eventually became so well known that [PAWN_pronoun] was forced to flee [PAWN_possessive] home when lawyers and copyright enforcers started to chase [PAWN_objective] to make an example of [PAWN_nameDef].</description>
+		<slot>Adulthood</slot>
+		<workDisables>
+			<li>Caring</li>
+		</workDisables>
+		<requiredWorkTags>
+			<li>Intellectual</li>
+		</requiredWorkTags>
+		<skillGains>
+			<Intellectual>9</Intellectual>
+			<Shooting>2</Shooting>
+			<Social>1</Social>
+		</skillGains>
+		<spawnCategories>
+			<li>AC_ResearcherQuest</li>
+		</spawnCategories>
+		<bodyTypeMale>Hulk</bodyTypeMale>
+		<bodyTypeFemale>Female</bodyTypeFemale>
+	</BackstoryDef>
+	<!-- ================================ Childhood Researcher BackstoryDef ====================== -->
+</Defs>

@@ -1,0 +1,177 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<!-- ================================ Hayabusa Armour ====================== -->
+	<ThingDef ParentName="ApparelBase">
+		<defName>AC_Apparel_HayabusaArmor</defName>
+		<label>hayabusa armor</label>
+		<description>A suit of true next-generation power armor. It offers unrivalled protection over chrysalis power armor and protects its wearer even in the most dangerous environments. It' self-repairing molecular plasteel integration is beyond what known fabrication processes are able to construct and the suit lining has been infused with crypo-bleed technologie.\n\nWhile it is impossible to know for sure, given the amount of armor ability modules added, this suit of power armor most likely served as a prototype armor platform for some sort of glitterworld mega-corp.</description>
+		<techLevel>Ultra</techLevel>
+		<graphicData>
+			<texPath>Things/Pawn/Humanlike/Apparel/HayabusaArmor/HayabusaArmor</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<generateCommonality>0</generateCommonality>
+		<statBases>
+			<MaxHitPoints>500</MaxHitPoints>
+			<Mass>16</Mass>
+			<Flammability>0.1</Flammability>
+			<ArmorRating_Sharp>1.85</ArmorRating_Sharp>
+			<ArmorRating_Blunt>1.25</ArmorRating_Blunt>
+			<ArmorRating_Heat>1</ArmorRating_Heat>
+			<Insulation_Cold>74</Insulation_Cold>
+			<Insulation_Heat>32</Insulation_Heat>
+			<EquipDelay>26</EquipDelay>
+		</statBases>
+		<costList>
+			<ComponentSpacer>12</ComponentSpacer>
+			<Plasteel>150</Plasteel>
+			<Uranium>50</Uranium>
+		</costList>
+		<equippedStatOffsets>
+			<MoveSpeed>0.2</MoveSpeed>
+			<CarryingCapacity>60</CarryingCapacity>
+			<MeleeDodgeChance>0.2</MeleeDodgeChance>
+			<SlaveSuppressionOffset MayRequire="Ludeon.RimWorld.Ideology">-0.8</SlaveSuppressionOffset>
+			<ToxicResistance>1</ToxicResistance>
+			<ToxicEnvironmentResistance MayRequire="Ludeon.RimWorld.Biotech">1</ToxicEnvironmentResistance>
+		</equippedStatOffsets>
+		<apparel>
+			<bodyPartGroups>
+				<li>Torso</li>
+				<li>Neck</li>
+				<li>Shoulders</li>
+				<li>Arms</li>
+				<li>Legs</li>
+			</bodyPartGroups>
+			<wornGraphicPath>Things/Pawn/Humanlike/Apparel/HayabusaArmor/HayabusaArmor</wornGraphicPath>
+			<layers>
+				<li>Middle</li>
+				<li>Shell</li>
+			</layers>
+			<defaultOutfitTags>
+				<li>Soldier</li>
+			</defaultOutfitTags>
+			<tags Inherit="False">
+				<li>HayabusaQuest</li>
+			</tags>
+			<useDeflectMetalEffect>true</useDeflectMetalEffect>
+			<soundWear>Wear_PowerArmor</soundWear>
+			<soundRemove>Remove_PowerArmor</soundRemove>
+		</apparel>
+		<colorGenerator Class="ColorGenerator_Options">
+			<options>
+				<li>
+					<weight>10</weight>
+					<only>(0.33,0.33,0.33,1)</only>
+				</li>
+				<li>
+					<weight>10</weight>
+					<only>(0.65,0.65,0.65,1)</only>
+				</li>
+				<li>
+					<weight>6</weight>
+					<min>(0.3,0.3,0.3,1)</min>
+					<max>(0.5,0.5,0.5,1)</max>
+				</li>
+				<li>
+					<weight>10.1</weight>
+					<only>(0.9,0.9,0.9,1)</only>
+				</li>
+			</options>
+		</colorGenerator>
+		<tickerType>Normal</tickerType>
+		<comps>
+			<li Class="VFECore.CompProperties_ApparelHediffs">
+				<hediffDefnames>
+					<li>AC_PainProtection</li>
+				</hediffDefnames>
+			</li>
+			<li Class="CompProperties_Biocodable"/>
+		</comps>
+		<thingSetMakerTags Inherit="False"/>
+		<tradeTags Inherit="False">
+			<li>HayabusaQuest</li>
+		</tradeTags>
+	</ThingDef>
+	<!-- ================================ Hayabusa Armour - Helmet ====================== -->
+	<ThingDef ParentName="ApparelBase">
+		<defName>AC_Apparel_HayabusaHelmet</defName>
+		<label>hayabusa helmet</label>
+		<description>A true next-generation power armor helmet. Its self-repairing molecular plasteel integration is beyond known fabrication techniques and the default on-board processors has been replaced by an experimental on-board persona persona. A complex visual and targeting system for near 360 degree view angles and tactical telemetry feed allows for near inhuman aiming speed and accuracy, including real time aim assist.\n\nWhile it is impossible to know for sure, this helmet most likely served as a prototype armor platform for some sort of glitterworld mega-corp.</description>
+		<techLevel>Ultra</techLevel>
+		<graphicData>
+			<texPath>Things/Pawn/Humanlike/Apparel/HayabusaArmorHelmet/HayabusaHelmet</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<shaderType>CutoutComplex</shaderType>
+			<drawSize>(0.9, 0.9)</drawSize>
+		</graphicData>
+		<generateCommonality>0</generateCommonality>
+		<statBases>
+			<MaxHitPoints>320</MaxHitPoints>
+			<Mass>4</Mass>
+			<Flammability>0.1</Flammability>
+			<ArmorRating_Sharp>1.85</ArmorRating_Sharp>
+			<ArmorRating_Blunt>1.25</ArmorRating_Blunt>
+			<ArmorRating_Heat>1</ArmorRating_Heat>
+			<Insulation_Cold>74</Insulation_Cold>
+			<Insulation_Heat>32</Insulation_Heat>
+			<EquipDelay>12</EquipDelay>
+		</statBases>
+		<costList>
+			<ComponentSpacer>6</ComponentSpacer>
+			<Plasteel>80</Plasteel>
+			<Uranium>15</Uranium>
+		</costList>
+		<equippedStatOffsets>
+			<AimingDelayFactor>-0.4</AimingDelayFactor>
+			<ShootingAccuracyPawn>15</ShootingAccuracyPawn>
+			<ToxicResistance>1</ToxicResistance>
+			<ToxicEnvironmentResistance MayRequire="Ludeon.RimWorld.Biotech">1</ToxicEnvironmentResistance>
+		</equippedStatOffsets>
+		<apparel>
+			<bodyPartGroups>
+				<li>FullHead</li>
+			</bodyPartGroups>
+			<wornGraphicPath>Things/Pawn/Humanlike/Apparel/HayabusaArmorHelmet/HayabusaHelmet</wornGraphicPath>
+			<layers>
+				<li>Overhead</li>
+			</layers>
+			<defaultOutfitTags>
+				<li>Soldier</li>
+			</defaultOutfitTags>
+			<tags Inherit="False">
+				<li>HayabusaQuest</li>
+			</tags>
+			<useWornGraphicMask>true</useWornGraphicMask>
+			<useDeflectMetalEffect>true</useDeflectMetalEffect>
+		</apparel>
+		<colorGenerator Class="ColorGenerator_Options">
+			<options>
+				<li>
+					<weight>10</weight>
+					<only>(0.33,0.33,0.33,1)</only>
+				</li>
+				<li>
+					<weight>10</weight>
+					<only>(0.65,0.65,0.65,1)</only>
+				</li>
+				<li>
+					<weight>6</weight>
+					<min>(0.3,0.3,0.3,1)</min>
+					<max>(0.5,0.5,0.5,1)</max>
+				</li>
+				<li>
+					<weight>10.1</weight>
+					<only>(0.9,0.9,0.9,1)</only>
+				</li>
+			</options>
+		</colorGenerator>
+		<comps>
+			<li Class="CompProperties_Biocodable"/>
+		</comps>
+		<thingSetMakerTags Inherit="False"/>
+		<tradeTags Inherit="False">
+			<li>HayabusaQuest</li>
+		</tradeTags>
+	</ThingDef>
+</Defs>

@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<SoundDef MayRequire="Ludeon.RimWorld.Royalty">
+		<defName>AC_JumpWingsLand</defName>
+		<context>MapOnly</context>
+		<maxSimultaneous>1</maxSimultaneous>
+		<subSounds>
+			<li>
+				<grains>
+					<li Class="AudioGrain_Clip">
+						<clipPath>Misc/WingsJump/JumpWings_Land</clipPath>
+					</li>
+				</grains>
+				<volumeRange>20</volumeRange>
+				<pitchRange>1</pitchRange>
+			</li>
+		</subSounds>
+	</SoundDef>
+	<SoundDef MayRequire="Ludeon.RimWorld.Royalty">
+		<defName>AC_JumpWingsLaunch</defName>
+		<context>MapOnly</context>
+		<maxSimultaneous>1</maxSimultaneous>
+		<subSounds>
+			<li>
+				<grains>
+					<li Class="AudioGrain_Clip">
+						<clipPath>Misc/WingsJump/JumpWings_Launch</clipPath>
+					</li>
+				</grains>
+				<volumeRange>25</volumeRange>
+				<pitchRange>1</pitchRange>
+			</li>
+		</subSounds>
+	</SoundDef>
+	<SoundDef MayRequire="Ludeon.RimWorld.Royalty">
+		<defName>AC_JumpWingsPreLaunch</defName>
+		<context>MapOnly</context>
+		<maxSimultaneous>1</maxSimultaneous>
+		<subSounds>
+			<li>
+				<grains>
+					<li Class="AudioGrain_Clip">
+						<clipPath>Misc/WingsJump/JumpWings_PreLaunch</clipPath>
+					</li>
+				</grains>
+				<volumeRange>30</volumeRange>
+				<pitchRange>1</pitchRange>
+			</li>
+		</subSounds>
+	</SoundDef>
+</Defs>

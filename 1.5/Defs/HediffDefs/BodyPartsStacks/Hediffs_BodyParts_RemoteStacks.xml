@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<!-- ================================ Neural Receiver ====================== -->
+	<ThingDef ParentName="AC_StackBase">
+		<defName>AC_RemoteStack</defName>
+		<label>Neural receiver</label>
+		<description>An ultratech implant which allows for a neural stack to cast its stored human consciousness remotely into the body it is installed in. It is required for a sleeve to become a viable needlecasting target.</description>
+		<graphicData>
+			<texPath>Things/Item/RemoteStack</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
+		</graphicData>
+		<descriptionHyperlinks>
+			<RecipeDef>AC_InstallRemoteStack</RecipeDef>
+		</descriptionHyperlinks>
+		<healthAffectsPrice>true</healthAffectsPrice>
+		<stackLimit>10</stackLimit>
+		<statBases>
+			<WorkToMake>12500</WorkToMake>
+		</statBases>
+		<costList>
+			<Plasteel>4</Plasteel>
+			<Steel>8</Steel>
+			<ComponentSpacer>1</ComponentSpacer>
+		</costList>
+		<thingSetMakerTags Inherit="False"/>
+		<modExtensions Inherit="False"/>
+		<recipeMaker Inherit="False">
+			<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+			<workSkill>Crafting</workSkill>
+			<effectWorking>Cook</effectWorking>
+			<soundWorking>Recipe_Machining</soundWorking>
+			<unfinishedThingDef>UnfinishedHealthItemBionic</unfinishedThingDef>
+			<skillRequirements>
+				<Crafting>10</Crafting>
+			</skillRequirements>
+			<researchPrerequisite>AC_NeuralCasting</researchPrerequisite>
+			<recipeUsers>
+				<li>FabricationBench</li>
+			</recipeUsers>
+			<displayPriority>16</displayPriority>
+		</recipeMaker>
+	</ThingDef>
+	<!-- ================================ Neural Receiver Hediff	====================== -->
+	<HediffDef ParentName="AC_ImplantStackBase">
+		<defName>AC_RemoteStack</defName>
+		<label>Neural receiver</label>
+		<labelNoun>a neural receiver</labelNoun>
+		<hediffClass>AlteredCarbon.Hediff_RemoteStack</hediffClass>
+		<description>An installed neural receiver.</description>
+		<descriptionHyperlinks>
+			<ThingDef>AC_RemoteStack</ThingDef>
+		</descriptionHyperlinks>
+		<spawnThingOnRemoved>AC_RemoteStack</spawnThingOnRemoved>
+		<isBad>false</isBad>
+		<addedPartProps>
+			<solid>true</solid>
+<!--			<partEfficiency>1</partEfficiency>
+			<betterThanNatural>true</betterThanNatural>-->
+		</addedPartProps>
+	</HediffDef>
+	<!-- ================================ Neural Receiver - Install ====================== -->
+	<RecipeDef ParentName="SurgeryInstallImplantBase">
+		<defName>AC_InstallRemoteStack</defName>
+		<label>install neural receiver</label>
+		<description>Install a neural receiver.</description>
+		<descriptionHyperlinks>
+			<ThingDef>AC_RemoteStack</ThingDef>
+		</descriptionHyperlinks>
+		<workerClass>AlteredCarbon.Recipe_InstallRemoteStack</workerClass>
+		<jobString>Installing neural receiver.</jobString>
+		<uiIconThing>AC_RemoteStack</uiIconThing>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>AC_RemoteStack</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>AC_RemoteStack</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>Neck</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>AC_RemoteStack</addsHediff>
+	</RecipeDef>
+	<!-- ================================ Neural Receiver - Remove ====================== -->
+	<RecipeDef ParentName="SurgeryRemoveImplantBase">
+		<defName>AC_RemoveRemoteStack</defName>
+		<label>remove neural receiver</label>
+		<description>Remove neural receiver.</description>
+		<descriptionHyperlinks>
+			<ThingDef>AC_RemoteStack</ThingDef>
+		</descriptionHyperlinks>
+		<workerClass>AlteredCarbon.Recipe_RemoveRemoteStack</workerClass>
+		<jobString>Removing neural receiver.</jobString>
+		<uiIconThing>AC_RemoteStack</uiIconThing>
+		<removesHediff>AC_RemoteStack</removesHediff>
+	</RecipeDef>
+</Defs>

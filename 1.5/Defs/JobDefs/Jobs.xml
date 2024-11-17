@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<!-- ================================ Neural Stack Jobs ====================== -->
+	<JobDef>
+		<defName>AC_ExtractStack</defName>
+		<driverClass>AlteredCarbon.JobDriver_ExtractStack</driverClass>
+		<reportString>extracts neural stack from target.</reportString>
+	</JobDef>
+	<!-- ================================ Sleeve Jobs ====================== -->
+	<JobDef>
+		<defName>AC_ReleaseSleeve</defName>
+		<driverClass>AlteredCarbon.JobDriver_ReleaseSleeve</driverClass>
+		<allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+		<reportString>releasing sleeve from gestator.</reportString>
+	</JobDef>
+	<JobDef>
+		<defName>AC_StartGestationProcess</defName>
+		<driverClass>AlteredCarbon.JobDriver_StartIncubatingProcess</driverClass>
+		<allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+		<reportString>starting gestation process.</reportString>
+	</JobDef>
+	<JobDef>
+		<defName>AC_CancelGestationProcess</defName>
+		<driverClass>AlteredCarbon.JobDriver_CancelIncubatingProcess</driverClass>
+		<allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+		<reportString>canceling gestation process.</reportString>
+	</JobDef>
+	<JobDef>
+		<defName>AC_TakeEmptySleeve</defName>
+		<driverClass>AlteredCarbon.JobDriver_TakeEmptySleeve</driverClass>
+		<casualInterruptible>false</casualInterruptible>
+		<carryThingAfterJob>true</carryThingAfterJob>
+		<dropThingBeforeJob>false</dropThingBeforeJob>
+		<reportString>taking empty sleeve.</reportString>
+	</JobDef>
+	<JobDef>
+		<defName>AC_HaulCorpseToGestation</defName>
+		<driverClass>AlteredCarbon.JobDriver_HaulCorpseToGestation</driverClass>
+		<allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+		<reportString>hauling TargetA to gestator.</reportString>
+	</JobDef>
+	<JobDef>
+		<defName>AC_CancelRepurposingBody</defName>
+		<driverClass>AlteredCarbon.JobDriver_CancelRepurposingBody</driverClass>
+		<allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+		<reportString>canceling body repurposing.</reportString>
+	</JobDef>
+	<JobDef>
+		<defName>AC_ChargeCuirassierBelt</defName>
+		<driverClass>AlteredCarbon.JobDriver_ChargeCuirassierBelt</driverClass>
+		<allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+		<reportString>charging cuirassier belt.</reportString>
+	</JobDef>
+</Defs>

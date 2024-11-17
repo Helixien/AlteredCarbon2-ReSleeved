@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<!-- ================================ Crypto Stasis ====================== -->
+	<HediffDef>
+		<defName>AC_CryptoStasis</defName>
+		<label>crypto stasis</label>
+		<labelNoun>crypto stasis</labelNoun>
+		<description>Active effect of the sleeve caskets suspension systems.</description>
+		<hediffClass>AlteredCarbon.Hediff_CryptoStasis</hediffClass>
+		<defaultLabelColor>(0, 0.7, 0.95)</defaultLabelColor>
+		<isBad>false</isBad>
+		<stages>
+			<li>
+				<painFactor>0</painFactor>
+				<hungerRateFactorOffset>-1</hungerRateFactorOffset>
+				<capMods>
+					<li>
+						<capacity>Consciousness</capacity>
+						<setMax>0.01</setMax>
+					</li>
+					<li>
+						<capacity>BloodFiltration</capacity>
+						<offset>0.25</offset>
+					</li>
+				</capMods>
+			</li>
+		</stages>
+	</HediffDef>
+	<!-- ================================ Armor - Pain Protection ====================== -->
+	<HediffDef>
+		<defName>AC_PainProtection</defName>
+		<label>pain protection</label>
+		<labelNoun>pain protection</labelNoun>
+		<description>Dampened pain receptors due to usage of chrysalis-class armor. Vastly enhances the wearer's ability to tolerate injury and nullifies pain sensitivity, allowing for greater physical resilience.</description>
+		<hediffClass>HediffWithComps</hediffClass>
+		<defaultLabelColor>(0, 0.7, 0.95)</defaultLabelColor>
+		<isBad>false</isBad>
+		<stages>
+			<li>
+				<painFactor>0</painFactor>
+			</li>
+		</stages>
+	</HediffDef>
+	<!-- ================================ Neural Connector - Scanning sickness ====================== -->
+	<HediffDef ParentName="DiseaseBase">
+		<defName>AC_ScanningSickness</defName>
+		<label>scanning sickness</label>
+		<description>This person was scanned by a neural connector, which has caused light disturbances in the neural stack connection to their brain, which will take time to resolve themselves. There won't be any long-term damage.</description>
+		<initialSeverity>3</initialSeverity>
+		<comps>
+			<li Class="HediffCompProperties_SeverityPerDay">
+				<severityPerDay>-1</severityPerDay>
+			</li>
+		</comps>
+		<stages>
+			<li>
+				<vomitMtbDays>1.5</vomitMtbDays>
+				<capMods>
+					<li>
+						<capacity>Consciousness</capacity>
+						<postFactor>0.85</postFactor>
+					</li>
+					<li>
+						<capacity>Moving</capacity>
+						<postFactor>0.85</postFactor>
+					</li>
+					<li>
+						<capacity>Manipulation</capacity>
+						<postFactor>0.85</postFactor>
+					</li>
+				</capMods>
+			</li>
+		</stages>
+	</HediffDef>
+	<!-- ================================ Degradation - Brain Trauma ====================== -->
+	<HediffDef>
+		<defName>AC_BrainTrauma</defName>
+		<label>brain trauma</label>
+		<labelNoun>a brain trauma</labelNoun>
+		<description>A brain injury resulting in loss of communication, forgetfulness, and involuntary motor functions.</description>
+		<hediffClass>HediffWithComps</hediffClass>
+		<cureAllAtOnceIfCuredByItem>true</cureAllAtOnceIfCuredByItem>
+		<stages>
+			<li>
+				<partIgnoreMissingHP>true</partIgnoreMissingHP>
+				<!-- to avoid penalties from brain injuries, so manipulation is 100%+ -->
+				<opinionOfOthersFactor>0</opinionOfOthersFactor>
+				<partEfficiencyOffset>-0.15</partEfficiencyOffset>
+				<forgetMemoryThoughtMtbDays>14</forgetMemoryThoughtMtbDays>
+				<capMods>
+					<li>
+						<capacity>Talking</capacity>
+						<setMax>0</setMax>
+					</li>
+					<li>
+						<capacity>Hearing</capacity>
+						<setMax>0</setMax>
+					</li>
+					<li>
+						<capacity>Manipulation</capacity>
+						<offset>0.5</offset>
+					</li>
+				</capMods>
+			</li>
+		</stages>
+	</HediffDef>
+	<!-- ================================ Deterioration Hediff ====================== -->
+	<HediffDef ParentName="InjuryBase">
+		<defName>AC_Deterioration</defName>
+		<label>deterioration</label>
+		<labelNoun>a deterioration</labelNoun>
+		<description>A deterioration.</description>
+		<tendable>false</tendable>
+		<comps>
+			<li Class="HediffCompProperties_Infecter">
+				<infectionChance>0.30</infectionChance>
+			</li>
+		</comps>
+		<injuryProps>
+			<painPerSeverity>0.01875</painPerSeverity>
+			<averagePainPerSeverityPermanent>0.00625</averagePainPerSeverityPermanent>
+			<canMerge>true</canMerge>
+			<destroyedLabel>deteriorated</destroyedLabel>
+			<destroyedOutLabel>deteriorated</destroyedOutLabel>
+		</injuryProps>
+	</HediffDef>
+</Defs>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<!-- ================================ Fusilier Armor Ability ====================== -->
+	<VFECore.Abilities.AbilityDef>
+		<defName>AC_FusilierSmokepop</defName>
+		<label>Smokepop</label>
+		<description>Deploy a cloud of protective smoke, covering your escape. Does not consume fuel, but requires time to recharge.</description>
+		<abilityClass>VFECore.Abilities.Ability_Explode</abilityClass>
+		<targetMode>Self</targetMode>
+		<iconPath>UI/Gizmos/Ability_FusilierSmoke</iconPath>
+		<cooldownTime>12500</cooldownTime>
+		<castTime>100</castTime>
+		<modExtensions>
+			<li Class="VFECore.Abilities.AbilityExtension_Explosion">
+				<explosionDamageDef>Smoke</explosionDamageDef>
+				<explosionRadius>7</explosionRadius>
+				<onCaster>true</onCaster>
+				<postExplosionGasType>BlindSmoke</postExplosionGasType>
+				<postExplosionSpawnChance>1</postExplosionSpawnChance>
+			</li>
+		</modExtensions>
+	</VFECore.Abilities.AbilityDef>
+	<!-- ================================ Dragoon Armor Ability ====================== -->
+	<AbilityDef MayRequire="Ludeon.RimWorld.Royalty">
+		<defName>AC_DragoonJump</defName>
+		<label>Dragoon jump</label>
+		<description>A variant of chrysalis armor with automatically recharging kinetic assistors and stability modules that allow the user to leap an impressive distance. Dragoon armor is less protective than standard chrysalis armor, but next-gen neuro-memetic assistors allow for improved mobility and easy flanking of hostile forces on the battlefield. \n\nIncludes a package of pain inhibitors to ensure the wearer can fulfil their objective until their dying breath.</description>
+		<iconPath>UI/Gizmos/Ability_DragoonJump</iconPath>
+		<cooldownTicksRange>2500</cooldownTicksRange>
+		<hostile>false</hostile>
+		<verbProperties>
+			<verbClass>Verb_CastAbilityJump</verbClass>
+			<label>jump</label>
+			<violent>false</violent>
+			<hasStandardCommand>true</hasStandardCommand>
+			<onlyManualCast>true</onlyManualCast>
+			<forceNormalTimeSpeed>false</forceNormalTimeSpeed>
+			<range>14.9</range>
+			<warmupTime>0.35</warmupTime>
+				<warmupEffecter>JumpWarmupEffect</warmupEffecter>
+				<requireLineOfSight>true</requireLineOfSight>
+				<flightEffecterDef>JumpFlightEffect</flightEffecterDef>
+				<soundLanding>JumpPackLand</soundLanding>
+				<targetParams>
+					<canTargetLocations>true</canTargetLocations>
+					<canTargetPawns>false</canTargetPawns>
+					<canTargetBuildings>false</canTargetBuildings>
+				</targetParams>
+		</verbProperties>
+		<jobDef>CastJump</jobDef>
+	</AbilityDef>
+	<!-- ================================ Jump Wing Ability ====================== -->
+	<AbilityDef MayRequire="Ludeon.RimWorld.Royalty">
+		<defName>AC_WingJumpAbility</defName>
+		<label>glide jump</label>
+		<description>A single-person set of mechanical wings for short-ranged flight. With its artificial polymer muscles and guidance assistant, the jump wing allows anyone to leap distances at high speed, while staying completely silent. It recharge automatically after every use.\n\nSome ultratech worlds use them for emergency personal to allow rapid deployment and rescue operation in difficult terrain.</description>
+		<iconPath>Things/Pawn/Humanlike/Apparel/JumpWings/JumpWings</iconPath>
+		<cooldownTicksRange>4000</cooldownTicksRange>
+		<hostile>false</hostile>
+		<verbProperties>
+			<verbClass>Verb_CastAbilityJump</verbClass>
+			<label>jump</label>
+			<violent>false</violent>
+			<hasStandardCommand>true</hasStandardCommand>
+			<onlyManualCast>true</onlyManualCast>
+			<forceNormalTimeSpeed>false</forceNormalTimeSpeed>
+			<range>19.9</range>
+			<warmupTime>0.6</warmupTime>
+			<warmupEffecter>AC_JumpWingsWarmupEffect</warmupEffecter>
+			<flightEffecterDef>AC_JumpWingsLaunch</flightEffecterDef>
+			<requireLineOfSight>true</requireLineOfSight>
+			<soundLanding>AC_JumpWingsLand</soundLanding>
+			<targetParams>
+				<canTargetLocations>true</canTargetLocations>
+				<canTargetPawns>false</canTargetPawns>
+				<canTargetBuildings>false</canTargetBuildings>
+			</targetParams>
+		</verbProperties>
+		<jobDef>CastJump</jobDef>
+	</AbilityDef>
+</Defs>

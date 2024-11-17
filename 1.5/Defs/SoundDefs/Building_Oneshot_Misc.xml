@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<!-- ================================ Neural Connector ====================== -->
+	<SoundDef>
+		<defName>AC_NeuralConnector_Complete</defName>
+		<context>MapOnly</context>
+		<maxSimultaneous>1</maxSimultaneous>
+		<subSounds>
+			<li>
+				<muteWhenPaused>True</muteWhenPaused>
+				<grains>
+					<li Class="AudioGrain_Clip">
+						<clipPath>Buildings/NeuralConnector/NeuralConnector_Scan_Stop</clipPath>
+					</li>
+				</grains>
+				<volumeRange>37</volumeRange>
+				<distRange>10~30</distRange>
+			</li>
+		</subSounds>
+	</SoundDef>
+</Defs>

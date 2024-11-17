@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<!-- ================================ Sophian Stacks for the Empire ====================== -->
+	<ThingStyleDef ParentName="AC_StackStyles">
+		<defName>AC_Sophian_EmptyNeuralStack</defName>
+		<graphicData>
+			<texPath>Styles/Sophian/Item/NeuralStacks/EmptyStack</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
+			<drawSize>0.80</drawSize>
+		</graphicData>
+	</ThingStyleDef>
+	<ThingStyleDef ParentName="AC_StackStyles">
+		<defName>AC_Sophian_ActiveNeuralStack</defName>
+		<graphicData>
+			<texPath>Styles/Sophian/Item/NeuralStacks/FriendlyStack</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>0.80</drawSize>
+		</graphicData>
+	</ThingStyleDef>
+</Defs>

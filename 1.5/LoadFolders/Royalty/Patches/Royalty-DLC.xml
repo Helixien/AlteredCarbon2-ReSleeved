@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	<Operation Class="PatchOperationSequence">
+		<operations>
+			<!-- ================================ Add Stacks to Deserter Quest ====================== -->
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/QuestScriptDef[defName="Intro_Deserter"]/root[@Class="QuestNode_Sequence"]/nodes/li[@Class="QuestNode_SetItemStashContents"]/items</xpath>
+				<value>
+					<li>AC_EmptyNeuralStack</li>
+					<li>AC_EmptyNeuralStack</li>
+				</value>
+			</li>
+			<!-- ================================ Add Arm-Blades to Traders ====================== -->
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/TraderKindDef[defName="Base_Empire_Standard" or defName="Empire_Caravan_TraderGeneral" or defName="Orbital_Empire"]/stockGenerators</xpath>
+				<value>
+					<li Class="StockGenerator_Tag">
+						<tradeTag>RogianArmBladeEmpire</tradeTag>
+						<thingDefCountRange>1~2</thingDefCountRange>
+						<countRange>1~2</countRange>
+					</li>
+				</value>
+			</li>
+			<!-- ================================ Add Arm-Blades to PawnKinds ====================== -->
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/PawnKindDef[defName="Empire_Fighter_Janissary" or defName="Empire_Fighter_Champion" or defName="Empire_Fighter_Cataphract"]/techHediffsTags</xpath>
+				<value>
+					<li>RogianArmBladeEmpire</li>
+				</value>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/PawnKindDef[@Name="StellicGuardBase" or @Name="RoyalBase"]/techHediffsTags</xpath>
+				<value>
+					<li>RogianArmBladeEmpire</li>
+				</value>
+			</li>
+			<!-- ================================ Add Stacks to traders ====================== -->
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/TraderKindDef[defName="Empire_Caravan_TributeCollector"]/stockGenerators</xpath>
+				<value>
+					<li Class="StockGenerator_BuySingleDef">
+						<thingDef>AC_EmptyNeuralStack</thingDef>
+					</li>
+					<li Class="StockGenerator_BuySingleDef">
+						<thingDef>AC_EmptyArchotechStack</thingDef>
+					</li>
+				</value>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/TraderKindDef[defName="Empire_Caravan_TraderGeneral"]/stockGenerators</xpath>
+				<value>
+					<li Class="StockGenerator_BuySingleDef">
+						<thingDef>AC_EmptyNeuralStack</thingDef>
+					</li>
+					<li Class="StockGenerator_BuySingleDef">
+						<thingDef>AC_EmptyArchotechStack</thingDef>
+					</li>
+				</value>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/TraderKindDef[defName="Orbital_Empire"]/stockGenerators</xpath>
+				<value>
+					<li Class="StockGenerator_BuySingleDef">
+						<thingDef>AC_EmptyNeuralStack</thingDef>
+					</li>
+					<li Class="StockGenerator_BuySingleDef">
+						<thingDef>AC_EmptyArchotechStack</thingDef>
+					</li>
+				</value>
+			</li>
+		</operations>
+	</Operation>
+</Patch>

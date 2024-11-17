@@ -1,0 +1,304 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<!-- ================================ Chrysalis Base ====================== -->
+	<ThingDef Name="AC_ApparelArmorChrysalisMakeableBase" ParentName="ArmorMachineableBase" Abstract="True">
+		<techLevel>Ultra</techLevel>
+		<graphicData>
+			<texPath>Things/Pawn/Humanlike/Apparel/ChrysalisArmor/ChrysalisArmor</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<generateCommonality>0.4</generateCommonality>
+		<statBases>
+			<WorkToMake>80000</WorkToMake>
+			<MaxHitPoints>360</MaxHitPoints>
+			<Mass>12</Mass>
+			<Flammability>0.3</Flammability>
+			<ArmorRating_Sharp>1.25</ArmorRating_Sharp>
+			<ArmorRating_Blunt>0.5</ArmorRating_Blunt>
+			<ArmorRating_Heat>0.56</ArmorRating_Heat>
+			<Insulation_Cold>36</Insulation_Cold>
+			<Insulation_Heat>12</Insulation_Heat>
+			<EquipDelay>12</EquipDelay>
+		</statBases>
+		<equippedStatOffsets>
+			<MoveSpeed>-0.4</MoveSpeed>
+			<SlaveSuppressionOffset MayRequire="Ludeon.RimWorld.Ideology">-0.4</SlaveSuppressionOffset>
+		</equippedStatOffsets>
+		<thingCategories>
+			<li>ApparelArmor</li>
+		</thingCategories>
+		<tradeTags>
+			<li>ChrysalisArmor</li>
+			<li>UltraTechArmor</li>
+			<li>HiTechArmor</li>
+			<li>Armor</li>
+		</tradeTags>
+		<costList>
+			<ComponentSpacer>5</ComponentSpacer>
+			<Plasteel>125</Plasteel>
+			<Uranium>35</Uranium>
+		</costList>
+		<recipeMaker>
+			<unfinishedThingDef>UnfinishedTechArmor</unfinishedThingDef>
+			<researchPrerequisite>AC_ChrysalisPoweredArmor</researchPrerequisite>
+			<skillRequirements>
+				<Crafting>10</Crafting>
+			</skillRequirements>
+			<recipeUsers Inherit="False">
+				<li>FabricationBench</li>
+			</recipeUsers>
+		</recipeMaker>
+		<apparel>
+			<bodyPartGroups>
+				<li>Torso</li>
+				<li>Neck</li>
+				<li>Shoulders</li>
+				<li>Arms</li>
+				<li>Legs</li>
+			</bodyPartGroups>
+			<wornGraphicPath>Things/Pawn/Humanlike/Apparel/ChrysalisArmor/ChrysalisArmor</wornGraphicPath>
+			<layers>
+				<li>Middle</li>
+				<li>Shell</li>
+			</layers>
+			<defaultOutfitTags>
+				<li>Soldier</li>
+			</defaultOutfitTags>
+			<tags>
+				<li>SpacerMilitary</li>
+				<li>UltraMilitary</li>
+			</tags>
+			<useDeflectMetalEffect>true</useDeflectMetalEffect>
+			<soundWear>Wear_PowerArmor</soundWear>
+			<soundRemove>Remove_PowerArmor</soundRemove>
+			<developmentalStageFilter>Adult</developmentalStageFilter>
+		</apparel>
+		<colorGenerator Class="ColorGenerator_Options">
+			<options>
+				<li>
+					<weight>10</weight>
+					<only>(0.9,0.9,0.9)</only>
+				</li>
+				<li>
+					<weight>10</weight>
+					<only>(0.33,0.33,0.33)</only>
+				</li>
+				<li>
+					<weight>10</weight>
+					<only>(0.65,0.65,0.65)</only>
+				</li>
+				<li>
+					<weight>6</weight>
+					<min>(0.3,0.3,0.3)</min>
+					<max>(0.5,0.5,0.5)</max>
+				</li>
+			</options>
+		</colorGenerator>
+		<tickerType>Normal</tickerType>
+		<comps>
+			<li Class="VFECore.CompProperties_ApparelHediffs">
+				<hediffDefnames>
+					<li>AC_PainProtection</li>
+				</hediffDefnames>
+			</li>
+			<li Class="CompProperties_Biocodable"/>
+		</comps>
+		<thingSetMakerTags>
+			<li>RewardStandardLowFreq</li>
+		</thingSetMakerTags>
+	</ThingDef>
+	<!-- ================================ Chrysalis Armour ====================== -->
+	<ThingDef ParentName="AC_ApparelArmorChrysalisMakeableBase">
+		<defName>AC_Apparel_ChrysalisArmor</defName>
+		<label>chrysalis armor</label>
+		<description>A suit of advanced chrysalis power armor. Improved protection over standard power armor, offered by molecular plasteel integration thoughout the suit as well as on-board processors to assist movement and dampen pain receptors.</description>
+		<recipeMaker>
+			<displayPriority>135</displayPriority>
+		</recipeMaker>
+	</ThingDef>
+	<!-- ================================ Fusilier Armour ====================== -->
+	<ThingDef ParentName="AC_ApparelArmorChrysalisMakeableBase">
+		<defName>AC_Apparel_FusilierArmor</defName>
+		<label>fusilier armor</label>
+		<description>A variant of chrysalis armor with a heavy layer of plasteel-weave plates, next-gen solid ablative coatings and integrated smokepop synthesizers to obfuscate the wearer’s location. \n\nIncludes a package of pain inhibitors to ensure the wearer can fulfill their objective until their dying breath.</description>
+		<graphicData>
+			<texPath>Things/Pawn/Humanlike/Apparel/FusilierArmor/FusilierArmor</texPath>
+		</graphicData>
+		<statBases>
+			<WorkToMake>95000</WorkToMake>
+			<MaxHitPoints>450</MaxHitPoints>
+			<Mass>14</Mass>
+			<ArmorRating_Sharp>1.35</ArmorRating_Sharp>
+			<ArmorRating_Blunt>0.6</ArmorRating_Blunt>
+			<ArmorRating_Heat>0.7</ArmorRating_Heat>
+			<Insulation_Cold>42</Insulation_Cold>
+			<Insulation_Heat>28</Insulation_Heat>
+			<EquipDelay>20</EquipDelay>
+		</statBases>
+		<recipeMaker>
+			<displayPriority>136</displayPriority>
+		</recipeMaker>
+		<costList>
+			<ComponentSpacer>8</ComponentSpacer>
+			<Plasteel>175</Plasteel>
+			<Uranium>60</Uranium>
+		</costList>
+		<equippedStatOffsets>
+			<MoveSpeed>-0.9</MoveSpeed>
+		</equippedStatOffsets>
+		<apparel>
+			<wornGraphicPath>Things/Pawn/Humanlike/Apparel/FusilierArmor/FusilierArmor</wornGraphicPath>
+		</apparel>
+		<comps>
+			<li Class="VFECore.Abilities.CompProperties_AbilitiesApparel">
+				<abilities>
+					<li>AC_FusilierSmokepop</li>
+				</abilities>
+			</li>
+		</comps>
+	</ThingDef>
+	<!-- ================================ Dragoon Armour ====================== -->
+	<ThingDef ParentName="AC_ApparelArmorChrysalisMakeableBase" MayRequire="Ludeon.RimWorld.Royalty">
+		<defName>AC_Apparel_DragoonArmor</defName>
+		<label>dragoon armor</label>
+		<description>A variant of chrysalis armor with automatically recharging kinetic assistors and stability modules that allow the user to leap an impressive distance. Dragoon armor is less protective than standard chrysalis armor, but next-gen neuro-memetic assistors allow for improved mobility and easy flanking of hostile forces on the battlefield. \n\nIncludes a package of pain inhibitors to ensure the wearer can fulfil their objective until their dying breath.</description>
+		<graphicData>
+			<texPath>Things/Pawn/Humanlike/Apparel/DragoonArmor/DragoonArmor</texPath>
+		</graphicData>
+		<statBases>
+			<WorkToMake>85000</WorkToMake>
+			<MaxHitPoints>320</MaxHitPoints>
+			<Mass>18</Mass>
+			<ArmorRating_Sharp>1.1</ArmorRating_Sharp>
+			<ArmorRating_Blunt>0.4</ArmorRating_Blunt>
+			<ArmorRating_Heat>0.5</ArmorRating_Heat>
+			<Insulation_Cold>36</Insulation_Cold>
+			<Insulation_Heat>12</Insulation_Heat>
+			<EquipDelay>14</EquipDelay>
+			<JumpRange>23.9</JumpRange>
+		</statBases>
+		<recipeMaker>
+			<displayPriority>137</displayPriority>
+		</recipeMaker>
+		<costList>
+			<ComponentSpacer>6</ComponentSpacer>
+			<Plasteel>160</Plasteel>
+			<Uranium>50</Uranium>
+		</costList>
+		<equippedStatOffsets>
+			<MoveSpeed>-0.2</MoveSpeed>
+		</equippedStatOffsets>
+		<apparel>
+			<wornGraphicPath>Things/Pawn/Humanlike/Apparel/DragoonArmor/DragoonArmor</wornGraphicPath>
+			<bodyPartGroups>
+				<li>Waist</li>
+			</bodyPartGroups>
+			<tags>
+				<li>WingJump</li>
+				<li>PackJump</li>
+			</tags>
+		</apparel>
+		<comps>
+			<li Class="AlteredCarbon.CompProperties_ApparelAbilities">
+				<abilityDefs>
+					<li>AC_DragoonJump</li>
+				</abilityDefs>
+			</li>
+		</comps>
+	</ThingDef>
+	<!-- ================================ Enviro Suit - For needlecaster ====================== -->
+	<ThingDef ParentName="ArmorMachineableBase">
+		<defName>AC_EnviroSuit</defName>
+		<label>enviro suit</label>
+		<description>A lightly armored, impermeable, airtight full body suit with hyperweave lining designed for work in extreme conditions. Thin, layered plasteel-weave plates, advanced molecular adaptation layers and a state of the art air filtration system allow for full protection against heat, cold, psychic and toxic effects. It limits the movement and visibility of the wearer while not offering much of protection in combat.\n\nOriginally created for workers in zero-G and other extreme working conditions, it soon found popularity with needlecasters, explorers and medical professionals alike and has been widely adopted on a multitude of worlds.</description>
+		<graphicData>
+			<texPath>Things/Pawn/Humanlike/Apparel/EnviroSuit/EnviroSuit</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<techLevel>Ultra</techLevel>
+		<tradeability>Sellable</tradeability>
+		<generateCommonality>0.3</generateCommonality>
+		<statBases>
+			<WorkToMake>45000</WorkToMake>
+			<MaxHitPoints>150</MaxHitPoints>
+			<Mass>10</Mass>
+			<Flammability>0</Flammability>
+			<ArmorRating_Sharp>0.2</ArmorRating_Sharp>
+			<ArmorRating_Blunt>0.2</ArmorRating_Blunt>
+			<ArmorRating_Heat>1</ArmorRating_Heat>
+			<Insulation_Cold>56</Insulation_Cold>
+			<Insulation_Heat>56</Insulation_Heat>
+			<EquipDelay>10</EquipDelay>
+		</statBases>
+		<equippedStatOffsets>
+			<MoveSpeed>-0.25</MoveSpeed>
+			<PsychicSensitivity>-0.25</PsychicSensitivity>
+			<ToxicResistance>1</ToxicResistance>
+			<ToxicEnvironmentResistance MayRequire="Ludeon.RimWorld.Biotech">1</ToxicEnvironmentResistance>
+		</equippedStatOffsets>
+		<costList>
+			<ComponentSpacer>3</ComponentSpacer>
+			<Plasteel>40</Plasteel>
+			<Hyperweave>20</Hyperweave>
+		</costList>
+		<recipeMaker>
+			<unfinishedThingDef>UnfinishedTechArmor</unfinishedThingDef>
+			<researchPrerequisite>AC_NeuralCasting</researchPrerequisite>
+			<skillRequirements>
+				<Crafting>10</Crafting>
+			</skillRequirements>
+			<recipeUsers Inherit="False">
+				<li>FabricationBench</li>
+			</recipeUsers>
+			<displayPriority>135</displayPriority>
+		</recipeMaker>
+		<thingCategories Inherit='False'>
+			<li>ApparelArmor</li>
+		</thingCategories>
+		<apparel>
+			<bodyPartGroups>
+				<li>Feet</li>
+				<li>Hands</li>
+				<li>Torso</li>
+				<li>Neck</li>
+				<li>Shoulders</li>
+				<li>Arms</li>
+				<li>Legs</li>
+			</bodyPartGroups>
+			<wornGraphicPath>Things/Pawn/Humanlike/Apparel/EnviroSuit/EnviroSuit</wornGraphicPath>
+			<useDeflectMetalEffect>true</useDeflectMetalEffect>
+			<layers>
+				<li>Shell</li>
+			</layers>
+			<defaultOutfitTags>
+				<li>Soldier</li>
+			</defaultOutfitTags>
+			<tags>
+				<li>SpacerEnviroSuit</li>
+				<li>UltraEnviroSuit</li>
+			</tags>
+			<developmentalStageFilter>Adult</developmentalStageFilter>
+		</apparel>
+		<colorGenerator Class="ColorGenerator_Options">
+			<options>
+				<li>
+					<weight>10</weight>
+					<only>(0.9,0.9,0.9)</only>
+				</li>
+				<li>
+					<weight>10</weight>
+					<only>(0.33,0.33,0.33)</only>
+				</li>
+				<li>
+					<weight>10</weight>
+					<only>(0.65,0.65,0.65)</only>
+				</li>
+				<li>
+					<weight>6</weight>
+					<min>(0.3,0.3,0.3)</min>
+					<max>(0.5,0.5,0.5)</max>
+				</li>
+			</options>
+		</colorGenerator>
+	</ThingDef>
+</Defs>

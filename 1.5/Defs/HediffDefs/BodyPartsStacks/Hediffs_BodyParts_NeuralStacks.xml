@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<AlteredCarbon.StackSavingOptions>
+		<defName>AC_StackSavingOptions</defName>
+		<ignoresTraits>
+			<li>Beauty</li>
+			<li>Immunity</li>
+			<li>AnnoyingVoice</li>
+			<li>CreepyBreathing</li>
+			<li>Tough</li>
+			<li>PsychicSensitivity</li>
+			<li>Delicate</li>
+			<li MayRequire="Ludeon.RimWorld.Anomaly">BodyMastery</li>
+			<li MayRequire="VanillaExpanded.VanillaExpanded.VPsycastsE">VPE_Thrall</li>
+			<li MayRequire="VanillaExpanded.VanillaTraitsExpanded">VTE_IronStomach</li>
+			<li MayRequire="VanillaExpanded.VanillaTraitsExpanded">VTE_BigBoned</li>
+			<li MayRequire="VanillaExpanded.VanillaTraitsExpanded">VTE_Dunce</li>
+			<li MayRequire="VanillaExpanded.VanillaTraitsExpanded">VTE_Squeamish</li>
+			<li MayRequire="VanillaExpanded.VanillaTraitsExpanded">VTE_ThickSkinned</li>
+			<li MayRequire="VanillaExpanded.VanillaTraitsExpanded">VTE_ThinSkinned</li>
+			<li MayRequire="OskarPotocki.VFE.Pirates">VFEP_WarcasketTrait</li>
+			<li MayRequire="OskarPotocki.VFE.Pirates">VFEP_Shellcasket</li>
+			<li MayRequire="sarg.alphagenes">AG_Beauty</li>
+			<li MayRequire="syrchalis.individuality">SYR_Agile</li>
+			<li MayRequire="syrchalis.individuality">SYR_KeenEye</li>
+			<li MayRequire="syrchalis.individuality">SYR_StrongBack</li>
+			<li MayRequire="Sierra.RTGT">RT_Nearsighted</li>
+			<li MayRequire="Sierra.RTGT">RT_Farsighted</li>
+			<li MayRequire="Sierra.RTGT">RT_Muscular</li>
+			<li MayRequire="Sierra.RTGT">RT_Frail</li>
+			<li MayRequire="Sierra.RTGT">RT_Hardy</li>
+			<li MayRequire="Sierra.RTGT">RT_Feeble</li>
+			<li MayRequire="Sierra.RTGT">RT_Healthy</li>
+			<li MayRequire="Sierra.RTGT">RT_ChronicallyIll</li>
+		</ignoresTraits>
+	</AlteredCarbon.StackSavingOptions>
+	<!-- ================================ Neural Stack - Base ====================== -->
+	<ThingDef Name="AC_StackBase" ParentName="BodyPartArchotechBase" Abstract="True">
+		<graphicData Inherit="False">
+			<onGroundRandomRotateAngle>35</onGroundRandomRotateAngle>
+			<drawSize>0.80</drawSize>
+		</graphicData>
+		<techLevel>Ultra</techLevel>
+		<uiIconForStackCount>1</uiIconForStackCount>
+		<tradeNeverStack>false</tradeNeverStack>
+		<useHitPoints>true</useHitPoints>
+		<drawGUIOverlay>true</drawGUIOverlay>
+		<statBases>
+			<Mass>0.4</Mass>
+			<DeteriorationRate>0.3</DeteriorationRate>
+			<MaxHitPoints>125</MaxHitPoints>
+			<Flammability>0</Flammability>
+			<MarketValue>950</MarketValue>
+		</statBases>
+		<thingCategories Inherit="False">
+			<li>AC_BodyPartsUltra</li>
+		</thingCategories>
+		<techHediffsTags Inherit="False">
+			<li>Ultra</li>
+		</techHediffsTags>
+		<comps>
+			<li Class="CompProperties_Styleable" />
+		</comps>
+	</ThingDef>
+	<HediffDef Name="AC_ImplantStackBase" Abstract="True" ParentName="ImplantHediffBase">
+		<priceImpact>true</priceImpact>
+		<countsAsAddedPartOrImplant>true</countsAsAddedPartOrImplant>
+		<comps>
+			<li Class="HediffCompProperties_ReactOnDamage">
+				<damageDefIncoming>EMP</damageDefIncoming>
+				<createHediff>BrainShock</createHediff>
+			</li>
+		</comps>
+	</HediffDef>
+	<!-- ================================ Empty Neural Stack ====================== -->
+	<ThingDef ParentName="AC_StackBase">
+		<defName>AC_EmptyNeuralStack</defName>
+		<label>empty neural stack</label>
+		<description>An ultratech neural implant which can store a human consciousness, commonly referred to as a neural. Once implanted directly into a person's spine in the neck it will download their consciousness and safely store it. While the death of an organic or inorganic body is no longer a concern, being a fragile piece of technology, blunt force trauma and bullets to the neck area should be avoided at all cost.\n\nExtremely rare, heavily restricted and hard to produce, these implants are rare on non-ultratech worlds.</description>
+		<thingClass>AlteredCarbon.NeuralStack</thingClass>
+		<graphicData>
+			<texPath>Things/Item/NeuralStacks/EmptyStack</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
+			<drawSize>0.80</drawSize>
+		</graphicData>
+		<descriptionHyperlinks>
+			<RecipeDef>AC_InstallNeuralStack</RecipeDef>
+		</descriptionHyperlinks>
+		<stackLimit>10</stackLimit>
+		<statBases>
+			<WorkToMake>18500</WorkToMake>
+		</statBases>
+		<costList>
+			<Plasteel>12</Plasteel>
+			<Steel>4</Steel>
+			<ComponentSpacer>4</ComponentSpacer>
+		</costList>
+		<thingSetMakerTags>
+			<li>RewardStandardLowFreq</li>
+		</thingSetMakerTags>
+		<tradeTags Inherit="False">
+			<li>AC_StacksUltra</li>
+			<li>Bionic</li>
+			<li MayRequire="Ludeon.RimWorld.Royalty">ImplantEmpireRoyal</li>
+		</tradeTags>
+		<recipeMaker Inherit="False">
+			<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+			<workSkill>Crafting</workSkill>
+			<effectWorking>Cook</effectWorking>
+			<soundWorking>Recipe_Machining</soundWorking>
+			<unfinishedThingDef>UnfinishedHealthItemBionic</unfinishedThingDef>
+			<skillRequirements>
+				<Crafting>12</Crafting>
+			</skillRequirements>
+			<researchPrerequisite>AC_NeuralDigitalization</researchPrerequisite>
+			<recipeUsers>
+				<li>FabricationBench</li>
+			</recipeUsers>
+			<displayPriority>15</displayPriority>
+		</recipeMaker>
+	</ThingDef>
+	<!-- ================================ Neural Stacks - Install Empty ====================== -->
+	<RecipeDef ParentName="SurgeryInstallImplantBase">
+		<defName>AC_InstallEmptyNeuralStack</defName>
+		<label>install empty neural stack</label>
+		<description>Install an empty neural stack.</description>
+		<descriptionHyperlinks>
+			<ThingDef>AC_EmptyNeuralStack</ThingDef>
+		</descriptionHyperlinks>
+		<workerClass>AlteredCarbon.Recipe_InstallNeuralStack</workerClass>
+		<jobString>Installing neural stack.</jobString>
+		<uiIconThing>AC_EmptyNeuralStack</uiIconThing>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>AC_EmptyNeuralStack</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>AC_EmptyNeuralStack</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>Neck</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>AC_NeuralStack</addsHediff>
+	</RecipeDef>
+	<!-- ================================ Active Neural Stack ====================== -->
+	<ThingDef ParentName="AC_StackBase">
+		<defName>AC_ActiveNeuralStack</defName>
+		<label>neural stack</label>
+		<description>An ultratech neural implant with a human consciousness stored on it, commonly referred to as a neural. Can be implanted directly into a person's or sleeve’s spine in the neck to bring back the person stored on the stack.</description>
+		<thingClass>AlteredCarbon.NeuralStack</thingClass>
+		<graphicData>
+			<texPath>Things/Item/NeuralStacks/FriendlyStack</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<descriptionHyperlinks>
+			<RecipeDef>AC_InstallNeuralStack</RecipeDef>
+		</descriptionHyperlinks>
+		<tickerType>Normal</tickerType>
+		<uiIconForStackCount>1</uiIconForStackCount>
+		<healthAffectsPrice>true</healthAffectsPrice>
+		<stackLimit>1</stackLimit>
+		<tradeNeverStack>false</tradeNeverStack>
+		<tradeTags Inherit="False"/>
+		<inspectorTabs>
+			<li>ITab_Pawn_Character</li>
+		</inspectorTabs>
+	</ThingDef>
+	<!-- ================================ Neural Stack Hediff ====================== -->
+	<HediffDef ParentName="AC_ImplantStackBase">
+		<defName>AC_NeuralStack</defName>
+		<label>Neural stack</label>
+		<labelNoun>A neural stack</labelNoun>
+		<description>An installed neural stack.</description>
+		<hediffClass>AlteredCarbon.Hediff_NeuralStack</hediffClass>
+		<descriptionHyperlinks>
+			<ThingDef>AC_ActiveNeuralStack</ThingDef>
+		</descriptionHyperlinks>
+		<spawnThingOnRemoved>AC_ActiveNeuralStack</spawnThingOnRemoved>
+		<isBad>false</isBad>
+		<addedPartProps>
+			<solid>true</solid>
+<!--			<partEfficiency>1.25</partEfficiency>
+			<betterThanNatural>true</betterThanNatural>-->
+		</addedPartProps>
+	</HediffDef>
+	<!-- ================================ Neural Stacks - Install Active ====================== -->
+	<RecipeDef ParentName="SurgeryInstallImplantBase">
+		<defName>AC_InstallNeuralStack</defName>
+		<label>install active neural stack</label>
+		<description>Install a neural stack.</description>
+		<descriptionHyperlinks>
+			<ThingDef>AC_ActiveNeuralStack</ThingDef>
+		</descriptionHyperlinks>
+		<workerClass>AlteredCarbon.Recipe_InstallActiveNeuralStack</workerClass>
+		<jobString>Installing neural stack.</jobString>
+		<uiIconThing>AC_ActiveNeuralStack</uiIconThing>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>AC_ActiveNeuralStack</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>AC_ActiveNeuralStack</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>Neck</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>AC_NeuralStack</addsHediff>
+	</RecipeDef>
+	<!-- ================================ Neural Stacks - Remove ====================== -->
+	<RecipeDef ParentName="SurgeryRemoveImplantBase">
+		<defName>AC_RemoveNeuralStack</defName>
+		<label>remove neural stack</label>
+		<description>Remove neural stack.</description>
+		<descriptionHyperlinks>
+			<ThingDef>AC_ActiveNeuralStack</ThingDef>
+		</descriptionHyperlinks>
+		<workerClass>AlteredCarbon.Recipe_RemoveNeuralStack</workerClass>
+		<jobString>Removing neural stack.</jobString>
+		<uiIconThing>AC_ActiveNeuralStack</uiIconThing>
+		<removesHediff>AC_NeuralStack</removesHediff>
+	</RecipeDef>
+</Defs>

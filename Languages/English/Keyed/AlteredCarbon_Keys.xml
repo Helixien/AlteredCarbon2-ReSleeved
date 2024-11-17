@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+	<!-- ================================ Stacks ====================== -->
+	<AC.InstallStack>Implant stack</AC.InstallStack>
+	<AC.InstallStackDesc>Select a pawn or empty sleeve to implant the neural stack into via surgery. The surgery bill will automatically be created in the health tab of the selected pawn or sleeve.</AC.InstallStackDesc>
+	<AC.InstallEmptyStackDesc>Select a pawn to implant the empty neural stack in via surgery. The surgery bill  will automatically be created in the health tab of the selected pawn or sleeve.</AC.InstallEmptyStackDesc>
+	<AC.InstallArchotechStack>Implant stack</AC.InstallArchotechStack>
+	<AC.InstallArchotechStackDesc>Select a pawn or empty sleeve to implant the archotech stack in via surgery. The surgery bill will automatically be created in the health tab of the selected pawn or sleeve.</AC.InstallArchotechStackDesc>
+	<AC.InstallEmptyArchotechStackDesc>Select a pawn to implant the empty archotech stack in via surgery. The surgery bill will automatically be created in the health tab of the selected pawn or sleeve.</AC.InstallEmptyArchotechStackDesc>
+	<AC.AutoLoad>Auto-load</AC.AutoLoad>
+	<AC.AutoLoadDesc>If active, haulers will automatically store this stack in a stack cache or neural matrix.</AC.AutoLoadDesc>
+	<AC.Faction>Faction</AC.Faction>
+	<AC.Childhood>Childhood</AC.Childhood>
+	<AC.Adulthood>Adulthood</AC.Adulthood>
+	<AC.AgeChronologicalTicks>Chronological age</AC.AgeChronologicalTicks>
+	<AC.DestroyStackConfirmation>Destroying stack:\nWARNING! You are about to destroy this stack. Are you sure you want to continue?</AC.DestroyStackConfirmation>
+	<AC.ScenPart_PawnsHaveNeuralStack>{0} have a {1} chance of starting with a {2}.</AC.ScenPart_PawnsHaveNeuralStack>
+	<AC.SleeveWithStack>Sleeve with stack installed inside.</AC.SleeveWithStack>
+	<AC.PawnAlreadyHasStack>{PAWN_nameDef} already has a neural stack installed!</AC.PawnAlreadyHasStack>
+	<AC.PawnAlreadyHasArchotechStack>{PAWN_nameDef} already has an archotech stack installed!</AC.PawnAlreadyHasArchotechStack>
+	<AC.PawnStackCannotDowngrade>{PAWN_nameDef} already has an archotech stack installed!</AC.PawnStackCannotDowngrade>
+	<AC.CannotInstallStackNeckIsMissingOrAnotherImplantInstalled>Cannot install neural stack - neck is missing or another implant is already present.</AC.CannotInstallStackNeckIsMissingOrAnotherImplantInstalled>
+	<AC.AlreadyMarkedForInstalling>Stack is already marked for implantation.</AC.AlreadyMarkedForInstalling>
+	<AC.PawnDiedOfImplantingStack>{PAWN_nameDef} has been overwritten by a neural stack.</AC.PawnDiedOfImplantingStack>
+	<AC.PawnHasNeutralStack>{0} has a neural stack implanted.</AC.PawnHasNeutralStack>
+	<AC.PawnDiedOfErasingStack>{PAWN_nameDef} has died.</AC.PawnDiedOfErasingStack>
+
+	<!-- ================================ Needlecasting ====================== -->
+	<AC.StartNeedlecasting>Start needlecasting</AC.StartNeedlecasting>
+	<AC.StartNeedlecastingDesc>Select a traget with a neural reciver to needlecast to.</AC.StartNeedlecastingDesc>
+	<AC.EndNeedlecasting>End needlecasting</AC.EndNeedlecasting>
+	<AC.EndNeedlecastingDesc>End the current needlecasting connection.</AC.EndNeedlecastingDesc>
+	<AC.MaximumNeedlecastingRange>Maximum needlecasting range: {0} tiles</AC.MaximumNeedlecastingRange>
+	<AC.CurrentDistanceToCastingOrigin>Current distance to casting origin: {0} tiles</AC.CurrentDistanceToCastingOrigin>
+	<AC.CaravanNeedlecastingIconTooltip>{0} is currently needlecasting into this sleeve. If they travel beyond their casting range will automatically be ended and they might be lost.\n\nMaximum needlecasting range: {1} tiles</AC.CaravanNeedlecastingIconTooltip>
+	<AC.NeedlecastingDisconnectWarning>Do your really want to end the {0}'s needlecasting connection?
+
+{0} is currently not on your colonies local map. The sleeve {0} is connected to might be lost if there are no other colonists on the same local map as them.</AC.NeedlecastingDisconnectWarning>
+	<AC.PawnStartedNeedlecastingIntoOtherPawn>{0} started needlecasting into sleeve of {1}.</AC.PawnStartedNeedlecastingIntoOtherPawn>
+	<AC.PawnStartedNeedlecastingIntoEmptySleeve>{0} started needlecasting into empty sleeve.</AC.PawnStartedNeedlecastingIntoEmptySleeve>
+	<AC.PawnNoLongerNeedlecasting>{0} is no longer needlecasting.</AC.PawnNoLongerNeedlecasting>
+	<AC.PawnStoppedNeedlecastingCause>{0} stopped needlecasting. Cause: {1}</AC.PawnStoppedNeedlecastingCause>
+	<AC.SleeveHasDied>Controlled sleeve has died.</AC.SleeveHasDied>
+	<AC.MatrixHasNoPower>Neural matrix has no power.</AC.MatrixHasNoPower>
+	<AC.SleeveNoLongerReachable>Controlled sleeve no longer reachable.</AC.SleeveNoLongerReachable>
+	<AC.WasRemovedFromCryptoCasket>{0} was removed from the crypto casket.</AC.WasRemovedFromCryptoCasket>
+	<AC.ConnectionDistrupted>Connection to controlled sleeve disrupted.</AC.ConnectionDistrupted>
+	<AC.ControlledSleeveLost>Controlled sleeve lost.</AC.ControlledSleeveLost>
+	<AC.NoLongerPartOfPlayerFaction>No longer part of {0} faction.</AC.NoLongerPartOfPlayerFaction>
+	<AC.CasterHasDied>Caster has died.</AC.CasterHasDied>
+	<AC.CasterStackDestroyed>Caster stack destroyed.</AC.CasterStackDestroyed>
+	<!-- ================================ Extract Stacks ====================== -->
+	<AC.DesignatorExtractStack>Extract stack</AC.DesignatorExtractStack>
+	<AC.ExtractStack>Extract stack</AC.ExtractStack>
+	<AC.DesignatorExtractStackDesc>Extract stacks from corpses.</AC.DesignatorExtractStackDesc>
+	<AC.MessageMustDesignateHasStack>Must designate corpses with stacks installed.</AC.MessageMustDesignateHasStack>
+	<!-- ================================ Sleeves ====================== -->
+	<AC.EmptySleeve>Empty sleeve</AC.EmptySleeve>
+	<AC.SleeveDeath>Sleeve Death</AC.SleeveDeath>
+	<AC.PawnDiedBecauseOf>Sleeve of {PAWN_labelShort} has died. Cause: {1}.</AC.PawnDiedBecauseOf>
+	<AC.PawnDied>Sleeve of {1_labelShort} has died.</AC.PawnDied>
+	<AC.SleveOf>Sleeve of</AC.SleveOf>
+	<AC.TakeToSleeveCasketOrMedicalBed>Take empty sleeve to sleeve casket or medical bed.</AC.TakeToSleeveCasketOrMedicalBed>
+	<AC.CannotTakeToSleeveCasketOrMedicalBed>Cannot take: No reachable, un-reserved sleeve casket or medical bed in safe temperature.</AC.CannotTakeToSleeveCasketOrMedicalBed>
+	<!-- ================================ Sleeve Gestator ====================== -->
+	<AC.CreateSleeveBody>Grow sleeve</AC.CreateSleeveBody>
+	<AC.SleeveCustomization>Sleeve Customization</AC.SleeveCustomization>
+	<AC.NoSleeve>No Sleeve</AC.NoSleeve>
+	<AC.Sleeve>Sleeve</AC.Sleeve>
+	<AC.CreateSleeveBodyDesc>Create a new baseliner or xenotype sleeve using available xenogerms.</AC.CreateSleeveBodyDesc>
+	<AC.GeneOptions>Gene options</AC.GeneOptions>
+	<AC.BodyOptions>Body options</AC.BodyOptions>
+	<AC.XenogermExplanation>Selected xenogerm will be consumed in the process. If no xenogerm is selected, the sleeve will be grown as a "Baseliner".</AC.XenogermExplanation>
+	<AC.GeneOptionsExplanation>Available options depend on the genes of the selected xenogerm. Chosen options will be used as active genes, while conflicting ones will be dormant.</AC.GeneOptionsExplanation>
+	<AC.BodyOptionsExplanation>Baseliner skins and hair colour options are always available. Chosen options will be used as active genes, while conflicting ones will be dormant.</AC.BodyOptionsExplanation>
+	<AC.ConvertGenesToGermline>Grow non-archotech genes in xenogerm as germline genes:</AC.ConvertGenesToGermline>
+	<AC.PowerSleeveWillBeLostIn>Due to lack of power, the sleeve will be lost in {0}.</AC.PowerSleeveWillBeLostIn>
+	<AC.FuelSleeveWillBeLostIn>Due to lack of neutroamine, the sleeve will be lost in {0}.</AC.FuelSleeveWillBeLostIn>
+	<AC.FuelSleeveWillBeDeteriorated>Due to lack of neutroamine, the sleeve will begin to deteriorate in {0}</AC.FuelSleeveWillBeDeteriorated>
+	<AC.FuelSleeveIsDeteriorating>Due to lack of neutroamine, the sleeve is deteriorating.</AC.FuelSleeveIsDeteriorating>
+	<AC.Race>Race</AC.Race>
+	<AC.Xenotype>Xenotype</AC.Xenotype>
+	<AC.SleeveQuality>Sleeve quality</AC.SleeveQuality>
+	<AC.SleeveBeauty>Sleeve beauty</AC.SleeveBeauty>
+	<AC.SleeveCustomizationExplanation>When you press Accept, a sleeve will begin growing in this Sleeve gestator. During growth, it will require a constant power connection as well as neutroamine connection via neutro pipes. When the timer finishes, a Sleeve can be extracted and either used straight-away, or inserted into a Sleeve casket.</AC.SleeveCustomizationExplanation>
+	<AC.SaveTemplate>Save template</AC.SaveTemplate>
+	<AC.LoadTemplate>Load template</AC.LoadTemplate>
+	<AC.CancelSleeveBodyGrowing>Cancel the sleeve growing process.</AC.CancelSleeveBodyGrowing>
+	<AC.CancelSleeveBodyGrowingDesc>Cancel sleeve growing.</AC.CancelSleeveBodyGrowingDesc>
+	<AC.BodyShape>Body shape</AC.BodyShape>
+	<AC.Cancel>Cancel</AC.Cancel>
+	<AC.GrowthProgress>Growth progress: </AC.GrowthProgress>
+	<AC.HairColour>Hair colour</AC.HairColour>
+	<AC.HairType>Hair type</AC.HairType>
+	<AC.HeadShape>Head shape</AC.HeadShape>
+	<AC.BeardType>Beard type</AC.BeardType>
+	<AC.SkinColour>Skin colour</AC.SkinColour>
+	<AC.TimeToGrow>Total time to grow: {0}</AC.TimeToGrow>
+	<AC.GrowCost>Total neutroamine needed: {0}</AC.GrowCost>
+	<AC.SelectRace>Select race</AC.SelectRace>
+	<AC.CloneSleeve>Clone sleeve</AC.CloneSleeve>
+	<AC.CloneSleeveDesc>Create a sleeve based on an existing pawn, including endogenes.</AC.CloneSleeveDesc>
+	<AC.IsRunningOutFuel>Sleeve gestator is running out neutroamine</AC.IsRunningOutFuel>
+	<AC.IsRunningOutPower>Sleeve gestator is running out power</AC.IsRunningOutPower>
+	<AC.SleeveIngestatorIsDead>Sleeve body in the gestator is dead</AC.SleeveIngestatorIsDead>
+	<AC.RepurposeCorpse>Repurpose corpse</AC.RepurposeCorpse>
+	<AC.RepurposeCorpseDesc>Repurpose a not fully rotten corpse and turn it into an empty sleeve.</AC.RepurposeCorpseDesc>
+	<AC.SleeveGrowerIsOccupied>Sleeve grower is occupied.</AC.SleeveGrowerIsOccupied>
+	<AC.CancelRepurposingCorpse>Cancel repurposing corpse</AC.CancelRepurposingCorpse>
+	<AC.CancelRepurposingCorpseDesc>Cancel repurposing corpse into a empty sleeve.</AC.CancelRepurposingCorpseDesc>
+	<AC.NeuralStackMustBeRemovedFirst>Neural stack must be removed first.</AC.NeuralStackMustBeRemovedFirst>
+	<AC.CannotRepurposeCorspeWithoutHead>Cannot repurpose corpse with missing head.</AC.CannotRepurposeCorspeWithoutHead>
+	<AC.SleeveDesignCouldntBeFullyLoaded>Saved Sleeve Design could not be fully loaded. Missing required xenogerm!</AC.SleeveDesignCouldntBeFullyLoaded>
+	<AC.PawnBodyCouldntBeFullyCopied>A {PAWN_nameDef} body couldn't be copied fully. The following xenogenes were skipped: {1}</AC.PawnBodyCouldntBeFullyCopied>
+	<AC.StartGrowing>Start growing</AC.StartGrowing>
+	<AC.FinishedGrowingSleeve>Sleeve gestator: Finished growing sleeve!</AC.FinishedGrowingSleeve>
+	<AC.SleeveAge>Age:</AC.SleeveAge>
+	<AC.YearsOld>{0} years old</AC.YearsOld>
+	<AC.PsychicSensitivity>Psychic sensitivity</AC.PsychicSensitivity>
+	<AC.CorpseRepurposingIsInProcess>Corpse repurposing is in process.</AC.CorpseRepurposingIsInProcess>
+	<AC.SleeveGrowingIsInProcess>Sleeve growing is in process.</AC.SleeveGrowingIsInProcess>
+	<!-- ================================ Neural Matrix & Stack Cache ====================== -->
+		<AC.NeuralMatrixManagement>Neural Matrix Management</AC.NeuralMatrixManagement>
+	<AC.ManageNeuralMatrix>Manage Neural Matrix</AC.ManageNeuralMatrix>
+	<AC.ManageNeuralMatrixDesc>Manage stacks stored or registered with the neural matrix.</AC.ManageNeuralMatrixDesc>
+	<AC.StorageFilters>Storage filters</AC.StorageFilters>
+	<AC.AllowColonistNeuralStacks>*Allow colonist stacks</AC.AllowColonistNeuralStacks>
+	<AC.AllowStrangerNeuralStacks>*Allow stranger stacks</AC.AllowStrangerNeuralStacks>
+	<AC.AllowHostileNeuralStacks>*Allow hostile stacks</AC.AllowHostileNeuralStacks>
+	<AC.TooltipTrackStack>Register {0} with the neural matrix.</AC.TooltipTrackStack>
+	<AC.TooltipImplantStack>Implant {0} into an empty sleeve. The stack will stay registered with the neural matrix and will continue to be tracked.</AC.TooltipImplantStack>
+	<AC.TooltipRemoveStack>Drop stack onto the ground. The stack will stay registered with the neural matrix and will continue to be tracked.</AC.TooltipRemoveStack>
+	<AC.TooltipStopManaging>Unregister {0}. It will still be stored inside the neural matrix storage, but no longer be tracked.</AC.TooltipStopManaging>
+	<AC.TooltipNeedlecast>Needlecast {0} into any sleeve with an installed neural reciver. The stack will not be removed from the neural matrix.</AC.TooltipNeedlecast>
+	<AC.EjectAllNeuralStacksDesc>Drop all contained stacks onto the ground.</AC.EjectAllNeuralStacksDesc>
+	<AC.EjectNeuralStackTooltip>Eject this stack from the matrix.</AC.EjectNeuralStackTooltip>
+	<AC.EjectNeuralStackConfirmation>Do you really want to eject {0}? It will be immediately ejected onto the ground nearby.</AC.EjectNeuralStackConfirmation>
+	<AC.EraseNeuralStackTooltip>Erase this neural stack irreversibly.</AC.EraseNeuralStackTooltip>
+	<AC.EraseNeuralStackConfirmation>Do you really want to erase {0}? It will be immediately destroyed.</AC.EraseNeuralStackConfirmation>
+	<AC.NeuralStackStorage>Contents</AC.NeuralStackStorage>
+	<AC.NeuralStacksStored>Stacks stored: {0}/{1}</AC.NeuralStacksStored>
+	<AC.StacksStored>Stacks stored: {0} / {1}</AC.StacksStored>
+	<AC.StacksTracked>Stacks tracked: {0}</AC.StacksTracked>
+	<AC.EjectStackTooltip>Eject this stack from the stack cache.</AC.EjectStackTooltip>
+	<AC.EjectStackConfirmation>Do you really want to eject {0}? It will be immediately ejected onto the ground nearby.</AC.EjectStackConfirmation>
+	<AC.StackStorage>Contents</AC.StackStorage>
+	<AC.NeuralStacksInCache>Stacks stored: ({0}/{1})</AC.NeuralStacksInCache>
+	<AC.AllowColonistStacks>*Allow colonist stacks</AC.AllowColonistStacks>
+	<AC.AllowStrangerStacks>*Allow stranger stacks</AC.AllowStrangerStacks>
+	<AC.AllowHostileStacks>*Allow hostile stacks</AC.AllowHostileStacks>
+	<AC.Status>Status</AC.Status>
+	<AC.Tracked>Tracked</AC.Tracked>
+	<AC.Untracked>Untracked</AC.Untracked>
+	<AC.Sleeved>Sleeved</AC.Sleeved>
+	<AC.Dead>Dead</AC.Dead>
+	<AC.Needlecasting>Needlecasting</AC.Needlecasting>
+	<AC.Stored>Stored</AC.Stored>
+	<AC.Dormant>Dormant</AC.Dormant>
+	<AC.Lost>Lost</AC.Lost>
+	<AC.OutOfRange>Out of range</AC.OutOfRange>
+	<AC.LowConscioussness>Low conscioussness</AC.LowConscioussness>
+	<AC.StackInformation>Stack Information</AC.StackInformation>
+	<AC.CurrentlyStatus>Currently Status</AC.CurrentlyStatus>
+	<AC.OriginalGender>Original Gender</AC.OriginalGender>
+	<AC.NeedlecastingRange>Needlecasting range</AC.NeedlecastingRange>
+	<AC.StackDegradation>Stack Degradation: {0}</AC.StackDegradation>
+	<AC.EjectAll>Eject all</AC.EjectAll>
+	<AC.Colonists>Colonists</AC.Colonists>
+	<AC.Friendly>Friendly</AC.Friendly>
+	<AC.Hostile>Hostile</AC.Hostile>
+	<AC.Male>Male</AC.Male>
+	<AC.Archostack>Archostack</AC.Archostack>
+	<AC.Duplicates>Duplicates</AC.Duplicates>
+	<AC.LocalOnly>Local only</AC.LocalOnly>
+	<AC.StackConfiguration>Stack Configuration</AC.StackConfiguration>
+	<AC.AutobankStack>Autobank Stack</AC.AutobankStack>
+	<AC.TooltipStopNeedlecasting>Stop needlecasting {0} into {1}.</AC.TooltipStopNeedlecasting>
+	<AC.TooltipCancelImplanting>Cancel implanting {0} into {1}.</AC.TooltipCancelImplanting>
+	<AC.IsCopy>Is copy</AC.IsCopy>
+	<AC.True>True</AC.True>
+	<AC.False>False</AC.False>
+	<AC.RelationshipsUnavailable>Relationships of {0} unavailable. \n\nStack must be sleeved or needlecasting to show relationships.</AC.RelationshipsUnavailable>
+	<AC.NeedsUnavailable>Needs of {0} unavailable. \n\nStack must be sleeved or needlecasting to show needs.</AC.NeedsUnavailable>
+	<AC.NoStacksRegistered>No stacks currently registered</AC.NoStacksRegistered>
+	<AC.NoUntrackedStacksStored>No untracked stacks stored</AC.NoUntrackedStacksStored>
+	<AC.Tile>tile</AC.Tile>
+	<!-- ================================ Other ====================== -->
+	<AC.CommandCallsNeuroformers>Call psylink neuroformers</AC.CommandCallsNeuroformers>
+	<AC.SetBodyParts>Install body parts</AC.SetBodyParts>
+	<AC.Copy>Copy</AC.Copy>
+	<AC.Original>Original</AC.Original>
+	<AC.Search>Search</AC.Search>
+	<AC.AddFilter>Add filter</AC.AddFilter>
+	<AC.IsEmptySleeve>Is empty sleeve</AC.IsEmptySleeve>
+	<AC.OriginalGender>Original gender</AC.OriginalGender>
+	<AC.ChargeCuirassierBelt>Charge cuirassier belt</AC.ChargeCuirassierBelt>
+	<AC.NeedlecastingCaster>Needlecasting</AC.NeedlecastingCaster>
+	<AC.NeedlecastingTarget>Used for needlecasting by {0}</AC.NeedlecastingTarget>
+	<AC.CuirassierBeltTooltip>A cuirassier belt that will attempt to stop incoming projectiles or shrapnel, while not preventing the wearer from firing out. Just like a regular shield belt, it is susceptible to EMP.\n\nCuirassier do not recharge themselves, rather they need to be manually fed from a power grid, like batteries, rechargers or exposed conduits.</AC.CuirassierBeltTooltip>
+	<!-- ================================ Neural editor ====================== -->
+	<AC.NoConnectedMatrix>Cannot use: No Neural Matrix nearby.</AC.NoConnectedMatrix>
+	<AC.ConnectedMatrixHasNoPower>Cannot use: Connected Neural Matrix is not powered.</AC.ConnectedMatrixHasNoPower>
+	<AC.WipingFriendlyStackWarning>Warning: The stack you are trying to factory reset does not belong to your faction.
+
+If you erase the content from a non-colonist stack from another faction, their entire faction may become your enemy.</AC.WipingFriendlyStackWarning>
+	<AC.DuplicatingFriendlyStackWarning>Warning: The stack you are trying to duplicate does not belong to your faction.
+
+If you make a copy of the content from a non-colonist stack from another faction, their entire faction may become your enemy.</AC.DuplicatingFriendlyStackWarning>
+	<AC.EditingFriendlyStackWarning>The stack you are trying to edit does not belong to your faction.
+
+If you edit the content from a non-colonist stack from another faction, their entire faction may become your enemy.</AC.EditingFriendlyStackWarning>
+	<AC.AlreadyOrderedToWipeStack>This stack is set for reseting already on a neural editor. Remove the bill in order to add new operation on it.</AC.AlreadyOrderedToWipeStack>
+	<AC.AlreadyOrderedToEditStack>This stack is set for editing already on a neural editor. Remove the bill in order to add new operation on it.</AC.AlreadyOrderedToEditStack>
+	<AC.AlreadyOrderedToDuplicateStack>This stack is set for duplicating already on a neural editor. Remove the bill in order to add new operation on it.</AC.AlreadyOrderedToDuplicateStack>
+	<AC.AlreadyOrderedToRestoreStack>This stack is set for restoring already on a neural editor. Remove the bill in order to add new operation on it.</AC.AlreadyOrderedToRestoreStack>
+	<AC.AlreadyOrderedToResetBiocodedThing>This biocoded thing is set for resetting already on a neural editor. Remove the bill in order to add new operation on it.</AC.AlreadyOrderedToResetBiocodedThing>
+	<AC.ResettingBiocodedFailed>Resetting biocoded equipment: Failed, {0} destroyed!</AC.ResettingBiocodedFailed>
+	<AC.ResettingBiocodedSuccess>Resetting biocoded equipment: Successful! {0} is unlocked.</AC.ResettingBiocodedSuccess>
+	<AC.EditNeuralStack>Edit Neural Stack</AC.EditNeuralStack>
+	<AC.NeuralStackEditExplanation>Neural Stacks feature advanced encryption to prevent outside forces from messing with the stored consciousness. Known exploits allow for some data to be edited and rewritten at the cost of stack degradation.</AC.NeuralStackEditExplanation>
+	<AC.Backstories>Backstories</AC.Backstories>
+	<AC.NoDisabledWorkTypes>No disabled work types</AC.NoDisabledWorkTypes>
+	<AC.NoSkillPenalties>No skill penalties</AC.NoSkillPenalties>
+	<AC.FactionAllegiance>Faction allegiance</AC.FactionAllegiance>
+	<AC.RemoveUnwaveringLoyalTrait>Remove unwavering loyal trait:</AC.RemoveUnwaveringLoyalTrait>
+	<AC.Ideology>Ideology</AC.Ideology>
+	<AC.Belief>Belief</AC.Belief>
+	<AC.Certainty>Certainty</AC.Certainty>
+	<AC.ChangingPawnIdeologyWarning>Changing a pawn ideology will also remove any roles assosiated from them.</AC.ChangingPawnIdeologyWarning>
+	<AC.TotalTimeToEdit>Total time to edit: {0}</AC.TotalTimeToEdit>
+	<AC.TotalStackDegradation>Expected stack degradation: {0}</AC.TotalStackDegradation>
+	<AC.Tutorial>WARNING: The more you edit, the higher the stack degradation will be, causing the stored pawns neurallity to become more and more unstable. Stack degradation will go away over time after being installed in a body, but can take years.</AC.Tutorial>
+	<AC.ResetAll>Reset all</AC.ResetAll>
+	<AC.StackDegradation>Stack degradation: {0}</AC.StackDegradation>
+	<AC.StartEditing>Start editing</AC.StartEditing>
+	<AC.CancelStackReset>Cancel stack reset</AC.CancelStackReset>
+	<AC.CancelStackResetDesc>Cancel reseting neural stack.</AC.CancelStackResetDesc>
+	<AC.CancelStackEdit>Cancel stack edit</AC.CancelStackEdit>
+	<AC.CancelStackEditDesc>Cancel editing neural stack.</AC.CancelStackEditDesc>
+	<AC.CancelStackDuplication>Cancel stack duplication</AC.CancelStackDuplication>
+	<AC.CancelStackDuplicationDesc>Cancel stack duplicating.</AC.CancelStackDuplicationDesc>
+	<AC.CancelBiocodingReset>Cancel biocoding reset.</AC.CancelBiocodingReset>
+	<AC.CancelBiocodingResetDesc>Cancel reseting biocoded thing.</AC.CancelBiocodingResetDesc>
+	<AC.SuccessfullyDuplicatedStack>{PAWN_nameDef} successfully duplicated neural stack.</AC.SuccessfullyDuplicatedStack>
+	<AC.CancelStackDuplication>Cancel stack duplication</AC.CancelStackDuplication>
+	<AC.CancelStackDuplicationDesc>Cancel duplication of stored neural stack.</AC.CancelStackDuplicationDesc>
+	<AC.CannotModifyWhileNeedlecasting>Cannot {0} while needlecasting.</AC.CannotModifyWhileNeedlecasting>
+	<!-- ================================ Mod Settings ====================== -->
+	<AC.EnableStackSpawning>Enable Stack Spawning</AC.EnableStackSpawning>
+	<AC.EnableStackSpawningDesc>If disabled, Neural Stacks and Archostacks will NOT spawn on any pawns. You can still craft them, get them as rewards or trade for them.</AC.EnableStackSpawningDesc>
+	<AC.EnableTechstackRequirement>Enable techstack requirements in research projects</AC.EnableTechstackRequirement>
+	<AC.EnableTechstackRequirementDesc>Only affects Royalty owners!</AC.EnableTechstackRequirementDesc>
+	<AC.TimeToGrowSleeveMultiplier>Time to grow sleeve multiplicator:</AC.TimeToGrowSleeveMultiplier>
+	<AC.TimeToGrowSleeveMultiplierDesc>Multiplicator of the overall time needed to grow a new sleeve.</AC.TimeToGrowSleeveMultiplierDesc>
+	<AC.CostToGrowSleeveMultiplier>Cost to grow sleeve multiplicator:</AC.CostToGrowSleeveMultiplier>
+	<AC.CostToGrowSleeveMultiplierDesc>Multiplicator of the overall neutroamine cost needed to grow a new sleeve.</AC.CostToGrowSleeveMultiplierDesc>
+	<AC.EnableStackDegradation>Enable Stack Degradation</AC.EnableStackDegradation>
+	<AC.EnableStackDegradationDesc>If disabled, Neural Stacks can be edited to your heart's content without having to worry about stack degradation.</AC.EnableStackDegradationDesc>
+	<AC.StackEditEditTimeValueMultiplier>Stack editing time gain multiplier:</AC.StackEditEditTimeValueMultiplier>
+	<AC.StackEditEditTimeValueMultiplierDesc>Multiplicator of the overall stack editing time.</AC.StackEditEditTimeValueMultiplierDesc>
+	<AC.StackEditDegradationValueMultiplier>Stack Degradation gain multiplier:</AC.StackEditDegradationValueMultiplier>
+	<AC.StackEditDegradationValueMultiplierDesc>Multiplies the overall stack degradation that is accumulated through editing.</AC.StackEditDegradationValueMultiplierDesc>
+	<AC.EnableArchostackEditing>Enable Archo Stack editing</AC.EnableArchostackEditing>
+	<AC.EnableArchostackEditingDesc>Allows you to edit the content of Archo Stacks.</AC.EnableArchostackEditingDesc>
+	<AC.ColonistStackNeedsExtracting>Colonist stack needs extracting.</AC.ColonistStackNeedsExtracting>
+	<AC.ColonistStackNeedsExtractingDesc>These colonists are incapacitated on the ground:\n\n{0}\nSend another colonist to rescue them and carry them back to bed.\n\n(To rescue, select another colonist, then right click on the victim and select Rescue.)</AC.ColonistStackNeedsExtractingDesc>
+	<AC.SleeveDeathDoesNotCauseGearTainting>Sleeve death doesn't cause gear to be tainted</AC.SleeveDeathDoesNotCauseGearTainting>
+	<AC.EnableSoldNeuralStacksCreatingPawnDuplicates>Selling neural stacks can create duplicates</AC.EnableSoldNeuralStacksCreatingPawnDuplicates>
+	<AC.EnableSoldNeuralStacksCreatingPawnDuplicatesDesc>text.todo</AC.EnableSoldNeuralStacksCreatingPawnDuplicatesDesc>
+	<AC.EnableNeuralStacksInAncientDangers>Enable neural stacks spawning in ancient dangers</AC.EnableNeuralStacksInAncientDangers>
+	<AC.EnableNeuralStacksInAncientDangersDesc>text.todo</AC.EnableNeuralStacksInAncientDangersDesc>
+	<!-- ================================ Warnings ====================== -->
+	<AC.CannotInstallStackOnAndroidWithoutNeuralModule>Cannot install stacks into androids without a neural module.</AC.CannotInstallStackOnAndroidWithoutNeuralModule>
+	<AC.CannotInstallEmptyStackInEmptySleeve>Cannot install an empty stack into an empty sleeve.</AC.CannotInstallEmptyStackInEmptySleeve>
+	<AC.CannotInstallStackInBodyOfThisRace>Cannot install stacks into this race: {0}.</AC.CannotInstallStackInBodyOfThisRace>
+	<AC.CannotInstallStackInNonHumanlikes>Cannot install stacks into non-humanlikes.</AC.CannotInstallStackInNonHumanlikes>
+	<AC.CannotInstallActiveStackInChildren>Cannot install an active stack into children.</AC.CannotInstallActiveStackInChildren>
+	<AC.CannotInstallAlreadyHaveStack>Cannot install stack: Already has a stack installed.</AC.CannotInstallAlreadyHaveStack>
+	<AC.RequiresArtificalParentPart>requires artifical parent part</AC.RequiresArtificalParentPart>
+	<AC.CannotInstallNeuralStackWithRemoteStack>Cannot implant: Remot stack present.</AC.CannotInstallNeuralStackWithRemoteStack>
+	<AC.CannotInstallRemoteStackWithNeuralStack>Cannot implant: Stack present.</AC.CannotInstallRemoteStackWithNeuralStack>
+	<AC.PawnHasNoSleeve>{PAWN_nameDef} has no sleeve.</AC.PawnHasNoSleeve>
+	<!-- ================================ Mental Fuse ====================== -->
+	<AC.TriggeredMentalFuseLabel>Mental fuse ({PAWN_nameDef})</AC.TriggeredMentalFuseLabel>
+	<AC.TriggeredMentalFuseText>{PAWN_nameDef}'s mental fuse has triggered, preventing a mental break.</AC.TriggeredMentalFuseText>
+	<AC.MentalFuseTraumaLabel>Mental fuse trauma</AC.MentalFuseTraumaLabel>
+	<AC.MentalFuseTraumaText>{PAWN_nameDef}'s mental fuse has caused permanent damage in {PAWN_objective} brain. This damage has caused {PAWN_objective} to develop strange savant-like abilities.</AC.MentalFuseTraumaText>
+	<!-- ================================ Neural Connector ====================== -->
+	<AC.RequiresNeuralStackInstalled>Requires neural stack installed.</AC.RequiresNeuralStackInstalled>
+	<AC.CreateNeuralStack>Create neural stack</AC.CreateNeuralStack>
+	<AC.CreateSkilltrainer>Create skilltrainer</AC.CreateSkilltrainer>
+	<AC.NotSufficientSkillLevels>Not sufficient skill levels</AC.NotSufficientSkillLevels>
+	<AC.CreatingNeuralStackCompleted>Creating neural stack completed for {PAWN_nameDef}.</AC.CreatingNeuralStackCompleted>
+	<AC.CreatingSkilltrainerCompleted>Creating skilltrainer completed for {PAWN_nameDef}. {PAWN_nameDef}'s brain has been destroyed by the neural connector.</AC.CreatingSkilltrainerCompleted>
+	<AC.ConfirmSkilltrainerPawn>Scanning {PAWN_nameDef} to create a skilltrainer will kill {PAWN_objective}. Are you sure you want to continue?
+
+Scanning {PAWN_nameDef} will create a skilltrainer for one of the following skills:
+{1}</AC.ConfirmSkilltrainerPawn>
+	<AC.ConfirmCancelSkilltrainerPawn>Cancelling a skilltrainer process will still kill {PAWN_nameDef}. Are you sure you want to continue?</AC.ConfirmCancelSkilltrainerPawn>
+	<AC.AlreadyRegisteredToMatrix>Already registered selected the neural matrix</AC.AlreadyRegisteredToMatrix>
+	<AC.RegisteringStackCompleted>Stack of {PAWN_nameDef} successfully registered with neural matrix.</AC.RegisteringStackCompleted>
+	<AC.RegisterStack>Register stack</AC.RegisterStack>
+	<AC.MessagePawnKilledNeuralConnector>{PAWN_nameDef}'s brain has been destroyed by the neural connector.</AC.MessagePawnKilledNeuralConnector>
+	<AC.CreatingSkillTrainer>Creating skilltrainer from {PAWN_nameDef}</AC.CreatingSkillTrainer>
+	<AC.RegisteringStack>Registering stack of {PAWN_nameDef}</AC.RegisteringStack>
+	<!-- ================================ Biocoding ====================== -->
+	<AC.BiocodableEquipWarning>Once imprinted to a user, the weapon can not be used by anyone else until its biocoding is reset again. Are you sure you want to equip this time?</AC.BiocodableEquipWarning>
+	<AC.BiocodingNotYetImprinted>Biocoding: Ready to imprint.</AC.BiocodingNotYetImprinted>
+</LanguageData>

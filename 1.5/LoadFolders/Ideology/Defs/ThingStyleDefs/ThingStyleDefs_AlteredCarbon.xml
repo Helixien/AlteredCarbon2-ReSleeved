@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<!-- ================================ Base ====================== -->
+	<ThingStyleDef Name="AC_RogianWeaponStyle" Abstract="True">
+		<graphicData>
+			<onGroundRandomRotateAngle>35</onGroundRandomRotateAngle>
+		</graphicData>
+	</ThingStyleDef>
+	<ThingStyleDef Name="AC_StackStyles" Abstract="True">
+		<graphicData>
+			<onGroundRandomRotateAngle>35</onGroundRandomRotateAngle>
+		</graphicData>
+	</ThingStyleDef>
+	<!-- ================================ Vanilla Weapons ====================== -->
+	<ThingStyleDef ParentName="AC_RogianWeaponStyle">
+		<defName>AC_Rogian_AutoPistol</defName>
+		<graphicData>
+			<texPath>Styles/Rogian/Things/Item/Equipment/WeaponRanged/AutoPistol</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+	</ThingStyleDef>
+	<ThingStyleDef ParentName="AC_RogianWeaponStyle">
+		<defName>AC_Rogian_Revolver</defName>
+		<graphicData>
+			<texPath>Styles/Rogian/Things/Item/Equipment/WeaponRanged/Revolver</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+	</ThingStyleDef>
+	<ThingStyleDef ParentName="AC_RogianWeaponStyle">
+		<defName>AC_Rogian_BoltActionRifle</defName>
+		<graphicData>
+			<texPath>Styles/Rogian/Things/Item/Equipment/WeaponRanged/BoltActionRifle</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+	</ThingStyleDef>
+	<ThingStyleDef ParentName="AC_RogianWeaponStyle">
+		<defName>AC_Rogian_PumpShotgun</defName>
+		<graphicData>
+			<texPath>Styles/Rogian/Things/Item/Equipment/WeaponRanged/Shotgun</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+	</ThingStyleDef>
+	<ThingStyleDef ParentName="AC_RogianWeaponStyle">
+		<defName>AC_Rogian_AssaultRifle</defName>
+		<graphicData>
+			<texPath>Styles/Rogian/Things/Item/Equipment/WeaponRanged/AssaultRifle</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+	</ThingStyleDef>
+	<ThingStyleDef ParentName="AC_RogianWeaponStyle">
+		<defName>AC_Rogian_ChargeRifle</defName>
+		<graphicData>
+			<texPath>Styles/Rogian/Things/Item/Equipment/WeaponRanged/ChargeRifle</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+	</ThingStyleDef>
+</Defs>

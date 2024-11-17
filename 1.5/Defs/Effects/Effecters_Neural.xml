@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<!-- ================================ Hacking Effecter ====================== -->
+	<EffecterDef>
+		<defName>AC_NeuralEditing</defName>
+		<children>
+			<li>
+				<subEffecterClass>SubEffecter_SprayerContinuous</subEffecterClass>
+				<moteDef>AC_Mote_NeuralEditing</moteDef>
+				<spawnLocType>BetweenTouchingCells</spawnLocType>
+				<positionLerpFactor>0.6</positionLerpFactor>
+				<scale>0.3~0.5</scale>
+				<color>(0, 182, 239)</color>
+				<positionRadius>0.5</positionRadius>
+				<ticksBetweenMotes>15</ticksBetweenMotes>
+			</li>
+		</children>
+	</EffecterDef>
+	<!-- ================================ Hacking Motes ====================== -->
+	<ThingDef ParentName="MoteBase">
+		<defName>AC_Mote_NeuralEditing</defName>
+		<altitudeLayer>MoteOverhead</altitudeLayer>
+		<mote>
+			<fadeInTime>0.2</fadeInTime>
+			<solidTime>0.2</solidTime>
+			<fadeOutTime>0.2</fadeOutTime>
+		</mote>
+		<graphicData>
+			<texPath>Things/Mote/NeuralHacking</texPath>
+			<shaderType>MoteGlow</shaderType>
+		</graphicData>
+	</ThingDef>
+	<!-- ================================ Neural Connector ====================== -->
+	<ThingDef ParentName="AC_NeuralConnectorMoteBase">
+		<defName>AC_ConnectorGlow_North</defName>
+		<graphicData>
+			<texPath>Things/Mote/ConnectorGlow_north</texPath>
+			<drawSize>(3, 2)</drawSize>
+		</graphicData>
+	</ThingDef>
+	<ThingDef ParentName="AC_NeuralConnectorMoteBase">
+		<defName>AC_ConnectorGlow_South</defName>
+		<graphicData>
+			<texPath>Things/Mote/ConnectorGlow_south</texPath>
+			<drawSize>(3, 2)</drawSize>
+		</graphicData>
+	</ThingDef>
+	<ThingDef ParentName="AC_NeuralConnectorMoteBase">
+		<defName>AC_ConnectorGlow_East</defName>
+		<graphicData>
+			<texPath>Things/Mote/ConnectorGlow_east</texPath>
+			<drawSize>(2, 3)</drawSize>
+		</graphicData>
+	</ThingDef>
+	<ThingDef ParentName="AC_NeuralConnectorMoteBase">
+		<defName>AC_ConnectorGlow_West</defName>
+		<graphicData>
+			<texPath>Things/Mote/ConnectorGlow_east</texPath>
+			<drawSize>(2, 3)</drawSize>
+			<shaderParameters>
+				<_FlipHorizontally>1</_FlipHorizontally>
+			</shaderParameters>
+		</graphicData>
+	</ThingDef>
+	<EffecterDef>
+		<defName>AC_NeuralConnectorHeadGlow</defName>
+		<children>
+			<li>
+				<subEffecterClass>SubEffecter_SprayerChance</subEffecterClass>
+				<positionRadius>0.13</positionRadius>
+				<moteDef>AC_NeuralConnectorHeadGlow</moteDef>
+				<chancePerTick>0.1</chancePerTick>
+				<spawnLocType>OnSource</spawnLocType>
+			</li>
+		</children>
+	</EffecterDef>
+	<ThingDef ParentName="MoteBase">
+		<defName>AC_NeuralConnectorHeadGlow</defName>
+		<thingClass>MoteAttached</thingClass>
+		<altitudeLayer>BuildingBelowTop</altitudeLayer>
+		<mote>
+			<fadeInTime>0.25</fadeInTime>
+			<fadeOutTime>0.25</fadeOutTime>
+			<solidTime>0.3</solidTime>
+			<growthRate>0.2</growthRate>
+		</mote>
+		<graphicData>
+			<shaderType>MoteGlow</shaderType>
+			<texPath>Things/Mote/ConnectorHeadGlow</texPath>
+			<drawSize>(1.2, 1.2)</drawSize>
+		</graphicData>
+	</ThingDef>
+	<ThingDef ParentName="MoteBase" Name="AC_NeuralConnectorMoteBase" Abstract="True">
+		<thingClass>MoteAttached</thingClass>
+		<altitudeLayer>MoteOverhead</altitudeLayer>
+		<mote>
+			<fadeInTime>0.35</fadeInTime>
+			<fadeOutTime>0.35</fadeOutTime>
+			<solidTime>999999</solidTime>
+			<needsMaintenance>True</needsMaintenance>
+			<fadeOutUnmaintained>True</fadeOutUnmaintained>
+		</mote>
+		<graphicData>
+			<graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+			<color>(0, 0.7, 0.9, 0.85)</color>
+			<shaderType>MoteSoftScannerGlow</shaderType>
+			<shaderParameters>
+				<_ScanSpeed>1.0</_ScanSpeed>
+				<_ScanPow>7</_ScanPow>
+			</shaderParameters>
+		</graphicData>
+	</ThingDef>
+</Defs>

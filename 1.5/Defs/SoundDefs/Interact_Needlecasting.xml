@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<!-- ================================ Needlecasting - Sleeve chargeup effect ====================== -->
+	<SoundDef>
+		<defName>AC_NeedlecastingCastingEffect</defName>
+		<context>MapOnly</context>
+		<maxSimultaneous>5</maxSimultaneous>
+		<priorityMode>PrioritizeNearest</priorityMode>
+		<sustain>True</sustain>
+		<sustainFadeoutTime>0.1</sustainFadeoutTime>
+		<subSounds>
+			<li>
+				<grains>
+					<li Class="AudioGrain_Clip">
+						<clipPath>Misc/Needlecasting/Needlecasting_Cast</clipPath>
+					</li>
+				</grains>
+				<volumeRange>20~25</volumeRange>
+				<pitchRange>0.9~1.1</pitchRange>
+				<muteWhenPaused>True</muteWhenPaused>
+			</li>
+		</subSounds>
+	</SoundDef>
+</Defs>

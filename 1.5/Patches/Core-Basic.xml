@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	<Operation Class="PatchOperationSequence">
+		<!-- ================================ Patches in new stuff into the base game ====================== -->
+		<operations>
+			<!-- ================================ Patches in new apparel tags to spacer pawnkinds ====================== -->
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/PawnKindDef[defName="AncientSoldier" or @Name="SpaceRefugeeBase"]/apparelTags</xpath>
+				<value>
+					<li>SpacerEnviroSuit</li>
+				</value>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/PawnKindDef[@Name="SpaceRefugeeBase"]/apparelTags</xpath>
+				<value>
+					<li>IndustrialAdvanced</li>
+				</value>
+			</li>
+			<!-- ================================ Change Neutroamine draw size ====================== -->
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[defName="Neutroamine"]/graphicData/drawSize</xpath>
+				<value>
+					<drawSize>0.80</drawSize>
+				</value>
+			</li>
+			<!-- ================================ Add extract designator ====================== -->
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/DesignationCategoryDef[defName="Orders"]/specialDesignatorClasses</xpath>
+				<value>
+					<li>AlteredCarbon.Designator_ExtractStack</li>
+				</value>
+			</li>
+			<!-- ================================ Patches in stack recipe ====================== -->
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName="CraftingSpot"]/recipes</xpath>
+				<value>
+					<li>AC_SmashNeuralStacks</li>
+				</value>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName="TableMachining" or defName="VFE_TableMachiningLarge"]/recipes</xpath>
+				<value>
+					<li>AC_ShredNeuralStacks</li>
+				</value>
+			</li>
+			<!-- ================================ Cryptosleep casket ====================== -->
+			<!-- ================================ Cryptosleep casket linkable to neural matrix for needlecasting relay range effect ====================== -->
+			<li Class="PatchOperationConditional">
+				<xpath>/Defs/ThingDef[defName="CryptosleepCasket"]/comps/li[@Class="CompProperties_AffectedByFacilities"]/linkableFacilities</xpath>
+				<nomatch Class="PatchOperationAdd">
+					<xpath>Defs/ThingDef[defName="CryptosleepCasket"]/comps</xpath>
+					<value>
+						<li Class="CompProperties_AffectedByFacilities">
+							<linkableFacilities>
+								<li>AC_NeuralMatrix</li>
+							</linkableFacilities>
+						</li>
+					</value>
+				</nomatch>
+				<match Class="PatchOperationAdd">
+					<xpath>/Defs/ThingDef[defName="CryptosleepCasket"]/comps/li[@Class="CompProperties_AffectedByFacilities"]/linkableFacilities</xpath>
+					<value>
+						<li>AC_NeuralMatrix</li>
+					</value>
+				</match>
+			</li>
+			<!-- ================================ Cryptosleep casket description hyperlinks ====================== -->
+			<li Class="PatchOperationConditional">
+				<xpath>/Defs/ThingDef[defName="CryptosleepCasket"]/descriptionHyperlinks</xpath>
+				<nomatch Class="PatchOperationAdd">
+					<xpath>Defs/ThingDef[defName="CryptosleepCasket"]</xpath>
+					<value>
+						<descriptionHyperlinks>
+							<ThingDef>AC_NeuralMatrix</ThingDef>
+						</descriptionHyperlinks>
+					</value>
+				</nomatch>
+				<match Class="PatchOperationAdd">
+					<xpath>/Defs/ThingDef[defName="CryptosleepCasket"]/descriptionHyperlinks</xpath>
+					<value>
+						<ThingDef>AC_NeuralMatrix</ThingDef>
+					</value>
+				</match>
+			</li>
+			<!-- ================================ Cryptosleep  description replacement ====================== -->
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[defName="CryptosleepCasket"]/description</xpath>
+				<value>
+					<description>A self-powered sarcophagus designed to keep a person in a state of suspended animation for many years.\n\nWhile mostly use for starflight or long term storage, it also found popularity with needlecasters.</description>
+				</value>
+			</li>
+			<!-- ================================ Cryptosleep casket placeworker ====================== -->
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName="CryptosleepCasket"]/placeWorkers</xpath>
+				<value>
+					<li>PlaceWorker_ShowFacilitiesConnections</li>
+				</value>
+			</li>
+			<!-- ================================ Patch Childhood Backstories ====================== -->
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/BackstoryDef[defName="SicklyChild55" or defName="FrightenedChild43"]/spawnCategories</xpath>
+				<value>
+					<li>AC_ResearcherQuest</li>
+				</value>
+			</li>
+		</operations>
+	</Operation>
+</Patch>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<!-- ================================ Hauling Neural Prints ====================== -->
+	<JobDef>
+		<defName>AC_HaulThingsToContainer</defName>
+		<driverClass>AlteredCarbon.JobDriver_HaulThingsToContainer</driverClass>
+		<reportString>hauling TargetA to TargetB.</reportString>
+		<allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+	</JobDef>
+</Defs>

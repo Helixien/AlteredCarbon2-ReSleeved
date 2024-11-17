@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<ThingDef ParentName="MechResourceBase">
+		<defName>AC_NanoStorageDrive</defName>
+		<label>nano storage drive</label>
+		<description>An advanced, self-repairing, multi-dimensional optical data storage drive containing a vast amount of knowledge.\n\nA researcher can study the date on the drive to unlock neural digitalization and sleeve gestation research.</description>
+		<graphicData>
+			<texPath>Things/Item/Resource/NanoStorageDrive</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>0.80</drawSize>
+		</graphicData>
+		<statBases>
+			<MarketValue>2500</MarketValue>
+		</statBases>
+		<comps>
+			<li Class="CompProperties_CompAnalyzableUnlockResearch">
+				<analysisID>975261953</analysisID>
+				<!-- Analyzable -->
+				<analysisDurationHours>5</analysisDurationHours>
+				<destroyedOnAnalyzed>true</destroyedOnAnalyzed>
+				<completedLetterLabel>Nano storage drive: {RESEARCH} unlocked</completedLetterLabel>
+				<completedLetter>By studying the nano storage drive data, {PAWN_labelShort} has acquired the insight needed for neural digitalization and sleeve gestation research project(s) {RESEARCH}.\n\nYour researchers can now use research benches to begin researching how to actually use the technology.</completedLetter>
+				<completedLetterDef>PositiveEvent</completedLetterDef>
+				<!-- Interactable -->
+				<activateTexPath>UI/Icons/Study</activateTexPath>
+				<activateLabelString>Analyze...</activateLabelString>
+				<activateDescString>Analyze the nano storage drive data.</activateDescString>
+				<jobString>Analyze nano storage drive</jobString>
+				<guiLabelString>Choose who should analyze this</guiLabelString>
+				<inspectString>Can be analyzed by a colonist.</inspectString>
+				<targetingParameters>
+					<canTargetBuildings>false</canTargetBuildings>
+					<canTargetAnimals>false</canTargetAnimals>
+					<canTargetMechs>false</canTargetMechs>
+					<onlyTargetControlledPawns>true</onlyTargetControlledPawns>
+				</targetingParameters>
+			</li>
+		</comps>
+	</ThingDef>
+	<!--=============== Neural Print ====================-->
+	<!-- disabled for now
+	<ThingDef ParentName="ResourceBase">
+		<defName>AC_NeuralPrint</defName>
+		<label>neural print</label>
+		<description>text.todo.</description>
+		<thingClass>AlteredCarbon.NeuralPrint</thingClass>
+		<graphicData>
+			<texPath>Things/Item/NeuralPrint/FriendlyNeuralPrint</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<onGroundRandomRotateAngle>35</onGroundRandomRotateAngle>
+			<drawSize>0.80</drawSize>
+		</graphicData>
+		<techLevel>Ultra</techLevel>
+		<uiIconForStackCount>1</uiIconForStackCount>
+		<tradeNeverStack>false</tradeNeverStack>
+		<useHitPoints>true</useHitPoints>
+		<drawGUIOverlay>true</drawGUIOverlay>
+		<soundInteract>Metal_Drop</soundInteract>
+		<soundDrop>Metal_Drop</soundDrop>
+		<stackLimit>1</stackLimit>
+		<statBases>
+			<MarketValue>500</MarketValue>
+			<MaxHitPoints>50</MaxHitPoints>
+			<Mass>0.2</Mass>
+			<Flammability>0.2</Flammability>
+			<DeteriorationRate>0.6</DeteriorationRate>
+		</statBases>
+		<thingCategories>
+			<li>ItemsMisc</li>
+		</thingCategories>
+		<inspectorTabs>
+			<li>ITab_Pawn_Character</li>
+			<li>ITab_Pawn_Social</li>
+			<li>ITab_Pawn_Log</li>
+		</inspectorTabs>
+		<tradeability>Sellable</tradeability>
+		<tradeTags>
+			<li>ExoticMisc</li>
+		</tradeTags>
+	</ThingDef>
+	-->
+</Defs>

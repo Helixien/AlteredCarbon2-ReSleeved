@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<!-- ================================ Neural Stack ====================== -->
+	<!-- ================================ Neurak Stacks - Destroy - Base ====================== -->
+	<RecipeDef Abstract="True" Name="AC_DestroyStacksBase">
+		<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+		<workSkill>Crafting</workSkill>
+		<efficiencyStat>AC_StackShreddingEfficiency</efficiencyStat>
+		<effectWorking>ButcherMechanoid</effectWorking>
+		<soundWorking>Recipe_Machining</soundWorking>
+		<uiIconThing>AC_EmptyNeuralStack</uiIconThing>
+		<ingredients>
+			<li>
+				<filter>
+					<categories>
+						<li>AC_BodyPartsUltra</li>
+					</categories>
+					<disallowedThingDefs>
+						<li>AC_EmptyArchotechStack</li>
+						<li>AC_ActiveArchotechStack</li>
+					</disallowedThingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<categories>
+				<li>AC_BodyPartsUltra</li>
+			</categories>
+		</fixedIngredientFilter>
+	</RecipeDef>
+	<!-- ================================ Neural Stacks - Destroy - Shredding ====================== -->
+	<RecipeDef ParentName="AC_DestroyStacksBase">
+		<defName>AC_ShredNeuralStacks</defName>
+		<label>Shred neural stack</label>
+		<description>Shred a neural stack to try to salvage usable material.</description>
+		<jobString>Shredding neural stack.</jobString>
+		<workAmount>800</workAmount>
+		<skillRequirements>
+			<Crafting>10</Crafting>
+		</skillRequirements>
+		<displayPriority>2</displayPriority>
+		<products>
+			<ComponentSpacer>1</ComponentSpacer>
+			<Plasteel>3</Plasteel>
+		</products>
+	</RecipeDef>
+	<!-- ================================ Neural Stacks - Destroy - Smashing ====================== -->
+	<RecipeDef ParentName="AC_DestroyStacksBase">
+		<defName>AC_SmashNeuralStacks</defName>
+		<label>Smash neural stack</label>
+		<description>Smash a neural stack with simple hand tools to salvage usable material.</description>
+		<jobString>Smashing neural stack.</jobString>
+		<workAmount>450</workAmount>
+		<skillRequirements>
+			<Crafting>2</Crafting>
+		</skillRequirements>
+		<displayPriority>2</displayPriority>
+		<products>
+			<Plasteel>1</Plasteel>
+		</products>
+	</RecipeDef>
+	<!-- ================================ Hacking - Decrypt Biocoded things ====================== -->
+	<RecipeDef ParentName="AC_RecipeNeuralEditing">
+		<defName>AC_ResetBiocodedThings</defName>
+		<label>Reset biocoding</label>
+		<description>Reset biocoded equipment to factory settings, allowing for bonding with a new person.\n\nIf unsuccessful, the item may break.</description>
+		<jobString>Resetting biocoded things.</jobString>
+		<workerClass>AlteredCarbon.Recipe_ResetBiocodedThings</workerClass>
+		<workAmount>12500</workAmount>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Apparel_PowerArmorHelmet</li>
+						<li>Gun_TripleRocket</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>Apparel_PowerArmorHelmet</li>
+				<li>Gun_TripleRocket</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<skillRequirements>
+			<Intellectual>8</Intellectual>
+		</skillRequirements>
+	</RecipeDef>
+</Defs>
