@@ -9,7 +9,7 @@ using Verse.Grammar;
 namespace AlteredCarbon
 {
     [HotSwappable]
-    public class Building_NeuralMatrix : Building
+    public class Building_NeuralMatrix : Building, IRenameable
     {
         public CompPowerTrader compPower;
         public CompNeuralCache compCache;
@@ -61,6 +61,23 @@ namespace AlteredCarbon
         public IEnumerable<NeuralStack> AllNeuralStacks => AllNeuralCaches.SelectMany(x => x.innerContainer.OfType<NeuralStack>());
         public List<Thing> LinkedBuildings => compFacility.LinkedBuildings;
         public IEnumerable<CompNeuralCache> AllNeuralCaches => LinkedBuildings.Select(x => x.TryGetComp<CompNeuralCache>()).Concat(compCache).Where(x => x != null);
+
+        public string RenamableLabel
+        {
+            get
+            {
+                return name ?? BaseLabel;
+            }
+            set
+            {
+                name = value;
+            }
+        }
+
+        public string BaseLabel => def.label.CapitalizeFirst();
+
+        public string InspectLabel => RenamableLabel;
+
         public override IEnumerable<Gizmo> GetGizmos()
         {
             yield return new CastingRangeGizmo(this);

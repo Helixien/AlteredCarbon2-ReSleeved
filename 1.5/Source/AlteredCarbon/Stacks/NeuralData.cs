@@ -314,7 +314,6 @@ namespace AlteredCarbon
             }
         }
 
-
         public void AppendDebugData(StringBuilder stringBuilder, Pawn pawn)
         {
             if (AC_Utils.debug)
@@ -943,15 +942,46 @@ namespace AlteredCarbon
 
             OverwriteThoughts(pawn);
             OverwriteTraits(pawn);
-            ResetRelationships(pawn);
 
+            //GetAllRelatedPawns(pawn, out HashSet<Pawn> allPotentialRelatedPawns, out Pawn oldOrigPawn);
+            //foreach (var other in allPotentialRelatedPawns)
+            //{
+            //    if (other?.relations != null)
+            //    {
+            //        var reflexives = other.relations.directRelations.Where(x => x.def.reflexive).ToList();
+            //        if (reflexives.Any())
+            //            Log.Message("1: " + other.GetFullName() + " - " + RelationshipsString(reflexives));
+            //    }
+            //}
+
+            ResetRelationships(pawn);
+            //foreach (var other in allPotentialRelatedPawns)
+            //{
+            //    if (other?.relations != null)
+            //    {
+            //        var reflexives = other.relations.directRelations.Where(x => x.def.reflexive).ToList();
+            //        if (reflexives.Any())
+            //            Log.Message("2: " + other.GetFullName() + " - " + RelationshipsString(reflexives));
+            //    }
+            //}
             if (changeGlobalData)
             {
                 OverwriteRelationships(pawn);
                 this.hostPawn = pawn;
                 this.pawnID = this.hostPawn.thingIDNumber;
             }
-
+            //foreach (var other in allPotentialRelatedPawns)
+            //{
+            //    if (other?.relations != null)
+            //    {
+            //        var reflexives = other.relations.directRelations.Where(x => x.def.reflexive).ToList();
+            //        if (reflexives.Any())
+            //        {
+            //            Log.Message("3: " + other.GetFullName() + " - " + RelationshipsString(reflexives));
+            //        }
+            //        Log.ResetMessageCount();
+            //    }
+            //}
             AssignAbilities(pawn);
             AssignSkills(pawn);
             SetStoryData(pawn);
