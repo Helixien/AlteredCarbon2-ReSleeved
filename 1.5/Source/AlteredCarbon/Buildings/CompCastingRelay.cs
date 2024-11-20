@@ -41,7 +41,7 @@ namespace AlteredCarbon
 
         private static readonly Material TuningMaterial = SolidColorMaterials.SimpleSolidColorMaterial(Color.yellow);
 
-        private static readonly Material TunedMaterial = SolidColorMaterials.SimpleSolidColorMaterial(Color.green);
+        private static readonly Material TunedMaterial = SolidColorMaterials.SimpleSolidColorMaterial(new ColorInt(0, 182, 239).ToColor);
 
         private static readonly Vector2 TuningBarSize = new Vector3(0.255f, 0.035f);
 
