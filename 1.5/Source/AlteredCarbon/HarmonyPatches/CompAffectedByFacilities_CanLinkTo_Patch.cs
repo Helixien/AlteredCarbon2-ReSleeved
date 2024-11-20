@@ -9,10 +9,6 @@ namespace AlteredCarbon
     {
         public static bool Prefix(CompAffectedByFacilities __instance, Thing facility, ref bool __result)
         {
-            if (__instance.parent.def == AC_DefOf.AC_CastingRelay)
-            {
-                return CheckForFacilities(facility, ref __result, AC_DefOf.AC_CastingRelay, 4);
-            }
             if (__instance.parent.def == AC_DefOf.AC_NeuralEditor)
             {
                 return CheckForFacilities(facility, ref __result, AC_DefOf.AC_NeuralEditor, 1);

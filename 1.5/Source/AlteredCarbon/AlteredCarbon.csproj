@@ -99,6 +99,8 @@
     <Compile Include="Buildings\Building_NeuralEditor.cs" />
     <Compile Include="Buildings\Building_Incubator.cs" />
     <Compile Include="Buildings\Building_SleeveGestator.cs" />
+    <Compile Include="Buildings\CompCastingRelay.cs" />
+    <Compile Include="Buildings\CastingRangeGizmo.cs" />
     <Compile Include="HarmonyPatches\BedPatches\RestUtility_CanUseBedNow_Patch.cs" />
     <Compile Include="HarmonyPatches\Building_SubcoreScanner_KillOccupant_Patch.cs" />
     <Compile Include="HarmonyPatches\Caravan_GetInspectString_Patch.cs" />

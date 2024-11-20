@@ -101,7 +101,9 @@
 			</li>
 			<li Class="CompProperties_Flickable"/>
 			<li Class="CompProperties_Breakdownable"/>
-			<li Class="CompProperties_Facility"/>
+			<li Class="CompProperties_Facility">
+				<showMaxSimultaneous>False</showMaxSimultaneous>
+			</li>
 			<li Class="CompProperties_ThingContainer">
 				<compClass>AlteredCarbon.CompNeuralCache</compClass>
 				<stackLimit>10</stackLimit>
@@ -334,19 +336,26 @@
 			</buildingTags>
 		</building>
 		<placeWorkers>
-			<li>PlaceWorker_ShowFacilitiesConnections</li>
+			<li>PlaceWorker_NotUnderRoof</li>
+			<li>PlaceWorker_BandNode</li>
 		</placeWorkers>
+		<drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
 		<comps>
 			<li Class="CompProperties_Power">
 				<compClass>CompPowerTrader</compClass>
 				<basePowerConsumption>500</basePowerConsumption>
 			</li>
-			<li Class="CompProperties_AffectedByFacilities">
-				<linkableFacilities>
-					<li>AC_NeuralMatrix</li>
-				</linkableFacilities>
-			</li>
 			<li Class="CompProperties_Flickable"/>
+			<li Class="AlteredCarbon.CompProperties_CastingRelay">
+				<untunedEffect>BandNodeUntuned</untunedEffect>
+				<tuningEffect>BandNodeTuning</tuningEffect>
+				<tunedEffect>BandNodeTuned</tunedEffect>
+				<retuningEffect>BandNodeRetuning</retuningEffect>
+				<tuningCompleteSound>BandNodeTuning_Complete</tuningCompleteSound>
+				<powerConsumptionIdle>100</powerConsumptionIdle>
+				<tuneSeconds>10</tuneSeconds>
+				<retuneSeconds>10</retuneSeconds>
+			</li>
 		</comps>
 	</ThingDef>
 	<!-- ================================ Stack Cache ====================== -->

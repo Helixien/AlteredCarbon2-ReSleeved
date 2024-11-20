@@ -184,6 +184,11 @@
 	<AC.NoStacksRegistered>No stacks currently registered</AC.NoStacksRegistered>
 	<AC.NoUntrackedStacksStored>No untracked stacks stored</AC.NoUntrackedStacksStored>
 	<AC.Tile>tile</AC.Tile>
+	<AC.StackRelayTuningDesc>Tune this casting relay to a neural matrix. Tuning will take {0} to complete.</AC.StackRelayTuningDesc>
+	<AC.StackRelayRetuningDesc>Retune this casting relay to another neural matrix. Retuning will take {0} to complete.</AC.StackRelayRetuningDesc>
+	<AC.ConnectedRelays>Connected relays</AC.ConnectedRelays>
+	<AC.MaxRange>Max range:</AC.MaxRange>
+	<AC.WorldTiles>{0} world tiles</AC.WorldTiles>
 	<!-- ================================ Other ====================== -->
 	<AC.CommandCallsNeuroformers>Call psylink neuroformers</AC.CommandCallsNeuroformers>
 	<AC.SetBodyParts>Install body parts</AC.SetBodyParts>

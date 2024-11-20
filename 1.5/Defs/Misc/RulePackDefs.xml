@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+
+	<RulePackDef>
+		<defName>AC_NeuralMatrixNameMaker</defName>
+		<rulePack>
+			<rulesStrings>
+				<li>root->[prefix]-[numbers]</li>
+				<li>prefix->Alpha</li>
+				<li>prefix->Beta</li>
+				<li>prefix->Gamma</li>
+				<li>prefix->Delta</li>
+				<li>numbers->[Digit][Digit]</li>
+			</rulesStrings>
+		</rulePack>
+	</RulePackDef>
+
+</Defs>

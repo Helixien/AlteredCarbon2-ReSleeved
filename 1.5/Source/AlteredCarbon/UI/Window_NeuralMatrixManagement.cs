@@ -591,7 +591,7 @@ namespace AlteredCarbon
                 "AC.OriginalGender".Translate() + ": " + neuralData.OriginalGender.ToString() + "\n" +
                 "AC.NeedlecastingRange".Translate() + ": " + range + " " +
                 (range > 1 ? "TilesLower".Translate() : "AC.Tile".Translate()) + "\n" +
-                "AC.StackDegradation".Translate() + ": " + neuralData.stackDegradation.ToStringPercent().Colorize(Color.red) + "\n" +
+                "AC.StackDegradation".Translate(neuralData.stackDegradation.ToStringPercent().Colorize(Color.red)) + "\n" +
                 "AC.IsCopy".Translate() + ": " + (neuralData.isCopied ? "AC.True".Translate() : "AC.False".Translate()));
             Text.Font = GameFont.Small;
 

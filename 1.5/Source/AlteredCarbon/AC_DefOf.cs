@@ -111,8 +111,6 @@ namespace AlteredCarbon
         public static ThingDef AC_StackCache;
         public static ThoughtDef AC_ErasedStack;
         public static ResearchProjectDef AC_NeuralDigitalization;
-        //public static ThingDef AC_NeuralPrint;
-        //public static RecipeDef AC_RestoreStackFromNeuralPrint;
         public static ThingDef AC_NeuralConnector;
         
         public static HediffDef AC_VoiceSynthesizer;
@@ -132,5 +130,7 @@ namespace AlteredCarbon
         public static ThingDef WaterproofConduit;
         public static IncidentDef AC_GiveQuest_Intro_Researcher;
         public static ThingDef AC_NanoStorageDrive;
+
+        public static RulePackDef AC_NeuralMatrixNameMaker;
     }
 }
