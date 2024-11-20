@@ -33,9 +33,16 @@
 			<skillRequirements>
 				<Crafting>12</Crafting>
 			</skillRequirements>
+			<workSkill>Crafting</workSkill>
+			<effectWorking>Smith</effectWorking>
+			<soundWorking>Recipe_Machining</soundWorking>
 			<recipeUsers Inherit="False">
 				<li>FabricationBench</li>
 			</recipeUsers>
+			<useIngredientsForColor>false</useIngredientsForColor>
+			<skillRequirements>
+				<Crafting>10</Crafting>
+			</skillRequirements>
 			<displayPriority>108</displayPriority>
 		</recipeMaker>
 		<thingCategories>

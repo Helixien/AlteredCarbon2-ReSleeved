@@ -35,6 +35,9 @@
 			<ToxicResistance>1</ToxicResistance>
 			<ToxicEnvironmentResistance MayRequire="Ludeon.RimWorld.Biotech">1</ToxicEnvironmentResistance>
 		</equippedStatOffsets>
+		<thingCategories>
+			<li>ArmorHeadgear</li>
+		</thingCategories>
 		<apparel>
 			<bodyPartGroups>
 				<li>Torso</li>
@@ -128,6 +131,9 @@
 			<ToxicResistance>1</ToxicResistance>
 			<ToxicEnvironmentResistance MayRequire="Ludeon.RimWorld.Biotech">1</ToxicEnvironmentResistance>
 		</equippedStatOffsets>
+		<thingCategories>
+			<li>ArmorHeadgear</li>
+		</thingCategories>
 		<apparel>
 			<bodyPartGroups>
 				<li>FullHead</li>

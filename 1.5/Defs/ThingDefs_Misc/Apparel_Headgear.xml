@@ -22,6 +22,9 @@
 			<Insulation_Heat>4</Insulation_Heat>
 			<EquipDelay>5</EquipDelay>
 		</statBases>
+    <thingCategories>
+      <li>ArmorHeadgear</li>
+    </thingCategories>
 		<costList>
 			<ComponentSpacer>2</ComponentSpacer>
 			<Plasteel>60</Plasteel>

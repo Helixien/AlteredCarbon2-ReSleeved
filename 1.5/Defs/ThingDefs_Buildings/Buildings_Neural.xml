@@ -349,7 +349,7 @@
 			<li Class="AlteredCarbon.CompProperties_CastingRelay">
 				<untunedEffect>BandNodeUntuned</untunedEffect>
 				<tuningEffect>BandNodeTuning</tuningEffect>
-				<tunedEffect>BandNodeTuned</tunedEffect>
+				<tunedEffect>AC_CastingRelayTuned</tunedEffect>
 				<retuningEffect>BandNodeRetuning</retuningEffect>
 				<tuningCompleteSound>BandNodeTuning_Complete</tuningCompleteSound>
 				<powerConsumptionIdle>100</powerConsumptionIdle>
