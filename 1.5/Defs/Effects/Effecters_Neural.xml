@@ -121,7 +121,7 @@
 			<li>
 				<subEffecterClass>SubEffecter_SprayerContinuous</subEffecterClass>
 				<fleckDef>AC_CastingRelayBluePulse</fleckDef>
-				<ticksBetweenMotes>240</ticksBetweenMotes>
+				<ticksBetweenMotes>120</ticksBetweenMotes>
 				<spawnLocType>OnSource</spawnLocType>
 			</li>
 		</children>
