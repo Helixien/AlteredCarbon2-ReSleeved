@@ -340,7 +340,7 @@ namespace AlteredCarbon
                 {
                     storyteller.comps.Insert(compIndex + 1, new StorytellerCompProperties_SingleOnceFixed
                     {
-                        fireAfterDaysPassed = 1,
+                        fireAfterDaysPassed = 50,
                         incident = AC_DefOf.AC_GiveQuest_Intro_Researcher,
                         allowedTargetTags = new List<IncidentTargetTagDef>
                         {
