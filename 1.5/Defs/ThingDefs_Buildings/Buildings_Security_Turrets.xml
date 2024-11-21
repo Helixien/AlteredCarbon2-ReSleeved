@@ -4,7 +4,7 @@
 	<ThingDef ParentName="BuildingBase">
 		<defName>AC_Turret_AncientGraserTurret</defName>
 		<label>ancient graser turret</label>
-		<description>An ancient portable graser turret. May explode when damaged. Its dumb AI brain can't be directly controlled, so beware of friendly fire.</description>
+		<description>An ancient high-energy gamma ray laser turret which fires a sweeping beam that pierces thick armor and burns targets. May explode when damaged. Its dumb AI brain can't be directly controlled, so beware of friendly fire.</description>
 		<thingClass>Building_TurretGun</thingClass>
 		<drawerType>MapMeshAndRealTime</drawerType>
 		<graphicData>
