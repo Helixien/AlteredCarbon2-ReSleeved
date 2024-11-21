@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	<Operation Class="PatchOperationSequence">
+		<!-- ================================ Patches Ancient stuff with VFE-Ancients features ====================== -->
+		<operations>
+			<!-- ================================ Patches Ancient Graser Turret ====================== -->
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[defName="AC_Turret_AncientGraserTurret"]/description</xpath>
+				<value>
+					<description>An ancientportable graser turret. May explode when damaged. Its dumb AI brain can't be directly controlled, so beware of friendly fire.\n\nThis structure was built by a long forgotten civilisation and the technology can no longer be replicated. It will never suffer breakdowns, and it operates more efficiently during solar flare incidents.</description>
+				</value>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName="AC_Turret_AncientGraserTurret"]/comps</xpath>
+				<value>
+					<li Class="VFEAncients.CompProperties_SolarPowerUp"/>
+				</value>
+			</li>
+		</operations>
+	</Operation>
+</Patch>

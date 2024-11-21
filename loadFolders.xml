@@ -14,5 +14,6 @@
 		<li IfModActive="Ludeon.RimWorld.Ideology">1.5/LoadFolders/Ideology</li>
 		<li IfModActive="vanillaracesexpanded.android">1.5/LoadFolders/VanillaRacesExpanded-Android</li>
 		<li IfModActive="VanillaExpanded.Ideo.SophianStyle">1.5/LoadFolders/VanillaIdeologyExpanded-SophianStyle</li>
+		<li IfModActive="VanillaExpanded.VFEA">1.5/LoadFolders/VanillaFactionsExpanded-Ancients</li>
 	</v1.5>
 </loadFolders>

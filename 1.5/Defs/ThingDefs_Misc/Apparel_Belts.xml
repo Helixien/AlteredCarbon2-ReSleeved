@@ -40,9 +40,6 @@
 				<li>FabricationBench</li>
 			</recipeUsers>
 			<useIngredientsForColor>false</useIngredientsForColor>
-			<skillRequirements>
-				<Crafting>10</Crafting>
-			</skillRequirements>
 			<displayPriority>108</displayPriority>
 		</recipeMaker>
 		<thingCategories>
