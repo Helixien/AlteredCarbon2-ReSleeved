@@ -101,7 +101,7 @@ namespace AlteredCarbon
         [MayRequireIdeology] public static PreceptDef AC_CrossSleeving_DontCare;
         public static HistoryEventDef AC_EditedStack;
 
-        public static RecipeDef AC_ResetBiocodedThings;
+        public static RecipeDef AC_ResetBiocodedThings, AC_UnboundPersona;
         [MayRequireRoyalty] public static ThingDef AC_Apparel_DragoonHelmet;
         public static ThingDef AC_Apparel_FusilierHelmet;
         public static JobDef AC_ChargeCuirassierBelt;

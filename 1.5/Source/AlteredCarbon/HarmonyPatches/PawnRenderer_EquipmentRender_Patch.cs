@@ -35,7 +35,8 @@ namespace AlteredCarbon
             HediffComp_MeleeWeapon hediffComp)
         {
             drawLoc.z += 0.35f;
-            bool mirror = IsRightPart(hediffComp.parent.part);
+            bool mirror = IsRightPart(hediffComp.parent.part) is false;
+
             var graphic = hediffComp.Graphic;
             if (pawn.Rotation == Rot4.South)
             {
@@ -48,6 +49,7 @@ namespace AlteredCarbon
                 drawLoc += new Vector3(0f, 0f, -0.11f);
                 drawLoc.y += 0f;
                 aimAngle = 143f;
+                mirror = !mirror;
             }
             else if (pawn.Rotation == Rot4.East)
             {

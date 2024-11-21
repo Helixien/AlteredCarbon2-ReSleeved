@@ -89,4 +89,33 @@
 			<Intellectual>8</Intellectual>
 		</skillRequirements>
 	</RecipeDef>
+	
+	<RecipeDef ParentName="AC_RecipeNeuralEditing">
+		<defName>AC_UnboundPersona</defName>
+		<label>Unbound persona</label>
+		<description>Unbound a persona weapon from their current user, allowing for bonding with a new person.\n\nIf unsuccessful, the item may break.</description>
+		<jobString>Unbounding persona.</jobString>
+		<workerClass>AlteredCarbon.Recipe_UnboundPersona</workerClass>
+		<workAmount>25000</workAmount>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Apparel_PowerArmorHelmet</li>
+						<li>Gun_TripleRocket</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>Apparel_PowerArmorHelmet</li>
+				<li>Gun_TripleRocket</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<skillRequirements>
+			<Intellectual>10</Intellectual>
+		</skillRequirements>
+	</RecipeDef>
 </Defs>

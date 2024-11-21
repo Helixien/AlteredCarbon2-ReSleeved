@@ -101,6 +101,9 @@
     <Compile Include="Buildings\Building_SleeveGestator.cs" />
     <Compile Include="Buildings\CompCastingRelay.cs" />
     <Compile Include="Buildings\CastingRangeGizmo.cs" />
+    <Compile Include="Recipes\Recipe_UnboundPersona.cs" />
+    <Compile Include="Recipes\ThingFilterBladelink.cs" />
+    <Compile Include="UI\Command_ActionOnPersona.cs" />
     <Compile Include="UI\Dialog_RenameMatrix.cs" />
     <Compile Include="HarmonyPatches\MainTabWindow_Inspect_DoInspectPaneButtons_Patch.cs" />
     <Compile Include="HarmonyPatches\BedPatches\RestUtility_CanUseBedNow_Patch.cs" />
