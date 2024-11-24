@@ -405,7 +405,7 @@ namespace AlteredCarbon
                 relativeInvolvedInRescueQuest = pawn.relations.relativeInvolvedInRescueQuest;
                 nextMarriageNameChange = pawn.relations.nextMarriageNameChange;
                 hidePawnRelations = pawn.relations.hidePawnRelations;
-                relations = pawn.relations.DirectRelations.CopyList();
+                relations = pawn.relations.DirectRelations.Where(x => x.def != PawnRelationDefOf.Overseer).ToList();
                 otherPawnRelations = new Dictionary<DirectPawnRelation, Pawn>();
                 foreach (var rel in pawn.relations.PotentiallyRelatedPawns.ToList())
                 {
