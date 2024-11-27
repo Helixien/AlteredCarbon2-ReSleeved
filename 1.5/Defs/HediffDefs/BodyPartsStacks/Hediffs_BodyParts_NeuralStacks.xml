@@ -58,8 +58,11 @@
 		<techHediffsTags Inherit="False">
 			<li>Ultra</li>
 		</techHediffsTags>
+		<tradeTags>
+			<li>Bionic</li>
+		</tradeTags>
 		<comps>
-			<li Class="CompProperties_Styleable" />
+			<li Class="CompProperties_Styleable"/>
 		</comps>
 	</ThingDef>
 	<HediffDef Name="AC_ImplantStackBase" Abstract="True" ParentName="ImplantHediffBase">
@@ -187,7 +190,7 @@
 		<isBad>false</isBad>
 		<addedPartProps>
 			<solid>true</solid>
-<!--			<partEfficiency>1.25</partEfficiency>
+			<!--			<partEfficiency>1.25</partEfficiency>
 			<betterThanNatural>true</betterThanNatural>-->
 		</addedPartProps>
 	</HediffDef>
