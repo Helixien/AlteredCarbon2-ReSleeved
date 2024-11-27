@@ -14,8 +14,8 @@ namespace AlteredCarbon
     {
         public static IEnumerable<Toil> Postfix(IEnumerable<Toil> __result, JobDriver_DoBill __instance)
         {
-            if (__instance.job.bill.recipe.Worker is Recipe_OperateOnNeuralStack //or Recipe_OperateOnNeuralPrint 
-                || AC_Utils.installActiveStacksRecipes.Contains(__instance.job.bill.recipe))
+            if (__instance.job?.bill?.recipe != null && (__instance.job.bill.recipe.Worker is Recipe_OperateOnNeuralStack //or Recipe_OperateOnNeuralPrint 
+                || AC_Utils.installActiveStacksRecipes.Contains(__instance.job.bill.recipe)))
             {
                 __instance.AddEndCondition(delegate
                 {

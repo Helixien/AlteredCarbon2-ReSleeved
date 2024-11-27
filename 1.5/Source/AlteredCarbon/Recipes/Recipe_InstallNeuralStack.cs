@@ -113,6 +113,11 @@ namespace AlteredCarbon
             else
             {
                 pawn.health.AddHediff(hediff, part);
+                if (pawn.Faction != null && pawn.Faction != Faction.OfPlayer 
+                    && pawn.Faction.HostileTo(Faction.OfPlayer) is false)
+                {
+                    pawn.Faction.TryAffectGoodwillWith(Faction.OfPlayer, 5, canSendMessage: true, false, AC_DefOf.AC_InstalledEmptyStackEvent, pawn);
+                }
             }
 
             if (ModsConfig.IdeologyActive)
