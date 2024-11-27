@@ -347,7 +347,8 @@ namespace AlteredCarbon
             {
                 isManagingButtonActive = false;
             }
-            if (stack.NeuralData.trackedToMatrix != null)
+            bool tracked = stack.NeuralData.trackedToMatrix == matrix;
+            if (tracked)
             {
                 DrawButton(iconRectWithOffset, trashIcon, tooltip: "AC.TooltipStopManaging".Translate(cache.pawnName), isManagingButtonActive, delegate
                 {
@@ -414,11 +415,10 @@ namespace AlteredCarbon
                     iconRectWithOffset.x -= iconSpacing;
                 }
             }
-            if (AC_DefOf.AC_NeuralCasting.IsFinished 
+            if (tracked && AC_DefOf.AC_NeuralCasting.IsFinished 
                 && (neuralStack != null && neuralStack.ParentHolder is CompNeuralCache stackCache 
                 && stackCache.parent.GetConnectedMatrix() == matrix || stack.ThingHolder is Pawn pawn 
-                && pawn.ParentHolder is Building_CryptosleepCasket casket && casket.GetConnectedMatrix() == matrix)
-            )
+                && pawn.ParentHolder is Building_CryptosleepCasket casket && casket.GetConnectedMatrix() == matrix))
             {
                 bool isNeedlecastingButtonActive = stack.NeuralData.faction == Faction.OfPlayer;
 

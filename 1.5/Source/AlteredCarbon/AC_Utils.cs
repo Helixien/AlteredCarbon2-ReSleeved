@@ -13,16 +13,6 @@ using Verse.AI;
 
 namespace AlteredCarbon
 {
-    //[HarmonyPatch(typeof(Ability), "get_Casting")]
-    //public static class test
-    //{
-    //    public static void Prefix(Ability __instance)
-    //    {
-    //        Log.Clear();
-    //        Log.Message(__instance.def + " - " + __instance.pawn);
-    //    }
-    //}
-
     public struct StackInstallInfo
     {
         public RecipeDef recipe;

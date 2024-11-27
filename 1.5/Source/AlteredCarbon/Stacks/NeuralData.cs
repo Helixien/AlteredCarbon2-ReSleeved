@@ -325,7 +325,7 @@ namespace AlteredCarbon
                     stringBuilder.AppendLine("pawn relations: ");
                     stringBuilder.AppendLine(pawn.relations.DirectRelations.Select(x => x.def + " - " + x.otherPawn.GetFullName()).ToStringSafeEnumerable());
                     stringBuilder.AppendLine("other relations: ");
-                    foreach (var other in pawn.relations.RelatedPawns)
+                    foreach (var other in pawn.relations.RelatedPawns.ToList())
                     {
                         if (other.relations.DirectRelations.Any())
                         {
@@ -419,19 +419,8 @@ namespace AlteredCarbon
                 }
 
                 relatedPawns = pawn.relations.PotentiallyRelatedPawns.ToList();
-                foreach (Pawn otherPawn in pawn.relations.RelatedPawns)
+                foreach (Pawn otherPawn in relatedPawns.ToList())
                 {
-                    foreach (PawnRelationDef rel2 in pawn.GetRelations(otherPawn))
-                    {
-                        if (!relations.Any(r => r.def == rel2 && r.otherPawn == otherPawn))
-                        {
-                            if (!rel2.implied)
-                            {
-                                relations.Add(new DirectPawnRelation(rel2, otherPawn, 0));
-                                AC_Utils.DebugMessage(pawn.GetFullName() + " - CopyFromPawn: added otherRelation: " + rel2 + " - " + otherPawn.GetFullName());
-                            }
-                        }
-                    }
                     AC_Utils.DebugMessage(pawn.GetFullName() + " - CopyFromPawn: added otherPawn from RelatedPawns: " 
                         + otherPawn.GetFullName());
                     relatedPawns.Add(otherPawn);
