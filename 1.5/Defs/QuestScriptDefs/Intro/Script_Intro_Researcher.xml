@@ -1,12 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Defs>
-
-	<IncidentDef ParentName="GiveQuestBase">
-		<defName>AC_GiveQuest_Intro_Researcher</defName>
-		<label>the researcher</label>
-		<questScriptDef>AC_Intro_Researcher</questScriptDef>
-		<baseChance>0</baseChance> <!-- given by a special storyteller comp -->
-	</IncidentDef>
 	<!-- Altered Carbon Intro Quest -->
 	<QuestScriptDef>
 		<defName>AC_Intro_Researcher</defName>
@@ -31,20 +24,16 @@
 				<li Class="QuestNode_GetMap"/>
 				<li Class="QuestNode_GetWalkInSpot"/>
 				<!-- Get asker -->
-
 				<li Class="QuestNode_Set">
 					<name>raidPoints</name>
 					<value>$points</value>
 				</li>
-		
-
 				<li Class="QuestNode_GeneratePawn">
 					<kindDef>AC_ResearcherRefugee</kindDef>
 					<storeAs>asker</storeAs>
 					<forbidAnyTitle>True</forbidAnyTitle>
 				</li>
-				
-			<!-- Spawn joiner -->
+				<!-- Spawn joiner -->
 				<li Class="QuestNode_PawnsArrive">
 					<pawns>$asker</pawns>
 					<walkInSpot>$walkInSpot</walkInSpot>
@@ -53,7 +42,6 @@
 					<isSingleReward>true</isSingleReward>
 					<rewardDetailsHidden>true</rewardDetailsHidden>
 				</li>
-				
 				<li Class="AlteredCarbon.QuestNode_DamageAndGiveItems">
 					<pawn>$asker</pawn>
 				</li>
@@ -62,29 +50,26 @@
 					<storeAs>enemyFaction</storeAs>
 					<allowEnemy>true</allowEnemy>
 				</li>
-				
 				<!-- Raid -->
 				<li Class="QuestNode_Set">
 					<name>raidDelayTicks</name>
 					<value>$(roundToTicksRough(randInt(1800, 2400)))</value>
 				</li>
-				
 				<li Class="QuestNode_Delay">
 					<delayTicks>$raidDelayTicks</delayTicks>
 					<node Class="QuestNode_Sequence">
 						<nodes>
-							
 							<li Class="QuestNode_SubScript">
 								<def>Util_Raid</def>
 								<prefix>raid</prefix>
 								<parms>
-								<inSignal>$inSignal</inSignal>
-								<map>$map</map>
-								<enemyFaction>$enemyFaction</enemyFaction>
-								<points>$raidPoints</points>
-								<walkInSpot>$walkInSpot</walkInSpot>
-								<customLetterLabel TKey="LetterLabelLoyaltySquad">{BASELABEL}: Raid</customLetterLabel>
-								<customLetterText TKey="LetterTextLoyaltySquad">{BASETEXT}\n\nThis is the raid squad that was hunting [../asker_nameFull].
+									<inSignal>$inSignal</inSignal>
+									<map>$map</map>
+									<enemyFaction>$enemyFaction</enemyFaction>
+									<points>$raidPoints</points>
+									<walkInSpot>$walkInSpot</walkInSpot>
+									<customLetterLabel TKey="LetterLabelLoyaltySquad">{BASELABEL}: Raid</customLetterLabel>
+									<customLetterText TKey="LetterTextLoyaltySquad">{BASETEXT}\n\nThis is the raid squad that was hunting [../asker_nameFull].
 								</customLetterText>
 								</parms>
 							</li>
