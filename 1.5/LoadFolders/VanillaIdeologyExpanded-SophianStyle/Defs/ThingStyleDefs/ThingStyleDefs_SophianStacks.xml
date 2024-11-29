@@ -23,6 +23,7 @@
 		<graphicData>
 			<texPath>Styles/Sophian/Pawn/Humanlike/Apparel/SophianChrysalisArmorHelmet/SophianChrysalisHelmet</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>0.80</drawSize>
 		</graphicData>
 	</ThingStyleDef>
 </Defs>

@@ -7,7 +7,7 @@
 			<texPath>Things/Pawn/Humanlike/Apparel/ChrysalisArmorHelmet/ChrysalisHelmet</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 			<shaderType>CutoutComplex</shaderType>
-			<drawSize>(0.9, 0.9)</drawSize>
+			<drawSize>0.80</drawSize>
 		</graphicData>
 		<generateCommonality>0.4</generateCommonality>
 		<statBases>
@@ -109,6 +109,7 @@
 		<description>A variant of chrysalis armor helmet with a heavy layer of plasteel-weave plates, next-gen solid ablative coatings and a package of several multi-spectrum sensors, including a classifier AI, allowing the user to see in darkness and smokey conditions. The integrated ballistic rangefinder provides optimal firing solutions, increasing the user’s effective range by 50%.</description>
 		<graphicData>
 			<texPath>Things/Pawn/Humanlike/Apparel/FusilierArmorHelmet/FusilierHelmet</texPath>
+			<drawSize>0.80</drawSize>
 		</graphicData>
 		<statBases>
 			<WorkToMake>32250</WorkToMake>
@@ -146,6 +147,7 @@
 		<description>A variant of chrysalis armor helmet with a simple classifier AI, to analyze terrain composition and guide the user, effectively eliminating terrain movement penalties.</description>
 		<graphicData>
 			<texPath>Things/Pawn/Humanlike/Apparel/DragoonArmorHelmet/DragoonHelmet</texPath>
+			<drawSize>0.80</drawSize>
 		</graphicData>
 		<statBases>
 			<WorkToMake>31250</WorkToMake>
