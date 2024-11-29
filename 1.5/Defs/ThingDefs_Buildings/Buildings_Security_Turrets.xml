@@ -28,6 +28,9 @@
 		<thingCategories>
 			<li>BuildingsSecurity</li>
 		</thingCategories>
+		<thingSetMakerTags>
+			<li>RewardStandardCore</li>
+		</thingSetMakerTags>
 		<statBases>
 			<MaxHitPoints>120</MaxHitPoints>
 			<Flammability>0.9</Flammability>

@@ -91,9 +91,6 @@
 		<defName>AC_Apparel_ChrysalisHelmet</defName>
 		<label>chrysalis helmet</label>
 		<description>An advanced power armor helmet, with a solid plasteel-weave shell and complex visual system for near 360 degree view angles and tactical telemetry feed, including aim assist.</description>
-		<graphicData>
-			<drawSize>0.90</drawSize>
-		</graphicData>
 		<statBases>
 			<VEF_RangedCooldownFactor>0.82</VEF_RangedCooldownFactor>
 		</statBases>

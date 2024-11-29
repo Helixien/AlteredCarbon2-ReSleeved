@@ -7,9 +7,17 @@
 		<expireDaysRange>1</expireDaysRange>
 		<defaultChallengeRating>1</defaultChallengeRating>
 		<isRootSpecial>true</isRootSpecial>
+		<defaultCharity>true</defaultCharity>
+		<successHistoryEvent MayRequire="Ludeon.RimWorld.Ideology">AC_CharityFulfilled_Researcher</successHistoryEvent>
+		<failedOrExpiredHistoryEvent MayRequire="Ludeon.RimWorld.Ideology">AC_CharityRefused_Researcher</failedOrExpiredHistoryEvent>
 		<questNameRules>
 			<rulesStrings>
-				<li>questName->The Researcher</li>
+				<li>questName->The [adjAny] researcher</li>
+				<!-- Pieces -->
+				<li>adjAny->waning</li>
+				<li>adjAny->fleeing</li>
+				<li>adjAny->distressed</li>
+				<li>adjAny->dying</li>
 			</rulesStrings>
 		</questNameRules>
 		<questDescriptionRules>
@@ -53,7 +61,7 @@
 				<!-- Raid -->
 				<li Class="QuestNode_Set">
 					<name>raidDelayTicks</name>
-					<value>$(roundToTicksRough(randInt(1800, 2400)))</value>
+					<value>$(roundToTicksRough(randInt(2800, 4400)))</value>
 				</li>
 				<li Class="QuestNode_Delay">
 					<delayTicks>$raidDelayTicks</delayTicks>
@@ -69,8 +77,7 @@
 									<points>$raidPoints</points>
 									<walkInSpot>$walkInSpot</walkInSpot>
 									<customLetterLabel TKey="LetterLabelLoyaltySquad">{BASELABEL}: Raid</customLetterLabel>
-									<customLetterText TKey="LetterTextLoyaltySquad">{BASETEXT}\n\nThis is the raid squad that was hunting [../asker_nameFull].
-								</customLetterText>
+									<customLetterText TKey="LetterTextLoyaltySquad">{BASETEXT}\n\nThis is the raid squad that was hunting [../asker_nameFull]. It seems they came to finish the job.</customLetterText>
 								</parms>
 							</li>
 							<li Class="QuestNode_End">
