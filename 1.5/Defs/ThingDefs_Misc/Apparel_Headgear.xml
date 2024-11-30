@@ -22,9 +22,9 @@
 			<Insulation_Heat>4</Insulation_Heat>
 			<EquipDelay>5</EquipDelay>
 		</statBases>
-    <thingCategories>
-      <li>ArmorHeadgear</li>
-    </thingCategories>
+		<thingCategories>
+			<li>ArmorHeadgear</li>
+		</thingCategories>
 		<costList>
 			<ComponentSpacer>2</ComponentSpacer>
 			<Plasteel>60</Plasteel>
@@ -92,7 +92,7 @@
 		<label>chrysalis helmet</label>
 		<description>An advanced power armor helmet, with a solid plasteel-weave shell and complex visual system for near 360 degree view angles and tactical telemetry feed, including aim assist.</description>
 		<statBases>
-			<VEF_RangedCooldownFactor>0.82</VEF_RangedCooldownFactor>
+			<VEF_RangedCooldownFactor>0.8</VEF_RangedCooldownFactor>
 		</statBases>
 		<recipeMaker>
 			<displayPriority>135</displayPriority>
@@ -137,7 +137,7 @@
 		</apparel>
 		<equippedStatOffsets>
 			<AimingDelayFactor>-0.5</AimingDelayFactor>
-			<ShootingAccuracyPawn>10</ShootingAccuracyPawn>
+			<ShootingAccuracyPawn>5</ShootingAccuracyPawn>
 		</equippedStatOffsets>
 	</ThingDef>
 	<!-- ================================ Dragoon Armour - Helmet ====================== -->
@@ -176,6 +176,46 @@
 			<wornGraphicPath>Things/Pawn/Humanlike/Apparel/DragoonArmorHelmet/DragoonHelmet</wornGraphicPath>
 		</apparel>
 	</ThingDef>
+	<!-- ================================ Lancier Armor - Helmet ====================== -->
+<!--	<ThingDef ParentName="AC_ApparelArmorHelmetChrysalisMakeableBase">
+		<defName>AC_Apparel_LancierHelmet</defName>
+		<label>lancier helmet</label>
+		<description>text.todo</description>
+		<graphicData>
+			<texPath>Things/Pawn/Humanlike/Apparel/LancierArmorHelmet/LancierHelmet</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<shaderType>CutoutComplex</shaderType>
+			<drawSize>0.80</drawSize>
+		</graphicData>
+		<statBases>
+			<WorkToMake>35250</WorkToMake>
+			<MaxHitPoints>120</MaxHitPoints>
+			<Mass>2.5</Mass>
+			<ArmorRating_Sharp>0.95</ArmorRating_Sharp>
+			<ArmorRating_Blunt>0.3</ArmorRating_Blunt>
+			<ArmorRating_Heat>0.36</ArmorRating_Heat>
+			<VEF_RangedCooldownFactor>0.5</VEF_RangedCooldownFactor>
+		</statBases>
+		<recipeMaker>
+			<displayPriority>138</displayPriority>
+		</recipeMaker>
+		<costList>
+			<ComponentSpacer>6</ComponentSpacer>
+			<Plasteel>40</Plasteel>
+			<Uranium>5</Uranium>
+		</costList>
+		<equippedStatOffsets>
+			<ShootingAccuracyPawn>5</ShootingAccuracyPawn>
+			<AimingDelayFactor>-0.6</AimingDelayFactor>
+			<AccuracyTouch>-0.25</AccuracyTouch>
+			<AccuracyShort>0.15</AccuracyShort>
+			<AccuracyMedium>0.35</AccuracyMedium>
+			<AccuracyLong>0.25</AccuracyLong>
+		</equippedStatOffsets>
+		<apparel>
+			<wornGraphicPath>Things/Pawn/Humanlike/Apparel/LancierArmorHelmet/LancierHelmet</wornGraphicPath>
+		</apparel>
+	</ThingDef>-->
 	<!-- ================================ Enviro Suit - For needlecaster ====================== -->
 	<ThingDef ParentName="ArmorHelmetMakeableBase">
 		<defName>AC_EnviroSuitHelmet</defName>
