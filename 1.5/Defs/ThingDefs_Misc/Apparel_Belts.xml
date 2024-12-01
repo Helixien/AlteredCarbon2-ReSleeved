@@ -11,6 +11,7 @@
 			<graphicClass>Graphic_Single</graphicClass>
 			<shaderType>CutoutComplex</shaderType>
 		</graphicData>
+		<generateCommonality>0.2</generateCommonality>
 		<tickerType>Normal</tickerType>
 		<techLevel>Ultra</techLevel>
 		<statBases>
@@ -45,7 +46,7 @@
 		<thingCategories>
 			<li>ApparelUtility</li>
 		</thingCategories>
-		<apparel>
+		<apparel Inherit="False">
 			<countsAsClothingForNudity>false</countsAsClothingForNudity>
 			<careIfWornByCorpse>false</careIfWornByCorpse>
 			<careIfDamaged>false</careIfDamaged>
@@ -57,7 +58,6 @@
 				<li>Belt</li>
 			</layers>
 			<tags>
-				<li>SpacerMilitary</li>
 				<li>UltraMilitary</li>
 			</tags>
 			<developmentalStageFilter>Child, Adult</developmentalStageFilter>
@@ -96,13 +96,14 @@
 				<showOnNeutralInCombat>true</showOnNeutralInCombat>
 				<shieldTexPath>Other/ShieldBubble</shieldTexPath>
 				<EnergyShieldRechargeRate>0</EnergyShieldRechargeRate>
-				<EnergyShieldEnergyMax>600</EnergyShieldEnergyMax>
+				<EnergyShieldEnergyMax>500</EnergyShieldEnergyMax>
 				<minShieldSize>1.4</minShieldSize>
 				<maxShieldSize>1.8</maxShieldSize>
 				<disableRotation>true</disableRotation>
 				<initialChargePct>0.5</initialChargePct>
 				<tooltipKey>AC.CuirassierBeltTooltip</tooltipKey>
 			</li>
+			<li Class="CompProperties_Biocodable"/>
 		</comps>
 	</ThingDef>
 </Defs>

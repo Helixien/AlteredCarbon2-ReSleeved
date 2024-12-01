@@ -5,7 +5,7 @@
 		<operations>
 			<!-- ================================ Patches in new apparel tags to spacer pawnkinds ====================== -->
 			<li Class="PatchOperationAdd">
-				<xpath>/Defs/PawnKindDef[defName="AncientSoldier" or @Name="SpaceRefugeeBase"]/apparelTags</xpath>
+				<xpath>/Defs/PawnKindDef[@Name="SpaceRefugeeBase"]/apparelTags</xpath>
 				<value>
 					<li>SpacerEnviroSuit</li>
 				</value>
