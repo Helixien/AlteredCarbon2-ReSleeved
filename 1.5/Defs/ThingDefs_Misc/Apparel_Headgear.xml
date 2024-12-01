@@ -106,7 +106,7 @@
 	<ThingDef ParentName="AC_ApparelArmorHelmetChrysalisMakeableBase">
 		<defName>AC_Apparel_FusilierHelmet</defName>
 		<label>fusilier helmet</label>
-		<description>A variant of chrysalis armor helmet with a heavy layer of plasteel-weave plates, next-gen solid ablative coatings and a package of several multi-spectrum sensors, including a classifier AI, allowing the user to see in darkness and smokey conditions. The integrated ballistic rangefinder provides optimal firing solutions, increasing the user’s effective range by 50%.</description>
+		<description>A variant of the chrysalis armor helmet with a heavy layer of plasteel-weave plates, next-gen solid ablative coatings and a package of several multi-spectrum sensors, including a classifier AI, allowing the user to see in darkness and smokey conditions. The integrated ballistic rangefinder provides optimal firing solutions, decreasing the user’s effective aiming delay by 50%.</description>
 		<graphicData>
 			<texPath>Things/Pawn/Humanlike/Apparel/FusilierArmorHelmet/FusilierHelmet</texPath>
 			<drawSize>0.80</drawSize>
@@ -144,7 +144,7 @@
 	<ThingDef ParentName="AC_ApparelArmorHelmetChrysalisMakeableBase" MayRequire="Ludeon.RimWorld.Royalty">
 		<defName>AC_Apparel_DragoonHelmet</defName>
 		<label>dragoon helmet</label>
-		<description>A variant of chrysalis armor helmet with a simple classifier AI, to analyze terrain composition and guide the user, effectively eliminating terrain movement penalties.</description>
+		<description>A variant of the chrysalis armor helmet with a simple classifier AI, to analyze terrain composition and guide the user, effectively eliminating terrain movement penalties.</description>
 		<graphicData>
 			<texPath>Things/Pawn/Humanlike/Apparel/DragoonArmorHelmet/DragoonHelmet</texPath>
 			<drawSize>0.80</drawSize>
@@ -177,10 +177,10 @@
 		</apparel>
 	</ThingDef>
 	<!-- ================================ Lancier Armor - Helmet ====================== -->
-<!--	<ThingDef ParentName="AC_ApparelArmorHelmetChrysalisMakeableBase">
+	<ThingDef ParentName="AC_ApparelArmorHelmetChrysalisMakeableBase">
 		<defName>AC_Apparel_LancierHelmet</defName>
 		<label>lancier helmet</label>
-		<description>text.todo</description>
+		<description>A variant of the chrysalis armor helmet with a specialised set of ballistic rangefinder arrays including an advanced classifier AI, to analyse optimal aiming solutions and firing patterns, as well as allowing the user to see in darkness and smokey conditions. Unlike other equipment based on the chrysalis-line, this helmet offers far less protection.</description>
 		<graphicData>
 			<texPath>Things/Pawn/Humanlike/Apparel/LancierArmorHelmet/LancierHelmet</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
@@ -215,7 +215,7 @@
 		<apparel>
 			<wornGraphicPath>Things/Pawn/Humanlike/Apparel/LancierArmorHelmet/LancierHelmet</wornGraphicPath>
 		</apparel>
-	</ThingDef>-->
+	</ThingDef>
 	<!-- ================================ Enviro Suit - For needlecaster ====================== -->
 	<ThingDef ParentName="ArmorHelmetMakeableBase">
 		<defName>AC_EnviroSuitHelmet</defName>
