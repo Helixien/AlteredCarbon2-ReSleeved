@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<!-- Thoughts: Charity fulfilled intro researcher -->
+	<ThoughtDef ParentName="CharityBase">
+		<defName>AC_CharityFulfilled_Essential_IntroResearcher</defName>
+		<stages>
+			<li>
+				<label>researcher helped</label>
+				<description>We helped the wounded researcher. We really are good people!</description>
+				<baseMoodEffect>4</baseMoodEffect>
+			</li>
+		</stages>
+	</ThoughtDef>
+	<ThoughtDef ParentName="CharityBase">
+		<defName>AC_CharityFulfilled_Important_IntroResearcher</defName>
+		<stages>
+			<li>
+				<label>researcher helped</label>
+				<description>We helped the wounded researcher. Helping others is important.</description>
+				<baseMoodEffect>2</baseMoodEffect>
+			</li>
+		</stages>
+	</ThoughtDef>
+	<ThoughtDef ParentName="CharityBase">
+		<defName>AC_CharityFulfilled_Worthwhile_IntroResearcher</defName>
+		<stages>
+			<li>
+				<label>researcher helped</label>
+				<description>We helped the wounded researcher. It was good of us.</description>
+				<baseMoodEffect>1</baseMoodEffect>
+			</li>
+		</stages>
+	</ThoughtDef>
+	<!-- Thoughts: Charity refused intro researcher -->
+	<ThoughtDef ParentName="CharityBase">
+		<defName>AC_CharityRefused_Essential_IntroResearcher</defName>
+		<stages>
+			<li>
+				<label>researcher not helped</label>
+				<description>We refused to help the wounded researcher. It was deeply immoral.</description>
+				<baseMoodEffect>-8</baseMoodEffect>
+			</li>
+		</stages>
+	</ThoughtDef>
+	<ThoughtDef ParentName="CharityBase">
+		<defName>AC_CharityRefused_Important_IntroResearcher</defName>
+		<stages>
+			<li>
+				<label>researcher not helped</label>
+				<description>We refused to help the wounded researcher. We should have tried harder.</description>
+				<baseMoodEffect>-4</baseMoodEffect>
+			</li>
+		</stages>
+	</ThoughtDef>
+	<ThoughtDef ParentName="CharityBase">
+		<defName>AC_CharityRefused_Worthwhile_IntroResearcher</defName>
+		<stages>
+			<li>
+				<label>researcher not helped</label>
+				<description>We refused to help the wounded researcher. Perhaps I am not as charitable as I thought.</description>
+				<baseMoodEffect>-2</baseMoodEffect>
+			</li>
+		</stages>
+	</ThoughtDef>
+</Defs>

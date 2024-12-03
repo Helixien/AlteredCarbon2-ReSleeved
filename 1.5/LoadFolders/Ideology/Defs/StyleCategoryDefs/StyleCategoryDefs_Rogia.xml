@@ -33,6 +33,10 @@
 				<thingDef>Gun_ChargeRifle</thingDef>
 				<styleDef>AC_Rogian_ChargeRifle</styleDef>
 			</li>
+			<li>
+				<thingDef>AC_Apparel_ChrysalisHelmet</thingDef>
+				<styleDef>AC_Rogian_Apparel_ChrysalisHelmet</styleDef>
+			</li>
 		</thingDefStyles>
 	</StyleCategoryDef>
 </Defs>

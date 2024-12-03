@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<IncidentDef ParentName="GiveQuestBase">
+		<defName>AC_GiveQuest_Intro_Researcher</defName>
+		<label>the researcher</label>
+		<questScriptDef>AC_Intro_Researcher</questScriptDef>
+		<baseChance>0</baseChance>
+		<!-- given by a special storyteller comp -->
+	</IncidentDef>
+</Defs>

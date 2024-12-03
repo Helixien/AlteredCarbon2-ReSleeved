@@ -54,4 +54,14 @@
 			<graphicClass>Graphic_Single</graphicClass>
 		</graphicData>
 	</ThingStyleDef>
+	<!-- ================================ Altered Carbon Armor ====================== -->
+	<ThingStyleDef ParentName="AC_RogianWeaponStyle">
+		<defName>AC_Rogian_Apparel_ChrysalisHelmet</defName>
+		<wornGraphicPath>Styles/Rogian/Pawn/Humanlike/Apparel/RogianChrysalisArmorHelmet/RogianChrysalisHelmet</wornGraphicPath>
+		<graphicData>
+			<texPath>Styles/Rogian/Pawn/Humanlike/Apparel/RogianChrysalisArmorHelmet/RogianChrysalisHelmet</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>0.80</drawSize>
+		</graphicData>
+	</ThingStyleDef>
 </Defs>

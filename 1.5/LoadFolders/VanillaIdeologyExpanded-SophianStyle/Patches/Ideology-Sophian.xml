@@ -14,6 +14,10 @@
 						<thingDef>AC_ActiveNeuralStack</thingDef>
 						<styleDef>AC_Sophian_ActiveNeuralStack</styleDef>
 					</li>
+					<li>
+						<thingDef>AC_Apparel_ChrysalisHelmet</thingDef>
+						<styleDef>AC_Sophian_Apparel_ChrysalisHelmet</styleDef>
+					</li>
 				</value>
 			</li>
 		</operations>

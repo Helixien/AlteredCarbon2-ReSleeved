@@ -7,7 +7,7 @@
 			<texPath>Things/Pawn/Humanlike/Apparel/ChrysalisArmorHelmet/ChrysalisHelmet</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 			<shaderType>CutoutComplex</shaderType>
-			<drawSize>(0.9, 0.9)</drawSize>
+			<drawSize>0.80</drawSize>
 		</graphicData>
 		<generateCommonality>0.4</generateCommonality>
 		<statBases>
@@ -22,9 +22,9 @@
 			<Insulation_Heat>4</Insulation_Heat>
 			<EquipDelay>5</EquipDelay>
 		</statBases>
-    <thingCategories>
-      <li>ArmorHeadgear</li>
-    </thingCategories>
+		<thingCategories>
+			<li>ArmorHeadgear</li>
+		</thingCategories>
 		<costList>
 			<ComponentSpacer>2</ComponentSpacer>
 			<Plasteel>60</Plasteel>
@@ -91,11 +91,8 @@
 		<defName>AC_Apparel_ChrysalisHelmet</defName>
 		<label>chrysalis helmet</label>
 		<description>An advanced power armor helmet, with a solid plasteel-weave shell and complex visual system for near 360 degree view angles and tactical telemetry feed, including aim assist.</description>
-		<graphicData>
-			<drawSize>0.90</drawSize>
-		</graphicData>
 		<statBases>
-			<VEF_RangedCooldownFactor>0.82</VEF_RangedCooldownFactor>
+			<VEF_RangedCooldownFactor>0.8</VEF_RangedCooldownFactor>
 		</statBases>
 		<recipeMaker>
 			<displayPriority>135</displayPriority>
@@ -109,9 +106,10 @@
 	<ThingDef ParentName="AC_ApparelArmorHelmetChrysalisMakeableBase">
 		<defName>AC_Apparel_FusilierHelmet</defName>
 		<label>fusilier helmet</label>
-		<description>A variant of chrysalis armor helmet with a heavy layer of plasteel-weave plates, next-gen solid ablative coatings and a package of several multi-spectrum sensors, including a classifier AI, allowing the user to see in darkness and smokey conditions. The integrated ballistic rangefinder provides optimal firing solutions, increasing the user’s effective range by 50%.</description>
+		<description>A variant of the chrysalis armor helmet with a heavy layer of plasteel-weave plates, next-gen solid ablative coatings and a package of several multi-spectrum sensors, including a classifier AI, allowing the user to see in darkness and smokey conditions. The integrated ballistic rangefinder provides optimal firing solutions, decreasing the user’s effective aiming delay by 50%.</description>
 		<graphicData>
 			<texPath>Things/Pawn/Humanlike/Apparel/FusilierArmorHelmet/FusilierHelmet</texPath>
+			<drawSize>0.80</drawSize>
 		</graphicData>
 		<statBases>
 			<WorkToMake>32250</WorkToMake>
@@ -139,16 +137,17 @@
 		</apparel>
 		<equippedStatOffsets>
 			<AimingDelayFactor>-0.5</AimingDelayFactor>
-			<ShootingAccuracyPawn>10</ShootingAccuracyPawn>
+			<ShootingAccuracyPawn>5</ShootingAccuracyPawn>
 		</equippedStatOffsets>
 	</ThingDef>
 	<!-- ================================ Dragoon Armour - Helmet ====================== -->
 	<ThingDef ParentName="AC_ApparelArmorHelmetChrysalisMakeableBase" MayRequire="Ludeon.RimWorld.Royalty">
 		<defName>AC_Apparel_DragoonHelmet</defName>
 		<label>dragoon helmet</label>
-		<description>A variant of chrysalis armor helmet with a simple classifier AI, to analyze terrain composition and guide the user, effectively eliminating terrain movement penalties.</description>
+		<description>A variant of the chrysalis armor helmet with a simple classifier AI, to analyze terrain composition and guide the user, effectively eliminating terrain movement penalties.</description>
 		<graphicData>
 			<texPath>Things/Pawn/Humanlike/Apparel/DragoonArmorHelmet/DragoonHelmet</texPath>
+			<drawSize>0.80</drawSize>
 		</graphicData>
 		<statBases>
 			<WorkToMake>31250</WorkToMake>
@@ -175,6 +174,46 @@
 		</equippedStatOffsets>
 		<apparel>
 			<wornGraphicPath>Things/Pawn/Humanlike/Apparel/DragoonArmorHelmet/DragoonHelmet</wornGraphicPath>
+		</apparel>
+	</ThingDef>
+	<!-- ================================ Lancier Armor - Helmet ====================== -->
+	<ThingDef ParentName="AC_ApparelArmorHelmetChrysalisMakeableBase">
+		<defName>AC_Apparel_LancierHelmet</defName>
+		<label>lancier helmet</label>
+		<description>A variant of the chrysalis armor helmet with a specialised set of ballistic rangefinder arrays including an advanced classifier AI, to analyse optimal aiming solutions and firing patterns, as well as allowing the user to see in darkness and smokey conditions. Unlike other equipment based on the chrysalis-line, this helmet offers far less protection.</description>
+		<graphicData>
+			<texPath>Things/Pawn/Humanlike/Apparel/LancierArmorHelmet/LancierHelmet</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<shaderType>CutoutComplex</shaderType>
+			<drawSize>0.80</drawSize>
+		</graphicData>
+		<statBases>
+			<WorkToMake>35250</WorkToMake>
+			<MaxHitPoints>120</MaxHitPoints>
+			<Mass>2.5</Mass>
+			<ArmorRating_Sharp>0.95</ArmorRating_Sharp>
+			<ArmorRating_Blunt>0.3</ArmorRating_Blunt>
+			<ArmorRating_Heat>0.36</ArmorRating_Heat>
+			<VEF_RangedCooldownFactor>0.5</VEF_RangedCooldownFactor>
+		</statBases>
+		<recipeMaker>
+			<displayPriority>138</displayPriority>
+		</recipeMaker>
+		<costList>
+			<ComponentSpacer>6</ComponentSpacer>
+			<Plasteel>40</Plasteel>
+			<Uranium>5</Uranium>
+		</costList>
+		<equippedStatOffsets>
+			<ShootingAccuracyPawn>5</ShootingAccuracyPawn>
+			<AimingDelayFactor>-0.6</AimingDelayFactor>
+			<AccuracyTouch>-0.25</AccuracyTouch>
+			<AccuracyShort>0.15</AccuracyShort>
+			<AccuracyMedium>0.35</AccuracyMedium>
+			<AccuracyLong>0.25</AccuracyLong>
+		</equippedStatOffsets>
+		<apparel>
+			<wornGraphicPath>Things/Pawn/Humanlike/Apparel/LancierArmorHelmet/LancierHelmet</wornGraphicPath>
 		</apparel>
 	</ThingDef>
 	<!-- ================================ Enviro Suit - For needlecaster ====================== -->
