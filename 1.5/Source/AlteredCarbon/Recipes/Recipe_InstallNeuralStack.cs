@@ -88,7 +88,8 @@ namespace AlteredCarbon
             {
                 neuralStack.NeuralData.hostPawn = null;
                 var data = hediff.NeuralData = neuralStack.NeuralData;
-                if (pawn.IsEmptySleeve() is false)
+
+                if (!pawn.IsEmptySleeve())
                 {
                     Messages.Message("AC.PawnDiedOfImplantingStack".Translate(pawn.Named("PAWN")), pawn, MessageTypeDefOf.PawnDeath);
                     var copy = new NeuralData();
@@ -109,10 +110,19 @@ namespace AlteredCarbon
                 data.OverwritePawn(pawn);
                 pawn.health.AddHediff(hediff, part);
                 ApplyMindEffects(pawn, hediff);
+                if (pawn.Faction != null && pawn.Faction != Faction.OfPlayer && !pawn.Faction.HostileTo(Faction.OfPlayer))
+                {
+                    ApplyInstalledOwnStackRelationshipChanges(pawn);
+                }
             }
             else
             {
                 pawn.health.AddHediff(hediff, part);
+                if (pawn.Faction != null && pawn.Faction != Faction.OfPlayer
+                    && pawn.Faction.HostileTo(Faction.OfPlayer) is false)
+                {
+                    TryAffectGoodwillWith(pawn.Faction, Faction.OfPlayer, 5, canSendMessage: true, false, AC_DefOf.AC_InstalledEmptyStackEvent, pawn);
+                }
             }
 
             if (ModsConfig.IdeologyActive)
@@ -120,6 +130,97 @@ namespace AlteredCarbon
                 Find.HistoryEventsManager.RecordEvent(new HistoryEvent(AC_DefOf.AC_InstalledNeuralStack, pawn.Named(HistoryEventArgsNames.Doer)));
             }
             hediff.savedStyle = neuralStack.StyleDef;
+        }
+
+        public static bool TryAffectGoodwillWith(Faction inst, Faction other, int goodwillChange, bool canSendMessage = true, bool canSendHostilityLetter = true, HistoryEventDef reason = null, GlobalTargetInfo? lookTarget = null)
+        {
+            if (!inst.CanChangeGoodwillFor(other, goodwillChange))
+            {
+                return false;
+            }
+            if (goodwillChange == 0)
+            {
+                return true;
+            }
+            int num = inst.GoodwillWith(other);
+            int num2 = inst.BaseGoodwillWith(other);
+            int num3 = Mathf.Clamp(num2 + goodwillChange, -100, 100);
+            if (num2 == num3)
+            {
+                return true;
+            }
+            if (reason != null && (inst.IsPlayer || other.IsPlayer))
+            {
+                Faction arg = (inst.IsPlayer ? other : inst);
+                Find.HistoryEventsManager.RecordEvent(new HistoryEvent(reason, arg.Named(HistoryEventArgsNames.AffectedFaction), goodwillChange.Named(HistoryEventArgsNames.CustomGoodwill)));
+            }
+            FactionRelation factionRelation = inst.RelationWith(other);
+            factionRelation.baseGoodwill = num3;
+            factionRelation.CheckKindThresholds(inst, canSendHostilityLetter, reason?.LabelCap ?? ((TaggedString)null), lookTarget ?? GlobalTargetInfo.Invalid, out var sentLetter);
+            FactionRelation factionRelation2 = other.RelationWith(inst);
+            FactionRelationKind kind = factionRelation2.kind;
+            factionRelation2.baseGoodwill = factionRelation.baseGoodwill;
+            factionRelation2.kind = factionRelation.kind;
+            bool sentLetter2;
+            if (kind != factionRelation2.kind)
+            {
+                other.Notify_RelationKindChanged(inst, kind, canSendHostilityLetter, reason?.LabelCap ?? ((TaggedString)null), lookTarget ?? GlobalTargetInfo.Invalid, out sentLetter2);
+            }
+            else
+            {
+                sentLetter2 = false;
+            }
+            int num4 = inst.GoodwillWith(other);
+            if (canSendMessage && num != num4 && !sentLetter && !sentLetter2 && Current.ProgramState == ProgramState.Playing && (inst.IsPlayer || other.IsPlayer))
+            {
+                Faction faction = (inst.IsPlayer ? other : inst);
+                string text = ((reason == null) ? ((string)"MessageGoodwillChanged".Translate(faction.name, num.ToString("F0"), num4.ToString("F0"))) : ((string)"MessageGoodwillChangedWithReason".Translate(faction.name, num.ToString("F0"), num4.ToString("F0"), reason.label)));
+                Messages.Message(text, lookTarget ?? GlobalTargetInfo.Invalid, ((float)goodwillChange > 0f) ? MessageTypeDefOf.PositiveEvent : MessageTypeDefOf.NegativeEvent);
+            }
+            return true;
+        }
+
+        private static void ApplyInstalledOwnStackRelationshipChanges(Pawn pawn)
+        {
+            int relationshipChange = 2;
+            Dictionary<GeneDef, int> geneOffsets = new()
+                    {
+                        { AC_DefOf.AC_SleeveQuality_Awful, -10 },
+                        { AC_DefOf.AC_SleeveQuality_Poor, -5 },
+                        { AC_DefOf.AC_SleeveQuality_Normal, 0 },
+                        { AC_DefOf.AC_SleeveQuality_Good, 2 },
+                        { AC_DefOf.AC_SleeveQuality_Excellent, 5 },
+                        { AC_DefOf.AC_SleeveQuality_Masterwork, 7 },
+                        { AC_DefOf.AC_SleeveQuality_Legendary, 10 }
+                    };
+
+            Dictionary<FloatRange, int> ageOffsets = new()
+                    {
+                        { new FloatRange(18, 20), 5 },
+                        { new FloatRange(20, 30), 4 },
+                        { new FloatRange(30, 40), 3 },
+                        { new FloatRange(40, 50), 2 },
+                        { new FloatRange(60, 70), -2 },
+                        { new FloatRange(70, 80), -4 },
+                        { new FloatRange(80, float.MaxValue), -5 }
+                    };
+            if (pawn.genes != null)
+            {
+                GeneDef matchingGene = geneOffsets.Keys.FirstOrDefault(gene => pawn.genes.HasActiveGene(gene));
+                if (matchingGene != null)
+                {
+                    relationshipChange += geneOffsets[matchingGene];
+                }
+            }
+
+            float age = pawn.ageTracker.AgeBiologicalYearsFloat;
+            FloatRange matchingRange = ageOffsets.Keys.FirstOrDefault(range => range.Includes(age));
+            if (matchingRange != null)
+            {
+                relationshipChange += ageOffsets[matchingRange];
+            }
+            var eventDef = relationshipChange >= 0 ? AC_DefOf.AC_InstalledNeuralStackEvent : AC_DefOf.AC_InstalledNeuralStackLowQualitySleeveEvent;
+            TryAffectGoodwillWith(pawn.Faction, Faction.OfPlayer, relationshipChange, true, false, eventDef, pawn);
         }
 
         public static void ApplyMindEffects(Pawn pawn, Hediff_NeuralStack hediff)

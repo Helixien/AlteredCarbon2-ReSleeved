@@ -132,5 +132,8 @@ namespace AlteredCarbon
         public static ThingDef AC_NanoStorageDrive;
 
         public static RulePackDef AC_NeuralMatrixNameMaker;
+        public static HistoryEventDef AC_InstalledEmptyStackEvent;
+        public static HistoryEventDef AC_InstalledNeuralStackEvent;
+        public static HistoryEventDef AC_InstalledNeuralStackLowQualitySleeveEvent;
     }
 }

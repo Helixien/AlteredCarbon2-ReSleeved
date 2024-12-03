@@ -194,7 +194,7 @@ namespace AlteredCarbon
                     }
                 };
                 var assignedPawnForInstalling = AssignedPawnForInstalling;
-                if (assignedPawnForInstalling != null)
+                if (assignedPawnForInstalling != null && this.stackCount == 1)
                 {
                     installStack.Disable("AC.AlreadyMarkedForInstalling".Translate());
                 }
