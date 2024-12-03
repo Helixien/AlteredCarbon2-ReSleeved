@@ -385,6 +385,7 @@ namespace AlteredCarbon
                 {
                     Messages.Message("AC.CannotInstallRemoteStackWithNeuralStack".Translate(), MessageTypeDefOf.RejectInput);
                 }
+                return false;
             }
             if (neuralStack != null && pawn.IsEmptySleeve() && neuralStack.IsActiveStack is false)
             {
@@ -1258,6 +1259,28 @@ namespace AlteredCarbon
         {
             var inst = obj.GetType().GetMethod("MemberwiseClone", BindingFlags.Instance | BindingFlags.NonPublic);
             return (T)inst?.Invoke(obj, null);
+        }
+
+        public static void CopyFields(this object source, object target)
+        {
+            try
+            {
+                FieldInfo[] fields = source.GetType().GetFields(BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance);
+                foreach (var field in fields)
+                {
+                    try
+                    {
+                        var value = field.GetValue(source);
+                        field.SetValue(target, value);
+                    }
+                    catch (Exception ex)
+                    {
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+            }
         }
 
         public static bool KeyExists<TKey, TValue>(this Dictionary<TKey, TValue> dictionary, TKey key)

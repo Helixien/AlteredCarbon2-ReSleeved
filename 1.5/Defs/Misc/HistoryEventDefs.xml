@@ -24,4 +24,14 @@
 		<defName>AC_InstalledEmptyStackEvent</defName>
 		<label>installed stack into faction member</label>
 	</HistoryEventDef>
+	
+	<HistoryEventDef>
+		<defName>AC_InstalledNeuralStackEvent</defName>
+		<label>resleeved faction member's stack</label>
+	</HistoryEventDef>
+	
+	<HistoryEventDef>
+		<defName>AC_InstalledNeuralStackLowQualitySleeveEvent</defName>
+		<label>resleeved faction member's stack into low quality sleeve</label>
+	</HistoryEventDef>
 </Defs>
