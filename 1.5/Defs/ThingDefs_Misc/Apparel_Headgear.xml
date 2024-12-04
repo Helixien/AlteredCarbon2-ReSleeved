@@ -206,11 +206,11 @@
 		</costList>
 		<equippedStatOffsets>
 			<ShootingAccuracyPawn>5</ShootingAccuracyPawn>
-			<AimingDelayFactor>-0.6</AimingDelayFactor>
-			<AccuracyTouch>-0.25</AccuracyTouch>
-			<AccuracyShort>0.15</AccuracyShort>
-			<AccuracyMedium>0.35</AccuracyMedium>
-			<AccuracyLong>0.25</AccuracyLong>
+			<AimingDelayFactor>-0.5</AimingDelayFactor>
+			<AccuracyTouch>-0.5</AccuracyTouch>
+			<AccuracyShort>-0.2</AccuracyShort>
+			<AccuracyMedium>0.2</AccuracyMedium>
+			<AccuracyLong>0.50</AccuracyLong>
 		</equippedStatOffsets>
 		<apparel>
 			<wornGraphicPath>Things/Pawn/Humanlike/Apparel/LancierArmorHelmet/LancierHelmet</wornGraphicPath>
