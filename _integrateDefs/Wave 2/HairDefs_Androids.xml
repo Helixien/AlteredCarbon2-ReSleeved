@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<HairDef>
+		<defName>HairExt_Chloe</defName>
+		<label>Chloe</label>
+		<styleGender>Female</styleGender>
+		<texPath>ExtendedHair/SyntheticDawn/Chloe</texPath>
+		<category>Soldier</category>
+		<styleTags>
+			<li>Urban</li>
+			<li>Rural</li>
+			<li>Soldier</li>
+			<li>HairLong</li>
+		</styleTags>
+	</HairDef>
+
+	<HairDef>
+		<defName>HairExt_Connor</defName>
+		<label>Connor</label>
+		<styleGender>Male</styleGender>
+		<texPath>ExtendedHair/SyntheticDawn/Connor</texPath>
+		<category>Soldier</category>
+		<styleTags>
+			<li>Urban</li>
+			<li>Rural</li>
+			<li>Soldier</li>
+			<li>HairShort</li>
+		</styleTags>
+	</HairDef>
+
+	<HairDef>
+		<defName>HairExt_Dolores</defName>
+		<label>Dolores</label>
+		<styleGender>Female</styleGender>
+		<texPath>ExtendedHair/SyntheticDawn/Dolores</texPath>
+		<category>Soldier</category>
+		<styleTags>
+			<li>Urban</li>
+			<li>Rural</li>
+			<li>Soldier</li>
+			<li>HairLong</li>
+		</styleTags>
+	</HairDef>
+
+	<HairDef>
+		<defName>HairExt_Kara</defName>
+		<label>Kara</label>
+		<styleGender>Female</styleGender>
+		<texPath>ExtendedHair/SyntheticDawn/Kara</texPath>
+		<category>Soldier</category>
+		<styleTags>
+			<li>Urban</li>
+			<li>Soldier</li>
+			<li>HairShort</li>
+		</styleTags>
+	</HairDef>
+
+	<HairDef>
+		<defName>HairExt_Kovacs</defName>
+		<label>Kovacs</label>
+		<styleGender>Male</styleGender>
+		<texPath>ExtendedHair/SyntheticDawn/Kovacs</texPath>
+		<category>Soldier</category>
+		<styleTags>
+			<li>Urban</li>
+			<li>Soldier</li>
+			<li>HairShort</li>
+		</styleTags>
+	</HairDef>
+
+	<HairDef>
+		<defName>HairExt_Sue</defName>
+		<label>Sue</label>
+		<styleGender>Female</styleGender>
+		<texPath>ExtendedHair/SyntheticDawn/Sue</texPath>
+		<category>Soldier</category>
+		<styleTags>
+			<li>Urban</li>
+			<li>Rural</li>
+			<li>Soldier</li>
+			<li>HairShort</li>
+		</styleTags>
+	</HairDef>
+
+</Defs>

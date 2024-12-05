@@ -1,0 +1,194 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<HairDef>
+		<defName>HairExt_CrewCut</defName>
+		<label>Crew Cut</label>
+		<styleGender>Male</styleGender>
+		<texPath>ExtendedHair/Male/CrewCut</texPath>
+		<category>Soldier</category>
+		<styleTags>
+			<li>Urban</li>
+			<li>Rural</li>
+			<li>Soldier</li>
+			<li>HairShort</li>
+		</styleTags>
+	</HairDef>
+
+    <HairDef>
+		<defName>HairExt_Fade</defName>
+		<label>Fade</label>
+		<styleGender>Male</styleGender>
+		<texPath>ExtendedHair/Male/Fade</texPath>
+		<category>Soldier</category>
+		<styleTags>
+			<li>Urban</li>
+			<li>Soldier</li>
+			<li>HairShort</li>
+		</styleTags>
+	</HairDef>
+
+    <HairDef>
+		<defName>HairExt_CombBack</defName>
+		<label>Comb Back</label>
+		<styleGender>Male</styleGender>
+		<texPath>ExtendedHair/Male/Combback</texPath>
+		<category>Soldier</category>
+		<styleTags>
+			<li>Urban</li>
+			<li>Rural</li>
+			<li>Soldier</li>
+			<li>HairShort</li>
+		</styleTags>
+	</HairDef>
+
+    <HairDef>
+		<defName>HairExt_Combover</defName>
+		<label>Comb Over</label>
+		<styleGender>Male</styleGender>
+		<texPath>ExtendedHair/Male/Combover</texPath>
+		<category>Soldier</category>
+		<styleTags>
+			<li>Urban</li>
+			<li>Rural</li>
+			<li>Soldier</li>
+			<li>HairShort</li>
+		</styleTags>
+	</HairDef>	
+
+    <HairDef>
+		<defName>HairExt_TheTrooper</defName>
+		<label>Trooper</label>
+		<styleGender>Male</styleGender>
+		<texPath>ExtendedHair/Male/Trooper</texPath>
+		<category>Soldier</category>
+		<styleTags>
+			<li>Urban</li>
+			<li>Rural</li>
+			<li>Soldier</li>
+			<li>HairShort</li>
+		</styleTags>
+	</HairDef>
+
+    <HairDef>
+		<defName>HairExt_Grimes</defName>
+		<label>Grimes</label>
+		<styleGender>Male</styleGender>
+		<texPath>ExtendedHair/Male/Grimes</texPath>
+		<category>Soldier</category>
+		<styleTags>
+			<li>Urban</li>
+			<li>Rural</li>
+			<li>Soldier</li>
+			<li>HairShort</li>
+		</styleTags>
+	</HairDef>
+
+    <HairDef>
+		<defName>HairExt_Undercut</defName>
+		<label>Under Cut</label>
+		<styleGender>MaleUsually</styleGender>
+		<texPath>ExtendedHair/Male/Undercut</texPath>
+		<category>Soldier</category>
+		<styleTags>
+			<li>Urban</li>
+			<li>Soldier</li>
+			<li>HairShort</li>
+		</styleTags>
+	</HairDef>
+	
+    <HairDef>
+		<defName>HairExt_Price</defName>
+		<label>Price</label>
+		<styleGender>Male</styleGender>
+		<texPath>ExtendedHair/Male/Price</texPath>
+		<category>Soldier</category>
+		<styleTags>
+			<li>Urban</li>
+			<li>Rural</li>
+			<li>Soldier</li>
+			<li>HairShort</li>
+		</styleTags>
+	</HairDef>
+ 
+    <HairDef>
+		<defName>HairExt_Soap</defName>
+		<label>Soap</label>
+		<styleGender>MaleUsually</styleGender>
+		<texPath>ExtendedHair/Male/Soap</texPath>
+		<category>Soldier</category>
+		<styleTags>
+			<li>Rural</li>
+			<li>Soldier</li>
+			<li>HairShort</li>
+		</styleTags>
+	</HairDef>
+	
+    <HairDef>
+		<defName>HairExt_Casual</defName>
+		<label>Casual</label>
+		<styleGender>Male</styleGender>
+		<texPath>ExtendedHair/Male/Casual</texPath>
+		<category>Soldier</category>
+		<styleTags>
+			<li>Urban</li>
+			<li>Rural</li>
+			<li>Soldier</li>
+			<li>HairShort</li>
+		</styleTags>
+	</HairDef>
+	
+    <HairDef>
+		<defName>HairExt_Curly</defName>
+		<label>Curly</label>
+		<styleGender>Male</styleGender>
+		<texPath>ExtendedHair/Male/Curly</texPath>
+		<category>Rural</category>
+		<styleTags>
+			<li>Urban</li>
+			<li>Rural</li>
+			<li>HairShort</li>
+		</styleTags>
+	</HairDef>
+
+    <HairDef>
+		<defName>HairExt_Fancy</defName>
+		<label>Fancy</label>
+		<styleGender>Male</styleGender>
+		<texPath>ExtendedHair/Male/Fancy</texPath>
+		<category>Soldier</category>
+		<styleTags>
+			<li>Urban</li>
+			<li>Soldier</li>
+			<li>HairShort</li>
+		</styleTags>
+	</HairDef>
+
+    <HairDef>
+		<defName>HairExt_Wavy</defName>
+		<label>Wavy</label>
+		<styleGender>Male</styleGender>
+		<texPath>ExtendedHair/Male/Wavy</texPath>
+		<category>Soldier</category>
+		<styleTags>
+			<li>Urban</li>
+            <li>Rural</li>
+			<li>Soldier</li>
+			<li>HairShort</li>
+		</styleTags>
+	</HairDef>
+
+    <HairDef>
+		<defName>Recruit</defName>
+		<label>Recruit</label>
+		<styleGender>Male</styleGender>
+		<texPath>ExtendedHair/Male/Recruit</texPath>
+		<category>Soldier</category>
+		<styleTags>
+			<li>Urban</li>
+			<li>Soldier</li>
+			<li>HairShort</li>
+		</styleTags>
+	</HairDef>
+
+</Defs>

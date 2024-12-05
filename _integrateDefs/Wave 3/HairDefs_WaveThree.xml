@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+
+	<HairDef>
+		<defName>HairExt_Zamaza</defName>
+		<label>Zamaza</label>
+		<styleGender>Female</styleGender>
+		<texPath>ExtendedHair/Other/Zamaza</texPath>
+		<category>Soldier</category>
+		<styleTags>
+			<li>Urban</li>
+			<li>HairLong</li>
+		</styleTags>
+	</HairDef>
+
+    <HairDef>
+		<defName>HairExt_Cobblepot</defName>
+		<label>Cobblepot</label>
+		<styleGender>Male</styleGender>
+		<texPath>ExtendedHair/Other/Cobblepot</texPath>
+		<category>Soldier</category>
+		<styleTags>
+			<li>Urban</li>
+			<li>Soldier</li>
+			<li>HairShort</li>
+		</styleTags>
+	</HairDef>
+
+    <HairDef>
+		<defName>HairExt_Cortana</defName>
+		<label>Cortana</label>
+		<styleGender>Female</styleGender>
+		<texPath>ExtendedHair/Other/CortanaH2A</texPath>
+		<category>Soldier</category>
+		<styleTags>
+			<li>Urban</li>
+			<li>Soldier</li>
+			<li>HairShort</li>
+		</styleTags>
+	</HairDef>
+
+    <HairDef>
+		<defName>HairExt_Thompkins</defName>
+		<label>Thompkins</label>
+		<styleGender>Female</styleGender>
+		<texPath>ExtendedHair/Other/Thompkins</texPath>
+		<category>Soldier</category>
+		<styleTags>
+			<li>Urban</li>
+			<li>Soldier</li>
+			<li>HairShort</li>
+		</styleTags>
+	</HairDef>
+
+    <HairDef>
+		<defName>HairExt_Triss</defName>
+		<label>Triss</label>
+		<styleGender>Female</styleGender>
+		<texPath>ExtendedHair/Other/Triss</texPath>
+		<category>Soldier</category>
+		<styleTags>
+			<li>Urban</li>
+			<li>Soldier</li>
+			<li>HairShort</li>
+		</styleTags>
+	</HairDef>
+
+    <HairDef>
+		<defName>HairExt_Yennefer</defName>
+		<label>Yennefer</label>
+		<styleGender>Female</styleGender>
+		<texPath>ExtendedHair/Other/Yennefer</texPath>
+		<category>Soldier</category>
+		<styleTags>
+			<li>Urban</li>
+			<li>Soldier</li>
+			<li>HairLong</li>
+		</styleTags>
+	</HairDef>
+
+    <HairDef>
+		<defName>HairExt_Geralt</defName>
+		<label>Geralt</label>
+		<styleGender>Male</styleGender>
+		<texPath>ExtendedHair/Other/Geralt</texPath>
+		<category>Soldier</category>
+		<styleTags>
+			<li>Urban</li>
+			<li>Soldier</li>
+			<li>HairLong</li>
+		</styleTags>
+	</HairDef>
+
+    <HairDef>
+		<defName>HairExt_EdgeDavid</defName>
+		<label>edge david</label>
+		<styleGender>Male</styleGender>
+		<texPath>ExtendedHair/Other/EdgeDavid</texPath>
+		<category>Urban</category>
+		<styleTags>
+			<li>Urban</li>
+			<li>HairShort</li>
+		</styleTags>
+	</HairDef>
+
+	<HairDef>
+		<defName>HairExt_EdgeLucy</defName>
+		<label>edge lucy</label>
+		<styleGender>Female</styleGender>
+		<texPath>ExtendedHair/Other/EdgeLucy</texPath>
+		<category>Urban</category>
+		<styleTags>
+			<li>Urban</li>
+			<li>HairShort</li>
+		</styleTags>
+	</HairDef>
+
+</Defs>
