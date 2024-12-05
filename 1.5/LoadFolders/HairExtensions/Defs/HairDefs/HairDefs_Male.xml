@@ -75,4 +75,28 @@
 			<li>Ultra</li>
 		</styleTags>
 	</HairDef>
+	<HairDef>
+		<defName>HairExt_Jackie</defName>
+		<label>Jackie</label>
+		<styleGender>Male</styleGender>
+		<texPath>ExtendedHair/YetMoreHairs/Jackie</texPath>
+		<category>Soldier</category>
+		<styleTags>
+			<li>Ultra</li>
+			<li>Urban</li>
+			<li>HairShort</li>
+		</styleTags>
+	</HairDef>
+	<HairDef>
+		<defName>HairExt_Vladislav</defName>
+		<label>Vladislav</label>
+		<styleGender>Male</styleGender>
+		<texPath>ExtendedHair/YetMoreHairs/Vladislav</texPath>
+		<category>Soldier</category>
+		<styleTags>
+			<li>Ultra</li>
+			<li>Urban</li>
+			<li>HairShort</li>
+		</styleTags>
+	</HairDef>
 </Defs>

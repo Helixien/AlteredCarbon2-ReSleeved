@@ -89,4 +89,16 @@
 			<li>Ultra</li>
 		</styleTags>
 	</HairDef>
+    <HairDef>
+        <defName>HairExt_Femvee</defName>
+        <label>Femvee</label>
+        <styleGender>Female</styleGender>
+        <texPath>ExtendedHair/YetMoreHairs/Femvee</texPath>
+        <category>Soldier</category>
+        <styleTags>
+            <li>Ultra</li>
+            <li>Urban</li>
+            <li>HairLong</li>
+        </styleTags>
+    </HairDef>
 </Defs>
