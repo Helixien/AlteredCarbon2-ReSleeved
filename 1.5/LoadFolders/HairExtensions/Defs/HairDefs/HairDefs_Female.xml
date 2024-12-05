@@ -28,7 +28,7 @@
 	</HairDef>
 	<HairDef>
 		<defName>HairExt_Dolores</defName>
-		<label>Dolores</label>
+		<label>dolores</label>
 		<styleGender>Female</styleGender>
 		<texPath>Things/Pawn/Humanlike/Hairs/Dolores</texPath>
 		<category>Soldier</category>
@@ -93,7 +93,7 @@
         <defName>HairExt_Femvee</defName>
         <label>Femvee</label>
         <styleGender>Female</styleGender>
-        <texPath>ExtendedHair/YetMoreHairs/Femvee</texPath>
+        <texPath>Things/Pawn/Humanlike/Hairs/Femvee</texPath>
         <category>Soldier</category>
         <styleTags>
             <li>Ultra</li>

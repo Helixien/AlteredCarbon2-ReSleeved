@@ -79,7 +79,7 @@
 		<defName>HairExt_Jackie</defName>
 		<label>Jackie</label>
 		<styleGender>Male</styleGender>
-		<texPath>ExtendedHair/YetMoreHairs/Jackie</texPath>
+		<texPath>Things/Pawn/Humanlike/Hairs/Jackie</texPath>
 		<category>Soldier</category>
 		<styleTags>
 			<li>Ultra</li>
@@ -91,7 +91,7 @@
 		<defName>HairExt_Vladislav</defName>
 		<label>Vladislav</label>
 		<styleGender>Male</styleGender>
-		<texPath>ExtendedHair/YetMoreHairs/Vladislav</texPath>
+		<texPath>Things/Pawn/Humanlike/Hairs/Vladislav</texPath>
 		<category>Soldier</category>
 		<styleTags>
 			<li>Ultra</li>
