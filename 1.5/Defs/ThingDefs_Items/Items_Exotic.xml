@@ -3,7 +3,7 @@
 	<ThingDef ParentName="MechResourceBase">
 		<defName>AC_NanoStorageDrive</defName>
 		<label>nano storage drive</label>
-		<description>An advanced, self-repairing, multi-dimensional optical data storage drive containing a vast amount of knowledge.\n\nA researcher can study the date on the drive to unlock neural digitalization and sleeve gestation research.</description>
+		<description>An advanced, self-repairing, multi-dimensional optical data storage drive containing a vast amount of knowledge.\n\nA researcher can study the data on the drive to unlock neural digitalization and sleeve gestation research.</description>
 		<graphicData>
 			<texPath>Things/Item/Resource/NanoStorageDrive</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
