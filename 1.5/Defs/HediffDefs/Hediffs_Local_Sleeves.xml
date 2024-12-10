@@ -47,15 +47,15 @@
 				<capMods>
 					<li>
 						<capacity>Moving</capacity>
-						<offset>-0.2</offset>
+						<offset>-0.25</offset>
 					</li>
 					<li>
 						<capacity>Manipulation</capacity>
-						<offset>-0.2</offset>
+						<offset>-0.25</offset>
 					</li>
 					<li>
 						<capacity>Sight</capacity>
-						<offset>-0.5</offset>
+						<offset>-0.1</offset>
 					</li>
 				</capMods>
 			</li>
@@ -76,7 +76,7 @@
 					</li>
 					<li>
 						<capacity>Sight</capacity>
-						<offset>-0.10</offset>
+						<offset>-0.25</offset>
 					</li>
 				</capMods>
 				<mentalStateGivers>
