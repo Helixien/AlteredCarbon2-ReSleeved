@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
 	<!-- ================================ Rogian Arm-Blade - Base ====================== -->
-	<ThingDef Name="AC_RogianArmBaldes_Base" ParentName="BodyPartBase" Abstract="True">
+	<ThingDef Name="AC_RogianArmBaldes_Base" ParentName="BodyPartBionicBase" Abstract="True">
 		<graphicData>
 			<texPath>Things/Item/Health/HealthItem</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
