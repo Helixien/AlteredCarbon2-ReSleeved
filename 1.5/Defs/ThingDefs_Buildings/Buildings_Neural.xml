@@ -4,7 +4,7 @@
 	<ThingDef ParentName="BuildingBase">
 		<defName>AC_NeuralMatrix</defName>
 		<label>neural matrix</label>
-		<description>A highly advanced and complex quantum computing array, designed for a multitude of tasks, including the storing and managing natural stacks. Neural Stacks stored inside can needlecast and remotely control any sleeve with a remote stack installed.\n\nA vast number of buildings can be connected to it to expand a neural matrix's functionality.</description>
+		<description>A highly advanced and complex quantum computing array, designed for a multitude of tasks, including the storage and management natural stacks. Neural Stacks stored inside can needlecast and remotely control any sleeve with a remote stack installed.\n\nA vast number of buildings can be connected to it to expand a neural matrix's functionality.</description>
 		<descriptionHyperlinks>
 			<ThingDef>AC_ActiveNeuralStack</ThingDef>
 			<ThingDef>AC_NeuralEditor</ThingDef>
@@ -101,7 +101,9 @@
 			</li>
 			<li Class="CompProperties_Flickable"/>
 			<li Class="CompProperties_Breakdownable"/>
-			<li Class="CompProperties_Facility"/>
+			<li Class="CompProperties_Facility">
+				<showMaxSimultaneous>False</showMaxSimultaneous>
+			</li>
 			<li Class="CompProperties_ThingContainer">
 				<compClass>AlteredCarbon.CompNeuralCache</compClass>
 				<stackLimit>10</stackLimit>
@@ -198,7 +200,7 @@
 	<ThingDef ParentName="BuildingBase">
 		<defName>AC_NeuralConnector</defName>
 		<label>neural connector</label>
-		<description>A sleek, ergonomic chair that allows for interfacing with an active neural stack that is inside a sleeve. Requires to be connected to a neural matrix to work.</description>
+		<description>A sleek, ergonomic chair that allows for interfacing with an active neural stack that is inside a sleeve. Requires being connected to a neural matrix to work.</description>
 		<thingClass>AlteredCarbon.Building_NeuralConnector</thingClass>
 		<drawerType>MapMeshAndRealTime</drawerType>
 		<tickerType>Normal</tickerType>
@@ -334,19 +336,26 @@
 			</buildingTags>
 		</building>
 		<placeWorkers>
-			<li>PlaceWorker_ShowFacilitiesConnections</li>
+			<li>PlaceWorker_NotUnderRoof</li>
+			<li>PlaceWorker_BandNode</li>
 		</placeWorkers>
+		<drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
 		<comps>
 			<li Class="CompProperties_Power">
 				<compClass>CompPowerTrader</compClass>
 				<basePowerConsumption>500</basePowerConsumption>
 			</li>
-			<li Class="CompProperties_AffectedByFacilities">
-				<linkableFacilities>
-					<li>AC_NeuralMatrix</li>
-				</linkableFacilities>
-			</li>
 			<li Class="CompProperties_Flickable"/>
+			<li Class="AlteredCarbon.CompProperties_CastingRelay">
+				<untunedEffect>BandNodeUntuned</untunedEffect>
+				<tuningEffect>BandNodeTuning</tuningEffect>
+				<tunedEffect>AC_CastingRelayTuned</tunedEffect>
+				<retuningEffect>BandNodeRetuning</retuningEffect>
+				<tuningCompleteSound>BandNodeTuning_Complete</tuningCompleteSound>
+				<powerConsumptionIdle>100</powerConsumptionIdle>
+				<tuneSeconds>10</tuneSeconds>
+				<retuneSeconds>10</retuneSeconds>
+			</li>
 		</comps>
 	</ThingDef>
 	<!-- ================================ Stack Cache ====================== -->

@@ -101,7 +101,7 @@ namespace AlteredCarbon
         [MayRequireIdeology] public static PreceptDef AC_CrossSleeving_DontCare;
         public static HistoryEventDef AC_EditedStack;
 
-        public static RecipeDef AC_ResetBiocodedThings;
+        public static RecipeDef AC_ResetBiocodedThings, AC_UnboundPersona;
         [MayRequireRoyalty] public static ThingDef AC_Apparel_DragoonHelmet;
         public static ThingDef AC_Apparel_FusilierHelmet;
         public static JobDef AC_ChargeCuirassierBelt;
@@ -111,8 +111,6 @@ namespace AlteredCarbon
         public static ThingDef AC_StackCache;
         public static ThoughtDef AC_ErasedStack;
         public static ResearchProjectDef AC_NeuralDigitalization;
-        //public static ThingDef AC_NeuralPrint;
-        //public static RecipeDef AC_RestoreStackFromNeuralPrint;
         public static ThingDef AC_NeuralConnector;
         
         public static HediffDef AC_VoiceSynthesizer;
@@ -132,5 +130,10 @@ namespace AlteredCarbon
         public static ThingDef WaterproofConduit;
         public static IncidentDef AC_GiveQuest_Intro_Researcher;
         public static ThingDef AC_NanoStorageDrive;
+
+        public static RulePackDef AC_NeuralMatrixNameMaker;
+        public static HistoryEventDef AC_InstalledEmptyStackEvent;
+        public static HistoryEventDef AC_InstalledNeuralStackEvent;
+        public static HistoryEventDef AC_InstalledNeuralStackLowQualitySleeveEvent;
     }
 }

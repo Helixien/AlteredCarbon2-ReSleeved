@@ -110,4 +110,20 @@
 			</shaderParameters>
 		</graphicData>
 	</ThingDef>
+	<!-- ================================ Casting Relay ====================== -->
+	<EffecterDef>
+		<defName>AC_CastingRelayTuned</defName>
+		<children>
+			<li>
+				<subEffecterClass>SubEffecter_Sustainer</subEffecterClass>
+				<soundDef>BandNodeTuned_Ambience</soundDef>
+			</li>
+			<li>
+				<subEffecterClass>SubEffecter_SprayerContinuous</subEffecterClass>
+				<fleckDef>AC_CastingRelayBluePulse</fleckDef>
+				<ticksBetweenMotes>120</ticksBetweenMotes>
+				<spawnLocType>OnSource</spawnLocType>
+			</li>
+		</children>
+	</EffecterDef>
 </Defs>

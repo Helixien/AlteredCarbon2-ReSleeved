@@ -13,16 +13,6 @@ using Verse.AI;
 
 namespace AlteredCarbon
 {
-    //[HarmonyPatch(typeof(Ability), "get_Casting")]
-    //public static class test
-    //{
-    //    public static void Prefix(Ability __instance)
-    //    {
-    //        Log.Clear();
-    //        Log.Message(__instance.def + " - " + __instance.pawn);
-    //    }
-    //}
-
     public struct StackInstallInfo
     {
         public RecipeDef recipe;
@@ -305,33 +295,8 @@ namespace AlteredCarbon
                 info.recipe.defaultIngredientFilter.SetAllow(AC_DefOf.AC_AllowStacksHostile, true);
             }
 
-            foreach (IngredientCount li in AC_DefOf.AC_ResetBiocodedThings.ingredients)
-            {
-                li.filter = new ThingFilterBiocodable();
-                li.filter.thingDefs ??= new List<ThingDef>();
-                foreach (ThingDef thingDef in DefDatabase<ThingDef>.AllDefs.Where(x => x.comps != null
-                    && x.HasAssignableCompFrom(typeof(CompBiocodable))))
-                {
-                    li.filter.SetAllow(thingDef, true);
-                    li.filter.thingDefs.Add(thingDef);
-                }
-            }
-            AC_DefOf.AC_ResetBiocodedThings.fixedIngredientFilter = new ThingFilterBiocodable();
-            AC_DefOf.AC_ResetBiocodedThings.fixedIngredientFilter.thingDefs ??= new List<ThingDef>();
-            foreach (ThingDef thingDef in DefDatabase<ThingDef>.AllDefs.Where(x => x.comps != null && x.HasAssignableCompFrom(typeof(CompBiocodable))))
-            {
-                AC_DefOf.AC_ResetBiocodedThings.fixedIngredientFilter.thingDefs.Add(thingDef);
-                AC_DefOf.AC_ResetBiocodedThings.fixedIngredientFilter.SetAllow(thingDef, true);
-            }
-            
-            
-            AC_DefOf.AC_ResetBiocodedThings.defaultIngredientFilter = new ThingFilterBiocodable();
-            AC_DefOf.AC_ResetBiocodedThings.defaultIngredientFilter.thingDefs ??= new List<ThingDef>();
-            foreach (ThingDef thingDef in DefDatabase<ThingDef>.AllDefs.Where(x => x.comps != null && x.HasAssignableCompFrom(typeof(CompBiocodable))))
-            {
-                AC_DefOf.AC_ResetBiocodedThings.defaultIngredientFilter.thingDefs.Add(thingDef);
-                AC_DefOf.AC_ResetBiocodedThings.defaultIngredientFilter.SetAllow(thingDef, true);
-            }
+            SetupIngredients(AC_DefOf.AC_ResetBiocodedThings, typeof(CompBiocodable), typeof(ThingFilterBiocodable));
+            SetupIngredients(AC_DefOf.AC_UnboundPersona, typeof(CompBladelinkWeapon), typeof(ThingFilterBladelink));
 
             foreach (var storyteller in DefDatabase<StorytellerDef>.AllDefs)
             {
@@ -340,7 +305,7 @@ namespace AlteredCarbon
                 {
                     storyteller.comps.Insert(compIndex + 1, new StorytellerCompProperties_SingleOnceFixed
                     {
-                        fireAfterDaysPassed = 1,
+                        fireAfterDaysPassed = 50,
                         incident = AC_DefOf.AC_GiveQuest_Intro_Researcher,
                         allowedTargetTags = new List<IncidentTargetTagDef>
                         {
@@ -348,6 +313,36 @@ namespace AlteredCarbon
                         }
                     });
                 }
+            }
+        }
+
+        private static void SetupIngredients(RecipeDef recipe, Type comp, Type filterType)
+        {
+            foreach (IngredientCount li in recipe.ingredients)
+            {
+                li.filter = Activator.CreateInstance(filterType) as ThingFilter;  
+                li.filter.thingDefs ??= new List<ThingDef>();
+                foreach (ThingDef thingDef in DefDatabase<ThingDef>.AllDefs.Where(x => x.comps != null
+                    && x.HasAssignableCompFrom(comp)))
+                {
+                    li.filter.SetAllow(thingDef, true);
+                    li.filter.thingDefs.Add(thingDef);
+                }
+            }
+            recipe.fixedIngredientFilter = Activator.CreateInstance(filterType) as ThingFilter;
+            recipe.fixedIngredientFilter.thingDefs ??= new List<ThingDef>();
+            foreach (ThingDef thingDef in DefDatabase<ThingDef>.AllDefs.Where(x => x.comps != null && x.HasAssignableCompFrom(comp)))
+            {
+                recipe.fixedIngredientFilter.thingDefs.Add(thingDef);
+                recipe.fixedIngredientFilter.SetAllow(thingDef, true);
+            }
+
+            recipe.defaultIngredientFilter = Activator.CreateInstance(filterType) as ThingFilter;
+            recipe.defaultIngredientFilter.thingDefs ??= new List<ThingDef>();
+            foreach (ThingDef thingDef in DefDatabase<ThingDef>.AllDefs.Where(x => x.comps != null && x.HasAssignableCompFrom(comp)))
+            {
+                recipe.defaultIngredientFilter.thingDefs.Add(thingDef);
+                recipe.defaultIngredientFilter.SetAllow(thingDef, true);
             }
         }
 
@@ -390,6 +385,7 @@ namespace AlteredCarbon
                 {
                     Messages.Message("AC.CannotInstallRemoteStackWithNeuralStack".Translate(), MessageTypeDefOf.RejectInput);
                 }
+                return false;
             }
             if (neuralStack != null && pawn.IsEmptySleeve() && neuralStack.IsActiveStack is false)
             {
@@ -1263,6 +1259,28 @@ namespace AlteredCarbon
         {
             var inst = obj.GetType().GetMethod("MemberwiseClone", BindingFlags.Instance | BindingFlags.NonPublic);
             return (T)inst?.Invoke(obj, null);
+        }
+
+        public static void CopyFields(this object source, object target)
+        {
+            try
+            {
+                FieldInfo[] fields = source.GetType().GetFields(BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance);
+                foreach (var field in fields)
+                {
+                    try
+                    {
+                        var value = field.GetValue(source);
+                        field.SetValue(target, value);
+                    }
+                    catch (Exception ex)
+                    {
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+            }
         }
 
         public static bool KeyExists<TKey, TValue>(this Dictionary<TKey, TValue> dictionary, TKey key)

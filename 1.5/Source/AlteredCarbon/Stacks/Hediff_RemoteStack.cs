@@ -267,7 +267,7 @@ namespace AlteredCarbon
             GiveNeedlecastEndingMessage(connectStatus);
             AC_Utils.DebugMessage("Ending needlecasting from " + Source + " to " + pawn.GetFullName());
             HediffSet_DirtyCache_Patch.looking = true;
-            UpdateSourcePawn();
+            UpdateSourcePawn(changeGlobalData: true);
             originalPawnData.OverwritePawn(pawn);
             var source = Source;
             pawn.ownership.UnclaimAll();
@@ -360,7 +360,7 @@ namespace AlteredCarbon
                     }
                     else
                     {
-                        UpdateSourcePawn();
+                        UpdateSourcePawn(changeGlobalData: false);
                     }
                 }
             }
@@ -379,13 +379,13 @@ namespace AlteredCarbon
             return null;
         }
 
-        private void UpdateSourcePawn()
+        private void UpdateSourcePawn(bool changeGlobalData)
         {
             var source = Source;
             if (source is Hediff_NeuralStack hediff)
             {
                 hediff.NeuralData.CopyFromPawn(pawn, hediff.SourceStack);
-                hediff.NeuralData.OverwritePawn(hediff.pawn);
+                hediff.NeuralData.OverwritePawn(hediff.pawn, changeGlobalData: changeGlobalData);
             }
             else if (source is NeuralStack stack)
             {

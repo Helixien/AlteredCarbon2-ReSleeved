@@ -29,7 +29,22 @@ namespace AlteredCarbon
         }
 
         public abstract HashSet<Thing> Things { get; }
-        public abstract IEnumerable<FloatMenuOption> FloatMenuOptions {  get; }
+
+        public virtual IEnumerable<FloatMenuOption> FloatMenuOptions
+        {
+            get
+            {
+                var things = Things;
+                foreach (var thing in Things)
+                {
+                    yield return new FloatMenuOption(thing.LabelCap, delegate ()
+                    {
+                        info.action(thing);
+                        Find.Targeter.StopTargeting();
+                    }, iconThing: thing, iconColor: Color.white);
+                }
+            }
+        }
 
         public void BeginTargeting()
         {

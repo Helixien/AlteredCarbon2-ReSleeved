@@ -66,7 +66,7 @@ namespace AlteredCarbon
                 }
             }
 
-            foreach (var related in original.relations.PotentiallyRelatedPawns)
+            foreach (var related in original.relations.PotentiallyRelatedPawns.ToList())
             {
                 if (related.CanThink())
                 {

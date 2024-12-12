@@ -36,9 +36,19 @@
 			<ThingDef>AC_VoiceSynthesizer</ThingDef>
 		</descriptionHyperlinks>
 		<spawnThingOnRemoved>AC_VoiceSynthesizer</spawnThingOnRemoved>
-		<addedPartProps>
-			<partEfficiency>1.1</partEfficiency>
-		</addedPartProps>
+		<stages>
+			<li>
+				<statOffsets>
+					<SocialImpact>0.2</SocialImpact>
+				</statOffsets>
+				<capMods>
+					<li>
+						<capacity>Talking</capacity>
+						<offset>0.2</offset>
+					</li>
+				</capMods>
+			</li>
+		</stages>
 	</HediffDef>
 	<!-- ================================ Voice Synthesizer - Install ====================== -->
 	<RecipeDef ParentName="SurgeryInstallImplantBase">

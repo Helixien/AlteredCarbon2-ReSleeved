@@ -100,7 +100,17 @@ namespace AlteredCarbon
             {
                 yield return g;
             }
-
+            foreach (var g in GetCommands<Command_ActionOnPersona>(new CommandInfo
+            {
+                icon = "UI/Gizmos/UnbondWeapon",
+                action = InstallUnboundPersonaBill,
+                recipe = AC_DefOf.AC_UnboundPersona,
+                defaultLabelCancel = "AC.CancelUnbondingPersona".Translate(),
+                defaultDescCancel = "AC.CancelUnbondingPersonaDesc".Translate(),
+            }))
+            {
+                yield return g;
+            }
             var matrix = ConnectedMatrix;
             if (matrix != null)
             {
@@ -174,6 +184,10 @@ namespace AlteredCarbon
                 {
                     Messages.Message("AC.AlreadyOrderedToResetBiocodedThing".Translate(), MessageTypeDefOf.CautionInput);
                 }
+                else if (bill.recipe == AC_DefOf.AC_UnboundPersona)
+                {
+                    Messages.Message("AC.AlreadyOrderedToUnboundPersonaThing".Translate(), MessageTypeDefOf.CautionInput);
+                }
                 return false;
             }
             return true;
@@ -185,6 +199,14 @@ namespace AlteredCarbon
             {
                 var thing = x.Thing;
                 billStack.AddBill(new Bill_OperateOnThing(thing, AC_DefOf.AC_ResetBiocodedThings, null));
+            }
+        }
+        public void InstallUnboundPersonaBill(LocalTargetInfo x)
+        {
+            if (CanAddOperationOn(x.Thing))
+            {
+                var thing = x.Thing;
+                billStack.AddBill(new Bill_OperateOnThing(thing, AC_DefOf.AC_UnboundPersona, null));
             }
         }
 

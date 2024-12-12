@@ -29,21 +29,5 @@ namespace AlteredCarbon
                 return things.Where(x => x.PositionHeld.Fogged(x.MapHeld) is false).ToHashSet();
             }
         }
-
-        public override IEnumerable<FloatMenuOption> FloatMenuOptions
-        {
-            get
-            {
-                var things = Things;
-                foreach (var thing in Things)
-                {
-                    yield return new FloatMenuOption(thing.LabelCap, delegate ()
-                    {
-                        info.action(thing);
-                        Find.Targeter.StopTargeting();
-                    }, iconThing: thing, iconColor: Color.white);
-                }
-            }
-        }
     }
 }

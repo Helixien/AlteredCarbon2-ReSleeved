@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<HistoryEventDef>
+		<defName>AC_InstalledNeuralStack</defName>
+		<label>installed neural stack</label>
+	</HistoryEventDef>
+	<HistoryEventDef>
+		<defName>AC_CharityFulfilled_Researcher</defName>
+		<label>researcher saved</label>
+	</HistoryEventDef>
+	<HistoryEventDef>
+		<defName>AC_CharityRefused_Researcher</defName>
+		<label>researcher refused</label>
+	</HistoryEventDef>
+</Defs>

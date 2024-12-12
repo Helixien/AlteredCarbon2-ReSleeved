@@ -32,6 +32,10 @@
 			<li MayRequire="Sierra.RTGT">RT_Feeble</li>
 			<li MayRequire="Sierra.RTGT">RT_Healthy</li>
 			<li MayRequire="Sierra.RTGT">RT_ChronicallyIll</li>
+			<li MayRequire="RedMattis.BigSmall.Core">Dwarfism</li>
+			<li MayRequire="RedMattis.BigSmall.Core">Small</li>
+			<li MayRequire="RedMattis.BigSmall.Core">Large</li>
+			<li MayRequire="RedMattis.BigSmall.Core">Gigantism</li>
 		</ignoresTraits>
 	</AlteredCarbon.StackSavingOptions>
 	<!-- ================================ Neural Stack - Base ====================== -->
@@ -58,8 +62,11 @@
 		<techHediffsTags Inherit="False">
 			<li>Ultra</li>
 		</techHediffsTags>
+		<tradeTags>
+			<li>Bionic</li>
+		</tradeTags>
 		<comps>
-			<li Class="CompProperties_Styleable" />
+			<li Class="CompProperties_Styleable"/>
 		</comps>
 	</ThingDef>
 	<HediffDef Name="AC_ImplantStackBase" Abstract="True" ParentName="ImplantHediffBase">
@@ -187,7 +194,7 @@
 		<isBad>false</isBad>
 		<addedPartProps>
 			<solid>true</solid>
-<!--			<partEfficiency>1.25</partEfficiency>
+			<!--			<partEfficiency>1.25</partEfficiency>
 			<betterThanNatural>true</betterThanNatural>-->
 		</addedPartProps>
 	</HediffDef>

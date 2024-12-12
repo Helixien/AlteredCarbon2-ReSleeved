@@ -1,46 +1,86 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using RimWorld;
 using UnityEngine;
 using Verse;
+using Verse.Grammar;
 
 namespace AlteredCarbon
 {
     [HotSwappable]
-    public class Building_NeuralMatrix : Building
+    public class Building_NeuralMatrix : Building, IRenameable
     {
         public CompPowerTrader compPower;
         public CompNeuralCache compCache;
         public CompFacility compFacility;
+        public string name;
+        public const int MaxCastingRelaysCount = 6;
+        public List<Thing> tunedCastingRelays = new List<Thing>();
         public override void SpawnSetup(Map map, bool respawningAfterLoad)
         {
             base.SpawnSetup(map, respawningAfterLoad);
             compPower = this.TryGetComp<CompPowerTrader>();
             compCache = this.TryGetComp<CompNeuralCache>();
             compFacility = this.TryGetComp<CompFacility>();
+            if (respawningAfterLoad && name.NullOrEmpty())
+            {
+                GenerateName();
+                var castingRelays = map.listerThings.ThingsOfDef(AC_DefOf.AC_CastingRelay).OrderBy(x => x.Position.DistanceTo(Position)).ToList();
+                while (castingRelays.Any() && tunedCastingRelays.Count < MaxCastingRelaysCount)
+                {
+                    var castingRelay = castingRelays.PopFront();
+                    var comp = castingRelay.TryGetComp<CompCastingRelay>();
+                    comp.tunedTo = this;
+                }
+            }
         }
 
         public bool Powered => this.compPower.PowerOn;
+        public override string Label => base.Label + (", " + name).Colorize(ColoredText.SubtleGrayColor);
+
+        public override void PostMake()
+        {
+            base.PostMake();
+            GenerateName();
+        }
+
         public float NeedleCastRange()
         {
-            var boost = 1f;
+            var range = 1f;
             if (Powered)
             {
-                foreach (var linked in LinkedBuildings.Where(x => x.def == AC_DefOf.AC_CastingRelay && x.TryGetComp<CompPowerTrader>().PowerOn))
+                foreach (var linked in tunedCastingRelays.Where(x => x.TryGetComp<CompPowerTrader>().PowerOn))
                 {
-                    boost += 5f;
+                    range += 5f;
                 }
             }
-            return boost;
+            return range;
         }
         public IEnumerable<NeuralStack> StoredNeuralStacks => compCache.innerContainer.OfType<NeuralStack>();
         public IEnumerable<NeuralStack> AllNeuralStacks => AllNeuralCaches.SelectMany(x => x.innerContainer.OfType<NeuralStack>());
         public List<Thing> LinkedBuildings => compFacility.LinkedBuildings;
         public IEnumerable<CompNeuralCache> AllNeuralCaches => LinkedBuildings.Select(x => x.TryGetComp<CompNeuralCache>()).Concat(compCache).Where(x => x != null);
+
+        public string RenamableLabel
+        {
+            get
+            {
+                return name ?? BaseLabel;
+            }
+            set
+            {
+                name = value;
+            }
+        }
+
+        public string BaseLabel => def.label.CapitalizeFirst();
+
+        public string InspectLabel => RenamableLabel;
+
         public override IEnumerable<Gizmo> GetGizmos()
         {
+            yield return new CastingRangeGizmo(this);
             foreach (var g in base.GetGizmos())
             {
                 yield return g;
@@ -93,6 +133,24 @@ namespace AlteredCarbon
                 };
                 yield return ejectAll;
             }
+        }
+
+        public override void ExposeData()
+        {
+            base.ExposeData();
+            Scribe_Values.Look(ref name, "name");
+            Scribe_Collections.Look(ref tunedCastingRelays, "tunedCastingRelays", LookMode.Reference);
+            if (Scribe.mode == LoadSaveMode.PostLoadInit)
+            {
+                tunedCastingRelays ??= new List<Thing>();
+            }
+        }
+
+        private void GenerateName()
+        {
+            GrammarRequest request = default(GrammarRequest);
+            request.Includes.Add(AC_DefOf.AC_NeuralMatrixNameMaker);
+            name = GrammarResolver.Resolve("root", request);
         }
     }
 }

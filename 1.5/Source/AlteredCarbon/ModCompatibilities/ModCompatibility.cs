@@ -238,17 +238,7 @@ namespace AlteredCarbon
                     newPart.Severity = hediff.Severity;
                     to.health.AddHediff(newPart);
                     var comp2 = newPart.TryGetComp<rjw.HediffComp_SexPart>();
-                    comp2.originalOwnerRace = comp.originalOwnerRace;
-                    comp2.previousOwner = comp.previousOwner;
-                    comp2.forcedSize = comp.forcedSize;
-                    comp2.baseSize = comp.baseSize;
-                    comp2.originalOwnerSize = comp.originalOwnerSize;
-                    comp2.fluidOverride = comp.fluidOverride;
-                    comp2.partFluidFactor = comp.partFluidFactor;
-                    comp2.possibleEggsTipString = comp.possibleEggsTipString;
-                    comp2.isTransplant = comp.isTransplant;
-                    comp2.discovered = comp.discovered;
-                    comp2.initialised = comp.initialised;
+                    comp.CopyFields(comp2);
                 }
             }
         }

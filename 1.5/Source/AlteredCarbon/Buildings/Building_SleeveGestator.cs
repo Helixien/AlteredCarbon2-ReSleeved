@@ -18,6 +18,7 @@ namespace AlteredCarbon
         public Pawn sleeveForGrowing;
 
         public BodyTypeDef targetBodyType;
+        public BeardDef targetBeard;
         public int targetSleeveAge;
         public bool innerPawnIsDead;
         public float initialRotTime;
@@ -455,6 +456,7 @@ namespace AlteredCarbon
         {
             Reset();
             targetBodyType = newSleeve.story.bodyType;
+            targetBeard = newSleeve.style.beardDef;
             targetSleeveAge = targetAge;
             xenogermToConsume = xenogerm;
             sleeveForGrowing = newSleeve;
@@ -479,6 +481,7 @@ namespace AlteredCarbon
             TotalGrowthCost = 0;
             TotalTicksToGrow = 0;
             targetBodyType = null;
+            targetBeard = null;
             xenogermToConsume = null; 
             corpseToRepurpose = null;
             sleeveForGrowing = null;
@@ -707,6 +710,14 @@ namespace AlteredCarbon
             return targetBodyType;
         }
 
+        private BeardDef GetActualBeardType()
+        {
+            if (InnerPawn.style.CanWantBeard is false)
+            {
+                return BeardDefOf.NoBeard;
+            }
+            return targetBeard;
+        }
 
         private void AdjustHealth()
         {
@@ -792,6 +803,17 @@ namespace AlteredCarbon
                 InnerPawn.story.bodyType = bodyType;
                 InnerPawn.RefreshGraphic();
             }
+
+            var beardType = GetActualBeardType();
+            if (beardType != InnerPawn.style.beardDef)
+            {
+                if (targetBeard is null)
+                {
+                    targetBeard = InnerPawn.style.beardDef;
+                }
+                InnerPawn.style.beardDef = beardType;
+                InnerPawn.RefreshGraphic();
+            }
         }
 
         public override string GetInspectString()
@@ -817,6 +839,7 @@ namespace AlteredCarbon
             Scribe_References.Look(ref corpseToRepurpose, "corpseToRepurpose");
             Scribe_Deep.Look(ref sleeveForGrowing, "sleeveForGrowing");
             Scribe_Defs.Look(ref targetBodyType, "targetBodyType");
+            Scribe_Defs.Look(ref targetBeard, "targetBeard");
             Scribe_Values.Look(ref targetSleeveAge, "targetSleeveAge", 18);
         }
     }

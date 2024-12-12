@@ -120,7 +120,7 @@
 	<ThingDef ParentName="AC_ApparelArmorChrysalisMakeableBase">
 		<defName>AC_Apparel_FusilierArmor</defName>
 		<label>fusilier armor</label>
-		<description>A variant of chrysalis armor with a heavy layer of plasteel-weave plates, next-gen solid ablative coatings and integrated smokepop synthesizers to obfuscate the wearer’s location. \n\nIncludes a package of pain inhibitors to ensure the wearer can fulfill their objective until their dying breath.</description>
+		<description>A variant of the chrysalis armor with a heavy layer of plasteel-weave plates, next-gen solid ablative coatings and integrated smokepop synthesizers to obfuscate the wearer’s location. \n\nIncludes a package of pain inhibitors to ensure the wearer can fulfill their objective until their dying breath.</description>
 		<graphicData>
 			<texPath>Things/Pawn/Humanlike/Apparel/FusilierArmor/FusilierArmor</texPath>
 		</graphicData>
@@ -161,7 +161,7 @@
 	<ThingDef ParentName="AC_ApparelArmorChrysalisMakeableBase" MayRequire="Ludeon.RimWorld.Royalty">
 		<defName>AC_Apparel_DragoonArmor</defName>
 		<label>dragoon armor</label>
-		<description>A variant of chrysalis armor with automatically recharging kinetic assistors and stability modules that allow the user to leap an impressive distance. Dragoon armor is less protective than standard chrysalis armor, but next-gen neuro-memetic assistors allow for improved mobility and easy flanking of hostile forces on the battlefield. \n\nIncludes a package of pain inhibitors to ensure the wearer can fulfil their objective until their dying breath.</description>
+		<description>A variant of the chrysalis armor with automatically recharging kinetic assistors and stability modules that allow the user to leap an impressive distance. Dragoon armor is less protective than standard chrysalis armor, but next-gen neuro-memetic assistors allow for improved mobility and easy flanking of hostile forces on the battlefield. \n\nIncludes a package of pain inhibitors to ensure the wearer can fulfil their objective until their dying breath.</description>
 		<graphicData>
 			<texPath>Things/Pawn/Humanlike/Apparel/DragoonArmor/DragoonArmor</texPath>
 		</graphicData>

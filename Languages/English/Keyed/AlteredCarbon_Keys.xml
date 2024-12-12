@@ -184,6 +184,11 @@
 	<AC.NoStacksRegistered>No stacks currently registered</AC.NoStacksRegistered>
 	<AC.NoUntrackedStacksStored>No untracked stacks stored</AC.NoUntrackedStacksStored>
 	<AC.Tile>tile</AC.Tile>
+	<AC.StackRelayTuningDesc>Tune this casting relay to a neural matrix. Tuning will take {0} to complete.</AC.StackRelayTuningDesc>
+	<AC.StackRelayRetuningDesc>Retune this casting relay to another neural matrix. Retuning will take {0} to complete.</AC.StackRelayRetuningDesc>
+	<AC.ConnectedRelays>Connected relays</AC.ConnectedRelays>
+	<AC.MaxRange>Max range:</AC.MaxRange>
+	<AC.WorldTiles>{0} world tiles</AC.WorldTiles>
 	<!-- ================================ Other ====================== -->
 	<AC.CommandCallsNeuroformers>Call psylink neuroformers</AC.CommandCallsNeuroformers>
 	<AC.SetBodyParts>Install body parts</AC.SetBodyParts>
@@ -214,8 +219,11 @@ If you edit the content from a non-colonist stack from another faction, their en
 	<AC.AlreadyOrderedToDuplicateStack>This stack is set for duplicating already on a neural editor. Remove the bill in order to add new operation on it.</AC.AlreadyOrderedToDuplicateStack>
 	<AC.AlreadyOrderedToRestoreStack>This stack is set for restoring already on a neural editor. Remove the bill in order to add new operation on it.</AC.AlreadyOrderedToRestoreStack>
 	<AC.AlreadyOrderedToResetBiocodedThing>This biocoded thing is set for resetting already on a neural editor. Remove the bill in order to add new operation on it.</AC.AlreadyOrderedToResetBiocodedThing>
+	<AC.AlreadyOrderedToUnboundPersonaThing>This persona weapon is set for unbounding already on a neural editor. Remove the bill in order to add new operation on it.</AC.AlreadyOrderedToUnboundPersonaThing>
 	<AC.ResettingBiocodedFailed>Resetting biocoded equipment: Failed, {0} destroyed!</AC.ResettingBiocodedFailed>
 	<AC.ResettingBiocodedSuccess>Resetting biocoded equipment: Successful! {0} is unlocked.</AC.ResettingBiocodedSuccess>
+	<AC.UnbondingPersonaFailed>Unbonding persona weapon: Failed, {0} destroyed!</AC.UnbondingPersonaFailed>
+	<AC.UnbondingPersonaSuccess>Unbonding persona weapon: Successful! {0} is unbound.</AC.UnbondingPersonaSuccess>
 	<AC.EditNeuralStack>Edit Neural Stack</AC.EditNeuralStack>
 	<AC.NeuralStackEditExplanation>Neural Stacks feature advanced encryption to prevent outside forces from messing with the stored consciousness. Known exploits allow for some data to be edited and rewritten at the cost of stack degradation.</AC.NeuralStackEditExplanation>
 	<AC.Backstories>Backstories</AC.Backstories>
@@ -245,6 +253,8 @@ If you edit the content from a non-colonist stack from another faction, their en
 	<AC.CancelStackDuplication>Cancel stack duplication</AC.CancelStackDuplication>
 	<AC.CancelStackDuplicationDesc>Cancel duplication of stored neural stack.</AC.CancelStackDuplicationDesc>
 	<AC.CannotModifyWhileNeedlecasting>Cannot {0} while needlecasting.</AC.CannotModifyWhileNeedlecasting>
+	<AC.CancelUnbondingPersona>Cancel unbound persona.</AC.CancelUnbondingPersona>
+	<AC.CancelUnbondingPersonaDesc>Cancel unbonding persona thing.</AC.CancelUnbondingPersonaDesc>
 	<!-- ================================ Mod Settings ====================== -->
 	<AC.EnableStackSpawning>Enable Stack Spawning</AC.EnableStackSpawning>
 	<AC.EnableStackSpawningDesc>If disabled, Neural Stacks and Archostacks will NOT spawn on any pawns. You can still craft them, get them as rewards or trade for them.</AC.EnableStackSpawningDesc>

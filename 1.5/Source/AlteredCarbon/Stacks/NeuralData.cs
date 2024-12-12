@@ -314,7 +314,6 @@ namespace AlteredCarbon
             }
         }
 
-
         public void AppendDebugData(StringBuilder stringBuilder, Pawn pawn)
         {
             if (AC_Utils.debug)
@@ -326,7 +325,7 @@ namespace AlteredCarbon
                     stringBuilder.AppendLine("pawn relations: ");
                     stringBuilder.AppendLine(pawn.relations.DirectRelations.Select(x => x.def + " - " + x.otherPawn.GetFullName()).ToStringSafeEnumerable());
                     stringBuilder.AppendLine("other relations: ");
-                    foreach (var other in pawn.relations.RelatedPawns)
+                    foreach (var other in pawn.relations.RelatedPawns.ToList())
                     {
                         if (other.relations.DirectRelations.Any())
                         {
@@ -406,7 +405,7 @@ namespace AlteredCarbon
                 relativeInvolvedInRescueQuest = pawn.relations.relativeInvolvedInRescueQuest;
                 nextMarriageNameChange = pawn.relations.nextMarriageNameChange;
                 hidePawnRelations = pawn.relations.hidePawnRelations;
-                relations = pawn.relations.DirectRelations.CopyList();
+                relations = pawn.relations.DirectRelations.Where(x => x.def != PawnRelationDefOf.Overseer).ToList();
                 otherPawnRelations = new Dictionary<DirectPawnRelation, Pawn>();
                 foreach (var rel in pawn.relations.PotentiallyRelatedPawns.ToList())
                 {
@@ -420,19 +419,8 @@ namespace AlteredCarbon
                 }
 
                 relatedPawns = pawn.relations.PotentiallyRelatedPawns.ToList();
-                foreach (Pawn otherPawn in pawn.relations.RelatedPawns)
+                foreach (Pawn otherPawn in relatedPawns.ToList())
                 {
-                    foreach (PawnRelationDef rel2 in pawn.GetRelations(otherPawn))
-                    {
-                        if (!relations.Any(r => r.def == rel2 && r.otherPawn == otherPawn))
-                        {
-                            if (!rel2.implied)
-                            {
-                                relations.Add(new DirectPawnRelation(rel2, otherPawn, 0));
-                                AC_Utils.DebugMessage(pawn.GetFullName() + " - CopyFromPawn: added otherRelation: " + rel2 + " - " + otherPawn.GetFullName());
-                            }
-                        }
-                    }
                     AC_Utils.DebugMessage(pawn.GetFullName() + " - CopyFromPawn: added otherPawn from RelatedPawns: " 
                         + otherPawn.GetFullName());
                     relatedPawns.Add(otherPawn);
@@ -943,15 +931,46 @@ namespace AlteredCarbon
 
             OverwriteThoughts(pawn);
             OverwriteTraits(pawn);
-            ResetRelationships(pawn);
 
+            //GetAllRelatedPawns(pawn, out HashSet<Pawn> allPotentialRelatedPawns, out Pawn oldOrigPawn);
+            //foreach (var other in allPotentialRelatedPawns)
+            //{
+            //    if (other?.relations != null)
+            //    {
+            //        var reflexives = other.relations.directRelations.Where(x => x.def.reflexive).ToList();
+            //        if (reflexives.Any())
+            //            Log.Message("1: " + other.GetFullName() + " - " + RelationshipsString(reflexives));
+            //    }
+            //}
+
+            ResetRelationships(pawn);
+            //foreach (var other in allPotentialRelatedPawns)
+            //{
+            //    if (other?.relations != null)
+            //    {
+            //        var reflexives = other.relations.directRelations.Where(x => x.def.reflexive).ToList();
+            //        if (reflexives.Any())
+            //            Log.Message("2: " + other.GetFullName() + " - " + RelationshipsString(reflexives));
+            //    }
+            //}
             if (changeGlobalData)
             {
                 OverwriteRelationships(pawn);
                 this.hostPawn = pawn;
                 this.pawnID = this.hostPawn.thingIDNumber;
             }
-
+            //foreach (var other in allPotentialRelatedPawns)
+            //{
+            //    if (other?.relations != null)
+            //    {
+            //        var reflexives = other.relations.directRelations.Where(x => x.def.reflexive).ToList();
+            //        if (reflexives.Any())
+            //        {
+            //            Log.Message("3: " + other.GetFullName() + " - " + RelationshipsString(reflexives));
+            //        }
+            //        Log.ResetMessageCount();
+            //    }
+            //}
             AssignAbilities(pawn);
             AssignSkills(pawn);
             SetStoryData(pawn);
