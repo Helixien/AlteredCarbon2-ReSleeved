@@ -25,6 +25,54 @@
 			</li>
 		</operations>
 	</Operation>
+	<Operation Class="ModSettingsFramework.PatchOperationModOption">
+		<defaultValue>True</defaultValue>
+		<label>Enable nano storage drive research requirement</label>
+		<tooltip>When enabled the two research projects to unlock sleeves and stacks requires the nano storage drive to be researched. If for some reason the intro quest that grants the item does not work for you, you can use this setting to get around it. (Default: True)</tooltip>
+		<id>AC_NanoStorageDriveResearch</id>
+		<category>AC_General</category>
+		<order>15</order>
+		<operations>
+			<!-- ================================ Enables item research ====================== -->
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName="AC_NanoStorageDrive"]</xpath>
+				<value>
+					<comps>
+						<li Class="CompProperties_CompAnalyzableUnlockResearch">
+							<analysisID>975261953</analysisID>
+							<!-- Analyzable -->
+							<analysisDurationHours>5</analysisDurationHours>
+							<destroyedOnAnalyzed>true</destroyedOnAnalyzed>
+							<completedLetterLabel>Nano storage drive: {RESEARCH} unlocked</completedLetterLabel>
+							<completedLetter>By studying the nano storage drive data, {PAWN_labelShort} has acquired the insight needed for neural digitalization and sleeve gestation research project(s) {RESEARCH}.\n\nYour researchers can now use research benches to begin researching how to actually use the technology.</completedLetter>
+							<completedLetterDef>PositiveEvent</completedLetterDef>
+							<!-- Interactable -->
+							<activateTexPath>UI/Icons/Study</activateTexPath>
+							<activateLabelString>Analyze...</activateLabelString>
+							<activateDescString>Analyze the nano storage drive data.</activateDescString>
+							<jobString>Analyze nano storage drive</jobString>
+							<guiLabelString>Choose who should analyze this</guiLabelString>
+							<inspectString>Can be analyzed by a colonist.</inspectString>
+							<targetingParameters>
+								<canTargetBuildings>false</canTargetBuildings>
+								<canTargetAnimals>false</canTargetAnimals>
+								<canTargetMechs>false</canTargetMechs>
+								<onlyTargetControlledPawns>true</onlyTargetControlledPawns>
+							</targetingParameters>
+						</li>
+					</comps>
+				</value>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ResearchProjectDef[defName="AC_SleeveGestation" or defName="AC_NeuralDigitalization"]</xpath>
+				<value>
+					<requiredAnalyzed>
+						<li>AC_NanoStorageDrive</li>
+					</requiredAnalyzed>
+				</value>
+			</li>
+		</operations>
+	</Operation>
 	<!-- ================ Stack Spawning ================ -->
 	<Operation Class="ModSettingsFramework.PatchOperationModOption">
 		<defaultValue>True</defaultValue>

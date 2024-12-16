@@ -12,30 +12,6 @@
 		<statBases>
 			<MarketValue>2500</MarketValue>
 		</statBases>
-		<comps>
-			<li Class="CompProperties_CompAnalyzableUnlockResearch">
-				<analysisID>975261953</analysisID>
-				<!-- Analyzable -->
-				<analysisDurationHours>5</analysisDurationHours>
-				<destroyedOnAnalyzed>true</destroyedOnAnalyzed>
-				<completedLetterLabel>Nano storage drive: {RESEARCH} unlocked</completedLetterLabel>
-				<completedLetter>By studying the nano storage drive data, {PAWN_labelShort} has acquired the insight needed for neural digitalization and sleeve gestation research project(s) {RESEARCH}.\n\nYour researchers can now use research benches to begin researching how to actually use the technology.</completedLetter>
-				<completedLetterDef>PositiveEvent</completedLetterDef>
-				<!-- Interactable -->
-				<activateTexPath>UI/Icons/Study</activateTexPath>
-				<activateLabelString>Analyze...</activateLabelString>
-				<activateDescString>Analyze the nano storage drive data.</activateDescString>
-				<jobString>Analyze nano storage drive</jobString>
-				<guiLabelString>Choose who should analyze this</guiLabelString>
-				<inspectString>Can be analyzed by a colonist.</inspectString>
-				<targetingParameters>
-					<canTargetBuildings>false</canTargetBuildings>
-					<canTargetAnimals>false</canTargetAnimals>
-					<canTargetMechs>false</canTargetMechs>
-					<onlyTargetControlledPawns>true</onlyTargetControlledPawns>
-				</targetingParameters>
-			</li>
-		</comps>
 	</ThingDef>
 	<!--=============== Neural Print ====================-->
 	<!-- disabled for now

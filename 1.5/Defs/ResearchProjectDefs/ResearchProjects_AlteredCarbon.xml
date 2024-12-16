@@ -20,9 +20,6 @@
 		<prerequisites>
 			<li>MicroelectronicsBasics</li>
 		</prerequisites>
-		<requiredAnalyzed>
-			<li>AC_NanoStorageDrive</li>
-		</requiredAnalyzed>
 		<generalRules>
 			<rulesStrings>
 				<li>subject->sleeve gestation</li>
@@ -46,9 +43,6 @@
 		<prerequisites>
 			<li>AdvancedFabrication</li>
 		</prerequisites>
-		<requiredAnalyzed>
-			<li>AC_NanoStorageDrive</li>
-		</requiredAnalyzed>
 		<generalRules>
 			<rulesStrings>
 				<li>subject->neural digitalization</li>
