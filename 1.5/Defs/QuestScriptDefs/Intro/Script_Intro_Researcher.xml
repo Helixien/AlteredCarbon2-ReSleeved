@@ -4,7 +4,7 @@
 	<QuestScriptDef>
 		<defName>AC_Intro_Researcher</defName>
 		<rootMinPoints>0</rootMinPoints>
-		<expireDaysRange>1</expireDaysRange>
+		<expireDaysRange>2</expireDaysRange>
 		<defaultChallengeRating>1</defaultChallengeRating>
 		<isRootSpecial>true</isRootSpecial>
 		<defaultCharity>true</defaultCharity>
