@@ -105,7 +105,7 @@
         <defName>HairExt_Parabangs</defName>
         <label>Parabangs</label>
         <styleGender>Female</styleGender>
-        <texPath>ExtendedHair/YetMoreHairs/Parabangs</texPath>
+        <texPath>Things/Pawn/Humanlike/Hairs/Parabangs</texPath>
         <category>Soldier</category>
         <styleTags>
             <li>Ultra</li>
