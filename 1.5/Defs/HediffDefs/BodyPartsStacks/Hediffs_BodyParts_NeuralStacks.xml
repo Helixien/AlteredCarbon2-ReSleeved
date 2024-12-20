@@ -100,7 +100,7 @@
 		<costList>
 			<Plasteel>12</Plasteel>
 			<Steel>4</Steel>
-			<ComponentSpacer>4</ComponentSpacer>
+			<ComponentSpacer>2</ComponentSpacer>
 		</costList>
 		<thingSetMakerTags>
 			<li>RewardStandardLowFreq</li>

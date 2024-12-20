@@ -16,5 +16,6 @@
 		<li IfModActive="vanillaracesexpanded.android">1.5/LoadFolders/VanillaRacesExpanded-Android</li>
 		<li IfModActive="VanillaExpanded.Ideo.SophianStyle">1.5/LoadFolders/VanillaIdeologyExpanded-SophianStyle</li>
 		<li IfModActive="VanillaExpanded.VFEA">1.5/LoadFolders/VanillaFactionsExpanded-Ancients</li>
+		<li IfModActive="OskarPotocki.VFE.Megacorp">1.5/LoadFolders/VanillaFactionsExpanded-Megacorps</li>
 	</v1.5>
 </loadFolders>

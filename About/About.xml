@@ -6,7 +6,7 @@
 		<li>1.5</li>
 		<li>1.4</li>
 	</supportedVersions>
-	<modVersion IgnoreIfNoMatchingField="True">6.0.2-Sov-rev5</modVersion>
+	<modVersion IgnoreIfNoMatchingField="True">6.0.2-Sov-rev6</modVersion>
 	<packageId>hlx.UltratechAlteredCarbon</packageId>
 	<description>This module adds ultratech technology, predominantly from “Altered Carbon”, the popular Netflix show and book series by Richard K. Morgan, into Rimworld.</description>
 	<url>https://steamcommunity.com/sharedfiles/filedetails/?id=2196278117</url>
@@ -31,5 +31,6 @@
 		<li>OskarPotocki.VFE.Pirates</li>
 		<li>OskarPotocki.VFE.Vikings</li>
 		<li>vanillaracesexpanded.android</li>
+		<li>OskarPotocki.VFE.Megacorp</li>
 	</loadAfter>
 </ModMetaData>
