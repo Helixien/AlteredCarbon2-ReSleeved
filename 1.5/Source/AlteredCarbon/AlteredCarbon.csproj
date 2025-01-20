@@ -88,7 +88,7 @@
       <Private>False</Private>
     </Reference>
     <Reference Include="VSE">
-      <HintPath>..\..\..\..\..\..\..\workshop\content\294100\2854967442\1.5\Assemblies\VSE.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\workshop\content\294100\3400246558\1.5\Assemblies\VSE.dll</HintPath>
       <Private>False</Private>
     </Reference>
   </ItemGroup>

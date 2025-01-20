@@ -15,7 +15,7 @@ namespace AlteredCarbon
                 {
                     __result = false;
                 }
-                else if (neuralStack.NeuralData.faction != trader.Faction)
+                else if (trader is null || neuralStack.NeuralData.faction != trader.Faction)
                 {
                     __result = false;
                 }
