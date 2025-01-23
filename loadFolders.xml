@@ -8,6 +8,7 @@
 		<li IfModActive="vanillaracesexpanded.android">1.4/LoadFolders/VanillaRacesExpanded-Android</li>
 	</v1.4>
 	<v1.5>
+		<li IfModNotActive="ReTextured.HD">LowRes_Textures</li>
 		<li>/</li>
 		<li>1.5</li>
 		<li IfModActive="Ludeon.RimWorld.Royalty">1.5/LoadFolders/Royalty</li>
