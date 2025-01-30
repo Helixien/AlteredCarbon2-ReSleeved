@@ -32,25 +32,21 @@ namespace AlteredCarbon
             RJWData rjwData = null;
             try
             {
-                rjw.DataStore dataStore = Find.World.GetComponent<rjw.DataStore>();
-                if (dataStore != null)
+                rjwData = new RJWData();
+                rjw.PawnData pawnData = rjw.PawnExtensions.GetRJWPawnData(pawn);
+                if (pawnData != null)
                 {
-                    rjwData = new RJWData();
-                    rjw.PawnData pawnData = dataStore.GetPawnData(pawn);
-                    if (pawnData != null)
+                    foreach (FieldInfo fieldInfo in typeof(rjw.PawnData).GetFields())
                     {
-                        foreach (FieldInfo fieldInfo in typeof(rjw.PawnData).GetFields())
+                        try
                         {
-                            try
-                            {
-                                FieldInfo newField = rjwData.GetType().GetField(fieldInfo.Name);
-                                newField.SetValue(rjwData, fieldInfo.GetValue(pawnData));
-                            }
-                            catch { }
+                            FieldInfo newField = rjwData.GetType().GetField(fieldInfo.Name);
+                            newField.SetValue(rjwData, fieldInfo.GetValue(pawnData));
                         }
+                        catch { }
                     }
-
                 }
+
                 rjw.CompRJW comp = ThingCompUtility.TryGetComp<rjw.CompRJW>(pawn);
                 if (comp != null)
                 {
@@ -79,30 +75,26 @@ namespace AlteredCarbon
         {
             try
             {
-                rjw.DataStore dataStore = Find.World.GetComponent<rjw.DataStore>();
-                if (dataStore != null)
+                rjw.PawnData pawnData = rjw.PawnExtensions.GetRJWPawnData(pawn);
+                if (pawnData != null)
                 {
-                    rjw.PawnData pawnData = dataStore.GetPawnData(pawn);
-                    if (pawnData != null)
+                    foreach (FieldInfo fieldInfo in typeof(RJWData).GetFields())
                     {
-                        foreach (FieldInfo fieldInfo in typeof(RJWData).GetFields())
+                        try
                         {
-                            try
-                            {
-                                FieldInfo newField = pawnData.GetType().GetField(fieldInfo.Name);
-                                newField.SetValue(pawnData, fieldInfo.GetValue(rjwData));
-                            }
-                            catch { }
+                            FieldInfo newField = pawnData.GetType().GetField(fieldInfo.Name);
+                            newField.SetValue(pawnData, fieldInfo.GetValue(rjwData));
                         }
-                        if (pawnData.Hero)
+                        catch { }
+                    }
+                    if (pawnData.Hero)
+                    {
+                        foreach (Pawn otherPawn in PawnsFinder.AllMapsCaravansAndTravelingTransportPods_Alive_OfPlayerFaction)
                         {
-                            foreach (Pawn otherPawn in PawnsFinder.AllMapsCaravansAndTravelingTransportPods_Alive_OfPlayerFaction)
+                            if (otherPawn != pawn)
                             {
-                                if (otherPawn != pawn)
-                                {
-                                    rjw.PawnData otherPawnData = dataStore.GetPawnData(otherPawn);
-                                    otherPawnData.Hero = false;
-                                }
+                                rjw.PawnData otherPawnData = rjw.PawnExtensions.GetRJWPawnData(otherPawn);
+                                otherPawnData.Hero = false;
                             }
                         }
                     }
