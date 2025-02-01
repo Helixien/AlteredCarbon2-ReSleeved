@@ -894,7 +894,7 @@ namespace AlteredCarbon
 
         public static IEnumerable<Hediff_MissingPart> GetMissingParts(this Pawn pawn)
         {
-            return pawn.health.hediffSet.hediffs.OfType<Hediff_MissingPart>();
+            return pawn?.health?.hediffSet?.hediffs?.OfType<Hediff_MissingPart>() ?? new List<Hediff_MissingPart>();
         }
 
         public static Hediff_NeuralStack GetNeuralStack(this Pawn pawn)
