@@ -15,7 +15,7 @@ public class MentalBreakWorker_TryStart_Patch
             return false;
         }
         
-        if (pawn.health.hediffSet.HasHediff(AC_DefOf.AC_MentalFuse))
+        if (pawn.health.hediffSet.TryGetHediff(AC_DefOf.AC_MentalFuse, out Hediff acMentalFuse))
         {
             //Send Letter
             var letter = LetterMaker.MakeLetter(
@@ -45,6 +45,24 @@ public class MentalBreakWorker_TryStart_Patch
                     "AC.MentalFuseTraumaLabel".Translate(),
                     "AC.MentalFuseTraumaText".Translate(pawn.Named("PAWN")).AdjustedFor(pawn),
                     LetterDefOf.NegativeEvent, pawn);
+            }
+
+            if (AC_Utils.generalSettings.singleUseMentalFuses)
+            {
+                pawn.health.RemoveHediff(acMentalFuse);
+                Messages.Message("AC.MentalFuseBlownText".Translate(pawn.Named("PAWN")), MessageTypeDefOf.NegativeHealthEvent);
+
+                if (AC_Utils.generalSettings.singleUseMentalFusePop)
+                {
+                    Effecter effecter = EffecterDefOf.ExtinguisherExplosion.Spawn();
+                    effecter.Trigger(new TargetInfo(pawn.Position, pawn.MapHeld),
+                        new TargetInfo(pawn.Position, pawn.MapHeld));
+                    effecter.Cleanup();
+                    GenExplosion.DoExplosion(pawn.Position, pawn.MapHeld, 2, DamageDefOf.Extinguish, null,
+                        explosionSound: SoundDefOf.Explosion_FirefoamPopper,
+                        postExplosionSpawnThingDef: ThingDefOf.Filth_FireFoam, postExplosionSpawnChance: 1f,
+                        applyDamageToExplosionCellsNeighbors: true);
+                }
             }
 
             return false;
