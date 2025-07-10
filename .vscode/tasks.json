@@ -8,7 +8,7 @@
             "type": "shell",
             "command": "msbuild",
             "args": [
-                "${workspaceFolder}/1.5/Source/AlteredCarbon/AlteredCarbon.csproj",
+                "${workspaceFolder}/1.6/Source/AlteredCarbon/AlteredCarbon.csproj",
                 "/property:GenerateFullPaths=true",
                 "/t:build",
                 "/consoleloggerparameters:NoSummary"

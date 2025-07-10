@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	<Operation Class="PatchOperationSequence">
+		<operations>
+			<!-- ================================ Add Hyperlinks ====================== -->
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName="GeneAssembler"]/descriptionHyperlinks</xpath>
+				<value>
+					<ThingDef>AC_SleeveGestator</ThingDef>
+				</value>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName="Xenogerm"]/descriptionHyperlinks</xpath>
+				<value>
+					<ThingDef>AC_SleeveGestator</ThingDef>
+				</value>
+			</li>
+			<!-- ================================ Item size adjustments ====================== -->
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName="SignalChip" or defName="PowerfocusChip" or defName="NanostructuringChip"]/graphicData</xpath>
+				<value>
+					<drawSize>0.80</drawSize>
+				</value>
+			</li>
+		</operations>
+	</Operation>
+</Patch>

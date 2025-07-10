@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<HistoryEventDef>
+		<defName>AC_UsedArchotechStack</defName>
+		<label>killed faction member with archotech stack</label>
+	</HistoryEventDef>
+	
+	<HistoryEventDef>
+		<defName>AC_EditedStack</defName>
+		<label>edited stack of faction member</label>
+	</HistoryEventDef>
+	
+	<HistoryEventDef>
+		<defName>AC_ErasedStackEvent</defName>
+		<label>erased stack of faction member</label>
+	</HistoryEventDef>
+	
+	<HistoryEventDef>
+		<defName>AC_DuplicatedStackEvent</defName>
+		<label>duplicated stack of faction member</label>
+	</HistoryEventDef>
+	
+	<HistoryEventDef>
+		<defName>AC_InstalledEmptyStackEvent</defName>
+		<label>installed stack into faction member</label>
+	</HistoryEventDef>
+	
+	<HistoryEventDef>
+		<defName>AC_InstalledNeuralStackEvent</defName>
+		<label>resleeved faction member's stack</label>
+	</HistoryEventDef>
+	
+	<HistoryEventDef>
+		<defName>AC_InstalledNeuralStackLowQualitySleeveEvent</defName>
+		<label>resleeved faction member's stack into low quality sleeve</label>
+	</HistoryEventDef>
+</Defs>

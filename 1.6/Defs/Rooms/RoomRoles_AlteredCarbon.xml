@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<!-- ================================ Laboratory Room Type ====================== -->
+	<RoomRoleDef>
+		<defName>AC_Laboratory</defName>
+		<label>laboratory room</label>
+		<workerClass>AlteredCarbon.RoomRoleWorker_UltraTech</workerClass>
+		<relatedStats>
+			<li>Cleanliness</li>
+			<li>Space</li>
+		</relatedStats>
+	</RoomRoleDef>
+	<!-- ================================ Neural Hub Room Type ====================== -->
+	<RoomRoleDef>
+		<defName>AC_NeuralControl</defName>
+		<label>Neural control room</label>
+		<workerClass>AlteredCarbon.RoomRoleWorker_NeuralControl</workerClass>
+		<relatedStats>
+			<li>Cleanliness</li>
+			<li>Space</li>
+		</relatedStats>
+	</RoomRoleDef>
+</Defs>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	<Operation Class="PatchOperationSequence">
+		<operations>
+			<!-- ================================ Add style to culture ====================== -->
+			<li Class="PatchOperationConditional">
+				<xpath>/Defs/CultureDef[defName="Astropolitan"]/thingStyleCategories</xpath>
+				<nomatch Class="PatchOperationAdd">
+					<xpath>/Defs/CultureDef[defName="Astropolitan"]</xpath>
+					<value>
+						<thingStyleCategories>
+							<li MayRequire="Ludeon.RimWorld.Ideology">
+								<category>AC_Rogian</category>
+								<priority>5</priority>
+							</li>
+						</thingStyleCategories>
+					</value>
+				</nomatch>
+				<match Class="PatchOperationAdd">
+					<xpath>/Defs/CultureDef[defName="Astropolitan"]/thingStyleCategories</xpath>
+					<value>
+						<li MayRequire="Ludeon.RimWorld.Ideology">
+							<category>AC_Rogian</category>
+							<priority>5</priority>
+						</li>
+					</value>
+				</match>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/PreceptDef[@Name="CharityPositiveBase"]/comps</xpath>
+				<value>
+					<li Class="PreceptComp_DevelopmentPoints">
+						<eventDef>AC_CharityFulfilled_Researcher</eventDef>
+						<points>1</points>
+					</li>
+				</value>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/PreceptDef[defName="Charity_Essential"]/comps</xpath>
+				<value>
+					<li Class="PreceptComp_KnowsMemoryThought">
+						<eventDef>AC_CharityFulfilled_Researcher</eventDef>
+						<thought>AC_CharityFulfilled_Essential_IntroResearcher</thought>
+					</li>
+					<li Class="PreceptComp_KnowsMemoryThought">
+						<eventDef>AC_CharityRefused_Researcher</eventDef>
+						<thought>AC_CharityRefused_Essential_IntroResearcher</thought>
+					</li>
+				</value>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/PreceptDef[defName="Charity_Important"]/comps</xpath>
+				<value>
+					<li Class="PreceptComp_KnowsMemoryThought">
+						<eventDef>AC_CharityFulfilled_Researcher</eventDef>
+						<thought>AC_CharityFulfilled_Important_IntroResearcher</thought>
+					</li>
+					<li Class="PreceptComp_KnowsMemoryThought">
+						<eventDef>AC_CharityRefused_Researcher</eventDef>
+						<thought>AC_CharityRefused_Important_IntroResearcher</thought>
+					</li>
+				</value>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/PreceptDef[defName="Charity_Worthwhile"]/comps</xpath>
+				<value>
+					<li Class="PreceptComp_KnowsMemoryThought">
+						<eventDef>AC_CharityFulfilled_Researcher</eventDef>
+						<thought>AC_CharityFulfilled_Worthwhile_IntroResearcher</thought>
+					</li>
+					<li Class="PreceptComp_KnowsMemoryThought">
+						<eventDef>AC_CharityRefused_Researcher</eventDef>
+						<thought>AC_CharityRefused_Worthwhile_IntroResearcher</thought>
+					</li>
+				</value>
+			</li>
+		</operations>
+	</Operation>
+</Patch>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<!-- Pawn for Intro Quest -->
+	<PawnKindDef ParentName="SpaceRefugeeBase">
+		<defName>AC_ResearcherRefugee</defName>
+		<label>researcher</label>
+		<minGenerationAge>50</minGenerationAge>
+		<backstoryFiltersOverride>
+			<li>
+				<categories>
+					<li>AC_ResearcherQuest</li>
+				</categories>
+			</li>
+		</backstoryFiltersOverride>
+		<humanPregnancyChance>0.02</humanPregnancyChance>
+		<isFighter>false</isFighter>
+		<disallowedTraits>
+			<li>Nudist</li>
+		</disallowedTraits>
+		<initialWillRange>0</initialWillRange>
+		<initialResistanceRange>0~0</initialResistanceRange>
+		<gearHealthRange>0.2~0.75</gearHealthRange>
+		<itemQuality>Good</itemQuality>
+		<apparelIgnoreSeasons>true</apparelIgnoreSeasons>
+		<apparelIgnorePollution>true</apparelIgnorePollution>
+		<apparelMoney>2000~3200</apparelMoney>
+		<apparelAllowHeadgearChance>0.3</apparelAllowHeadgearChance>
+		<apparelTags>
+			<li>IndustrialBasic</li>
+		</apparelTags>
+		<apparelRequired>
+			<li MayRequire="Ludeon.RimWorld.Anomaly">Apparel_LabCoat</li>
+		</apparelRequired>
+		<apparelColor>(250,250,250)</apparelColor>
+		<skills>
+			<li>
+				<skill>Intellectual</skill>
+				<range>10</range>
+			</li>
+		</skills>
+		<inventoryOptions>
+			<skipChance>30</skipChance>
+			<subOptionsChooseOne>
+				<li>
+					<thingDef>Silver</thingDef>
+					<countRange>25~125</countRange>
+				</li>
+				<li>
+					<thingDef>MedicineUltratech</thingDef>
+					<countRange>1~2</countRange>
+				</li>
+			</subOptionsChooseOne>
+		</inventoryOptions>
+		<xenotypeSet Inherit="False">
+			<xenotypeChances>
+				<Genie>0.1</Genie>
+			</xenotypeChances>
+		</xenotypeSet>
+		<modExtensions>
+			<li Class="AlteredCarbon.StackSpawnModExtension">
+				<chanceToSpawnWithStack>100</chanceToSpawnWithStack>
+			</li>
+		</modExtensions>
+	</PawnKindDef>
+</Defs>

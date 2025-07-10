@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<!-- Altered Carbon Intro Quest -->
+	<QuestScriptDef>
+		<defName>AC_Intro_Researcher</defName>
+		<rootMinPoints>0</rootMinPoints>
+		<expireDaysRange>2</expireDaysRange>
+		<defaultChallengeRating>1</defaultChallengeRating>
+		<isRootSpecial>true</isRootSpecial>
+		<defaultCharity>true</defaultCharity>
+		<successHistoryEvent MayRequire="Ludeon.RimWorld.Ideology">AC_CharityFulfilled_Researcher</successHistoryEvent>
+		<failedOrExpiredHistoryEvent MayRequire="Ludeon.RimWorld.Ideology">AC_CharityRefused_Researcher</failedOrExpiredHistoryEvent>
+		<questNameRules>
+			<rulesStrings>
+				<li>questName->The [adjAny] researcher</li>
+				<!-- Pieces -->
+				<li>adjAny->waning</li>
+				<li>adjAny->fleeing</li>
+				<li>adjAny->distressed</li>
+				<li>adjAny->dying</li>
+			</rulesStrings>
+		</questNameRules>
+		<questDescriptionRules>
+			<rulesStrings>
+				<li>questDescription->[asker_nameFull], [asker_titleIndef], is calling from nearby and explains in a few quick words that [asker_pronoun] has been exiled from [asker_possessive] home world for reasons they won't disclose and got attacked right after crash landing on this planet. [asker_pronoun] managed to escape, but is now badly wounded and in need of medical attention.
+\n\n[asker_nameDef] promises to be able to make it worth your while if you grant them a safe place to stay and get patched up at [map_definite].
+\n\n[asker_pronoun] refuses to answer any more questions, reiterating that their wounds need treatment as soon as possible.</li>
+			</rulesStrings>
+		</questDescriptionRules>
+		<root Class="QuestNode_Sequence">
+			<nodes>
+				<li Class="QuestNode_GetMap" />
+				<li Class="QuestNode_GetWalkInSpot" />
+				<!-- Get asker -->
+				<li Class="QuestNode_Set">
+					<name>raidPoints</name>
+					<value>$points</value>
+				</li>
+				<li Class="QuestNode_GeneratePawn">
+					<kindDef>AC_ResearcherRefugee</kindDef>
+					<storeAs>asker</storeAs>
+					<forbidAnyTitle>True</forbidAnyTitle>
+				</li>
+				<!-- Spawn joiner -->
+				<li Class="QuestNode_PawnsArrive">
+					<pawns>$asker</pawns>
+					<walkInSpot>$walkInSpot</walkInSpot>
+					<joinPlayer>true</joinPlayer>
+					<customLetterText TKey="LetterLabelAskerBecameHostile">{BASETEXT}\n\nBecause you accepted [asker_nameDef] the raid that is hunting [asker_objective] will arrive soon.</customLetterText>
+					<isSingleReward>true</isSingleReward>
+					<rewardDetailsHidden>true</rewardDetailsHidden>
+				</li>
+				<li Class="AlteredCarbon.QuestNode_DamageAndGiveItems">
+					<pawn>$asker</pawn>
+				</li>
+				<li Class="VEF.Storyteller.QuestNode_GetFaction">
+					<factionDef>Pirate</factionDef>
+					<storeAs>enemyFaction</storeAs>
+					<allowEnemy>true</allowEnemy>
+				</li>
+				<!-- Raid -->
+				<li Class="QuestNode_Set">
+					<name>raidDelayTicks</name>
+					<value>$(roundToTicksRough(randInt(2800, 4400)))</value>
+				</li>
+				<li Class="QuestNode_Delay">
+					<delayTicks>$raidDelayTicks</delayTicks>
+					<node Class="QuestNode_Sequence">
+						<nodes>
+							<li Class="QuestNode_SubScript">
+								<def>Util_Raid</def>
+								<prefix>raid</prefix>
+								<parms>
+									<inSignal>$inSignal</inSignal>
+									<map>$map</map>
+									<enemyFaction>$enemyFaction</enemyFaction>
+									<points>$raidPoints</points>
+									<walkInSpot>$walkInSpot</walkInSpot>
+									<customLetterLabel TKey="LetterLabelLoyaltySquad">{BASELABEL}: Raid</customLetterLabel>
+									<customLetterText TKey="LetterTextLoyaltySquad">{BASETEXT}\n\nThis is the raid squad that was hunting [../asker_nameFull]. It seems they came to finish the job.</customLetterText>
+								</parms>
+							</li>
+							<li Class="QuestNode_End">
+								<outcome>Success</outcome>
+							</li>
+						</nodes>
+					</node>
+				</li>
+			</nodes>
+		</root>
+	</QuestScriptDef>
+</Defs>

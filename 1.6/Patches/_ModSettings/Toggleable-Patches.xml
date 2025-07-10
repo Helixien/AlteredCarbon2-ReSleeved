@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	<Operation Class="AlteredCarbon.AlteredCarbonSettingsWorker_General">
+		<id>AlteredCarbon_ModSettings_General</id>
+		<order>0</order>
+		<category>AC_General</category>
+		<showTooltipAsTinyText>false</showTooltipAsTinyText>
+	</Operation>
+	<!-- ================ Chrysalis Armor Tweaks ================ -->
+	<Operation Class="ModSettingsFramework.PatchOperationModOption">
+		<defaultValue>False</defaultValue>
+		<label>Chrysalis armor covers hands and feets</label>
+		<tooltip>When enabled the chrysalis covers pawns hands and feets as well. (Default: False)</tooltip>
+		<id>AC_ChrysalisFullBody</id>
+		<category>AC_General</category>
+		<order>20</order>
+		<operations>
+			<!-- ================================ Spawns stack on core pirate pawns ====================== -->
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[@Name="AC_ApparelArmorChrysalisMakeableBase" or defName="AC_Apparel_HayabusaArmor"]/apparel/bodyPartGroups</xpath>
+				<value>
+					<li>Hands</li>
+					<li>Feet</li>
+				</value>
+			</li>
+		</operations>
+	</Operation>
+	<Operation Class="ModSettingsFramework.PatchOperationModOption">
+		<defaultValue>True</defaultValue>
+		<label>Enable nano storage drive research requirement</label>
+		<tooltip>When enabled the two research projects to unlock sleeves and stacks requires the nano storage drive to be researched. If for some reason the intro quest that grants the item does not work for you, you can use this setting to get around it. (Default: True)</tooltip>
+		<id>AC_NanoStorageDriveResearch</id>
+		<category>AC_General</category>
+		<order>15</order>
+		<operations>
+			<!-- ================================ Enables item research ====================== -->
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName="AC_NanoStorageDrive"]</xpath>
+				<value>
+					<comps>
+						<li Class="CompProperties_CompAnalyzableUnlockResearch">
+							<analysisID>975261953</analysisID>
+							<!-- Analyzable -->
+							<analysisDurationHours>5</analysisDurationHours>
+							<destroyedOnAnalyzed>true</destroyedOnAnalyzed>
+							<completedLetterLabel>Nano storage drive: {RESEARCH} unlocked</completedLetterLabel>
+							<completedLetter>By studying the nano storage drive data, {PAWN_labelShort} has acquired the insight needed for neural digitalization and sleeve gestation research project(s) {RESEARCH}.\n\nYour researchers can now use research benches to begin researching how to actually use the technology.</completedLetter>
+							<completedLetterDef>PositiveEvent</completedLetterDef>
+							<!-- Interactable -->
+							<activateTexPath>UI/Icons/Study</activateTexPath>
+							<activateLabelString>Analyze...</activateLabelString>
+							<activateDescString>Analyze the nano storage drive data.</activateDescString>
+							<jobString>Analyze nano storage drive</jobString>
+							<guiLabelString>Choose who should analyze this</guiLabelString>
+							<inspectString>Can be analyzed by a colonist.</inspectString>
+							<targetingParameters>
+								<canTargetBuildings>false</canTargetBuildings>
+								<canTargetAnimals>false</canTargetAnimals>
+								<canTargetMechs>false</canTargetMechs>
+								<onlyTargetControlledPawns>true</onlyTargetControlledPawns>
+							</targetingParameters>
+						</li>
+					</comps>
+				</value>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ResearchProjectDef[defName="AC_SleeveGestation" or defName="AC_NeuralDigitalization"]</xpath>
+				<value>
+					<requiredAnalyzed>
+						<li>AC_NanoStorageDrive</li>
+					</requiredAnalyzed>
+				</value>
+			</li>
+		</operations>
+	</Operation>
+	<!-- ================ Stack Spawning ================ -->
+	<Operation Class="ModSettingsFramework.PatchOperationModOption">
+		<defaultValue>True</defaultValue>
+		<label>Stacks spawn on pirates</label>
+		<tooltip>When enabled, neural stacks will have a chance to spawn on higher tier pirates. (Default: True)</tooltip>
+		<id>AC_StackSpawningPirates</id>
+		<category>AC_StackSpawning</category>
+		<order>5</order>
+		<operations>
+			<!-- ================================ Spawns stack on core pirate pawns ====================== -->
+			<li Class="PatchOperationAddModExtension">
+				<xpath>/Defs/PawnKindDef[defName="Grenadier_Destructive" or defName="Grenadier_Smoke" or defName="Mercenary_Gunner" or efName="Mercenary_Gunner_Acidifier" or defName="Mercenary_Sniper" or defName="Mercenary_Sniper_Acidifier" or defName="Mercenary_Slasher" or defName="Mercenary_Slasher_Acidifier" or defName="Mercenary_Heavy"]</xpath>
+				<value>
+					<li Class="AlteredCarbon.StackSpawnModExtension">
+						<chanceToSpawnWithStack>5</chanceToSpawnWithStack>
+					</li>
+				</value>
+			</li>
+			<li Class="PatchOperationAddModExtension">
+				<xpath>/Defs/PawnKindDef[defName="Mercenary_Elite" or defName="Mercenary_Elite_Acidifier"]</xpath>
+				<value>
+					<li Class="AlteredCarbon.StackSpawnModExtension">
+						<chanceToSpawnWithStack>10</chanceToSpawnWithStack>
+					</li>
+				</value>
+			</li>
+			<li Class="PatchOperationAddModExtension">
+				<xpath>/Defs/PawnKindDef[defName="PirateBoss"]</xpath>
+				<value>
+					<li Class="AlteredCarbon.StackSpawnModExtension">
+						<chanceToSpawnWithStack>20</chanceToSpawnWithStack>
+					</li>
+				</value>
+			</li>
+			<!-- ================================ Spawns stack on VFE-Pirates pawns ====================== -->
+			<li Class="PatchOperationAddModExtension" MayRequire="OskarPotocki.VFE.Pirates">
+				<xpath>/Defs/PawnKindDef[@Name="VFEP_JunkersBase" or @Name="VFEP_MercenariesBase"]</xpath>
+				<value>
+					<li Class="AlteredCarbon.StackSpawnModExtension">
+						<chanceToSpawnWithStack>5</chanceToSpawnWithStack>
+					</li>
+				</value>
+			</li>
+		</operations>
+	</Operation>
+	<Operation Class="ModSettingsFramework.PatchOperationModOption">
+		<defaultValue>True</defaultValue>
+		<label>Stacks spawn on ancients and spacer</label>
+		<tooltip>When enabled, neural stacks will have a chance to spawn on ancients and spacer pawns. (Default: True)</tooltip>
+		<id>AC_StackSpawningAncientSpacer</id>
+		<category>AC_StackSpawning</category>
+		<order>10</order>
+		<operations>
+			<li Class="PatchOperationAddModExtension">
+				<xpath>/Defs/PawnKindDef[defName="SpaceRefugee" or defName="SpaceRefugee_Clothed"]</xpath>
+				<value>
+					<li Class="AlteredCarbon.StackSpawnModExtension">
+						<chanceToSpawnWithStack>5</chanceToSpawnWithStack>
+					</li>
+				</value>
+			</li>
+			<li Class="PatchOperationAddModExtension">
+				<xpath>/Defs/PawnKindDef[defName="AncientSoldier" or defName="StrangerInBlack"]</xpath>
+				<value>
+					<li Class="AlteredCarbon.StackSpawnModExtension">
+						<chanceToSpawnWithStack>20</chanceToSpawnWithStack>
+					</li>
+				</value>
+			</li>
+		</operations>
+	</Operation>
+	<Operation Class="ModSettingsFramework.PatchOperationModOption">
+		<defaultValue>True</defaultValue>
+		<label>Stacks spawn on imperials (Recommended)</label>
+		<tooltip>When enabled, neural stacks will have a chance to spawn on imperials and deserters. (Default: True)</tooltip>
+		<id>AC_StackSpawningEmpire</id>
+		<category>AC_StackSpawning</category>
+		<order>15</order>
+		<operations>
+			<!-- ================================ Spawns stack on Royalty pawns ====================== -->
+			<li Class="PatchOperationAddModExtension" MayRequire="Ludeon.RimWorld.Royalty">
+				<xpath>/Defs/PawnKindDef[@Name="EmpireCommonerBase"]</xpath>
+				<value>
+					<li Class="AlteredCarbon.StackSpawnModExtension">
+						<chanceToSpawnWithStack>5</chanceToSpawnWithStack>
+					</li>
+				</value>
+			</li>
+			<li Class="PatchOperationAddModExtension" MayRequire="Ludeon.RimWorld.Royalty">
+				<xpath>/Defs/PawnKindDef[@Name="ImperialFighterBase"]</xpath>
+				<value>
+					<li Class="AlteredCarbon.StackSpawnModExtension">
+						<chanceToSpawnWithStack>17</chanceToSpawnWithStack>
+					</li>
+				</value>
+			</li>
+			<li Class="PatchOperationAddModExtension" MayRequire="Ludeon.RimWorld.Royalty">
+				<xpath>/Defs/PawnKindDef[@Name="RoyalBase"]</xpath>
+				<value>
+					<li Class="AlteredCarbon.StackSpawnModExtension">
+						<chanceToSpawnWithStack>22</chanceToSpawnWithStack>
+					</li>
+				</value>
+			</li>
+			<li Class="PatchOperationAddModExtension" MayRequire="Ludeon.RimWorld.Royalty">
+				<xpath>/Defs/PawnKindDef[@Name="RoyalUpperBase"]</xpath>
+				<value>
+					<li Class="AlteredCarbon.StackSpawnModExtension">
+						<chanceToSpawnWithStack>27</chanceToSpawnWithStack>
+					</li>
+				</value>
+			</li>
+			<li Class="PatchOperationAddModExtension" MayRequire="Ludeon.RimWorld.Royalty">
+				<xpath>/Defs/PawnKindDef[deName="Empire_Royal_Stellarch" or defName="Empire_Royal_Bestower" or defName="Empire_Royal_Consul"]</xpath>
+				<value>
+					<li Class="AlteredCarbon.StackSpawnModExtension">
+						<chanceToSpawnWithStack>95</chanceToSpawnWithStack>
+					</li>
+				</value>
+			</li>
+			<!-- ================================ Spawns stack on VFE-Empire and VFE-Deserter pawns ====================== -->
+			<li Class="PatchOperationAddModExtension" MayRequire="OskarPotocki.VFE.Empire">
+				<xpath>/Defs/PawnKindDef[@Name="VFEE_DeserterBase"]</xpath>
+				<value>
+					<li Class="AlteredCarbon.StackSpawnModExtension">
+						<chanceToSpawnWithStack>10</chanceToSpawnWithStack>
+					</li>
+				</value>
+			</li>
+		</operations>
+	</Operation>
+	<!-- ================ Textures ================ -->
+	<!--	<Operation Class="ModSettingsFramework.PatchOperationModOption">
+		<defaultValue>False</defaultValue>
+		<label>Alternative Protector Armour</label>
+		<tooltip>Replace the vanilla friendly Protector armour texture with one more in line with the Altered Carbon TV-Show. (Default: False)</tooltip>
+		<id>AC_AlternateProtector</id>
+		<category>AC_Textures</category>
+		<order>10</order>
+		<operations>
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[defName = "AC_Apparel_ProtectorHelmet"]/graphicData/texPath</xpath>
+				<value>
+					<texPath>Things/Pawn/Humanlike/Apparel/AC_ProtectorArmor/AC_ProtectorHelmet</texPath>
+				</value>
+			</li>
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[defName = "AC_Apparel_ProtectorHelmet"]/apparel/wornGraphicPath</xpath>
+				<value>
+					<wornGraphicPath>Things/Pawn/Humanlike/Apparel/AC_ProtectorHelmet/AC_ProtectorHelmet</wornGraphicPath>
+				</value>
+			</li>
+		</operations>
+	</Operation>-->
+	<!-- ================ Sleeve Gastating ================ -->
+	<Operation Class="AlteredCarbon.AlteredCarbonSettingsWorker_SleeveGrowing">
+		<order>20</order>
+		<id>AlteredCarbon_ModSettings_SleeveGrowing</id>
+		<category>AC_SleeveGestating</category>
+		<showTooltipAsTinyText>false</showTooltipAsTinyText>
+	</Operation>
+	<!-- ================ Stack Rewritting ================ -->
+	<Operation Class="AlteredCarbon.AlteredCarbonSettingsWorker_EditStack">
+		<order>30</order>
+		<id>AlteredCarbon_ModSettings_StackEditing</id>
+		<category>AC_StackEditing</category>
+		<showTooltipAsTinyText>false</showTooltipAsTinyText>
+	</Operation>
+</Patch>

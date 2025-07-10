@@ -1,0 +1,452 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<!-- ================================ Rogian Arm-Blade - Mono ====================== -->
+	<ThingDef ParentName="AC_RogianArmBaldes_Base">
+		<defName>AC_RogianArmBlade_Mono</defName>
+		<label>mono arm-blade</label>
+		<description>A crystal-metallic variation of an arm-blade, infused with mechanites that maintain a mono-molecular cutting edge. It cuts through even thick armor with ease, and its light weight permits fast attacks. When retracted neuromuscular synchronisation makes them appear and function like a normal arm.</description>
+		<descriptionHyperlinks>
+			<RecipeDef>AC_InstallRogianArmBlade_Mono</RecipeDef>
+		</descriptionHyperlinks>
+		<statBases>
+			<MarketValue>2850</MarketValue>
+			<Mass>2</Mass>
+		</statBases>
+		<techHediffsTags Inherit="False">
+			<li>RogianArmBladeEmpire</li>
+		</techHediffsTags>
+		<tradeTags Inherit="False">
+			<li>RogianArmBladeEmpire</li>
+		</tradeTags>
+	</ThingDef>
+	<!-- ================================ Rogian Arm-Blade Hediff - Mono ====================== -->
+	<HediffDef ParentName="ImplantHediffBase">
+		<defName>AC_RogianArmBlade_Mono</defName>
+		<label>mono arm-blade</label>
+		<labelNoun>a mono arm-blade</labelNoun>
+		<description>An installed crystal-metallic variation of an arm-blade, infused with mechanites that maintain a mono-molecular cutting edge. It cuts through even thick armor with ease, and its light weight permits fast attacks. When retracted neuromuscular synchronisation makes them appear and function like a normal arm.</description>
+		<descriptionHyperlinks>
+			<ThingDef>AC_RogianArmBlade_Mono</ThingDef>
+		</descriptionHyperlinks>
+		<comps>
+			<li Class="AlteredCarbon.HediffCompProperties_MeleeWeapon">
+				<weaponGraphicData>
+					<texPath>AbilityEffects/ArmBlade/RogianArmBlade_Mono</texPath>
+					<graphicClass>Graphic_Single</graphicClass>
+					<drawSize>(1, 1)</drawSize>
+				</weaponGraphicData>
+				<tools>
+					<li>
+						<label>point</label>
+						<capacities>
+							<li>Stab</li>
+						</capacities>
+						<power>25</power>
+						<cooldownTime>1.5</cooldownTime>
+						<armorPenetration>0.9</armorPenetration>
+						<alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+						<soundMeleeHit>MeleeHit_MonoSword</soundMeleeHit>
+						<soundMeleeMiss>MeleeMiss_BionicSlash</soundMeleeMiss>
+					</li>
+					<li>
+						<label>edge</label>
+						<capacities>
+							<li>Cut</li>
+						</capacities>
+						<power>25</power>
+						<cooldownTime>1.5</cooldownTime>
+						<armorPenetration>0.9</armorPenetration>
+						<alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+						<soundMeleeHit>MeleeHit_MonoSword</soundMeleeHit>
+						<soundMeleeMiss>MeleeMiss_BionicSlash</soundMeleeMiss>
+					</li>
+				</tools>
+			</li>
+		</comps>
+		<spawnThingOnRemoved>AC_RogianArmBlade_Mono</spawnThingOnRemoved>
+	</HediffDef>
+	<!-- ================================ Rogian Arm-Blade Recipe - Mono ====================== -->
+	<RecipeDef ParentName="SurgeryInstallImplantBase">
+		<defName>AC_InstallRogianArmBlade_Mono</defName>
+		<label>install mono arm-blade</label>
+		<description>Install a mono-arm-blade.</description>
+		<workerClass>AlteredCarbon.Recipe_InstallImplantAddon</workerClass>
+		<descriptionHyperlinks>
+			<ThingDef>AC_RogianArmBlade_Mono</ThingDef>
+			<HediffDef>AC_RogianArmBlade_Mono</HediffDef>
+		</descriptionHyperlinks>
+		<jobString>Installing mono arm-blade.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>AC_RogianArmBlade_Mono</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>AC_RogianArmBlade_Mono</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>Arm</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>AC_RogianArmBlade_Mono</addsHediff>
+	</RecipeDef>
+	<RecipeDef ParentName="SurgeryRemoveImplantBase">
+		<defName>AC_RemoveRogianArmBlade_Mono</defName>
+		<label>remove mono arm-blade</label>
+		<description>Remove mono arm-blade.</description>
+		<descriptionHyperlinks>
+			<ThingDef>AC_RogianArmBlade_Mono</ThingDef>
+			<HediffDef>AC_RogianArmBlade_Mono</HediffDef>
+		</descriptionHyperlinks>
+		<jobString>Removing mono arm-blade.</jobString>
+		<removesHediff>AC_RogianArmBlade_Mono</removesHediff>
+	</RecipeDef>
+	<!-- ================================ Rogian Arm-Blade - Plasma ====================== -->
+	<ThingDef ParentName="AC_RogianArmBaldes_Base">
+		<defName>AC_RogianArmBlade_Plasma</defName>
+		<label>plasma arm-blade</label>
+		<description>A metal-cored variation of an arm-blade. Plasma is wrapped around the core, held in place by an energy field. Targets are both sliced by the metal core, as well as burned or ignited by the plasma sheath. When retracted neuromuscular synchronisation makes them appear and function like a normal arm.</description>
+		<descriptionHyperlinks>
+			<RecipeDef>AC_InstallRogianArmBlade_Plasma</RecipeDef>
+		</descriptionHyperlinks>
+		<statBases>
+			<MarketValue>2850</MarketValue>
+			<Mass>2</Mass>
+		</statBases>
+		<techHediffsTags Inherit="False">
+			<li>RogianArmBladeEmpire</li>
+		</techHediffsTags>
+		<tradeTags Inherit="False">
+			<li>RogianArmBladeEmpire</li>
+		</tradeTags>
+	</ThingDef>
+	<!-- ================================ Rogian Arm-Blade Hediff - Plasma ====================== -->
+	<HediffDef ParentName="ImplantHediffBase">
+		<defName>AC_RogianArmBlade_Plasma</defName>
+		<label>plasma arm-blade</label>
+		<labelNoun>a plasma arm-blade</labelNoun>
+		<description>An installed metal-cored variation of an arm-blade. Plasma is wrapped around the core, held in place by an energy field. Targets are both sliced by the metal core, as well as burned or ignited by the plasma sheath. When retracted neuromuscular synchronisation makes them appear and function like a normal arm.</description>
+		<descriptionHyperlinks>
+			<ThingDef>AC_RogianArmBlade_Plasma</ThingDef>
+		</descriptionHyperlinks>
+		<comps>
+			<li Class="AlteredCarbon.HediffCompProperties_MeleeWeapon">
+				<weaponGraphicData>
+					<texPath>AbilityEffects/ArmBlade/RogianArmBlade_Plasma</texPath>
+					<graphicClass>Graphic_Single</graphicClass>
+					<drawSize>(1, 1)</drawSize>
+				</weaponGraphicData>
+				<tools>
+					<li>
+						<label>point</label>
+						<capacities>
+							<li>Stab</li>
+						</capacities>
+						<power>21</power>
+						<cooldownTime>2</cooldownTime>
+						<extraMeleeDamages>
+							<li>
+								<def>Flame</def>
+								<amount>10</amount>
+								<chance>0.5</chance>
+							</li>
+						</extraMeleeDamages>
+						<alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+						<soundMeleeHit>MeleeHit_PlasmaSword</soundMeleeHit>
+						<soundMeleeMiss>MeleeMiss_BionicSlash</soundMeleeMiss>
+					</li>
+					<li>
+						<label>edge</label>
+						<capacities>
+							<li>Cut</li>
+						</capacities>
+						<power>21</power>
+						<cooldownTime>2</cooldownTime>
+						<extraMeleeDamages>
+							<li>
+								<def>Flame</def>
+								<amount>10</amount>
+								<chance>0.5</chance>
+							</li>
+						</extraMeleeDamages>
+						<alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+						<soundMeleeHit>MeleeHit_PlasmaSword</soundMeleeHit>
+						<soundMeleeMiss>MeleeMiss_BionicSlash</soundMeleeMiss>
+					</li>
+				</tools>
+			</li>
+		</comps>
+		<spawnThingOnRemoved>AC_RogianArmBlade_Plasma</spawnThingOnRemoved>
+	</HediffDef>
+	<!-- ================================ Rogian Arm-Blade Recipe - Plasma ====================== -->
+	<RecipeDef ParentName="SurgeryInstallImplantBase">
+		<defName>AC_InstallRogianArmBlade_Plasma</defName>
+		<label>install plasma arm-blade</label>
+		<description>Install a plasma-arm blade.</description>
+		<workerClass>AlteredCarbon.Recipe_InstallImplantAddon</workerClass>
+		<descriptionHyperlinks>
+			<ThingDef>AC_RogianArmBlade_Plasma</ThingDef>
+			<HediffDef>AC_RogianArmBlade_Plasma</HediffDef>
+		</descriptionHyperlinks>
+		<jobString>Installing plasma-arm blade.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>AC_RogianArmBlade_Plasma</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>AC_RogianArmBlade_Plasma</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>Arm</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>AC_RogianArmBlade_Plasma</addsHediff>
+	</RecipeDef>
+	<RecipeDef ParentName="SurgeryRemoveImplantBase">
+		<defName>AC_RemoveRogianArmBlade_Plasma</defName>
+		<label>remove plasma arm-blade</label>
+		<description>Remove plasma arm-blade.</description>
+		<descriptionHyperlinks>
+			<ThingDef>AC_RogianArmBlade_Plasma</ThingDef>
+			<HediffDef>AC_RogianArmBlade_Plasma</HediffDef>
+		</descriptionHyperlinks>
+		<jobString>Removing plasma arm-blade.</jobString>
+		<removesHediff>AC_RogianArmBlade_Plasma</removesHediff>
+	</RecipeDef>
+	<!-- ================================ Rogian Arm-Blade - Zeus ====================== -->
+	<ThingDef ParentName="AC_RogianArmBaldes_Base">
+		<defName>AC_RogianArmBlade_Zeus</defName>
+		<label>zeus arm-blade</label>
+		<description>An experimental variation of an arm-blade with an embedded EMP capacitor. Upon contact, it blasts the target with an EMP burst in addition to the physical damage. When retracted neuromuscular synchronisation makes them appear and function like a normal arm.</description>
+		<descriptionHyperlinks>
+			<RecipeDef>AC_InstallRogianArmBlade_Zeus</RecipeDef>
+		</descriptionHyperlinks>
+		<statBases>
+			<MarketValue>2850</MarketValue>
+			<Mass>2</Mass>
+		</statBases>
+		<techHediffsTags Inherit="False">
+			<li>RogianArmBladeEmpire</li>
+		</techHediffsTags>
+		<tradeTags Inherit="False">
+			<li>RogianArmBladeEmpire</li>
+		</tradeTags>
+	</ThingDef>
+	<!-- ================================ Rogian Arm-Blade Hediff - Zeus ====================== -->
+	<HediffDef ParentName="ImplantHediffBase">
+		<defName>AC_RogianArmBlade_Zeus</defName>
+		<label>zeus arm-blade</label>
+		<labelNoun>a zeus arm-blade</labelNoun>
+		<description>An installed variation of an arm-blade with an embedded EMP capacitor. Upon contact, it blasts the target with an EMP burst in addition to the physical damage. When retracted neuromuscular synchronisation makes them appear and function like a normal arm.</description>
+		<descriptionHyperlinks>
+			<ThingDef>AC_RogianArmBlade_Zeus</ThingDef>
+		</descriptionHyperlinks>
+		<comps>
+			<li Class="AlteredCarbon.HediffCompProperties_MeleeWeapon">
+				<weaponGraphicData>
+					<texPath>AbilityEffects/ArmBlade/RogianArmBlade_Zeus</texPath>
+					<graphicClass>Graphic_Single</graphicClass>
+					<drawSize>(1, 1)</drawSize>
+				</weaponGraphicData>
+				<tools>
+					<li>
+						<label>point</label>
+						<capacities>
+							<li>Stab</li>
+						</capacities>
+						<power>20</power>
+						<cooldownTime>2</cooldownTime>
+						<extraMeleeDamages>
+							<li>
+								<def>EMP</def>
+								<amount>9</amount>
+							</li>
+						</extraMeleeDamages>
+						<alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+						<soundMeleeHit>MeleeHit_ZeusHammer</soundMeleeHit>
+						<soundMeleeMiss>MeleeMiss_BionicSlash</soundMeleeMiss>
+					</li>
+					<li>
+						<label>edge</label>
+						<capacities>
+							<li>Cut</li>
+						</capacities>
+						<power>20</power>
+						<cooldownTime>2</cooldownTime>
+						<extraMeleeDamages>
+							<li>
+								<def>EMP</def>
+								<amount>9</amount>
+							</li>
+						</extraMeleeDamages>
+						<alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+						<soundMeleeHit>MeleeHit_ZeusHammer</soundMeleeHit>
+						<soundMeleeMiss>MeleeMiss_BionicSlash</soundMeleeMiss>
+					</li>
+				</tools>
+			</li>
+		</comps>
+		<spawnThingOnRemoved>AC_RogianArmBlade_Zeus</spawnThingOnRemoved>
+	</HediffDef>
+	<!-- ================================ Rogian Arm-Blade Recipe - Zeus ====================== -->
+	<RecipeDef ParentName="SurgeryInstallImplantBase">
+		<defName>AC_InstallRogianArmBlade_Zeus</defName>
+		<label>install zeus arm-blade</label>
+		<description>Install a zeus arm-blade.</description>
+		<workerClass>AlteredCarbon.Recipe_InstallImplantAddon</workerClass>
+		<descriptionHyperlinks>
+			<ThingDef>AC_RogianArmBlade_Zeus</ThingDef>
+			<HediffDef>AC_RogianArmBlade_Zeus</HediffDef>
+		</descriptionHyperlinks>
+		<jobString>Installing zeus arm-blade.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>AC_RogianArmBlade_Zeus</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>AC_RogianArmBlade_Zeus</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>Arm</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>AC_RogianArmBlade_Zeus</addsHediff>
+	</RecipeDef>
+	<RecipeDef ParentName="SurgeryRemoveImplantBase">
+		<defName>AC_RemoveRogianArmBlade_Zeus</defName>
+		<label>remove zeus arm-blade</label>
+		<description>Remove zeus arm-blade.</description>
+		<descriptionHyperlinks>
+			<ThingDef>AC_RogianArmBlade_Zeus</ThingDef>
+			<HediffDef>AC_RogianArmBlade_Zeus</HediffDef>
+		</descriptionHyperlinks>
+		<jobString>Removing zeus arm-blade.</jobString>
+		<removesHediff>AC_RogianArmBlade_Zeus</removesHediff>
+	</RecipeDef>
+	<!-- ================================ Vanilla Expanded Support ====================== -->
+	<!-- ================================ Rogian Arm-Blade - Toxblade ====================== -->
+	<ThingDef ParentName="AC_RogianArmBaldes_Base" MayRequire="OskarPotocki.VFE.Empire">
+		<defName>AC_RogianArmBlade_Toxblade</defName>
+		<label>tox arm-blade</label>
+		<description>An experimental variation of an arm-blade with an integrated acidifier fluids dispenser. Upon contact, it dispenses a small amount of acidifier and toxic vapours. The effect only lasts a few seconds and is inflicted roughly half of the time. When retracted neuromuscular synchronisation makes them appear and function like a normal arm.</description>
+		<descriptionHyperlinks>
+			<RecipeDef>AC_InstallRogianArmBlade_Toxblad</RecipeDef>
+		</descriptionHyperlinks>
+		<statBases>
+			<MarketValue>2850</MarketValue>
+			<Mass>2</Mass>
+		</statBases>
+		<techHediffsTags Inherit="False">
+			<li>RogianArmBladeEmpire</li>
+		</techHediffsTags>
+		<tradeTags Inherit="False">
+			<li>RogianArmBladeEmpire</li>
+		</tradeTags>
+	</ThingDef>
+	<!-- ================================ Rogian Arm-Blade Hediff - Toxblade ====================== -->
+	<HediffDef ParentName="ImplantHediffBase" MayRequire="OskarPotocki.VFE.Empire">
+		<defName>AC_RogianArmBlade_Toxblade</defName>
+		<label>tox arm-blade</label>
+		<labelNoun>a tox arm-blade</labelNoun>
+		<description>An installed variation of an arm-blade with an integrated acidifier fluids dispenser. Upon contact, it dispenses a small amount of acidifier and toxic vapours. The effect only lasts a few seconds and is inflicted roughly half of the time. When retracted neuromuscular synchronisation makes them appear and function like a normal arm.</description>
+		<descriptionHyperlinks>
+			<ThingDef>AC_RogianArmBlade_Toxblade</ThingDef>
+		</descriptionHyperlinks>
+		<comps>
+			<li Class="AlteredCarbon.HediffCompProperties_MeleeWeapon">
+				<weaponGraphicData>
+					<texPath>AbilityEffects/ArmBlade/RogianArmBlade_Tox</texPath>
+					<graphicClass>Graphic_Single</graphicClass>
+					<drawSize>(1, 1)</drawSize>
+				</weaponGraphicData>
+				<tools>
+					<li>
+						<label>point</label>
+						<capacities>
+							<li>VFEE_StabToxblade</li>
+						</capacities>
+						<power>14</power>
+						<cooldownTime>1.4</cooldownTime>
+						<alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+						<soundMeleeHit>Interact_MonoSword</soundMeleeHit>
+						<soundMeleeMiss>MeleeMiss_BionicSlash</soundMeleeMiss>
+					</li>
+					<li>
+						<label>edge</label>
+						<capacities>
+							<li>VFEE_StabToxblade</li>
+						</capacities>
+						<power>14</power>
+						<cooldownTime>1.4</cooldownTime>
+						<alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+						<soundMeleeHit>Interact_MonoSword</soundMeleeHit>
+						<soundMeleeMiss>MeleeMiss_BionicSlash</soundMeleeMiss>
+					</li>
+				</tools>
+			</li>
+		</comps>
+		<spawnThingOnRemoved>AC_RogianArmBlade_Toxblade</spawnThingOnRemoved>
+	</HediffDef>
+	<!-- ================================ Rogian Arm-Blade Recipe - Toxblade ====================== -->
+	<RecipeDef ParentName="SurgeryInstallImplantBase" MayRequire="OskarPotocki.VFE.Empire">
+		<defName>AC_InstallRogianArmBlade_Toxblad</defName>
+		<label>install tox arm-blade</label>
+		<description>Install a tox arm-blade.</description>
+		<workerClass>AlteredCarbon.Recipe_InstallImplantAddon</workerClass>
+		<descriptionHyperlinks>
+			<ThingDef>AC_RogianArmBlade_Toxblade</ThingDef>
+			<HediffDef>AC_RogianArmBlade_Toxblade</HediffDef>
+		</descriptionHyperlinks>
+		<jobString>Installing tox arm-blade.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>AC_RogianArmBlade_Toxblade</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>AC_RogianArmBlade_Toxblade</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>Arm</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>AC_RogianArmBlade_Toxblade</addsHediff>
+	</RecipeDef>
+	<RecipeDef ParentName="SurgeryRemoveImplantBase" MayRequire="OskarPotocki.VFE.Empire">
+		<defName>AC_RemoveRogianArmBlade_Toxblade</defName>
+		<label>remove tox arm-blade</label>
+		<description>Remove tox arm-blade.</description>
+		<descriptionHyperlinks>
+			<ThingDef>AC_RogianArmBlade_Toxblade</ThingDef>
+			<HediffDef>AC_RogianArmBlade_Toxblade</HediffDef>
+		</descriptionHyperlinks>
+		<jobString>Removing tox arm-blade.</jobString>
+		<removesHediff>AC_RogianArmBlade_Toxblade</removesHediff>
+	</RecipeDef>
+</Defs>

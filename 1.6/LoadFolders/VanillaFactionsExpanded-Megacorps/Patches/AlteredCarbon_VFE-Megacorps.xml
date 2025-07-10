@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	<Operation Class="PatchOperationSequence">
+		<!-- ================================ Patches Megacorp Ultratech components ====================== -->
+		<operations>
+			<!-- ================================ Buildings ====================== -->
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[defName="AC_NeuralMatrix"]/costList</xpath>
+				<value>
+					<costList>
+						<Steel>250</Steel>
+						<Plasteel>150</Plasteel>
+						<VFEU_ComponentUltra>6</VFEU_ComponentUltra>
+					</costList>
+				</value>
+			</li>
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[defName="AC_NeuralEditor"]/costList</xpath>
+				<value>
+					<costList>
+						<Steel>80</Steel>
+						<Plasteel>10</Plasteel>
+						<VFEU_ComponentUltra>2</VFEU_ComponentUltra>
+					</costList>
+				</value>
+			</li>
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[defName="AC_NeuralConnector"]/costList</xpath>
+				<value>
+					<costList>
+						<Steel>100</Steel>
+						<Plasteel>75</Plasteel>
+						<VFEU_ComponentUltra>2</VFEU_ComponentUltra>
+					</costList>
+				</value>
+			</li>
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[defName="AC_CastingRelay"]/costList</xpath>
+				<value>
+					<costList>
+						<Steel>90</Steel>
+						<Plasteel>25</Plasteel>
+						<VFEU_ComponentUltra>3</VFEU_ComponentUltra>
+					</costList>
+				</value>
+			</li>
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[defName="AC_SleeveCasket"]/costList</xpath>
+				<value>
+					<costList>
+						<Steel>100</Steel>
+						<Plasteel>15</Plasteel>
+						<Uranium>5</Uranium>
+						<VFEU_ComponentUltra>4</VFEU_ComponentUltra>
+					</costList>
+				</value>
+			</li>
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[defName="AC_SleeveGestator"]/costList</xpath>
+				<value>
+					<costList>
+						<Steel>250</Steel>
+						<Plasteel>50</Plasteel>
+						<VFEU_ComponentUltra>6</VFEU_ComponentUltra>
+					</costList>
+				</value>
+			</li>
+			<!-- ================================ Stacks ====================== -->
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[defName="AC_EmptyNeuralStack"]/costList</xpath>
+				<value>
+					<costList>
+						<Plasteel>12</Plasteel>
+						<Steel>4</Steel>
+						<VFEU_ComponentUltra>2</VFEU_ComponentUltra>
+					</costList>
+				</value>
+			</li>
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[defName="AC_RemoteStack"]/costList</xpath>
+				<value>
+					<costList>
+						<Plasteel>4</Plasteel>
+						<Steel>8</Steel>
+						<VFEU_ComponentUltra>1</VFEU_ComponentUltra>
+					</costList>
+				</value>
+			</li>
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/RecipeDef[defName="AC_ShredNeuralStacks"]/products</xpath>
+				<value>
+					<products>
+						<VFEU_ComponentUltra>1</VFEU_ComponentUltra>
+						<Plasteel>3</Plasteel>
+					</products>
+				</value>
+			</li>
+		</operations>
+		<!-- ================================ Implants ====================== -->
+		<li Class="PatchOperationReplace">
+			<xpath>/Defs/ThingDef[defName="AC_RogianArmBlade"]/costList</xpath>
+			<value>
+				<costList>
+					<Steel>20</Steel>
+					<VFEU_ComponentUltra>4</VFEU_ComponentUltra>
+				</costList>
+			</value>
+		</li>
+		<!-- ================================ Patches Megacorp Ultratech Research ====================== -->
+		<operations>
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ResearchProjectDef[@Name="AC_ResearchBase"]/requiredResearchFacilities</xpath>
+				<value>
+					<requiredResearchFacilities>
+						<li>VFEU_UltratechResearchBench</li>
+					</requiredResearchFacilities>
+				</value>
+			</li>
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ResearchProjectDef[defName="AC_SleeveGestation"]/prerequisites</xpath>
+				<value>
+					<prerequisites>
+						<li>VFEU_Nanoelectronics</li>
+					</prerequisites>
+				</value>
+			</li>
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ResearchProjectDef[defName="AC_NeuralDigitalization"]/prerequisites</xpath>
+				<value>
+					<prerequisites>
+						<li>VFEU_Replication</li>
+					</prerequisites>
+				</value>
+			</li>
+		</operations>
+		<!-- ================================ Patches Workbench ====================== -->
+		<operations>
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[defName="AC_EmptyNeuralStack" or defName="AC_RemoteStack" or defName="AC_RogianArmBlade"]/recipeMaker/recipeUsers</xpath>
+				<value>
+					<recipeUsers>
+						<li>VFEU_Ultrareplicator</li>
+					</recipeUsers>
+				</value>
+			</li>
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[@Name="AC_ApparelArmorHelmetChrysalisMakeableBase" or @Name="AC_ApparelArmorChrysalisMakeableBase" or defName="AC_CuirassierBelt" or defName="AC_Apparel_WingJump"]/recipeMaker/recipeUsers</xpath>
+				<value>
+					<recipeUsers Inherit="False">
+						<li>VFEU_Ultrareplicator</li>
+					</recipeUsers>
+				</value>
+			</li>
+		</operations>
+	</Operation>
+</Patch>

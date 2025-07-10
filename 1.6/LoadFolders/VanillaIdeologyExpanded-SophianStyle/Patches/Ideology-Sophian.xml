@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	<Operation Class="PatchOperationSequence">
+		<operations>
+			<!-- ================================ Add stack styles to Sophian Style ====================== -->
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/StyleCategoryDef[defName="VIES_Sophian"]/thingDefStyles</xpath>
+				<value>
+					<li>
+						<thingDef>AC_EmptyNeuralStack</thingDef>
+						<styleDef>AC_Sophian_EmptyNeuralStack</styleDef>
+					</li>
+					<li>
+						<thingDef>AC_ActiveNeuralStack</thingDef>
+						<styleDef>AC_Sophian_ActiveNeuralStack</styleDef>
+					</li>
+					<li>
+						<thingDef>AC_Apparel_ChrysalisHelmet</thingDef>
+						<styleDef>AC_Sophian_Apparel_ChrysalisHelmet</styleDef>
+					</li>
+				</value>
+			</li>
+		</operations>
+	</Operation>
+</Patch>

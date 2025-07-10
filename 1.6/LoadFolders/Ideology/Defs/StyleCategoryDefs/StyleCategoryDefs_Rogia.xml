@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<!-- ================================ New Style ====================== -->
+	<StyleCategoryDef>
+		<defName>AC_Rogian</defName>
+		<label>rogian</label>
+		<iconPath>UI/StyleCategories/Rogian</iconPath>
+		<soundOngoingRitual>RitualSustainer_Techist</soundOngoingRitual>
+		<ritualVisualEffectDef>Techist</ritualVisualEffectDef>
+		<thingDefStyles>
+			<!-- ================================ Vanilla ====================== -->
+			<li>
+				<thingDef>Gun_Autopistol</thingDef>
+				<styleDef>AC_Rogian_AutoPistol</styleDef>
+			</li>
+			<li>
+				<thingDef>Gun_Revolver</thingDef>
+				<styleDef>AC_Rogian_Revolver</styleDef>
+			</li>
+			<li>
+				<thingDef>Gun_BoltActionRifle</thingDef>
+				<styleDef>AC_Rogian_BoltActionRifle</styleDef>
+			</li>
+			<li>
+				<thingDef>Gun_PumpShotgun</thingDef>
+				<styleDef>AC_Rogian_PumpShotgun</styleDef>
+			</li>
+			<li>
+				<thingDef>Gun_AssaultRifle</thingDef>
+				<styleDef>AC_Rogian_AssaultRifle</styleDef>
+			</li>
+			<li>
+				<thingDef>Gun_ChargeRifle</thingDef>
+				<styleDef>AC_Rogian_ChargeRifle</styleDef>
+			</li>
+			<li>
+				<thingDef>AC_Apparel_ChrysalisHelmet</thingDef>
+				<styleDef>AC_Rogian_Apparel_ChrysalisHelmet</styleDef>
+			</li>
+		</thingDefStyles>
+	</StyleCategoryDef>
+</Defs>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<ModSettingsFramework.ModOptionCategoryDef Name="AC_ModOptionsBase" Abstract="True">
+		<mods>
+			<li>Altered Carbon 2: ReSleeved</li>
+		</mods>
+	</ModSettingsFramework.ModOptionCategoryDef>
+	<ModSettingsFramework.ModOptionCategoryDef ParentName="AC_ModOptionsBase">
+		<defName>AC_General</defName>
+		<label>General</label>
+		<order>0</order>
+	</ModSettingsFramework.ModOptionCategoryDef>
+	<ModSettingsFramework.ModOptionCategoryDef ParentName="AC_ModOptionsBase">
+		<defName>AC_StackSpawning</defName>
+		<label>Stack spawning</label>
+		<order>5</order>
+	</ModSettingsFramework.ModOptionCategoryDef>
+	<ModSettingsFramework.ModOptionCategoryDef ParentName="AC_ModOptionsBase">
+		<defName>AC_SleeveGestating</defName>
+		<label>Sleeve Gestating</label>
+		<order>10</order>
+	</ModSettingsFramework.ModOptionCategoryDef>
+	<ModSettingsFramework.ModOptionCategoryDef ParentName="AC_ModOptionsBase">
+		<defName>AC_StackEditing</defName>
+		<label>Stack Editing</label>
+		<order>20</order>
+	</ModSettingsFramework.ModOptionCategoryDef>
+	<ModSettingsFramework.ModOptionCategoryDef ParentName="AC_ModOptionsBase">
+		<defName>AC_Textures</defName>
+		<label>Textures</label>
+		<order>995</order>
+	</ModSettingsFramework.ModOptionCategoryDef>
+</Defs>

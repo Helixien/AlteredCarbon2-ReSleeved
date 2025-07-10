@@ -18,4 +18,16 @@
 		<li IfModActive="VanillaExpanded.VFEA">1.5/LoadFolders/VanillaFactionsExpanded-Ancients</li>
 		<li IfModActive="OskarPotocki.VFE.Megacorp">1.5/LoadFolders/VanillaFactionsExpanded-Megacorps</li>
 	</v1.5>
+
+<v1.6>
+  <li>/</li>
+  <li>1.6</li>
+  <li IfModActive="Ludeon.RimWorld.Royalty">1.6/LoadFolders/Royalty</li>
+  <li IfModActive="Ludeon.RimWorld.Ideology">1.6/LoadFolders/Ideology</li>
+  <li IfModNotActive="neronix17.hairstyles">1.6/LoadFolders/HairExtensions</li>
+  <li IfModActive="vanillaracesexpanded.android">1.6/LoadFolders/VanillaRacesExpanded-Android</li>
+  <li IfModActive="VanillaExpanded.Ideo.SophianStyle">1.6/LoadFolders/VanillaIdeologyExpanded-SophianStyle</li>
+  <li IfModActive="VanillaExpanded.VFEA">1.6/LoadFolders/VanillaFactionsExpanded-Ancients</li>
+  <li IfModActive="OskarPotocki.VFE.Megacorp">1.6/LoadFolders/VanillaFactionsExpanded-Megacorps</li>
+</v1.6>
 </loadFolders>
