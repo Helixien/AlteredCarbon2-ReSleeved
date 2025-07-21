@@ -66,7 +66,7 @@
       <Private>False</Private>
     </Reference>
     <Reference Include="RJW">
-      <HintPath>..\..\..\..\rjw-master\1.5\Assemblies\RJW.dll</HintPath>
+      <HintPath>..\..\..\..\rjw-Dev\1.6\Assemblies\RJW.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="SyrTraits">

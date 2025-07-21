@@ -192,11 +192,11 @@
 		</descriptionHyperlinks>
 		<spawnThingOnRemoved>AC_ActiveNeuralStack</spawnThingOnRemoved>
 		<isBad>false</isBad>
-		<addedPartProps>
-			<solid>true</solid>
-			<!--			<partEfficiency>1.25</partEfficiency>
-			<betterThanNatural>true</betterThanNatural>-->
-		</addedPartProps>
+		<!--<addedPartProps>
+						<solid>true</solid>
+			<partEfficiency>1.25</partEfficiency>
+			<betterThanNatural>true</betterThanNatural>
+		</addedPartProps>-->
 	</HediffDef>
 	<!-- ================================ Neural Stacks - Install Active ====================== -->
 	<RecipeDef ParentName="SurgeryInstallImplantBase">

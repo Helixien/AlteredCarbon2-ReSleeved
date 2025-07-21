@@ -88,7 +88,7 @@
 		<healthAffectsPrice>true</healthAffectsPrice>
 		<uiIconForStackCount>1</uiIconForStackCount>
 		<tradeNeverStack>false</tradeNeverStack>
-		<tradeTags Inherit="False"/>
+		<tradeTags Inherit="False" />
 		<inspectorTabs>
 			<li>ITab_Pawn_Character</li>
 		</inspectorTabs>
@@ -105,11 +105,11 @@
 		<hediffClass>AlteredCarbon.Hediff_NeuralStack</hediffClass>
 		<spawnThingOnRemoved>AC_ActiveArchotechStack</spawnThingOnRemoved>
 		<isBad>false</isBad>
-		<addedPartProps>
-			<solid>true</solid>
-<!--			<partEfficiency>1.5</partEfficiency>
-			<betterThanNatural>true</betterThanNatural>-->
-		</addedPartProps>
+		<!--		<addedPartProps>
+						<solid>true</solid>
+			<partEfficiency>1.5</partEfficiency>
+			<betterThanNatural>true</betterThanNatural
+		</addedPartProps>-->
 	</HediffDef>
 	<!-- ================================ Archostacks - Install Active ====================== -->
 	<RecipeDef ParentName="SurgeryInstallImplantBase">

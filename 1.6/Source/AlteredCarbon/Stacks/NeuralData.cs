@@ -1790,8 +1790,7 @@ namespace AlteredCarbon
             Scribe_Collections.Look(ref traits, "traits", LookMode.Deep);
             Scribe_Collections.Look(ref skills, "skills", LookMode.Deep);
             Scribe_Collections.Look(ref relations, "otherPawnRelations", LookMode.Deep);
-            Scribe_Collections.Look(ref otherPawnRelations, "otherPawnRelations2", LookMode.Deep, LookMode.Reference,
-                ref relationKeys, ref pawnValues);
+            Scribe_Collections.Look(ref otherPawnRelations, "otherPawnRelations2", LookMode.Deep, LookMode.Reference, ref relationKeys, ref pawnValues);
 
             Scribe_Values.Look(ref everSeenByPlayer, "everSeenByPlayer");
             Scribe_Values.Look(ref canGetRescuedThought, "canGetRescuedThought", true);

@@ -22,8 +22,8 @@
 			<Steel>8</Steel>
 			<ComponentSpacer>1</ComponentSpacer>
 		</costList>
-		<thingSetMakerTags Inherit="False"/>
-		<modExtensions Inherit="False"/>
+		<thingSetMakerTags Inherit="False" />
+		<modExtensions Inherit="False" />
 		<recipeMaker Inherit="False">
 			<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
 			<workSkill>Crafting</workSkill>
@@ -40,7 +40,7 @@
 			<displayPriority>16</displayPriority>
 		</recipeMaker>
 	</ThingDef>
-	<!-- ================================ Neural Receiver Hediff	====================== -->
+	<!-- ================================ Neural Receiver Hediff ====================== -->
 	<HediffDef ParentName="AC_ImplantStackBase">
 		<defName>AC_RemoteStack</defName>
 		<label>Neural receiver</label>
@@ -52,11 +52,11 @@
 		</descriptionHyperlinks>
 		<spawnThingOnRemoved>AC_RemoteStack</spawnThingOnRemoved>
 		<isBad>false</isBad>
-		<addedPartProps>
-			<solid>true</solid>
-<!--			<partEfficiency>1</partEfficiency>
-			<betterThanNatural>true</betterThanNatural>-->
-		</addedPartProps>
+		<!--<addedPartProps>
+						<solid>true</solid>
+			<partEfficiency>1</partEfficiency>
+			<betterThanNatural>true</betterThanNatural>
+		</addedPartProps>-->
 	</HediffDef>
 	<!-- ================================ Neural Receiver - Install ====================== -->
 	<RecipeDef ParentName="SurgeryInstallImplantBase">

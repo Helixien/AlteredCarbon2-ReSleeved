@@ -1,4 +1,4 @@
-﻿using Verse;
+using Verse;
 
 namespace AlteredCarbon
 {
@@ -38,9 +38,7 @@ namespace AlteredCarbon
         public bool isDemon = false;
         public bool oviPregnancy = false;
         public float raceSexDrive = 1.0f;
-
         public OrientationAC orientation;
-        public string quirksave;
         public int NextHookupTick;
         public void ExposeData()
         {

@@ -54,12 +54,6 @@ namespace AlteredCarbon
                     {
                         rjwData = new RJWData();
                     }
-                    rjwData.quirksave = comp.quirksave;
-                    if (rjwData.quirksave != null)
-                    {
-                        rjwData.quirksave = rjwData.quirksave.Replace("Fertile", "");
-                        rjwData.quirksave = rjwData.quirksave.Replace("Infertile", "");
-                    }
                     rjwData.orientation = (OrientationAC)(int)comp.orientation;
                     rjwData.NextHookupTick = comp.NextHookupTick;
                 }
@@ -103,9 +97,6 @@ namespace AlteredCarbon
                 rjw.CompRJW comp = ThingCompUtility.TryGetComp<rjw.CompRJW>(pawn);
                 if (comp != null)
                 {
-                    comp.quirksave = rjwData.quirksave;
-                    comp.quirks = new System.Text.StringBuilder(comp.quirksave);
-
                     comp.orientation = (rjw.Orientation)(int)rjwData.orientation;
                     comp.NextHookupTick = rjwData.NextHookupTick;
                 }

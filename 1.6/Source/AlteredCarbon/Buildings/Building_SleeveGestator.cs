@@ -1,4 +1,4 @@
-﻿using RimWorld;
+using RimWorld;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,7 +11,7 @@ using Verse.Sound;
 namespace AlteredCarbon
 {
     [HotSwappable]
-    public class Building_SleeveGestator : Building_Incubator, IThingHolderWithDrawnPawn
+    public class Building_SleeveGestator : Building_Incubator, IThingHolderWithDrawnPawn, ISuspendableThingHolder
     {
         public Xenogerm xenogermToConsume;
         public Corpse corpseToRepurpose;
@@ -561,7 +561,7 @@ namespace AlteredCarbon
         public float HeldPawnBodyAngle => Rotation.AsAngle;
 
         public PawnPosture HeldPawnPosture => PawnPosture.Standing;
-
+        public bool IsContentsSuspended => true;
         public override void EjectContents()
         {
             var pawn = InnerPawn;

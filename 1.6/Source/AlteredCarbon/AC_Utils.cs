@@ -174,7 +174,7 @@ namespace AlteredCarbon
 
         public static bool CanThink(this Pawn pawn)
         {
-            return pawn.needs?.mood?.thoughts?.memories != null;
+            return pawn?.needs?.mood?.thoughts?.memories != null;
         }
 
         public static BodyPartRecord GetNeck(this Pawn pawn)
