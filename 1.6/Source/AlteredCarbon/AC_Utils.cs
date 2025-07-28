@@ -181,7 +181,29 @@ namespace AlteredCarbon
         {
             return pawn.health.hediffSet.GetNotMissingParts().FirstOrDefault(x => x.def == AC_DefOf.Neck);
         }
-
+        public static void FillNeeds(this Pawn pawn)
+        {
+            if (pawn.needs.food != null && pawn.needs.food.CurLevel < pawn.needs.food.MaxLevel)
+            {
+                pawn.needs.food.CurLevel += 0.001f;
+            }
+            if (ModCompatibility.DubsBadHygieneActive)
+            {
+                ModCompatibility.FillThirstNeed(pawn, 0.001f);
+                ModCompatibility.FillHygieneNeed(pawn, 0.001f);
+                ModCompatibility.FillBladderNeed(pawn, 0.001f);
+            }
+            var malnutrition = pawn.GetHediff(HediffDefOf.Malnutrition);
+            if (malnutrition != null)
+            {
+                pawn.health.RemoveHediff(malnutrition);
+            }
+            var dehydration = pawn.health.hediffSet.hediffs.FirstOrDefault(x => x.def.defName == "DBHDehydration");
+            if (dehydration != null)
+            {
+                pawn.health.RemoveHediff(dehydration);
+            }
+        }
 
         private static void PostfixLogMethod(MethodBase __originalMethod)
         {

@@ -653,6 +653,7 @@ namespace AlteredCarbon
 
         private void DoWork()
         {
+            InnerPawn.FillNeeds();
             if (runningOutPowerInTicks > 0)
             {
                 runningOutPowerInTicks = 0;
