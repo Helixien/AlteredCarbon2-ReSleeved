@@ -228,10 +228,10 @@
 			</rulesStrings>
 		</generalRules>
 	</ResearchProjectDef>
-	<!-- ================================ REM-sleep Enchanment ====================== -->
+	<!-- ================================ REM-sleep Enhancement ====================== -->
 	<ResearchProjectDef ParentName="AC_ResearchBase">
 		<defName>AC_REMEnchanment</defName>
-		<label>REM-sleep enchanment</label>
+		<label>REM-sleep enhancement</label>
 		<description>Craft brain implants that enhance the user’s REM sleep, promoting deeper and more restorative rest.</description>
 		<baseCost>2000</baseCost>
 		<prerequisites>
