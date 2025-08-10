@@ -235,17 +235,7 @@ namespace AlteredCarbon
 
         public static void PatchAll()
         {
-            AccessTools.GetTypesFromAssembly(typeof(AC_Utils).Assembly).Do(delegate (Type type)
-            {
-                try
-                {
-                    harmony.CreateClassProcessor(type).Patch();
-                }
-                catch (Exception e)
-                {
-                    Log.Error("Error patching " + type + " - " + e.ToString());
-                }
-            });
+            harmony.PatchAll();
         }
 
         static AC_Utils()
