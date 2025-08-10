@@ -23,6 +23,7 @@
 		<equippedStatOffsets>
 			<MoveSpeed>-0.4</MoveSpeed>
 			<SlaveSuppressionOffset MayRequire="Ludeon.RimWorld.Ideology">-0.4</SlaveSuppressionOffset>
+			<VacuumResistance MayRequire="Ludeon.RimWorld.Odyssey">0.3</VacuumResistance>
 		</equippedStatOffsets>
 		<thingCategories>
 			<li>ApparelArmor</li>
@@ -235,6 +236,7 @@
 			<PsychicSensitivity>-0.25</PsychicSensitivity>
 			<ToxicResistance>1</ToxicResistance>
 			<ToxicEnvironmentResistance MayRequire="Ludeon.RimWorld.Biotech">1</ToxicEnvironmentResistance>
+			<VacuumResistance MayRequire="Ludeon.RimWorld.Odyssey">0.67</VacuumResistance>
 		</equippedStatOffsets>
 		<costList>
 			<ComponentSpacer>3</ComponentSpacer>
