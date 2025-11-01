@@ -87,13 +87,13 @@
       <HintPath>..\..\..\..\..\..\..\workshop\content\294100\3268401022\1.6\Assemblies\VAspirE.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="Vehicles">
-      <HintPath>..\..\..\..\Vehicle-Framework\1.6\Assemblies\Vehicles.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
     <Reference Include="VEF">
       <HintPath>..\..\..\..\VanillaExpandedFramework\1.6\Assemblies\VEF.dll</HintPath>
       <HintPath>..\..\..\..\..\..\..\workshop\content\294100\2023507013\1.6\Assemblies\VEF.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Vehicles">
+      <HintPath>..\..\..\..\..\..\..\workshop\content\294100\3014915404\1.6\Assemblies\Vehicles.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="VREAndroids">
