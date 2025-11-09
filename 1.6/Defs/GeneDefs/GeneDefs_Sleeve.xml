@@ -89,8 +89,8 @@
 		<description>Carriers of this gene had their bodies artificially gestated. Above average effort was put into it, resulting in good quality.</description>
 		<iconPath>UI/Icons/Genes/Gene_SleeveQuality_ Good</iconPath>
 		<displayOrderInCategory>15</displayOrderInCategory>
-		<biostatCpx>2</biostatCpx>
-		<biostatMet>2</biostatMet>
+		<biostatCpx>4</biostatCpx>
+		<biostatMet>4</biostatMet>
 		<statFactors>
 			<LifespanFactor>1.25</LifespanFactor>
 			<CancerRate>-0.1</CancerRate>
@@ -110,8 +110,8 @@
 		<description>Carriers of this gene had their bodies artificially gestated. A good amount of effort was put into it, resulting in excellent quality.</description>
 		<iconPath>UI/Icons/Genes/Gene_SleeveQuality_ Excellent</iconPath>
 		<displayOrderInCategory>20</displayOrderInCategory>
-		<biostatCpx>4</biostatCpx>
-		<biostatMet>4</biostatMet>
+		<biostatCpx>8</biostatCpx>
+		<biostatMet>8</biostatMet>
 		<statFactors>
 			<LifespanFactor>1.5</LifespanFactor>
 			<CancerRate>-0.2</CancerRate>
@@ -132,8 +132,8 @@
 		<description>Carriers of this gene had their bodies artificially gestated. A lot of effort was put into it, resulting in masterwork quality.</description>
 		<iconPath>UI/Icons/Genes/Gene_SleeveQuality_ Masterwork</iconPath>
 		<displayOrderInCategory>25</displayOrderInCategory>
-		<biostatCpx>8</biostatCpx>
-		<biostatMet>8</biostatMet>
+		<biostatCpx>12</biostatCpx>
+		<biostatMet>12</biostatMet>
 		<statFactors>
 			<LifespanFactor>2</LifespanFactor>
 			<CancerRate>-0.3</CancerRate>
@@ -155,8 +155,8 @@
 		<description>Carriers of this gene had their bodies artificially gestated. An extreme amount of effort was put into it, resulting in legendary quality.</description>
 		<iconPath>UI/Icons/Genes/Gene_SleeveQuality_ Legendary</iconPath>
 		<displayOrderInCategory>30</displayOrderInCategory>
-		<biostatCpx>12</biostatCpx>
-		<biostatMet>12</biostatMet>
+		<biostatCpx>18</biostatCpx>
+		<biostatMet>18</biostatMet>
 		<statFactors>
 			<LifespanFactor>3</LifespanFactor>
 			<CancerRate>-0.5</CancerRate>
