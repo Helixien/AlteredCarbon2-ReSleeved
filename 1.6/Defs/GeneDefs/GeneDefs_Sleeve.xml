@@ -155,8 +155,8 @@
 		<description>Carriers of this gene had their bodies artificially gestated. An extreme amount of effort was put into it, resulting in legendary quality.</description>
 		<iconPath>UI/Icons/Genes/Gene_SleeveQuality_ Legendary</iconPath>
 		<displayOrderInCategory>30</displayOrderInCategory>
-		<biostatCpx>18</biostatCpx>
-		<biostatMet>18</biostatMet>
+		<biostatCpx>16</biostatCpx>
+		<biostatMet>16</biostatMet>
 		<statFactors>
 			<LifespanFactor>3</LifespanFactor>
 			<CancerRate>-0.5</CancerRate>
