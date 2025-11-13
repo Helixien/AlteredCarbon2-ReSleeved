@@ -135,5 +135,6 @@ namespace AlteredCarbon
         public static HistoryEventDef AC_InstalledEmptyStackEvent;
         public static HistoryEventDef AC_InstalledNeuralStackEvent;
         public static HistoryEventDef AC_InstalledNeuralStackLowQualitySleeveEvent;
+        [MayRequire("VanillaExpanded.VPsycastsE")] public static HediffDef VPE_PsycastAbilityImplant;
     }
 }

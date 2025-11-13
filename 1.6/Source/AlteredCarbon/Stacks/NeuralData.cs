@@ -447,7 +447,7 @@ namespace AlteredCarbon
                     this.limitEntropyAmount = pawn.psychicEntropy.limitEntropyAmount;
                     this.targetPsyfocus = pawn.psychicEntropy.targetPsyfocus;
                 }
-                VPE_PsycastAbilityImplant = pawn.health.hediffSet.hediffs.FirstOrDefault(x => x.def.defName == "VPE_PsycastAbilityImplant");
+                VPE_PsycastAbilityImplant = pawn.health.hediffSet.hediffs.FirstOrDefault(x => x.def == AC_DefOf.VPE_PsycastAbilityImplant);
 
                 if (pawn.abilities?.abilities != null)
                 {
@@ -625,7 +625,6 @@ namespace AlteredCarbon
 
             AC_Utils.DebugMessage("CopyFromPawn: -----------------------------------------");
         }
-
 
         private static readonly List<string> activeModIdentifiers;
 
@@ -1170,7 +1169,7 @@ namespace AlteredCarbon
 
                     if (VPE_PsycastAbilityImplant?.def != null)
                     {
-                        pawn.health.hediffSet.hediffs.RemoveAll(x => x.def.defName == "VPE_PsycastAbilityImplant");
+                        pawn.health.hediffSet.hediffs.RemoveAll(x => x.def == AC_DefOf.VPE_PsycastAbilityImplant);
                         pawn.health.AddHediff(VPE_PsycastAbilityImplant);
                         Traverse.Create(VPE_PsycastAbilityImplant).Field("psylink").SetValue(hediff_Psylink);
                     }
@@ -1183,7 +1182,6 @@ namespace AlteredCarbon
                         pawn.abilities.GainAbility(def);
                     }
                 }
-
 
                 if (VEAbilities.NullOrEmpty() is false)
                 {
@@ -1459,6 +1457,7 @@ namespace AlteredCarbon
             }
             if (relations != null)
             {
+                relations.RemoveAll(x => x.def is null || x.otherPawn is null);
                 foreach (var relation in relations)
                 {
                     allPotentialRelatedPawns.Add(relation.otherPawn);
@@ -1468,7 +1467,7 @@ namespace AlteredCarbon
             {
                 allPotentialRelatedPawns.Remove(oldOrigPawn);
             }
-
+            allPotentialRelatedPawns.RemoveWhere(x => x is null);
             foreach (var potentiallyRelatedPawn in allPotentialRelatedPawns)
             {
                 ReplaceSocialReferences(potentiallyRelatedPawn, pawn, oldOrigPawn);
