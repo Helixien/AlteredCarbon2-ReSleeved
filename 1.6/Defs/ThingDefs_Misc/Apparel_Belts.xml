@@ -19,6 +19,7 @@
 			<WorkToMake>35000</WorkToMake>
 			<Flammability>0.4</Flammability>
 			<EquipDelay>3</EquipDelay>
+			<EnergyShieldRechargeRate>0</EnergyShieldRechargeRate>
 		</statBases>
 		<thingSetMakerTags>
 			<li>RewardSpecial</li>
@@ -95,7 +96,6 @@
 				<showOnHostiles>true</showOnHostiles>
 				<showOnNeutralInCombat>true</showOnNeutralInCombat>
 				<shieldTexPath>Other/ShieldBubble</shieldTexPath>
-				<EnergyShieldRechargeRate>0</EnergyShieldRechargeRate>
 				<EnergyShieldEnergyMax>500</EnergyShieldEnergyMax>
 				<minShieldSize>1.4</minShieldSize>
 				<maxShieldSize>1.8</maxShieldSize>
