@@ -423,6 +423,7 @@ namespace AlteredCarbon
             Find.WorldPawns.AddPawn(clone);
             initialRotTime = corpse.TryGetComp<CompRottable>().RotProgress;
             corpse.innerContainer.Clear();
+            clone.holdingOwner?.Remove(clone);
             corpse.InnerPawn = clone;
             TryAcceptThing(corpse);
             var totalTicksToGrow = 60000f;
