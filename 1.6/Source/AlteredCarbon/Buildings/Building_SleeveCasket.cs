@@ -74,6 +74,7 @@ namespace AlteredCarbon
         public override void Tick()
         {
             base.Tick();
+            if (Spawned is false) return;
             if (this.CurOccupants.Any())
             {
                 compPower.PowerOutput = 0f - compPower.Props.PowerConsumption;
