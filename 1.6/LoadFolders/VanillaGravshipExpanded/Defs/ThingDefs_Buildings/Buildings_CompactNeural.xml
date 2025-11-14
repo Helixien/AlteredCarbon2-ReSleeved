@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<!-- ================================ Neural Editor ====================== -->
+	<ThingDef ParentName="BuildingBase">
+		<defName>AC_CompactNeuralEditor</defName>
+		<label>compact neural editor</label>
+		<description>A space-efficient, gravship-powered that connects to a neural matrix and allows the user to interface designed for use aboard gravships. Allows the modification of neural stacks and other complex tasks, like resetting biocoding.</description>
+		<descriptionHyperlinks>
+			<ThingDef>AC_NeuralMatrix</ThingDef>
+			<ThingDef>AC_ActiveNeuralStack</ThingDef>
+		</descriptionHyperlinks>
+		<thingClass>AlteredCarbon.Building_NeuralEditor</thingClass>
+		<graphicData>
+			<texPath>Things/Building/Misc/CompactNeuralEditor</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<drawSize>(2,1)</drawSize>
+			<damageData>
+				<cornerTL>Damage/Corner</cornerTL>
+				<cornerTR>Damage/Corner</cornerTR>
+				<cornerBL>Damage/Corner</cornerBL>
+				<cornerBR>Damage/Corner</cornerBR>
+			</damageData>
+		</graphicData>
+		<castEdgeShadows>true</castEdgeShadows>
+		<staticSunShadowHeight>0.20</staticSunShadowHeight>
+		<constructEffect>ConstructMetal</constructEffect>
+		<minifiedDef>MinifiedThing</minifiedDef>
+		<costList>
+			<Steel>60</Steel>
+			<Plasteel>10</Plasteel>
+			<ComponentSpacer>2</ComponentSpacer>
+			<GravlitePanel>8</GravlitePanel>
+		</costList>
+		<thingCategories>
+			<li>BuildingsMisc</li>
+		</thingCategories>
+		<altitudeLayer>Building</altitudeLayer>
+		<fillPercent>0.3</fillPercent>
+		<useHitPoints>True</useHitPoints>
+		<statBases>
+			<Mass>10</Mass>
+			<MaxHitPoints>180</MaxHitPoints>
+			<WorkToBuild>4200</WorkToBuild>
+			<Flammability>1.0</Flammability>
+		</statBases>
+		<size>(2,1)</size>
+		<designationCategory>Odyssey</designationCategory>
+		<passability>PassThroughOnly</passability>
+		<pathCost>40</pathCost>
+		<hasInteractionCell>True</hasInteractionCell>
+		<interactionCellOffset>(1,0,-1)</interactionCellOffset>
+		<surfaceType>Item</surfaceType>
+		<constructionSkillPrerequisite>8</constructionSkillPrerequisite>
+		<terrainAffordanceNeeded>Substructure</terrainAffordanceNeeded>
+		<surfaceType>Item</surfaceType>
+		<inspectorTabs>
+			<li>ITab_Bills</li>
+		</inspectorTabs>
+		<comps>
+			<li Class="CompProperties_Breakdownable"/>
+			<li Class="CompProperties_AffectedByFacilities">
+				<linkableFacilities>
+					<li>AC_NeuralMatrix</li>
+				</linkableFacilities>
+			</li>
+		</comps>
+		<building>
+			<spawnedConceptLearnOpportunity>BillsTab</spawnedConceptLearnOpportunity>
+			<heatPerTickWhileWorking>0.10</heatPerTickWhileWorking>
+			<relatedTerrain>
+				<li>Substructure</li>
+			</relatedTerrain>
+			<buildingTags>
+				<li>Neural</li>
+			</buildingTags>
+		</building>
+		<placeWorkers>
+			<li>PlaceWorker_ShowFacilitiesConnections</li>
+			<li>PlaceWorker_PreventInteractionSpotOverlap</li>
+			<li>PlaceWorker_ReportWorkSpeedPenalties</li>
+		</placeWorkers>
+		<researchPrerequisites>
+			<li>VGE_CompactWorkspaces</li>
+			<li>AC_NeuralDigitalization</li>
+		</researchPrerequisites>
+		<drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
+		<modExtensions>
+			<li Class="VEF.Buildings.RecipeInheritanceExtension">
+				<inheritRecipesFrom>
+					<li>AC_NeuralMatrix</li>
+				</inheritRecipesFrom>
+			</li>
+		</modExtensions>
+	</ThingDef>
+</Defs>

@@ -29,5 +29,6 @@
   <li IfModActive="VanillaExpanded.Ideo.SophianStyle">1.6/LoadFolders/VanillaIdeologyExpanded-SophianStyle</li>
   <li IfModActive="VanillaExpanded.VFEA">1.6/LoadFolders/VanillaFactionsExpanded-Ancients</li>
   <li IfModActive="OskarPotocki.VFE.Megacorp">1.6/LoadFolders/VanillaFactionsExpanded-Megacorps</li>
+  <li IfModActive="vanillaexpanded.gravship">1.6/LoadFolders/VanillaGravshipExpanded</li>
 </v1.6>
 </loadFolders>
