@@ -1,4 +1,4 @@
-﻿using HarmonyLib;
+using HarmonyLib;
 using Verse;
 
 namespace AlteredCarbon
@@ -8,7 +8,7 @@ namespace AlteredCarbon
     {
         public static void Postfix(ThingDef def, ThingRequestGroup group, ref bool __result)
         {
-            if (__result is false && group == ThingRequestGroup.PotentialBillGiver && def == AC_DefOf.AC_NeuralEditor)
+            if (__result is false && group == ThingRequestGroup.PotentialBillGiver && def.IsNeuralEditor())
             {
                 __result = true;
             }

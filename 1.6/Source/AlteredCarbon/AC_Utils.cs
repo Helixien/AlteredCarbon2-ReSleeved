@@ -93,6 +93,7 @@ namespace AlteredCarbon
                 Log.ResetMessageCount();
             }
         }
+        public static bool IsNeuralEditor(this ThingDef def) => def.thingClass != null && typeof(Building_NeuralEditor).IsAssignableFrom(def.thingClass);
 
         public static List<Thing> GetAllStackCaches(this Map map)
         {
@@ -148,7 +149,7 @@ namespace AlteredCarbon
                 return def == AC_DefOf.AC_SleeveGestator
                     || def == AC_DefOf.AC_SleeveCasket || def == AC_DefOf.AC_SleeveCasket
                     || def == AC_DefOf.AC_NeuralMatrix
-                    || def == AC_DefOf.AC_NeuralEditor;
+                    || def.IsNeuralEditor();
             }
             return false;
         }
@@ -686,7 +687,6 @@ namespace AlteredCarbon
                 }
             }
         }
-
 
         public static void AddTakeEmptySleeveJob(Pawn pawn, Pawn pawnTarget, bool failMessage)
         {

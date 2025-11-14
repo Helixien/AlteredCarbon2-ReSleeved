@@ -90,6 +90,7 @@
 		<priorityInType>200</priorityInType>
 		<fixedBillGiverDefs>
 			<li>AC_NeuralEditor</li>
+			<li MayRequire="vanillaexpanded.gravship">AC_CompactNeuralEditor</li>
 		</fixedBillGiverDefs>
 		<verb>neural editing</verb>
 		<gerund>neural editing at</gerund>

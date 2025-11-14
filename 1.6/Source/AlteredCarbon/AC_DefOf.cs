@@ -60,7 +60,6 @@ namespace AlteredCarbon
         public static HediffDef AC_SleeveShock;
         public static ThingDef AC_SleeveGestator;
         public static ThingDef AC_SleeveCasket;
-        public static ThingDef AC_NeuralEditor;
         public static RecipeDef AC_WipeActiveNeuralStack;
         public static RecipeDef AC_InstallNeuralStack;
         public static RecipeDef AC_InstallEmptyNeuralStack;

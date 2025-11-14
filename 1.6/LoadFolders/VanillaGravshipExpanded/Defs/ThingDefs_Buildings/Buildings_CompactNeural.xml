@@ -84,12 +84,5 @@
 			<li>AC_NeuralDigitalization</li>
 		</researchPrerequisites>
 		<drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
-		<modExtensions>
-			<li Class="VEF.Buildings.RecipeInheritanceExtension">
-				<inheritRecipesFrom>
-					<li>AC_NeuralMatrix</li>
-				</inheritRecipesFrom>
-			</li>
-		</modExtensions>
 	</ThingDef>
 </Defs>

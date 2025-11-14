@@ -1,4 +1,4 @@
-﻿using HarmonyLib;
+using HarmonyLib;
 using RimWorld;
 using Verse;
 
@@ -9,9 +9,9 @@ namespace AlteredCarbon
     {
         public static bool Prefix(CompAffectedByFacilities __instance, Thing facility, ref bool __result)
         {
-            if (__instance.parent.def == AC_DefOf.AC_NeuralEditor)
+            if (__instance.parent.def.IsNeuralEditor())
             {
-                return CheckForFacilities(facility, ref __result, AC_DefOf.AC_NeuralEditor, 1);
+                return CheckForFacilities(facility, ref __result, __instance.parent.def, 1);
             }
             return true;
         }
