@@ -1,4 +1,4 @@
-﻿using HarmonyLib;
+using HarmonyLib;
 using LudeonTK;
 using RimWorld;
 using System;
@@ -33,7 +33,7 @@ namespace AlteredCarbon
         private Vector2 scrollPosition;
 
         // indexes for lists
-        private Dictionary<string, int> indexesPerCategory;
+        public Dictionary<string, GeneDef> selectedGenesPerCategory;
         private int hairTypeIndex = 0;
         private int beardTypeIndex = 0;
         private int raceTypeIndex = 0;
@@ -268,13 +268,21 @@ namespace AlteredCarbon
                         firstColumnPos.y += 5f;
                         geneOptionsDrawn = true;
                     }
-                    var index = indexesPerCategory[category.Key];
-                    DoSelectionButtons(ref firstColumnPos, category.Key.SplitCamelCase().FirstCharToUpper(), ref index,
-                        (GeneDef x) => x.LabelCap, groupedGenes, delegate (GeneDef x)
+                    if (selectedGenesPerCategory.TryGetValue(category.Key, out var selectedGene))
+                    {
+                        var index = groupedGenes.IndexOf(selectedGene);
+                        if (index < 0)
                         {
-                            GeneUtils.ApplyGene(x, curSleeve, IsXenogene(x));
-                            RecheckEverything();
-                        }, floatMenu: false);
+                            index = 0;
+                        }
+                        DoSelectionButtons(ref firstColumnPos, category.Key.SplitCamelCase().FirstCharToUpper(), ref index,
+                            (GeneDef x) => x.LabelCap, groupedGenes, delegate (GeneDef x)
+                            {
+                                selectedGenesPerCategory[category.Key] = x;
+                                GeneUtils.ApplyGene(x, curSleeve, IsXenogene(x));
+                                RecheckEverything();
+                            }, floatMenu: false);
+                    }
                 }
             }
             if (curXenogerm != null)
@@ -706,16 +714,24 @@ namespace AlteredCarbon
             hairTypeIndex = permittedHairs.IndexOf(curSleeve.story.hairDef);
             beardTypeIndex = permittedBeards.IndexOf(curSleeve.style.beardDef);
             headTypeIndex = permittedHeads.IndexOf(curSleeve.story.headType);
-            indexesPerCategory = new Dictionary<string, int>();
-            var genes = curSleeve.genes.GenesListForReading.Where(x => x.def.exclusionTags.NullOrEmpty() is false).Select(x => x.def).ToList();
-            foreach (var gene in genes)
+            selectedGenesPerCategory = new Dictionary<string, GeneDef>();
+            var genesWithExclusionTags = curSleeve.genes.GenesListForReading.Where(x => x.def.exclusionTags.NullOrEmpty() is false).ToList();
+            var allExclusionTags = genesWithExclusionTags.SelectMany(x => x.def.exclusionTags).Distinct().ToList();
+
+            foreach (var tag in allExclusionTags)
             {
-                foreach (var tag in gene.exclusionTags)
+                var genesOfThisTag = genesWithExclusionTags.Where(x => x.def.exclusionTags.Contains(tag)).OrderBy(x => x.def.index).ToList();
+                if (genesOfThisTag.Any())
                 {
-                    var genesOfThisTag = curSleeve.genes.GenesListForReading.Where(x => x.def.exclusionTags.NullOrEmpty() is false
-                        && x.def.exclusionTags.Contains(tag)).ToList();
                     var activeGene = genesOfThisTag.FirstOrDefault(x => x.Active);
-                    indexesPerCategory[tag] = genesOfThisTag.IndexOf(activeGene);
+                    if (activeGene != null)
+                    {
+                        selectedGenesPerCategory[tag] = activeGene.def;
+                    }
+                    else
+                    {
+                        selectedGenesPerCategory[tag] = genesOfThisTag.First().def;
+                    }
                 }
             }
 
@@ -939,6 +955,10 @@ namespace AlteredCarbon
             foreach (var geneDef in DefDatabase<GeneDef>.AllDefsListForReading)
             {
                 if (ModCompatibility.VanillaRacesExpandedAndroidIsActive && ModCompatibility.IsAndroidGene(geneDef))
+                {
+                    continue;
+                }
+                if (geneDef.defName == "RS_VoidTouched")
                 {
                     continue;
                 }

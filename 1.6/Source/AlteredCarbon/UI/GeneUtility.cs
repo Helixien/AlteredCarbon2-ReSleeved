@@ -1,4 +1,4 @@
-﻿using RimWorld;
+using RimWorld;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -7,6 +7,7 @@ using static AlteredCarbon.UIHelper;
 
 namespace AlteredCarbon
 {
+    [HotSwappable]
     public static class GeneUtils
     {
         public static Gene ApplyGene(GeneDef geneDef, Pawn pawn, bool xenogene)
@@ -27,6 +28,10 @@ namespace AlteredCarbon
         public static void ApplyGene(Gene gene, Pawn pawn)
         {
             OverrideAllConflicting(gene, pawn);
+            if (Find.WindowStack.WindowOfType<Window_SleeveCustomization>() is Window_SleeveCustomization window)
+            {
+                RecalculateGeneOverrides(pawn, window.selectedGenesPerCategory.Values.ToList());
+            }
             if (gene.def.skinIsHairColor)
             {
                 pawn.story.skinColorOverride = pawn.story.HairColor;
@@ -110,6 +115,32 @@ namespace AlteredCarbon
                 if (item != gene && item.def.ConflictsWith(gene.def))
                 {
                     item.OverrideBy(gene);
+                }
+            }
+        }
+
+        public static void RecalculateGeneOverrides(Pawn pawn, List<GeneDef> selectedGenes)
+        {
+            foreach (var gene in pawn.genes.GenesListForReading)
+            {
+                if (selectedGenes.Contains(gene.def))
+                {
+                    gene.OverrideBy(null);
+                }
+                else
+                {
+                    foreach (var selectedGeneDef in selectedGenes)
+                    {
+                        if (gene.def.ConflictsWith(selectedGeneDef))
+                        {
+                            var overridingGene = pawn.genes.GetGene(selectedGeneDef);
+                            if (overridingGene != null)
+                            {
+                                gene.OverrideBy(overridingGene);
+                                break;
+                            }
+                        }
+                    }
                 }
             }
         }
