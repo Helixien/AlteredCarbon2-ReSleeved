@@ -16,14 +16,14 @@ namespace AlteredCarbon
             get
             {
                 NeuralData neuralData = NeuralData;
-                var archoPath = "Things/Item/ArchoStacks/";
-                var stackPath = "Things/Item/NeuralStacks/";
-                if (this.StyleDef != null)
-                {
-                    stackPath = this.StyleDef.graphicData.texPath.Replace("FriendlyStack", "");
-                }
                 if (neuralData.ContainsData)
                 {
+                    var archoPath = "Things/Item/ArchoStacks/";
+                    var stackPath = "Things/Item/NeuralStacks/";
+                    if (this.StyleDef != null)
+                    {
+                        stackPath = this.StyleDef.graphicData.texPath.Replace("FriendlyStack", "");
+                    }
                     if (neuralData.guestStatusInt == GuestStatus.Slave)
                     {
                         return GetStackGraphic(ref slaveGraphic, ref slaveGraphicData,
@@ -474,7 +474,16 @@ namespace AlteredCarbon
         {
             Thing newStack = ThingMaker.MakeThing(this.GetEmptyStackVariant());
             GenPlace.TryPlaceThing(newStack, affecter.Position, affecter.Map, ThingPlaceMode.Near);
-            newStack.StyleDef = this.StyleDef;
+            var style = this.StyleDef;
+            if (style != null)
+            {
+                var emptyStyle = DefDatabase<ThingStyleDef>.GetNamedSilentFail(style.defName.Replace("Active", "Empty"));
+                if (emptyStyle != null)
+                {
+                    style = emptyStyle;
+                }
+                newStack.StyleDef = style;
+            }
             if (NeuralData.hostPawn != null)
             {
                 AlteredCarbonManager.Instance.StacksIndex.Remove(NeuralData.PawnID);
@@ -510,7 +519,6 @@ namespace AlteredCarbon
             Scribe_References.Look(ref hediff, "hediff");
             Scribe_References.Look(ref needleCastingInto, "needleCastingInto");
             Scribe_References.Look(ref assignedPawnForInstalling, "assignedPawnForInstalling");
-
         }
     }
 }

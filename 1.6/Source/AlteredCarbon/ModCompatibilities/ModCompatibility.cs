@@ -208,6 +208,11 @@ namespace AlteredCarbon
         {
             return rjw.SexPartAdder.MakePart(hediffDef, pawn, part);
         }
+        
+        public static void SexualizePawn(Pawn pawn)
+        {
+            rjw.xxx.GetCompRJW(pawn)?.Sexualize();
+        }
 
         public static List<Color> GetRacialColorPresets(ThingDef thingDef, string channelName)
         {

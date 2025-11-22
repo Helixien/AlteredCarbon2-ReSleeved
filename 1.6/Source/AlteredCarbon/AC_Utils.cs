@@ -517,7 +517,7 @@ namespace AlteredCarbon
             return pawn;
         }
 
-        public static Pawn ClonePawn(Pawn source)
+        public static Pawn ClonePawn(Pawn source, bool copyTattoos = false)
         {
             var clone = CreateEmptyPawn(source.kindDef, source.Faction);
             if (source.IsCreepJoiner)
@@ -527,7 +527,7 @@ namespace AlteredCarbon
                     form = source.creepjoiner.form
                 };
             }
-            CopyBody(source, clone, copyAgeInfo: true, copyGenesFully: true, copyHealth: true);
+            CopyBody(source, clone, copyAgeInfo: true, copyGenesFully: true, copyHealth: true, copyTattoos: copyTattoos);
             clone.CreateEmptySleeve(keepNaturalAbilities: true, keepPsycastAbilities: true);
             CopyAbilities(source, clone);
             clone.Rotation = source.Rotation;
@@ -571,7 +571,7 @@ namespace AlteredCarbon
         }
 
         public static void CopyBody(Pawn source, Pawn dest, bool copyAgeInfo = false, bool copyGenesPartially = false, bool copyGenesFully = false,
-            bool copyHealth = false)
+            bool copyHealth = false, bool copyTattoos = false)
         {
             dest.gender = source.gender;
             dest.story.skinColorOverride = source.story.skinColorOverride;
@@ -633,6 +633,17 @@ namespace AlteredCarbon
             {
                 CopyEndogenes(source, dest);
                 CopyXenogenes(source, dest);
+            }
+            
+            if (copyTattoos)
+            {
+                dest.style.BodyTattoo = source.style.BodyTattoo;
+                dest.style.FaceTattoo = source.style.FaceTattoo;
+            }
+            else if (ModsConfig.IdeologyActive)
+            {
+                dest.style.BodyTattoo = TattooDefOf.NoTattoo_Body;
+                dest.style.FaceTattoo = TattooDefOf.NoTattoo_Face;
             }
 
             if (ModCompatibility.RimJobWorldIsActive)
@@ -887,12 +898,11 @@ namespace AlteredCarbon
             pawn.story.Childhood = AC_DefOf.AC_VatGrownChild;
             pawn.story.Adulthood = AC_DefOf.AC_VatGrownAdult;
             pawn.story.favoriteColor = null;
-            if (ModsConfig.IdeologyActive)
-            {
-                pawn.style.BodyTattoo = TattooDefOf.NoTattoo_Body;
-                pawn.style.FaceTattoo = TattooDefOf.NoTattoo_Face;
-            }
             AlteredCarbonManager.Instance.emptySleeves.Add(pawn);
+            if (ModCompatibility.RimJobWorldIsActive)
+            {
+                ModCompatibility.SexualizePawn(pawn);
+            }
         }
 
         public static IEnumerable<Hediff_MissingPart> GetMissingParts(this Pawn pawn)

@@ -418,7 +418,7 @@ namespace AlteredCarbon
         public void PutCorpseForRepurposing(Corpse corpse)
         {
             Reset();
-            var clone = AC_Utils.ClonePawn(corpse.InnerPawn);
+            var clone = AC_Utils.ClonePawn(corpse.InnerPawn, copyTattoos: true);
             clone.health.healthState = PawnHealthState.Dead;
             Find.WorldPawns.AddPawn(clone);
             initialRotTime = corpse.TryGetComp<CompRottable>().RotProgress;
