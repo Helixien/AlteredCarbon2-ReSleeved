@@ -27,11 +27,12 @@ namespace AlteredCarbon
 
         public static void ApplyGene(Gene gene, Pawn pawn)
         {
-            OverrideAllConflicting(gene, pawn);
             if (Find.WindowStack.WindowOfType<Window_SleeveCustomization>() is Window_SleeveCustomization window)
             {
                 RecalculateGeneOverrides(pawn, window.selectedGenesPerCategory.Values.ToList());
             }
+            OverrideAllConflicting(gene, pawn);
+
             if (gene.def.skinIsHairColor)
             {
                 pawn.story.skinColorOverride = pawn.story.HairColor;

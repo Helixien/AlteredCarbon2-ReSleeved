@@ -723,7 +723,7 @@ namespace AlteredCarbon
                 var genesOfThisTag = genesWithExclusionTags.Where(x => x.def.exclusionTags.Contains(tag)).OrderBy(x => x.def.index).ToList();
                 if (genesOfThisTag.Any())
                 {
-                    var activeGene = genesOfThisTag.FirstOrDefault(x => x.Active);
+                    var activeGene = genesOfThisTag.FirstOrDefault(x => x.Active && x.Overridden is false);
                     if (activeGene != null)
                     {
                         selectedGenesPerCategory[tag] = activeGene.def;
