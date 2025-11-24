@@ -88,7 +88,9 @@ namespace AlteredCarbon
                 {
                     comp.Props.resetSound.PlayOneShot(new TargetInfo(comp.Pawn.Position, comp.Pawn.Map));
                 }
+                pawn.rotationTracker.FaceCell(TargetThingA.Position);
             };
+            doWork.handlingFacing = true;
             doWork.AddPreTickAction(() =>
             {
                 if (moteCablePulse == null || moteCablePulse.Destroyed)
@@ -97,8 +99,6 @@ namespace AlteredCarbon
                         new TargetInfo(pawn.Position, base.Map));
                 }
                 moteCablePulse?.Maintain();
-
-                pawn.rotationTracker.FaceCell(TargetThingA.Position);
                 var comp = Apparel.GetComp<CompShieldBubble>();
                 comp.Energy = Mathf.Min(comp.EnergyMax, comp.Energy + 0.1f);
                 if (Building.PowerComp.PowerNet.powerComps.Any(x => x.parent == Apparel) is false)

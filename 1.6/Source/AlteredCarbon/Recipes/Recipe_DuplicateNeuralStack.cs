@@ -1,4 +1,4 @@
-﻿using RimWorld;
+using RimWorld;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -21,10 +21,10 @@ namespace AlteredCarbon
             float intellectualSkill = doer.skills.GetSkill(SkillDefOf.Intellectual).Level;
             var stackCopyTo = DuplicateStack(doer.Position, doer.Map, neuralDataToDuplicate);
             Messages.Message("AC.SuccessfullyDuplicatedStack".Translate(doer.Named("PAWN")), doer, MessageTypeDefOf.TaskCompletion);
-            if (stackCopyTo.NeuralData.faction != null && doer.Faction != null
-                && doer.Faction != stackCopyTo.NeuralData.faction)
+            if (stackCopyTo.NeuralData.Faction != null && doer.Faction != null
+                && doer.Faction != stackCopyTo.NeuralData.Faction)
             {
-                stackCopyTo.NeuralData.faction.TryAffectGoodwillWith(doer.Faction, stackCopyTo.NeuralData.faction.GoodwillToMakeHostile(doer.Faction), canSendMessage: true, reason: AC_DefOf.AC_DuplicatedStackEvent);
+                stackCopyTo.NeuralData.Faction.TryAffectGoodwillWith(doer.Faction, stackCopyTo.NeuralData.Faction.GoodwillToMakeHostile(doer.Faction), canSendMessage: true, reason: AC_DefOf.AC_DuplicatedStackEvent);
             }
             float degradationChance = DegradationChanceCurve.Evaluate(intellectualSkill);
             if (Rand.Chance(degradationChance))

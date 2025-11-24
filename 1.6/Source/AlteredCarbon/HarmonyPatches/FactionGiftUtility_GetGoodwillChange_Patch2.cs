@@ -1,4 +1,4 @@
-﻿using HarmonyLib;
+using HarmonyLib;
 using RimWorld;
 using RimWorld.Planet;
 using System;
@@ -16,7 +16,7 @@ namespace AlteredCarbon
                 if (tradeables[i].ActionToDo == TradeAction.PlayerSells)
                 {
                     if (tradeables[i].AnyThing is NeuralStack neuralStack && neuralStack.NeuralData.ContainsData
-                        && neuralStack.NeuralData.faction == theirFaction)
+                        && neuralStack.NeuralData.Faction == theirFaction)
                     {
                         __result += 8;
                     }

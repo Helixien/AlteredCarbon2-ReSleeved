@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Linq;
 using System.Text;
 using RimWorld;
@@ -79,7 +79,7 @@ namespace AlteredCarbon
             stackRecruitable = neuralData.recruitable;
 
             this.allChildhoodBackstories = DefDatabase<BackstoryDef>.AllDefsListForReading
-                .Where(x => x.slot == BackstorySlot.Childhood && (x.spawnCategories?.Any(x => x == "ColonyAndroid" 
+                .Where(x => x.slot == BackstorySlot.Childhood && (x.spawnCategories?.Any(x => x == "ColonyAndroid"
                 || x == "AwakenedAndroid") is false)).ToList();
             if (neuralData.adulthood != null)
             {
@@ -109,9 +109,9 @@ namespace AlteredCarbon
             {
                 ideoIndex = Find.IdeoManager.IdeosListForReading.IndexOf(neuralData.ideo);
             }
-            if (neuralData.faction != null)
+            if (neuralData.Faction != null)
             {
-                factionIndex = allFactions.IndexOf(neuralData.faction);
+                factionIndex = allFactions.IndexOf(neuralData.Faction);
             }
         }
 
@@ -318,17 +318,17 @@ namespace AlteredCarbon
             DoSelectionButtons(ref pos, "Faction".Translate(), ref factionIndex, (Faction x) => x.Name, allFactions,
                 delegate (Faction faction)
             {
-                if (neuralData.faction != faction)
+                if (neuralData.Faction != faction)
                 {
                     neuralData.isFactionLeader = false;
                 }
-                neuralData.faction = faction;
+                neuralData.Faction = faction;
                 factionIndex = allFactions.IndexOf(faction);
-            }, false, buttonOffsetFromTextOverride: 5f, labelWidthOverride: 80f, includeInfoCard: false, 
-                tooltipGetter: (Faction t) => t.def.Description, icon: (Faction t) => t.def.FactionIcon, 
-                iconColor: (Faction t) => t.def.DefaultColor, labelGetterPostfix: (Faction t) => t != Faction.OfPlayer ? (", " + 
+            }, false, buttonOffsetFromTextOverride: 5f, labelWidthOverride: 80f, includeInfoCard: false,
+                tooltipGetter: (Faction t) => t.def.Description, icon: (Faction t) => t.def.FactionIcon,
+                iconColor: (Faction t) => t.def.DefaultColor, labelGetterPostfix: (Faction t) => t != Faction.OfPlayer ? (", " +
                 t.GoodwillWith(Faction.OfPlayer).ToString().Colorize(ColoredText.GetFactionRelationColor(t))) : "");
-            
+
             if (stackRecruitable is false)
             {
                 var unwaveringLoyal = neuralData.recruitable;
@@ -407,14 +407,14 @@ namespace AlteredCarbon
                 skillsContainer.x += this.Margin;
                 skillsContainer.y += this.Margin;
 
-                var rect = GenUI.DrawElementStackVertical(skillsContainer, Text.LineHeight, neuralData.skills, delegate(Rect rect, SkillRecord skill)
+                var rect = GenUI.DrawElementStackVertical(skillsContainer, Text.LineHeight, neuralData.skills, delegate (Rect rect, SkillRecord skill)
                     {
                         skill.pawn = neuralData.DummyPawn;
                         Rect labelRect = new Rect(rect.x, rect.y, 110, rect.height);
                         Widgets.Label(labelRect, skill.def.skillLabel.CapitalizeFirst());
 
                         Rect passionRect = new Rect(labelRect.xMax + (labelRect.height * 2) + 100 + 15, labelRect.y, labelRect.height, labelRect.height);
-                        
+
                         if (Mouse.IsOver(passionRect))
                         {
                             Widgets.DrawHighlight(passionRect);
@@ -471,7 +471,7 @@ namespace AlteredCarbon
                                 SoundDefOf.Tick_Tiny.PlayOneShotOnCamera();
                                 skill.Level += 1;
                             }
-                            
+
                             if (skill.passion > Passion.None)
                             {
                                 Texture2D image = AllPassions[(int)skill.passion];
@@ -493,10 +493,10 @@ namespace AlteredCarbon
                             {
                                 GUI.color = ((skill.Aptitude > 0) ? ColorLibrary.BrightGreen : ColorLibrary.RedReadable);
                             }
-                        
+
                             label = skill.Level.ToStringCached();
                         }
-                        
+
                         GenUI.SetLabelAlign(TextAnchor.MiddleLeft);
                         Widgets.Label(skillLevelLabel, label);
                         GenUI.ResetLabelAlign();
@@ -523,7 +523,7 @@ namespace AlteredCarbon
             }
             for (int i = 0; i < pawn.story.traits.allTraits.Count; i++)
             {
-                if (!pawn.story.traits.allTraits[i].Suppressed 
+                if (!pawn.story.traits.allTraits[i].Suppressed
                     && pawn.story.traits.allTraits[i].CurrentData.skillGains.FirstOrDefault(x => x.skill == sk) is SkillGain skillGain)
                 {
                     num += (float)skillGain.amount;
@@ -683,7 +683,7 @@ namespace AlteredCarbon
         private void DrawAcceptCancelButtons(Rect inRect)
         {
             var buttonWidth = 200;
-            var resetAllButtonRect = new Rect(buttonWidth / 2f, inRect.height - 32, buttonWidth, 32); 
+            var resetAllButtonRect = new Rect(buttonWidth / 2f, inRect.height - 32, buttonWidth, 32);
             if (Widgets.ButtonText(resetAllButtonRect, "AC.ResetAll".Translate()))
             {
                 ResetAll();
@@ -774,7 +774,7 @@ namespace AlteredCarbon
             {
                 time += (int)(certaintyDiff * editTimeOffsetPerCertaintyChange);
             }
-            if (neuralDataCopy.faction != neuralData.faction)
+            if (neuralDataCopy.Faction != neuralData.Faction)
             {
                 time += editTimeOffsetPerFactionChange;
             }
@@ -849,7 +849,7 @@ namespace AlteredCarbon
             {
                 degradation += (int)(certaintyDiff * stackDegradationOffsetPerCertaintyChange);
             }
-            if (neuralDataCopy.faction != neuralData.faction)
+            if (neuralDataCopy.Faction != neuralData.Faction)
             {
                 degradation += stackDegradationOffsetPerFactionChange;
             }

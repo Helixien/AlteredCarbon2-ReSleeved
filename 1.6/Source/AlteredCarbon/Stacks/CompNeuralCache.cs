@@ -1,4 +1,4 @@
-﻿using RimWorld;
+using RimWorld;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,15 +19,15 @@ namespace AlteredCarbon
         {
             if (thing is NeuralStack stack && stack.IsActiveStack && stack.autoLoad && Full is false)
             {
-                if (this.allowColonistNeuralStacks && stack.NeuralData.faction != null && stack.NeuralData.faction == Faction.OfPlayer)
+                if (this.allowColonistNeuralStacks && stack.NeuralData.Faction != null && stack.NeuralData.Faction == Faction.OfPlayer)
                 {
                     return true;
                 }
-                if (this.allowHostileNeuralStacks && stack.NeuralData.faction.HostileTo(Faction.OfPlayer))
+                if (this.allowHostileNeuralStacks && stack.NeuralData.Faction.HostileTo(Faction.OfPlayer))
                 {
                     return true;
                 }
-                if (this.allowStrangerNeuralStacks && (stack.NeuralData.faction is null || stack.NeuralData.faction != Faction.OfPlayer && !stack.NeuralData.faction.HostileTo(Faction.OfPlayer)))
+                if (this.allowStrangerNeuralStacks && (stack.NeuralData.Faction is null || stack.NeuralData.Faction != Faction.OfPlayer && !stack.NeuralData.Faction.HostileTo(Faction.OfPlayer)))
                 {
                     return true;
                 }
@@ -89,7 +89,7 @@ namespace AlteredCarbon
                     }
                 };
             }
-       
+
         }
 
         public void EjectContents(bool ejectNeedlecasting = false)
@@ -127,7 +127,7 @@ namespace AlteredCarbon
 
         public void Notify_HauledTo(Pawn hauler, Thing thing, int count)
         {
-            if (thing is NeuralStack stack && stack.NeuralData.faction == Faction.OfPlayer)
+            if (thing is NeuralStack stack && stack.NeuralData.Faction == Faction.OfPlayer)
             {
                 var matrix = this.parent.GetConnectedMatrix();
                 if (matrix != null)

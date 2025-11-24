@@ -1300,6 +1300,18 @@ namespace AlteredCarbon
         {
             return dictionary != null && dictionary.ContainsKey(key);
         }
+
+        public static void CopyFrom(this OutfitForcedHandler dest, OutfitForcedHandler src)
+        {
+            dest.ForcedApparel.Clear();
+            if (src != null)
+            {
+                foreach (var apparel in src.ForcedApparel)
+                {
+                    dest.ForcedApparel.Add(apparel);
+                }
+            }
+        }
     }
 }
 

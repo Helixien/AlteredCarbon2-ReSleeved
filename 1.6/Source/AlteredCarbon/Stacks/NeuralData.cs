@@ -31,8 +31,29 @@ namespace AlteredCarbon
         private List<TimeAssignmentDef> times;
         private FoodPolicy foodPolicy;
         private ApparelPolicy apparelPolicy;
+        private OutfitForcedHandler forcedHandler;
         private DrugPolicy drugPolicy;
-        public Faction faction;
+
+        private Faction faction;
+        public Faction Faction
+        {
+            get
+            {
+                if (hostPawn != null && faction != hostPawn.Faction)
+                {
+                    faction = hostPawn.Faction;
+                }
+                return faction;
+            }
+            set
+            {
+                faction = value;
+                if (hostPawn != null && hostPawn.Faction != value)
+                {
+                    hostPawn.SetFaction(value);
+                }
+            }
+        }
         public bool isFactionLeader;
         public List<Thought_Memory> thoughts;
         public List<Trait> traits;
@@ -174,7 +195,7 @@ namespace AlteredCarbon
                     ticks = ageBiologicalTicks = hostPawn.ageTracker.AgeBiologicalTicks;
                 }
                 dummyPawn = AC_Utils.CreateEmptyPawn(hostPawn?.kindDef ?? kindDef ?? PawnKindDefOf.Colonist,
-                    faction, OriginalRace ?? ThingDefOf.Human, ticks, OriginalXenotypeDef != null
+                    Faction, OriginalRace ?? ThingDefOf.Human, ticks, OriginalXenotypeDef != null
                     ? OriginalXenotypeDef : XenotypeDefOf.Baseliner);
                 dummyPawn.gender = OriginalGender;
             }
@@ -247,17 +268,23 @@ namespace AlteredCarbon
             }
         }
 
-        public bool Friendly => faction != null && (faction != Faction.OfPlayer && faction.HostileTo(Faction.OfPlayer) is false);
-        public bool Colonist => faction != null && faction == Faction.OfPlayer;
-        public bool Hostile => faction != null && (faction != Faction.OfPlayer && faction.HostileTo(Faction.OfPlayer));
+        public bool Friendly
+        {
+            get
+            {
+                return Faction != null && (Faction != Faction.OfPlayer && Faction.HostileTo(Faction.OfPlayer) is false);
+            }
+        }
+        public bool Colonist => Faction != null && Faction == Faction.OfPlayer;
+        public bool Hostile => Faction != null && (Faction != Faction.OfPlayer && Faction.HostileTo(Faction.OfPlayer));
 
         public void AppendInfoStack(StringBuilder stringBuilder)
         {
             if (this.ContainsData)
             {
-                if (this.faction != null)
+                if (this.Faction != null)
                 {
-                    stringBuilder.AppendLineTagged("AC.Faction".Translate() + ": " + this.faction.NameColored);
+                    stringBuilder.AppendLineTagged("AC.Faction".Translate() + ": " + this.Faction.NameColored);
                 }
                 if (ModCompatibility.AlienRacesIsActive && this.OriginalRace != null)
                 {
@@ -349,6 +376,11 @@ namespace AlteredCarbon
             }
             foodPolicy = pawn.foodRestriction?.CurrentFoodPolicy;
             apparelPolicy = pawn.outfits?.curApparelPolicy;
+            if (pawn.outfits?.forcedHandler != null)
+            {
+                forcedHandler = new OutfitForcedHandler();
+                forcedHandler.CopyFrom(pawn.outfits.forcedHandler);
+            }
             drugPolicy = pawn.drugs?.CurrentPolicy;
             times = pawn.timetable?.times.CopyList();
             thoughts = pawn.needs?.mood?.thoughts?.memories?.Memories.CopyList();
@@ -691,10 +723,15 @@ namespace AlteredCarbon
             selfTend = other.selfTend;
             foodPolicy = other.foodPolicy;
             apparelPolicy = other.apparelPolicy;
+            if (other.forcedHandler != null)
+            {
+                forcedHandler = new OutfitForcedHandler();
+                forcedHandler.CopyFrom(other.forcedHandler);
+            }
             drugPolicy = other.drugPolicy;
             times = other.times.CopyList();
             thoughts = other.thoughts.CopyList();
-            faction = other.faction;
+            faction = other.Faction;
             isFactionLeader = other.isFactionLeader;
             traits = new List<Trait>();
             if (other.traits != null)
@@ -879,9 +916,9 @@ namespace AlteredCarbon
             {
                 pawn.kindDef = kindDef;
             }
-            if (pawn.Faction != faction)
+            if (pawn.Faction != Faction)
             {
-                pawn.SetFaction(faction);
+                pawn.SetFaction(Faction);
             }
             if (pawn.IsEmptySleeve())
             {
@@ -1040,6 +1077,11 @@ namespace AlteredCarbon
             pawn.foodRestriction.CurrentFoodPolicy = foodPolicy;
             pawn.outfits = new Pawn_OutfitTracker(pawn);
             pawn.outfits.curApparelPolicy = apparelPolicy;
+            if (forcedHandler != null)
+            {
+                pawn.outfits.forcedHandler = new OutfitForcedHandler();
+                pawn.outfits.forcedHandler.CopyFrom(forcedHandler);
+            }
             pawn.drugs = new Pawn_DrugPolicyTracker(pawn);
             pawn.drugs.CurrentPolicy = drugPolicy;
             pawn.ageTracker.AgeChronologicalTicks = ageChronologicalTicks;
@@ -1744,7 +1786,7 @@ namespace AlteredCarbon
             Scribe_Values.Look(ref isCopied, "isCopied", false, false);
             Scribe_Values.Look(ref diedFromCombat, "diedFromCombat");
             Scribe_Deep.Look(ref name, "name", new object[0]);
-            Scribe_References.Look(ref hostPawn, "hostPawn", true);
+            Scribe_References.Look(ref hostPawn, "hostPawn");
             Scribe_Values.Look(ref hostilityMode, "hostilityMode");
             Scribe_Collections.Look(ref allowedAreas, "allowedAreas", LookMode.Reference, LookMode.Reference, ref allowedAreasKeys, ref allowedAreasValues);
             if (Scribe.mode == LoadSaveMode.Saving && allowedAreas != null)
@@ -1771,12 +1813,13 @@ namespace AlteredCarbon
             Scribe_Defs.Look(ref originalRace, "race");
             Scribe_Defs.Look(ref kindDef, "kindDef");
             Scribe_References.Look(ref apparelPolicy, "outfit", false);
+            Scribe_Deep.Look(ref forcedHandler, "forcedHandler");
             Scribe_References.Look(ref foodPolicy, "foodPolicy", false);
             Scribe_References.Look(ref drugPolicy, "drugPolicy", false);
 
             Scribe_Collections.Look(ref times, "times", LookMode.Def);
             Scribe_Collections.Look(ref thoughts, "thoughts", LookMode.Deep);
-            Scribe_References.Look(ref faction, "faction", true);
+            Scribe_References.Look(ref faction, "faction");
             Scribe_Values.Look(ref isFactionLeader, "isFactionLeader", false, false);
 
             Scribe_Collections.Look(ref skills, "skills", LookMode.Deep);
@@ -1796,7 +1839,7 @@ namespace AlteredCarbon
             Scribe_References.Look(ref relativeInvolvedInRescueQuest, "relativeInvolvedInRescueQuest");
             Scribe_Values.Look(ref nextMarriageNameChange, "nextMarriageNameChange");
             Scribe_Values.Look(ref hidePawnRelations, "hidePawnRelations");
-            Scribe_Collections.Look(ref relatedPawns, saveDestroyedThings: true, "relatedPawns", LookMode.Reference);
+            Scribe_Collections.Look(ref relatedPawns, "relatedPawns", LookMode.Reference);
             Scribe_Collections.Look(ref priorities, "priorities", LookMode.Def, LookMode.Value);
             Scribe_Values.Look(ref guestStatusInt, "guestStatusInt");
             Scribe_Defs.Look(ref interactionMode, "interactionMode");
@@ -1836,8 +1879,8 @@ namespace AlteredCarbon
             }
             if (ModsConfig.IdeologyActive)
             {
-                Scribe_References.Look(ref ideo, "ideo", saveDestroyedThings: true);
-                Scribe_Collections.Look(ref previousIdeos, saveDestroyedThings: true, "previousIdeos", LookMode.Reference);
+                Scribe_References.Look(ref ideo, "ideo");
+                Scribe_Collections.Look(ref previousIdeos, "previousIdeos", LookMode.Reference);
                 Scribe_Defs.Look(ref favoriteColor, "favoriteColor");
                 Scribe_Values.Look(ref joinTick, "joinTick");
                 Scribe_Values.Look(ref certainty, "certainty");
@@ -1953,7 +1996,7 @@ namespace AlteredCarbon
         private List<Pawn> pawnValues = new List<Pawn>();
         public override string ToString()
         {
-            return name + " - " + faction;
+            return name + " - " + Faction;
         }
     }
 }

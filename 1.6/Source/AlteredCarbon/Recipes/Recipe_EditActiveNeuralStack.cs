@@ -1,4 +1,4 @@
-﻿using RimWorld;
+using RimWorld;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -14,8 +14,8 @@ namespace AlteredCarbon
             base.Notify_IterationCompleted(billDoer, ingredients);
             var origData = NeuralData(billDoer);
             var rewrittenData = origData.neuralDataRewritten;
-            var faction = origData.faction;
-            if (faction != null && faction != Faction.OfPlayer) 
+            var faction = origData.Faction;
+            if (faction != null && faction != Faction.OfPlayer)
             {
                 Faction.OfPlayer.TryAffectGoodwillWith(faction, faction.GoodwillToMakeHostile(Faction.OfPlayer), canSendMessage: true, !faction.temporary, AC_DefOf.AC_EditedStack);
             }

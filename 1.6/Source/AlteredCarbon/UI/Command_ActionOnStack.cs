@@ -1,4 +1,4 @@
-﻿using RimWorld;
+using RimWorld;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -90,7 +90,8 @@ namespace AlteredCarbon
                         }
                     }
                 }
-                return things.Where(x => x.PositionHeld.Fogged(x.MapHeld) is false).ToHashSet();
+                things.RemoveWhere(x => x.Destroyed || x.ParentHolder is Thing t && t.Faction != source.Faction || x.PositionHeld.Fogged(x.MapHeld));
+                return things;
             }
         }
 

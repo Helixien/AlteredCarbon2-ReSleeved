@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
@@ -14,10 +14,10 @@ namespace AlteredCarbon
 		public override bool Matches(Thing t)
 		{
 			var stack = t as NeuralStack;
-			if (stack != null && stack.NeuralData.ContainsData && stack.NeuralData.faction != Faction.OfPlayer && !stack.NeuralData.faction.HostileTo(Faction.OfPlayer))
-            {
+			if (stack != null && stack.NeuralData.ContainsData && stack.NeuralData.Faction != Faction.OfPlayer && !stack.NeuralData.Faction.HostileTo(Faction.OfPlayer))
+			{
 				return true;
-            }
+			}
 			return false;
 		}
 	}

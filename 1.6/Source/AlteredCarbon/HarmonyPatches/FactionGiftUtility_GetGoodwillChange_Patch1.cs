@@ -1,4 +1,4 @@
-﻿using HarmonyLib;
+using HarmonyLib;
 using RimWorld.Planet;
 using System;
 using System.Collections.Generic;
@@ -16,8 +16,8 @@ namespace AlteredCarbon
                 ThingOwner directlyHeldThings = pod.GetDirectlyHeldThings();
                 for (int i = 0; i < directlyHeldThings.Count; i++)
                 {
-                    if (directlyHeldThings[i] is NeuralStack neuralStack && neuralStack.NeuralData.ContainsData 
-                        && neuralStack.NeuralData.faction == giveTo.Faction)
+                    if (directlyHeldThings[i] is NeuralStack neuralStack && neuralStack.NeuralData.ContainsData
+                        && neuralStack.NeuralData.Faction == giveTo.Faction)
                     {
                         __result += 8;
                     }

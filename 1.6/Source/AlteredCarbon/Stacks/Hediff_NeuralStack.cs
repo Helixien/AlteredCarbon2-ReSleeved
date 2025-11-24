@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -274,8 +274,7 @@ namespace AlteredCarbon
         }
 
         public bool preventSpawningStack;
-        public NeuralStack SpawnStack(bool destroyPawn = false, ThingPlaceMode placeMode = ThingPlaceMode.Near, 
-            Caravan caravan = null, bool psycastEffect = false, Map mapToSpawn = null)
+        public NeuralStack SpawnStack(bool destroyPawn = false, ThingPlaceMode placeMode = ThingPlaceMode.Near, Caravan caravan = null, bool psycastEffect = false, Map mapToSpawn = null, bool forceSpawn = false)
         {
             if (preventSpawningStack)
             {
@@ -285,21 +284,32 @@ namespace AlteredCarbon
             try
             {
                 float partHealth = pawn.health.hediffSet.GetPartHealth(part);
-                if (partHealth <= 0)
+                if (forceSpawn is false && partHealth <= 0)
                 {
                     preventSpawningStack = false;
                     return null;
                 }
-                if (def != AC_DefOf.AC_ArchotechStack && placeMode == ThingPlaceMode.Direct
-                    && pawn.Corpse is Corpse corpse && corpse.Destroyed is false)
+                var corpse = pawn.Corpse;
+                if (corpse != null)
                 {
-                    placeMode = ThingPlaceMode.Near;
+                    corpse.MapHeld?.designationManager.TryRemoveDesignationOn(corpse, AC_DefOf.AC_ExtractStackDesignation);
+
+                    if (def != AC_DefOf.AC_ArchotechStack && placeMode == ThingPlaceMode.Direct && corpse.Destroyed is false)
+                    {
+                        placeMode = ThingPlaceMode.Near;
+                    }
                 }
+
                 var healthRatio = partHealth / part.def.GetMaxHealth(pawn);
                 var stackDef = SourceStack;
                 var neuralStack = ThingMaker.MakeThing(stackDef) as NeuralStack;
                 if (savedStyle != null)
                 {
+                    var activeStyle = DefDatabase<ThingStyleDef>.GetNamedSilentFail(savedStyle.defName.Replace("Empty", "Active"));
+                    if (activeStyle != null)
+                    {
+                        savedStyle = activeStyle;
+                    }
                     neuralStack.SetStyleDef(savedStyle);
                 }
                 if (neuralStack.IsArchotechStack is false)
@@ -359,11 +369,6 @@ namespace AlteredCarbon
                 Log.Error("Error spawning stack: " + this + " - " + ex.ToString());
             }
             preventSpawningStack = false;
-            return null;
-        }
-
-        private ThingStyleDef GetStyleDef(ThingDef stackDef, NeuralStack neuralStack)
-        {
             return null;
         }
 

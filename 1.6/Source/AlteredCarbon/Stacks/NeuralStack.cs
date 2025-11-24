@@ -29,12 +29,12 @@ namespace AlteredCarbon
                         return GetStackGraphic(ref slaveGraphic, ref slaveGraphicData,
                             archoPath + "SlaveArchoStack", stackPath + "SlaveStack");
                     }
-                    else if (neuralData.faction == Faction.OfPlayer)
+                    else if (neuralData.Faction == Faction.OfPlayer)
                     {
                         return GetStackGraphic(ref friendlyGraphic, ref friendlyGraphicData,
                             archoPath + "FriendlyArchoStack", stackPath + "FriendlyStack");
                     }
-                    else if (neuralData.faction != null && neuralData.faction.HostileTo(Faction.OfPlayer))
+                    else if (neuralData.Faction != null && neuralData.Faction.HostileTo(Faction.OfPlayer))
                     {
                         return GetStackGraphic(ref hostileGraphic, ref hostileGraphicData,
                             archoPath + "HostileArchoStack", stackPath + "HostileStack");
@@ -448,7 +448,7 @@ namespace AlteredCarbon
                 NeuralData.OverwritePawn(pawn);
                 if (affectFactionRelationship)
                 {
-                    NeuralData.faction.TryAffectGoodwillWith(affecter.Faction, NeuralData.faction.GoodwillToMakeHostile(affecter.Faction), canSendMessage: true, reason: AC_DefOf.AC_ErasedStackEvent);
+                    NeuralData.Faction.TryAffectGoodwillWith(affecter.Faction, NeuralData.Faction.GoodwillToMakeHostile(affecter.Faction), canSendMessage: true, reason: AC_DefOf.AC_ErasedStackEvent);
                 }
                 if (NeuralData.isFactionLeader)
                 {

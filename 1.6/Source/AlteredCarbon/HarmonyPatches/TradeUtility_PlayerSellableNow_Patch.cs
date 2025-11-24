@@ -1,4 +1,4 @@
-﻿using HarmonyLib;
+using HarmonyLib;
 using RimWorld;
 using Verse;
 
@@ -15,7 +15,7 @@ namespace AlteredCarbon
                 {
                     __result = false;
                 }
-                else if (trader is null || neuralStack.NeuralData.faction != trader.Faction)
+                else if (trader is null || neuralStack.NeuralData.Faction != trader.Faction)
                 {
                     __result = false;
                 }

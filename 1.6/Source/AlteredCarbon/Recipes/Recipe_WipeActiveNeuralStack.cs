@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
@@ -18,8 +18,8 @@ namespace AlteredCarbon
             var stack = Thing(billDoer) as NeuralStack;
             AC_DefOf.Message_NegativeEvent.PlayOneShot(stack);
             var neuralData = NeuralData(billDoer);
-            if (neuralData.faction != null && billDoer != null && billDoer.Faction != null 
-                && billDoer.Faction != neuralData.faction)
+            if (neuralData.Faction != null && billDoer != null && billDoer.Faction != null
+                && billDoer.Faction != neuralData.Faction)
             {
                 stack.EmptyStack(billDoer, true);
             }

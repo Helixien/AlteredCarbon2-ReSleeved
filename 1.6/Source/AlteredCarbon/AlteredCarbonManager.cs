@@ -1,4 +1,4 @@
-﻿using RimWorld;
+using RimWorld;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -176,7 +176,7 @@ namespace AlteredCarbon
             Scribe_Collections.Look(ref stacksIndex, "stacksIndex", LookMode.Value, LookMode.Reference, ref pawnKeys, ref stacksValues);
             Scribe_Collections.Look(ref pawnsWithStacks, "pawnsWithStacks", LookMode.Reference);
             Scribe_Collections.Look(ref emptySleeves, "emptySleeves", LookMode.Reference);
-            Scribe_Collections.Look(ref deadPawns, saveDestroyedThings: true, "deadPawns", LookMode.Reference);
+            Scribe_Collections.Look(ref deadPawns, "deadPawns", LookMode.Reference);
             Scribe_Collections.Look(ref stacksRelationships, "stacksRelationships", LookMode.Value, LookMode.Deep, ref stacksRelationshipsKeys, ref stacksRelationshipsValues);
             pawnsWithStacks.RemoveWhere(x => x is null || x.Destroyed);
             Instance = this;

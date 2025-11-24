@@ -1,4 +1,4 @@
-﻿using Verse;
+using Verse;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
@@ -130,7 +130,7 @@ namespace AlteredCarbon
             var items = matrix.AllNeuralStacks.Concat(matrix.Map.listerThings.GetThingsOfType<NeuralStack>()
                 .Where(x => x.Fogged() is false && x.IsActiveStack && x.NeuralData.trackedToMatrix == matrix)).Cast<IStackHolder>();
             var hediffs = PawnsFinder.AllMapsWorldAndTemporary_AliveOrDead.Select(pawn => pawn.GetNeuralStack())
-                .Where(x => x != null&& x.NeuralData.trackedToMatrix == matrix).Cast<IStackHolder>();
+                .Where(x => x != null && x.NeuralData.trackedToMatrix == matrix).Cast<IStackHolder>();
             allItems = [.. items, .. hediffs];
             currentItems = GetItems();
         }
@@ -312,7 +312,7 @@ namespace AlteredCarbon
             {
                 thing = needleCastingInto.pawn;
             }
-            (Thing thing, TaggedString pawnName, string factionName) cache = new(thing, data.PawnNameColored, data.faction?.Name);
+            (Thing thing, TaggedString pawnName, string factionName) cache = new(thing, data.PawnNameColored, data.Faction?.Name);
             Rect iconRect = new(rect.x, rect.y, rect.height, rect.height);
             Widgets.ThingIcon(iconRect, cache.thing);
 
@@ -324,7 +324,7 @@ namespace AlteredCarbon
             Text.Font = GameFont.Tiny;
             GUI.color = Color.grey;
             Rect factionRect = new(nameRect.x, nameRect.yMax - 5, nameRect.width, 15);
-            if (stack.NeuralData.faction != null)
+            if (stack.NeuralData.Faction != null)
             {
                 Widgets.Label(factionRect, "AC.Faction".Translate() + ": " + cache.factionName);
             }
@@ -393,7 +393,7 @@ namespace AlteredCarbon
                     {
                         DrawButton(iconRectWithOffset, cancelIcon, "AC.TooltipCancelImplanting".Translate(cache.pawnName, assignedPawn.Label),
                             isImplantingButtonActive, () => assignedPawn.BillStack.bills
-                            .RemoveAll(x => x is Bill_InstallStack installStack 
+                            .RemoveAll(x => x is Bill_InstallStack installStack
                             && installStack.stackToInstall == neuralStack));
                     }
                     else
@@ -415,14 +415,14 @@ namespace AlteredCarbon
                     iconRectWithOffset.x -= iconSpacing;
                 }
             }
-            if (tracked && AC_DefOf.AC_NeuralCasting.IsFinished 
-                && (neuralStack != null && neuralStack.ParentHolder is CompNeuralCache stackCache 
-                && stackCache.parent.GetConnectedMatrix() == matrix || stack.ThingHolder is Pawn pawn 
+            if (tracked && AC_DefOf.AC_NeuralCasting.IsFinished
+                && (neuralStack != null && neuralStack.ParentHolder is CompNeuralCache stackCache
+                && stackCache.parent.GetConnectedMatrix() == matrix || stack.ThingHolder is Pawn pawn
                 && pawn.ParentHolder is Building_CryptosleepCasket casket && casket.GetConnectedMatrix() == matrix))
             {
-                bool isNeedlecastingButtonActive = stack.NeuralData.faction == Faction.OfPlayer;
+                bool isNeedlecastingButtonActive = stack.NeuralData.Faction == Faction.OfPlayer;
 
-                if (neuralStack != null && (neuralStack.ParentHolder is not CompNeuralCache 
+                if (neuralStack != null && (neuralStack.ParentHolder is not CompNeuralCache
                     || neuralStack.AssignedPawnForInstalling is not null || matrix.Powered is false))
                 {
                     isNeedlecastingButtonActive = false;
