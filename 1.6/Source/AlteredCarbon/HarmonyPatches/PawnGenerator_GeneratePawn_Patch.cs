@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Linq;
 using HarmonyLib;
 using Verse;
@@ -10,7 +10,7 @@ namespace AlteredCarbon
     {
         public static void Postfix(Pawn __result)
         {
-            if (__result != null && __result.RaceProps.Humanlike)
+            if (__result != null && __result.RaceProps.Humanlike && __result.IsShambler is false)
             {
                 var extension = __result.kindDef.GetModExtension<StackSpawnModExtension>();
                 if (extension != null)
