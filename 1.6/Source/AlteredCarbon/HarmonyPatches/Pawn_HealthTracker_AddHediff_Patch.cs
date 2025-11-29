@@ -19,7 +19,7 @@ namespace AlteredCarbon
 
         public static bool HandleHediff(Pawn ___pawn, Hediff hediff)
         {
-            if (hediff is Hediff_MissingPart missingPart && missingPart.part.def == AC_DefOf.Neck && missingPart.IsFresh && ___pawn.HasNeuralStack(out var stackHediff))
+            if (hediff is Hediff_MissingPart missingPart && missingPart.part?.def == AC_DefOf.Neck && missingPart.IsFresh && ___pawn.HasNeuralStack(out var stackHediff))
             {
                 stackHediff.SpawnStack(forceSpawn: true);
             }

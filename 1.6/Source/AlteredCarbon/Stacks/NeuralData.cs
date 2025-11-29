@@ -1678,7 +1678,6 @@ namespace AlteredCarbon
             }
         }
 
-        private static Type VEPsycastModExtensionType = AccessTools.TypeByName("VanillaPsycastsExpanded.AbilityExtension_Psycast");
         public static bool CanStoreAbility(Pawn pawn, Def def)
         {
             if (IsNaturalAbility(pawn, def))
@@ -1698,19 +1697,13 @@ namespace AlteredCarbon
             {
                 return typeof(Psycast).IsAssignableFrom(abilityDef.abilityClass);
             }
-            else if (def is VEF.Abilities.AbilityDef abilityDef2)
+            else if (ModCompatibility.VEPsycastsIsActive && def.modExtensions != null && def is VEF.Abilities.AbilityDef abilityDef2)
             {
-                if (VEPsycastModExtensionType != null)
+                foreach (var modExtension in def.modExtensions)
                 {
-                    if (def.modExtensions != null)
+                    if (ModCompatibility.VEPsycastModExtensionType.IsAssignableFrom(modExtension.GetType()))
                     {
-                        foreach (var modExtension in def.modExtensions)
-                        {
-                            if (VEPsycastModExtensionType.IsAssignableFrom(modExtension.GetType()))
-                            {
-                                return true;
-                            }
-                        }
+                        return true;
                     }
                 }
             }

@@ -125,7 +125,7 @@ namespace AlteredCarbon
         public static ResearchProjectDef AC_NeuralCasting;
         public static EffecterDef AC_NeuralConnectorHeadGlow;
         public static ThingDef AC_ConnectorGlow_North, AC_ConnectorGlow_South, AC_ConnectorGlow_West, AC_ConnectorGlow_East;
-        public static ResearchProjectDef AC_SkilltrainerProduction;
+        public static ResearchProjectDef AC_SkilltrainerProduction, AC_PsytrainerProduction;
         public static ThingDef WaterproofConduit;
         public static IncidentDef AC_GiveQuest_Intro_Researcher;
         public static ThingDef AC_NanoStorageDrive;

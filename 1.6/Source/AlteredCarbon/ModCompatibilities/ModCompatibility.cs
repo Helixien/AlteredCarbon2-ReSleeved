@@ -18,6 +18,10 @@ namespace AlteredCarbon
         private static readonly MethodInfo tryGetRaceGroupDef;
         private static readonly Type raceGroupDef_HelperType;
 
+        public static bool VEPsycastsIsActive;
+
+        public static Type VEPsycastModExtensionType;
+
         public static bool DubsBadHygieneActive;
         public static bool VanillaSkillsExpandedIsActive;
         public static bool VanillaRacesExpandedAndroidIsActive;
@@ -46,6 +50,11 @@ namespace AlteredCarbon
                 new HarmonyMethod(AccessTools.Method(typeof(ModCompatibility), "CharacterCardUtility_DoLeftSection_PatchPrefix")));
             }
             VehicleFrameworkIsActive = ModsConfig.IsActive("SmashPhil.VehicleFramework");
+            VEPsycastsIsActive = ModsConfig.IsActive("VanillaExpanded.VPsycastsE");
+            if (VEPsycastsIsActive)
+            {
+                VEPsycastModExtensionType = AccessTools.TypeByName("VanillaPsycastsExpanded.AbilityExtension_Psycast");
+            }
         }
 
         public static bool TryGetVehicleTile(Pawn pawn, out int tile)

@@ -124,6 +124,18 @@
 			</rulesStrings>
 		</generalRules>
 	</ResearchProjectDef>
+	<!-- ================================ Psytrainer production ====================== -->
+	<ResearchProjectDef ParentName="AC_ResearchBase">
+		<defName>AC_PsytrainerProduction</defName>
+		<label>psytrainer production</label>
+		<description>text.todo.</description>
+		<baseCost>8000</baseCost>
+		<researchViewX>1.00</researchViewX>
+		<researchViewY>1.90</researchViewY>
+		<prerequisites>
+			<li>AC_NeuralDigitalization</li>
+		</prerequisites>
+	</ResearchProjectDef>
 	<!-- ================================ Chrysalis Powered Armor ====================== -->
 	<ResearchProjectDef ParentName="AC_ResearchBase">
 		<defName>AC_ChrysalisPoweredArmor</defName>

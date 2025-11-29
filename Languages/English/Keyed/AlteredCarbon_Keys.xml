@@ -120,7 +120,7 @@
 	<AC.CorpseRepurposingIsInProcess>Corpse repurposing is in process.</AC.CorpseRepurposingIsInProcess>
 	<AC.SleeveGrowingIsInProcess>Sleeve growing is in process.</AC.SleeveGrowingIsInProcess>
 	<!-- ================================ Neural Matrix & Stack Cache ====================== -->
-		<AC.NeuralMatrixManagement>Neural Matrix Management</AC.NeuralMatrixManagement>
+	<AC.NeuralMatrixManagement>Neural Matrix Management</AC.NeuralMatrixManagement>
 	<AC.ManageNeuralMatrix>Manage Neural Matrix</AC.ManageNeuralMatrix>
 	<AC.ManageNeuralMatrixDesc>Manage stacks stored or registered with the neural matrix.</AC.ManageNeuralMatrixDesc>
 	<AC.StorageFilters>Storage filters</AC.StorageFilters>
@@ -303,19 +303,28 @@ If you edit the content from a non-colonist stack from another faction, their en
 	<AC.RequiresNeuralStackInstalled>Requires neural stack installed.</AC.RequiresNeuralStackInstalled>
 	<AC.CreateNeuralStack>Create neural stack</AC.CreateNeuralStack>
 	<AC.CreateSkilltrainer>Create skilltrainer</AC.CreateSkilltrainer>
+	<AC.CreatePsytrainer>Create psytrainer</AC.CreatePsytrainer>
 	<AC.NotSufficientSkillLevels>Not sufficient skill levels</AC.NotSufficientSkillLevels>
+	<AC.NoPsycasterAbilities>No psycaster abilities</AC.NoPsycasterAbilities>
 	<AC.CreatingNeuralStackCompleted>Creating neural stack completed for {PAWN_nameDef}.</AC.CreatingNeuralStackCompleted>
 	<AC.CreatingSkilltrainerCompleted>Creating skilltrainer completed for {PAWN_nameDef}. {PAWN_nameDef}'s brain has been destroyed by the neural connector.</AC.CreatingSkilltrainerCompleted>
+	<AC.CreatingPsytrainerCompleted>Creating psytrainer completed for {PAWN_nameDef}. {PAWN_nameDef}'s brain has been destroyed by the neural connector.</AC.CreatingPsytrainerCompleted>
 	<AC.ConfirmSkilltrainerPawn>Scanning {PAWN_nameDef} to create a skilltrainer will kill {PAWN_objective}. Are you sure you want to continue?
 
 Scanning {PAWN_nameDef} will create a skilltrainer for one of the following skills:
 {1}</AC.ConfirmSkilltrainerPawn>
+	<AC.ConfirmPsytrainerPawn>Scanning {PAWN_nameDef} to create a psytrainer will kill {PAWN_objective}. Are you sure you want to continue?
+
+Scanning {PAWN_nameDef} will create a psytrainer for one of the following abilities:
+{1}</AC.ConfirmPsytrainerPawn>
 	<AC.ConfirmCancelSkilltrainerPawn>Cancelling a skilltrainer process will still kill {PAWN_nameDef}. Are you sure you want to continue?</AC.ConfirmCancelSkilltrainerPawn>
+	<AC.ConfirmCancelPsytrainerPawn>Cancelling a psytrainer process will still kill {PAWN_nameDef}. Are you sure you want to continue?</AC.ConfirmCancelPsytrainerPawn>
 	<AC.AlreadyRegisteredToMatrix>Already registered selected the neural matrix</AC.AlreadyRegisteredToMatrix>
 	<AC.RegisteringStackCompleted>Stack of {PAWN_nameDef} successfully registered with neural matrix.</AC.RegisteringStackCompleted>
 	<AC.RegisterStack>Register stack</AC.RegisterStack>
 	<AC.MessagePawnKilledNeuralConnector>{PAWN_nameDef}'s brain has been destroyed by the neural connector.</AC.MessagePawnKilledNeuralConnector>
 	<AC.CreatingSkillTrainer>Creating skilltrainer from {PAWN_nameDef}</AC.CreatingSkillTrainer>
+	<AC.CreatingPsytrainer>Creating psytrainer for {PAWN_labelShort}</AC.CreatingPsytrainer>
 	<AC.RegisteringStack>Registering stack of {PAWN_nameDef}</AC.RegisteringStack>
 	<!-- ================================ Biocoding ====================== -->
 	<AC.BiocodableEquipWarning>Once imprinted to a user, the weapon can not be used by anyone else until its biocoding is reset again. Are you sure you want to equip this time?</AC.BiocodableEquipWarning>

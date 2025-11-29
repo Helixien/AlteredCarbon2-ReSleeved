@@ -15,7 +15,7 @@ namespace AlteredCarbon
     {
         public enum NeuralConnectorMode
         {
-            NotSet, RegisterStack, CreateNeuralPrint, CreateSkilltrainer
+            NotSet, RegisterStack, CreateNeuralPrint, CreateSkilltrainer, CreatePsytrainer
         }
 
         private NeuralConnectorMode connectorMode;
@@ -156,7 +156,7 @@ namespace AlteredCarbon
                 def.building.subcoreScannerFixedIngredients[i].ResolveReferences();
             }
         }
-        public bool DestroyOccupantBrain => connectorMode == NeuralConnectorMode.CreateSkilltrainer;
+        public bool DestroyOccupantBrain => connectorMode == NeuralConnectorMode.CreateSkilltrainer || connectorMode == NeuralConnectorMode.CreatePsytrainer;
 
         public override void DeSpawn(DestroyMode mode = DestroyMode.Vanish)
         {
@@ -263,6 +263,13 @@ namespace AlteredCarbon
                 {
                     return "AC.NotSufficientSkillLevels".Translate();
                 }
+                if (connectorMode == NeuralConnectorMode.CreatePsytrainer)
+                {
+                    if (GetAllPsycastAbilities(selPawn).Any() is false)
+                    {
+                        return "AC.NoPsycasterAbilities".Translate();
+                    }
+                }
                 if (selPawn.IsQuestLodger())
                 {
                     return "CryptosleepCasketGuestsNotAllowed".Translate();
@@ -314,6 +321,7 @@ namespace AlteredCarbon
                     case NeuralConnectorMode.RegisterStack: return 1600;
                     case NeuralConnectorMode.CreateNeuralPrint: return 12500;
                     case NeuralConnectorMode.CreateSkilltrainer: return 20000;
+                    case NeuralConnectorMode.CreatePsytrainer: return 25000;
                     default: return 0;
                 }
             }
@@ -401,12 +409,9 @@ namespace AlteredCarbon
             {
                 yield return FloatMenuUtility.DecoratePrioritizedTask(new FloatMenuOption("EnterBuilding".Translate(this), delegate
                 {
-                    if (connectorMode == NeuralConnectorMode.CreateSkilltrainer)
+                    if (connectorMode == NeuralConnectorMode.CreateSkilltrainer || connectorMode == NeuralConnectorMode.CreatePsytrainer)
                     {
-                        Find.WindowStack.Add(Dialog_MessageBox.CreateConfirmation("AC.ConfirmSkilltrainerPawn".Translate(selPawn.Named("PAWN")), delegate
-                        {
-                            SelectPawn(selPawn);
-                        }, destructive: true));
+                        ShowConfirmationDialog(connectorMode, selPawn);
                     }
                     else
                     {
@@ -491,11 +496,26 @@ namespace AlteredCarbon
                     {
                         if (connectorMode == NeuralConnectorMode.CreateSkilltrainer)
                         {
-                            var skill = Occupant.skills.skills.Where(x => x.Level >= 10).RandomElement();
+                            var skill = GetRandomSkill();
                             var def = ThingDef.Named(ThingDefGenerator_Neurotrainer.NeurotrainerDefPrefix + "_" + skill.def.defName);
                             var skilTrainer = ThingMaker.MakeThing(def);
                             GenPlace.TryPlaceThing(skilTrainer, InteractionCell, Map, ThingPlaceMode.Near);
                             Messages.Message("AC.CreatingSkilltrainerCompleted".Translate(Occupant.Named("PAWN")), Occupant, MessageTypeDefOf.PositiveEvent);
+                        }
+                        else if (connectorMode == NeuralConnectorMode.CreatePsytrainer)
+                        {
+                            var selectedAbility = GetRandomPsycastAbility(Occupant);
+                            if (selectedAbility != null)
+                            {
+                                var def = ThingDef.Named(ThingDefGenerator_Neurotrainer.PsytrainerDefPrefix + "_" + selectedAbility.defName);
+                                var psyTrainer = ThingMaker.MakeThing(def);
+                                GenPlace.TryPlaceThing(psyTrainer, InteractionCell, Map, ThingPlaceMode.Near);
+                                Messages.Message("AC.CreatingPsytrainerCompleted".Translate(Occupant.Named("PAWN")), Occupant, MessageTypeDefOf.PositiveEvent);
+                            }
+                            else
+                            {
+                                Log.Warning($"Tried to create Psytrainer but no psycast abilities found on {Occupant.Name}");
+                            }
                         }
                         else if (connectorMode == NeuralConnectorMode.RegisterStack)
                         {
@@ -543,6 +563,16 @@ namespace AlteredCarbon
                 effectStart?.Cleanup();
                 effectStart = null;
             }
+        }
+
+        private SkillRecord GetRandomSkill()
+        {
+            return GetAllValidSkills().RandomElement();
+        }
+
+        private IEnumerable<SkillRecord> GetAllValidSkills()
+        {
+            return Occupant.skills.skills.Where(x => x.Level >= 10);
         }
 
         private void DoWorkEffects()
@@ -623,6 +653,14 @@ namespace AlteredCarbon
                             connectorMode = NeuralConnectorMode.CreateSkilltrainer;
                         }, iconTex: Skilltrainer, Color.white));
                     }
+                    if (AC_DefOf.AC_PsytrainerProduction.IsFinished)
+                    {
+                        floatList.Add(new FloatMenuOption("AC.CreatePsytrainer".Translate(), delegate
+                        {
+                            initScanner = true;
+                            connectorMode = NeuralConnectorMode.CreatePsytrainer;
+                        }, iconTex: Skilltrainer, Color.white));
+                    }
                     Find.WindowStack.Add(new FloatMenu(floatList));
                 };
                 command_Action.activateSound = SoundDefOf.Tick_Tiny;
@@ -656,16 +694,13 @@ namespace AlteredCarbon
                         }
                         else
                         {
-                            if (connectorMode == NeuralConnectorMode.CreateSkilltrainer)
+                            if (connectorMode == NeuralConnectorMode.CreateSkilltrainer || connectorMode == NeuralConnectorMode.CreatePsytrainer)
                             {
-                                var skillList = pawn.skills.skills.Where(x => x.Level >= 10).Select(x => x.def.skillLabel);
-                                list.Add(new FloatMenuOption(pawn.LabelShortCap + " (" + skillList.ToStringSafeEnumerable() + ")", delegate
+                                list.Add(new FloatMenuOption(pawn.LabelShortCap + " (" + (connectorMode == NeuralConnectorMode.CreateSkilltrainer ?
+                                    GetAllValidSkills().Select(x => x.def.skillLabel) :
+                                    GetAllPsycastAbilities(pawn).Select(x => x.LabelCap.ToString()).ToList()).ToStringSafeEnumerable() + ")", delegate
                                 {
-                                    Find.WindowStack.Add(Dialog_MessageBox.CreateConfirmation("AC.ConfirmSkilltrainerPawn".Translate(
-                                        pawn.Named("PAWN"), skillList.ToLineList("- ")), delegate
-                                        {
-                                            SelectPawn(pawn);
-                                        }, destructive: true));
+                                    ShowConfirmationDialog(connectorMode, pawn);
                                 }, pawn, Color.white));
                             }
                             else
@@ -708,9 +743,9 @@ namespace AlteredCarbon
                 command_Action3.icon = CancelLoadingIcon;
                 command_Action3.action = delegate
                 {
-                    if (State == SubcoreScannerState.Occupied && connectorMode == NeuralConnectorMode.CreateSkilltrainer)
+                    if (State == SubcoreScannerState.Occupied && (connectorMode == NeuralConnectorMode.CreateSkilltrainer || connectorMode == NeuralConnectorMode.CreatePsytrainer))
                     {
-                        Find.WindowStack.Add(Dialog_MessageBox.CreateConfirmation("AC.ConfirmCancelSkilltrainerPawn".Translate(Occupant.Named("PAWN")), EjectContents, destructive: true));
+                        ShowCancelConfirmationDialog(connectorMode);
                     }
                     else
                     {
@@ -792,6 +827,10 @@ namespace AlteredCarbon
                         {
                             stringBuilder.Append("AC.CreatingSkillTrainer".Translate(selectedPawn.Named("PAWN")).Resolve());
                         }
+                        else if (connectorMode == NeuralConnectorMode.CreatePsytrainer)
+                        {
+                            stringBuilder.Append("AC.CreatingPsytrainer".Translate(selectedPawn.Named("PAWN")).Resolve());
+                        }
                         stringBuilder.AppendLineIfNotEmpty();
                         stringBuilder.Append("DurationLeft".Translate(fabricationTicksLeft.ToStringTicksToPeriod()).Resolve());
                     }
@@ -819,6 +858,71 @@ namespace AlteredCarbon
             Scribe_Values.Look(ref connectorMode, "connectorMode");
             Scribe_Values.Look(ref lastBillWorkTicks, "lastBillWorkTicks");
             Scribe_Values.Look(ref ticksWithoutPower, "ticksWithoutPower");
+        }
+
+        private List<AbilityDef> GetAllVanillaPsycastAbilities(Pawn pawn)
+        {
+            return pawn.abilities.abilities.Where(x => x.def.IsPsycast).Select(x => x.def).ToList();
+        }
+
+        private List<VEF.Abilities.AbilityDef> GetAllVEFPsycastAbilities(Pawn pawn)
+        {
+            var compAbilities = pawn.GetComp<VEF.Abilities.CompAbilities>();
+            if (compAbilities?.LearnedAbilities != null)
+            {
+                return compAbilities.LearnedAbilities.Where(x => NeuralData.IsPsycastAbility(x.def)).Select(x => x.def).ToList();
+            }
+            return new List<VEF.Abilities.AbilityDef>();
+        }
+
+        private List<Def> GetAllPsycastAbilities(Pawn pawn)
+        {
+            var vanillaAbilities = GetAllVanillaPsycastAbilities(pawn);
+            var vefAbilities = GetAllVEFPsycastAbilities(pawn);
+            
+            var allAbilities = new List<Def>();
+            allAbilities.AddRange(vanillaAbilities.Cast<Def>());
+            allAbilities.AddRange(vefAbilities.Cast<Def>());
+            
+            return allAbilities;
+        }
+
+        private Def GetRandomPsycastAbility(Pawn pawn)
+        {
+            var allAbilities = GetAllPsycastAbilities(pawn);
+            if (allAbilities.Any())
+            {
+                return allAbilities.RandomElement();
+            }
+            return null;
+        }
+
+        private void ShowConfirmationDialog(NeuralConnectorMode mode, Pawn selPawn)
+        {
+            if (mode == NeuralConnectorMode.CreateSkilltrainer)
+            {
+                var skillList = GetAllValidSkills().Select(x => x.def.skillLabel);
+                Find.WindowStack.Add(Dialog_MessageBox.CreateConfirmation("AC.ConfirmSkilltrainerPawn".Translate(
+                    selPawn.Named("PAWN"), skillList.ToLineList("- ")), delegate
+                {
+                    SelectPawn(selPawn);
+                }, destructive: true));
+            }
+            else if (mode == NeuralConnectorMode.CreatePsytrainer)
+            {
+                var allAbilities = GetAllPsycastAbilities(selPawn).Select(x => x.LabelCap.ToString()).ToList();
+                Find.WindowStack.Add(Dialog_MessageBox.CreateConfirmation("AC.ConfirmPsytrainerPawn".Translate(
+                    selPawn.Named("PAWN"), allAbilities.ToLineList("- ")), delegate
+                {
+                    SelectPawn(selPawn);
+                }, destructive: true));
+            }
+        }
+
+        private void ShowCancelConfirmationDialog(NeuralConnectorMode mode)
+        {
+            var translationKey = mode == NeuralConnectorMode.CreateSkilltrainer ? "AC.ConfirmCancelSkilltrainerPawn" : "AC.ConfirmCancelPsytrainerPawn";
+            Find.WindowStack.Add(Dialog_MessageBox.CreateConfirmation(translationKey.Translate(Occupant.Named("PAWN")), EjectContents, destructive: true));
         }
     }
 }
