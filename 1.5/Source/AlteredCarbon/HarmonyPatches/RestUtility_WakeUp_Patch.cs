@@ -11,7 +11,7 @@ public static class RestUtility_WakeUp_Patch
     {
         if (p.health.hediffSet.HasHediff(AC_DefOf.AC_Dreamcatcher))
         {
-            p.needs.mood.thoughts.memories.TryGainMemory(ThoughtDefOf.SleepDisturbed, null, null);
+            p.needs.mood.thoughts.memories.TryGainMemory(AC_DefOf.AC_PleasantDream, null, null);
         }
     }
 }
