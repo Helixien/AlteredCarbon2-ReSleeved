@@ -9,7 +9,7 @@ public static class MemoryThoughtHandler_TryGainMemory_Patch
 {
     public static void Postfix(MemoryThoughtHandler __instance, ref Thought_Memory newThought)
     {
-        if (__instance?.pawn?.health.hediffSet.HasHediff(AC_DefOf.AC_Dreamcatcher) != true || newThought == null) return;
+        if (__instance?.pawn?.health.hediffSet.HasHediff(AC_DefOf.AC_Dreamcatcher) != true || newThought?.pawn == null) return;
         if (newThought.MoodOffset() < 0)
         {
             newThought.durationTicksOverride = (int)(newThought.DurationTicks * 0.75f);
