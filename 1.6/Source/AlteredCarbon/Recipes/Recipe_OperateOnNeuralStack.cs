@@ -15,7 +15,7 @@ namespace AlteredCarbon
 
         public NeuralData NeuralData(Pawn billDoer)
         {
-            return Thing(billDoer).GetNeuralData();
+            return Thing(billDoer).GetNeuralData(refresh: true);
         }
 
         public Thing Thing(Pawn billDoer)
