@@ -892,7 +892,7 @@ namespace AlteredCarbon
             pawn.guest.recruitable = true;
             pawn.Name = new NameSingle("AC.EmptySleeve".Translate());
             pawn.story.title = null;
-            pawn.playerSettings.medCare = MedicalCareCategory.Best;
+            pawn.playerSettings.medCare = Find.PlaySettings.defaultCareForColonist;
             pawn.workSettings.EnableAndInitialize();
             pawn.skills.Notify_SkillDisablesChanged();
             pawn.story.Childhood = AC_DefOf.AC_VatGrownChild;
