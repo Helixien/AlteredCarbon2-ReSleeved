@@ -115,6 +115,7 @@ namespace AlteredCarbon
         public static HediffDef AC_VoiceSynthesizer;
         public static HediffDef AC_MentalFuse;
         public static HediffDef AC_Dreamcatcher;
+        public static ThoughtDef AC_PleasantDream;
         public static ThingCategoryDef WeaponsMelee;
         [DefAlias("AC_RemoteStack")] public static HediffDef AC_RemoteStackHediff;
         public static ThingDef AC_RemoteStack;
