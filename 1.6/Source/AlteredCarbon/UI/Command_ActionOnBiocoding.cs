@@ -21,7 +21,7 @@ namespace AlteredCarbon
                 foreach (var thing in source.MapHeld.listerThings.AllThings)
                 {
                     var comp = thing.TryGetComp<CompBiocodable>();
-                    if (comp != null && comp is not CompBladelinkWeapon && comp.CodedPawn != null)
+                    if (comp != null && comp is not CompBladelinkWeapon && comp.Biocoded)
                     {
                         things.Add(thing);
                     }
