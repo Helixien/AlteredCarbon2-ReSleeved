@@ -112,7 +112,7 @@
 	<ThingDef ParentName="AC_ApparelArmorChrysalisMakeableBase">
 		<defName>AC_Apparel_ChrysalisArmor</defName>
 		<label>chrysalis armor</label>
-		<description>A suit of advanced chrysalis power armor. Improved protection over standard power armor, offered by molecular plasteel integration thoughout the suit as well as on-board processors to assist movement and dampen pain receptors.</description>
+		<description>A suit of advanced chrysalis power armor. Improved protection over standard power armor, offered by molecular plasteel integration throughout the suit as well as on-board processors to assist movement and dampen pain receptors.</description>
 		<recipeMaker>
 			<displayPriority>135</displayPriority>
 		</recipeMaker>
@@ -211,7 +211,7 @@
 	<ThingDef ParentName="ArmorMachineableBase">
 		<defName>AC_EnviroSuit</defName>
 		<label>enviro suit</label>
-		<description>A lightly armored, impermeable, airtight full body suit with hyperweave lining designed for work in extreme conditions. Thin, layered plasteel-weave plates, advanced molecular adaptation layers and a state of the art air filtration system allow for full protection against heat, cold, psychic and toxic effects. It limits the movement and visibility of the wearer while not offering much of protection in combat.\n\nOriginally created for workers in zero-G and other extreme working conditions, it soon found popularity with needlecasters, explorers and medical professionals alike and has been widely adopted on a multitude of worlds.</description>
+		<description>A lightly armored, impermeable, airtight full-body suit with hyperweave lining designed for work in extreme conditions. Thin, layered plasteel-weave plates, advanced molecular adaptation layers and a state-of-the-art air filtration system allow for full protection against heat, cold, psychic and toxic effects. It limits the movement and visibility of the wearer while not offering much protection in combat.\n\nOriginally created for workers in zero-G and other extreme working conditions, it soon found popularity with needlecasters, explorers and medical professionals alike and has been widely adopted on a multitude of worlds.</description>
 		<graphicData>
 			<texPath>Things/Pawn/Humanlike/Apparel/EnviroSuit/EnviroSuit</texPath>
 			<graphicClass>Graphic_Single</graphicClass>

@@ -4,7 +4,7 @@
 	<XenotypeDef>
 		<defName>AC_Sleeveliner</defName>
 		<label>Sleeveliner</label>
-		<description>An artificially gestated human with no or major significant genetic modifications.</description>
+		<description>An artificially gestated human with no major genetic modifications.</description>
 		<iconPath>UI/Icons/Xenotypes/Baseliner</iconPath>
 		<factionlessGenerationWeight>0</factionlessGenerationWeight>
 	</XenotypeDef>
@@ -86,7 +86,7 @@
 	<GeneDef ParentName="AC_SleeveQualityGeneBase">
 		<defName>AC_SleeveQuality_Good</defName>
 		<label>Good quality</label>
-		<description>Carriers of this gene had their bodies artificially gestated. Above average effort was put into it, resulting in good quality.</description>
+		<description>Carriers of this gene had their bodies artificially gestated. Above-average effort was put into it, resulting in good quality.</description>
 		<iconPath>UI/Icons/Genes/Gene_SleeveQuality_ Good</iconPath>
 		<displayOrderInCategory>15</displayOrderInCategory>
 		<biostatCpx>2</biostatCpx>

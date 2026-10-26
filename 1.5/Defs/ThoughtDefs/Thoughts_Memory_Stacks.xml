@@ -15,7 +15,7 @@
 		<stages>
 			<li>
 				<label>different sleeve xenotype</label>
-				<description>The xenotype of my sleeve is not my own, this feels wrong.</description>
+				<description>The xenotype of my sleeve is not my own. This feels wrong.</description>
 				<baseMoodEffect>-5</baseMoodEffect>
 			</li>
 		</stages>
@@ -37,7 +37,7 @@
 		<stages>
 			<li>
 				<label>different sleeve gender</label>
-				<description>The gender of my sleeve is not my own, this feels wrong.</description>
+				<description>The gender of my sleeve is not my own. This feels wrong.</description>
 				<baseMoodEffect>-5</baseMoodEffect>
 			</li>
 		</stages>
@@ -74,7 +74,7 @@
 		<stages>
 			<li>
 				<label>New sleeve</label>
-				<description>I have a new body, this will take some getting used to.</description>
+				<description>I have a new body. This will take some getting used to.</description>
 				<baseMoodEffect>-2</baseMoodEffect>
 			</li>
 		</stages>
@@ -91,7 +91,7 @@
 		<stages>
 			<li>
 				<label>different sleeve race</label>
-				<description>The race of my sleeve is not my own, this feels wrong.</description>
+				<description>The race of my sleeve is not my own. This feels wrong.</description>
 				<baseMoodEffect>-5</baseMoodEffect>
 			</li>
 		</stages>
@@ -136,7 +136,7 @@
 		<stages>
 			<li>
 				<label>Lost my fiance</label>
-				<description>My fiance stayed with my original but I still love them. This isn't fair...</description>
+				<description>My fiance stayed with my original, but I still love them. This isn't fair...</description>
 				<baseMoodEffect>-10</baseMoodEffect>
 			</li>
 		</stages>

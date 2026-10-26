@@ -86,7 +86,7 @@
 			<li Class="PatchOperationReplace">
 				<xpath>/Defs/ThingDef[defName="CryptosleepCasket"]/description</xpath>
 				<value>
-					<description>A self-powered sarcophagus designed to keep a person in a state of suspended animation for many years.\n\nWhile mostly use for starflight or long term storage, it also found popularity with needlecasters.</description>
+					<description>A self-powered sarcophagus designed to keep a person in a state of suspended animation for many years.\n\nWhile mostly used for starflight or long-term storage, it has also become popular with needlecasters.</description>
 				</value>
 			</li>
 			<!-- ================================ Cryptosleep casket placeworker ====================== -->

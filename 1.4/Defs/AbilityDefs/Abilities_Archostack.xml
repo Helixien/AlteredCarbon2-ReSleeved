@@ -4,7 +4,7 @@
 	<VFECore.Abilities.AbilityDef>
 		<defName>AC_ArchoStackSkip</defName>
 		<label>stack skip</label>
-		<description>Skip the archo stack into the targets body, taking control over it. Kills the target and the sleeve the archostack is currently in. This is useful if the current sleeve is near death.</description>
+		<description>Skip the archo stack into the target's body, taking control over it. Kills the target and the sleeve the archostack is currently in. This is useful if the current sleeve is near death.</description>
 		<iconPath>UI/Icons/StackSkip</iconPath>
 		<abilityClass>AlteredCarbon.Ability_ArchoStackSkip</abilityClass>
 		<cooldownTime>420000</cooldownTime>

@@ -23,7 +23,7 @@
 	<JobDef>
 		<defName>AC_InsertingThingIntoProcessor</defName>
 		<driverClass>AlteredCarbon.JobDriver_InsertIntoProcessor</driverClass>
-		<reportString>inserting TargetA to TargetB.</reportString>
+		<reportString>inserting TargetA into TargetB.</reportString>
 		<allowOpportunisticPrefix>true</allowOpportunisticPrefix>
 	</JobDef>
 	<!-- ================================ Hauling corpse to sleeve grower ====================== -->

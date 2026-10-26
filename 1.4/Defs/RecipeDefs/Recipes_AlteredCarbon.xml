@@ -4,7 +4,7 @@
 	<RecipeDef>
 		<defName>AC_MakeEmptyCorticalStack</defName>
 		<label>make empty cortical stack</label>
-		<description>Make empty cortical stack.</description>
+		<description>Make an empty cortical stack.</description>
 		<jobString>Making empty cortical stack.</jobString>
 		<workAmount>18500</workAmount>
 		<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
@@ -111,7 +111,7 @@
 	<RecipeDef ParentName="SurgeryRemoveImplantBase">
 		<defName>AC_RemoveArchoStack</defName>
 		<label>remove archo stack</label>
-		<description>Remove archo stack.</description>
+		<description>Remove an archo stack.</description>
 		<descriptionHyperlinks>
 			<ThingDef>AC_FilledArchoStack</ThingDef>
 		</descriptionHyperlinks>
@@ -125,7 +125,7 @@
 		<defName>AC_RewriteFilledCorticalStack</defName>
 		<label>Rewrite cortical stack</label>
 		<description>Rewrite a cortical stack.</description>
-		<jobString>rewriting cortical stack.</jobString>
+		<jobString>Rewriting cortical stack.</jobString>
 		<workerClass>AlteredCarbon.Recipe_RewriteFilledCorticalStack</workerClass>
 		<workAmount>10000000000</workAmount>
 		<ingredients>
@@ -176,7 +176,7 @@
 		<defName>AC_HackBiocodedThings</defName>
 		<label>hack biocoded things</label>
 		<description>Attempt to hack and remove biocoding from weapons and equipment to make them usable. If unsuccessful, the item will break.</description>
-		<jobString>hacking biocoded things.</jobString>
+		<jobString>Hacking biocoded things.</jobString>
 		<workerClass>AlteredCarbon.Recipe_HackBiocodedThings</workerClass>
 		<workAmount>25000</workAmount>
 		<ingredients>

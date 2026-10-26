@@ -45,32 +45,32 @@
 		<stages>
 			<li>
 				<label>Bugging feeling</label>
-				<description>Somethings bugging me, but I can't but my finger on it.</description>
+				<description>Something's bugging me, but I can't put my finger on it.</description>
 				<baseMoodEffect>-3</baseMoodEffect>
 			</li>
 			<li>
 				<label>Feeling off</label>
-				<description>Something feels off, but whenever I put my finger on it it slips away...</description>
+				<description>Something feels off, but whenever I put my finger on it, it slips away...</description>
 				<baseMoodEffect>-8</baseMoodEffect>
 			</li>
 			<li>
 				<label>Something is wrong</label>
-				<description>Something is wrong with me, this isnt right...</description>
+				<description>Something is wrong with me. This isn't right...</description>
 				<baseMoodEffect>-12</baseMoodEffect>
 			</li>
 			<li>
 				<label>Feeling unlike myself</label>
-				<description>I dont feel like myself anymore, my memory... things dont make sense!</description>
+				<description>I don't feel like myself anymore. My memory... things don't make sense!</description>
 				<baseMoodEffect>-20</baseMoodEffect>
 			</li>
 			<li>
 				<label>Not myself</label>
-				<description>My memories and who I am now dont line up, someone messed with my mind!</description>
+				<description>My memories and who I am now don't line up. Someone messed with my mind!</description>
 				<baseMoodEffect>-25</baseMoodEffect>
 			</li>
 			<li>
 				<label>Stranger to myself</label>
-				<description>I feel like a stranger to myself. What memories are my own and which ones where altered? I cant live like this!</description>
+				<description>I feel like a stranger to myself. What memories are my own and which ones were altered? I can't live like this!</description>
 				<baseMoodEffect>-50</baseMoodEffect>
 			</li>
 		</stages>
@@ -88,7 +88,7 @@
 		<stages>
 			<li>
 				<label>erased a stack</label>
-				<description>We just erased the content of one of our stacks as if the person on it didn't exist. It's not just data, its a person! How would we be so barbaric?</description>
+				<description>We just erased the content of one of our stacks as if the person on it didn't exist. It's not just data, it's a person! How could we be so barbaric?</description>
 				<baseMoodEffect>-3</baseMoodEffect>
 			</li>
 		</stages>

@@ -4,7 +4,7 @@
 	<CultureDef>
 		<defName>AC_Rogian</defName>
 		<label>rogian</label>
-		<description>An ultrachtech culture hailing from the planet Rogia.</description>
+		<description>An ultratech culture hailing from the planet Rogia.</description>
 <!--		<pawnNameMaker>NamerPersonSophian</pawnNameMaker>
 		<pawnNameMakerFemale>NamerPersonSophianFemale</pawnNameMakerFemale>-->
 		<ideoNameMaker MayRequire="Ludeon.RimWorld.Ideology">NamerIdeoAstropolitan</ideoNameMaker>

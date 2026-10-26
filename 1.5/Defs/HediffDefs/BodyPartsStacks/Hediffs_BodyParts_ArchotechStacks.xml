@@ -21,7 +21,7 @@
 	<ThingDef ParentName="AC_ArchotechStackBase">
 		<defName>AC_EmptyArchotechStack</defName>
 		<label>Empty archotech stack</label>
-		<description>An neural implant built by an archotech which can store a human consciousness, commonly referred to as a neural. Once implanted directly into a person's spine in the neck it will download their consciousness and safely store it. Unlike common neural implants, it is far more robust, will carry psylinks between bodies and if needed, act on its own to protect whoevers consciousness is stored inside it. Its internal workings are a mystery to all human minds, even those lucky or cursed enough to become its new inhabitant.</description>
+		<description>A neural implant built by an archotech which can store a human consciousness, commonly referred to as a neural. Once implanted directly into a person's spine in the neck, it will download their consciousness and safely store it. Unlike common neural implants, it is far more robust, will carry psylinks between bodies and, if needed, act on its own to protect whoever's consciousness is stored inside it. Its internal workings are a mystery to all human minds, even those lucky or cursed enough to become its new inhabitant.</description>
 		<thingClass>AlteredCarbon.NeuralStack</thingClass>
 		<graphicData>
 			<texPath>Things/Item/ArchoStacks/ArchoStackEmpty</texPath>
@@ -97,7 +97,7 @@
 	<HediffDef ParentName="AC_ImplantStackBase">
 		<defName>AC_ArchotechStack</defName>
 		<label>Archotech stack</label>
-		<labelNoun>A archotech stack</labelNoun>
+		<labelNoun>An archotech stack</labelNoun>
 		<description>An installed archotech stack.</description>
 		<descriptionHyperlinks>
 			<ThingDef>AC_ActiveArchotechStack</ThingDef>

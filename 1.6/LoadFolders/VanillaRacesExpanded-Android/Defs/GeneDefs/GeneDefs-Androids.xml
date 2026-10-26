@@ -3,7 +3,7 @@
 	<VREAndroids.AndroidGeneDef ParentName="VREA_HardwareBase">
 		<defName>AC_NeuralModule</defName>
 		<label>neural module</label>
-		<description>Androids have a neural module for interfacing for common neural stacks. They can be used as shells for shellwalkers.</description>
+		<description>Androids have a neural module for interfacing with common neural stacks. They can be used as shells for shellwalkers.</description>
 		<iconPath>UI/Icons/Genes/Hardware/Gene_NeuralModule</iconPath>
 		<displayOrderInCategory>10</displayOrderInCategory>
 		<biostatCpx>1</biostatCpx>

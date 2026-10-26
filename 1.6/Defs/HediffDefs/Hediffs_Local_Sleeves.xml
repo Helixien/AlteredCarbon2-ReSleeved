@@ -31,7 +31,7 @@
 	<HediffDef ParentName="DiseaseBase">
 		<defName>AC_SleeveShock</defName>
 		<label>sleeve shock</label>
-		<description>A dissonance between the host body and the transferred consciousness.It typically manifests with disorientation, impaired motor functions and nausea as the new consciousness adjusts to its physical vessel.\nOver time the consciousness and the sleeve harmonize as the brain adapts to its new physical form, reducing symptoms and restoring full functionality. The adjustment period varies by individual.</description>
+		<description>A dissonance between the host body and the transferred consciousness. It typically manifests with disorientation, impaired motor functions and nausea as the new consciousness adjusts to its physical vessel.\nOver time, the consciousness and the sleeve harmonize as the brain adapts to its new physical form, reducing symptoms and restoring full functionality. The adjustment period varies by individual.</description>
 		<descriptionShort>A temporary sickness that arises when a transferred consciousness struggles to adapt to a new physical body, initially causing symptoms like disorientation and nausea.</descriptionShort>
 		<isBad>true</isBad>
 		<makesSickThought>true</makesSickThought>

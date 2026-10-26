@@ -4,7 +4,7 @@
 	<ThingDef ParentName="ApparelBase">
 		<defName>AC_Apparel_HayabusaArmor</defName>
 		<label>hayabusa armor</label>
-		<description>A suit of true next-generation power armor. It offers unrivalled protection over chrysalis power armor and protects its wearer even in the most dangerous environments. It' self-repairing molecular plasteel integration is beyond what known fabrication processes are able to construct and the suit lining has been infused with crypo-bleed technologie.\n\nWhile it is impossible to know for sure, given the amount of armor ability modules added, this suit of power armor most likely served as a prototype armor platform for some sort of glitterworld mega-corp.</description>
+		<description>A suit of true next-generation power armor. It offers unrivalled protection over chrysalis power armor and protects its wearer even in the most dangerous environments. Its self-repairing molecular plasteel integration is beyond what known fabrication processes are able to construct and the suit lining has been infused with crypo-bleed technology.\n\nWhile it is impossible to know for sure, given the number of armor ability modules added, this suit of power armor most likely served as a prototype armor platform for some sort of glitterworld mega-corp.</description>
 		<techLevel>Ultra</techLevel>
 		<graphicData>
 			<texPath>Things/Pawn/Humanlike/Apparel/HayabusaArmor/HayabusaArmor</texPath>
@@ -100,7 +100,7 @@
 	<ThingDef ParentName="ApparelBase">
 		<defName>AC_Apparel_HayabusaHelmet</defName>
 		<label>hayabusa helmet</label>
-		<description>A true next-generation power armor helmet. Its self-repairing molecular plasteel integration is beyond known fabrication techniques and the default on-board processors has been replaced by an experimental on-board persona persona. A complex visual and targeting system for near 360 degree view angles and tactical telemetry feed allows for near inhuman aiming speed and accuracy, including real time aim assist.\n\nWhile it is impossible to know for sure, this helmet most likely served as a prototype armor platform for some sort of glitterworld mega-corp.</description>
+		<description>A true next-generation power armor helmet. Its self-repairing molecular plasteel integration is beyond known fabrication techniques and the default on-board processors have been replaced by an experimental on-board persona. A complex visual and targeting system for near-360-degree viewing angles and tactical telemetry feed allows for near-inhuman aiming speed and accuracy, including real-time aim assist.\n\nWhile it is impossible to know for sure, this helmet most likely served as a prototype armor platform for some sort of glitterworld mega-corp.</description>
 		<techLevel>Ultra</techLevel>
 		<graphicData>
 			<texPath>Things/Pawn/Humanlike/Apparel/HayabusaArmorHelmet/HayabusaHelmet</texPath>

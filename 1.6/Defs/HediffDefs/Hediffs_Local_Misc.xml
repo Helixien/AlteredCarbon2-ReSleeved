@@ -5,7 +5,7 @@
 		<defName>AC_CryptoStasis</defName>
 		<label>crypto stasis</label>
 		<labelNoun>crypto stasis</labelNoun>
-		<description>Active effect of the sleeve caskets suspension systems.</description>
+		<description>Active effect of the sleeve casket's suspension systems.</description>
 		<hediffClass>AlteredCarbon.Hediff_CryptoStasis</hediffClass>
 		<defaultLabelColor>(0, 0.7, 0.95)</defaultLabelColor>
 		<isBad>false</isBad>
@@ -45,7 +45,7 @@
 	<HediffDef ParentName="DiseaseBase">
 		<defName>AC_ScanningSickness</defName>
 		<label>scanning sickness</label>
-		<description>This person was scanned by a neural connector, which has caused light disturbances in the neural stack connection to their brain, which will take time to resolve themselves. There won't be any long-term damage.</description>
+		<description>This person was scanned by a neural connector, which has caused light disturbances in the neural stack's connection to their brain, which will take time to resolve themselves. There won't be any long-term damage.</description>
 		<initialSeverity>3</initialSeverity>
 		<comps>
 			<li Class="HediffCompProperties_SeverityPerDay">

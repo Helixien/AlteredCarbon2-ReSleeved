@@ -46,7 +46,7 @@
 					<pawns>$asker</pawns>
 					<walkInSpot>$walkInSpot</walkInSpot>
 					<joinPlayer>true</joinPlayer>
-					<customLetterText TKey="LetterLabelAskerBecameHostile">{BASETEXT}\n\nBecause you accepted [asker_nameDef] the raid that is hunting [asker_objective] will arrive soon.</customLetterText>
+					<customLetterText TKey="LetterLabelAskerBecameHostile">{BASETEXT}\n\nBecause you accepted [asker_nameDef], the raid that is hunting [asker_objective] will arrive soon.</customLetterText>
 					<isSingleReward>true</isSingleReward>
 					<rewardDetailsHidden>true</rewardDetailsHidden>
 				</li>

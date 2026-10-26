@@ -90,7 +90,7 @@
 	<ThingDef ParentName="AC_ApparelArmorHelmetChrysalisMakeableBase">
 		<defName>AC_Apparel_ChrysalisHelmet</defName>
 		<label>chrysalis helmet</label>
-		<description>An advanced power armor helmet, with a solid plasteel-weave shell and complex visual system for near 360 degree view angles and tactical telemetry feed, including aim assist.</description>
+		<description>An advanced power armor helmet, with a solid plasteel-weave shell and complex visual system for near-360-degree viewing angles and tactical telemetry feed, including aim assist.</description>
 		<statBases>
 			<VEF_RangedCooldownFactor>0.8</VEF_RangedCooldownFactor>
 		</statBases>
@@ -106,7 +106,7 @@
 	<ThingDef ParentName="AC_ApparelArmorHelmetChrysalisMakeableBase">
 		<defName>AC_Apparel_FusilierHelmet</defName>
 		<label>fusilier helmet</label>
-		<description>A variant of the chrysalis armor helmet with a heavy layer of plasteel-weave plates, next-gen solid ablative coatings and a package of several multi-spectrum sensors, including a classifier AI, allowing the user to see in darkness and smokey conditions. The integrated ballistic rangefinder provides optimal firing solutions, decreasing the user’s effective aiming delay by 50%.</description>
+		<description>A variant of the chrysalis armor helmet with a heavy layer of plasteel-weave plates, next-gen solid ablative coatings and a package of several multi-spectrum sensors, including a classifier AI, allowing the user to see in darkness and smoky conditions. The integrated ballistic rangefinder provides optimal firing solutions, decreasing the user’s effective aiming delay by 50%.</description>
 		<graphicData>
 			<texPath>Things/Pawn/Humanlike/Apparel/FusilierArmorHelmet/FusilierHelmet</texPath>
 			<drawSize>0.80</drawSize>
@@ -180,7 +180,7 @@
 	<ThingDef ParentName="AC_ApparelArmorHelmetChrysalisMakeableBase">
 		<defName>AC_Apparel_LancierHelmet</defName>
 		<label>lancier helmet</label>
-		<description>A variant of the chrysalis armor helmet with a specialised set of ballistic rangefinder arrays including an advanced classifier AI, to analyse optimal aiming solutions and firing patterns, as well as allowing the user to see in darkness and smokey conditions. Unlike other equipment based on the chrysalis-line, this helmet offers far less protection.</description>
+		<description>A variant of the chrysalis armor helmet with a specialised set of ballistic rangefinder arrays including an advanced classifier AI, to analyse optimal aiming solutions and firing patterns, as well as allowing the user to see in darkness and smoky conditions. Unlike other equipment based on the chrysalis-line, this helmet offers far less protection.</description>
 		<graphicData>
 			<texPath>Things/Pawn/Humanlike/Apparel/LancierArmorHelmet/LancierHelmet</texPath>
 			<graphicClass>Graphic_Single</graphicClass>

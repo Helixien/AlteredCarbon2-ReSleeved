@@ -36,7 +36,7 @@
 	<ThingDef ParentName="BaseHumanMakeableGun">
 		<defName>AC_Gun_ChargeIncursionar</defName>
 		<label>charge incursionar</label>
-		<description>A multi-purpose charged-shot incursionar rifle with two shooting modes. Pulse-charge technology charges each shot with unstable energy as it leaves the barrel. Released on impact, the charged energy greatly increases the damage done. Shotgun mode will eliminate any close targets with a powerful,charge blast, whilst Rifle mode allows users to engage enemies at long range.</description>
+		<description>A multi-purpose charged-shot incursionar rifle with two shooting modes. Pulse-charge technology charges each shot with unstable energy as it leaves the barrel. Released on impact, the charged energy greatly increases the damage done. Shotgun mode will eliminate any close targets with a powerful charge blast, whilst rifle mode allows users to engage enemies at long range.</description>
 		<techLevel>Spacer</techLevel>
 		<graphicData>
 			<texPath>Things/Item/Equipment/WeaponRanged/ChargeIncursionar</texPath>

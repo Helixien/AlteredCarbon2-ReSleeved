@@ -4,7 +4,7 @@
 	<ThingDef ParentName="BodyPartBase">
 		<defName>AC_CortexOverseer</defName>
 		<label>cortex overseer</label>
-		<description>A decommissioned and outlawed ultratech implant once heavily used to control prisoners and slaves. Once installed it fuses to the persons spine, making it impossible to remove. It contains a simple, yet powerful explosive that can be remotely triggered to instantly kill the person it is installed in.</description>
+		<description>A decommissioned and outlawed ultratech implant once heavily used to control prisoners and slaves. Once installed, it fuses to the person's spine, making it impossible to remove. It contains a simple yet powerful explosive that can be remotely triggered to instantly kill the person it is installed in.</description>
 		<descriptionHyperlinks>
 			<RecipeDef>AC_InstallCortexOverseer</RecipeDef>
 		</descriptionHyperlinks>
@@ -76,7 +76,7 @@
 			<ThingDef>AC_CortexOverseer</ThingDef>
 			<HediffDef>AC_CortexOverseer</HediffDef>
 		</descriptionHyperlinks>
-		<jobString>deactivating cortex overseer.</jobString>
+		<jobString>Deactivating cortex overseer.</jobString>
 		<workerClass>AlteredCarbon.Recipe_DeactivateCortexOverseer</workerClass>
 		<workAmount>2500</workAmount>
 		<isViolation>true</isViolation>

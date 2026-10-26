@@ -83,7 +83,7 @@
 	<ThingDef ParentName="AC_StackBase">
 		<defName>AC_EmptyNeuralStack</defName>
 		<label>empty neural stack</label>
-		<description>An ultratech neural implant which can store a human consciousness, commonly referred to as a neural. Once implanted directly into a person's spine in the neck it will download their consciousness and safely store it. While the death of an organic or inorganic body is no longer a concern, being a fragile piece of technology, blunt force trauma and bullets to the neck area should be avoided at all cost.\n\nExtremely rare, heavily restricted and hard to produce, these implants are rare on non-ultratech worlds.</description>
+		<description>An ultratech neural implant which can store a human consciousness, commonly referred to as a neural. Once implanted directly into a person's spine in the neck, it will download their consciousness and safely store it. While the death of an organic or inorganic body is no longer a concern, the implant is a fragile piece of technology, so blunt force trauma and bullets to the neck area should be avoided at all costs.\n\nExtremely rare, heavily restricted and hard to produce, these implants are rare on non-ultratech worlds.</description>
 		<thingClass>AlteredCarbon.NeuralStack</thingClass>
 		<graphicData>
 			<texPath>Things/Item/NeuralStacks/EmptyStack</texPath>

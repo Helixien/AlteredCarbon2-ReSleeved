@@ -4,7 +4,7 @@
 	<ThingDef ParentName="ApparelBase" MayRequire="Ludeon.RimWorld.Royalty">
 		<defName>AC_Apparel_WingJump</defName>
 		<label>glide pack</label>
-		<description>A single-person set of mechanical wings for short-ranged flight. With its artificial polymer muscles and guidance assistant, the jump wing allows anyone to leap distances at high speed, while staying completely silent. It recharge automatically after every use.\n\nSome ultratech worlds use them for emergency personal to allow rapid deployment and rescue operation in difficult terrain.</description>
+		<description>A single-person set of mechanical wings for short-ranged flight. With its artificial polymer muscles and guidance assistant, the jump wing allows anyone to leap distances at high speed, while staying completely silent. It recharges automatically after every use.\n\nSome ultratech worlds use them for emergency personnel to allow rapid deployment and rescue operations in difficult terrain.</description>
 		<techLevel>Spacer</techLevel>
 		<recipeMaker>
 			<unfinishedThingDef>UnfinishedPack</unfinishedThingDef>

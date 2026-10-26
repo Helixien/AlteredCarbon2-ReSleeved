@@ -78,7 +78,7 @@
 	<!-- ================================ Neural Editing - Modify Neural stacks - Base ====================== -->
 	<RecipeDef ParentName="AC_RecipeNeuralEditing" Name="AC_EditActiveNeuralStackBase" Abstract="True">
 		<label>Modify stack</label>
-		<description>Modify the neural data stored on an active stack. This process can take not only time, but can also be very destructive on the consciousness stored on the selected stack.</description>
+		<description>Modify the neural data stored on an active stack. This process can be time-consuming and very destructive to the consciousness stored on the selected stack.</description>
 		<jobString>Modifying stack.</jobString>
 		<workerClass>AlteredCarbon.Recipe_EditActiveNeuralStack</workerClass>
 		<workAmount>10000000000</workAmount>

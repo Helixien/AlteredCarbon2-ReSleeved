@@ -36,7 +36,7 @@
 		<defName>AC_Stacking_Central</defName>
 		<issue>AC_Stacking</issue>
 		<label>central</label>
-		<description>Without a neural stack we put ourselves at the risk of death. To live without one is unthinkable.</description>
+		<description>Without a neural stack, we put ourselves at risk of death. To live without one is unthinkable.</description>
 		<impact>High</impact>
 		<displayOrderInImpact>1000</displayOrderInImpact>
 		<requiredMemes>
@@ -75,7 +75,7 @@
 		<stages>
 			<li>
 				<label>neural stack installed</label>
-				<description>I have a stack as any human should. The world is right, and I am as I should be.</description>
+				<description>I have a stack, as any human should. The world is right, and I am as I should be.</description>
 				<baseMoodEffect>4</baseMoodEffect>
 			</li>
 		</stages>
@@ -87,7 +87,7 @@
 		<stages>
 			<li>
 				<label>archotech stack installed</label>
-				<description>I have a stack as any human should. The world is right, and I am as I should be.</description>
+				<description>I have a stack, as any human should. The world is right, and I am as I should be.</description>
 				<baseMoodEffect>8</baseMoodEffect>
 			</li>
 		</stages>
@@ -228,7 +228,7 @@
 		<defName>AC_Stacking_Despised</defName>
 		<issue>AC_Stacking</issue>
 		<label>despised</label>
-		<description>A neural stacks violate the purity of the human consciousness and should never be used.</description>
+		<description>Neural stacks violate the purity of human consciousness and should never be used.</description>
 		<impact>Low</impact>
 		<displayOrderInIssue>20</displayOrderInIssue>
 		<displayOrderInImpact>200</displayOrderInImpact>
@@ -292,7 +292,7 @@
 		<defName>AC_Sleeving_Demanded</defName>
 		<issue>AC_Sleeving</issue>
 		<label>demanded</label>
-		<description>Why settle for what nature gave us? One must use a sleeve of their own design and choosing to be their true selves!</description>
+		<description>Why settle for what nature gave us? One must use a sleeve of their own design and choosing to be their true self!</description>
 		<impact>High</impact>
 		<displayOrderInImpact>1000</displayOrderInImpact>
 		<requiredMemes>
@@ -505,7 +505,7 @@
 		<stages>
 			<li>
 				<label>sleeved</label>
-				<description>I am forced to live in a body that was not given to me by nature. This is horrible and against my believes.</description>
+				<description>I am forced to live in a body that was not given to me by nature. This is horrible and against my beliefs.</description>
 				<baseMoodEffect>-20</baseMoodEffect>
 			</li>
 		</stages>
@@ -526,7 +526,7 @@
 		<defName>AC_CrossSleeving_DontCare</defName>
 		<issue>AC_CrossSleeving</issue>
 		<label>don't care</label>
-		<description>Male and female are just two sides of the same coin, switching between them is nothing bothersome.</description>
+		<description>Male and female are just two sides of the same coin. Switching between them is nothing bothersome.</description>
 		<impact>Low</impact>
 		<displayOrderInIssue>10</displayOrderInIssue>
 		<associatedMemes>
@@ -539,7 +539,7 @@
 		<defName>AC_CrossSleeving_Despised</defName>
 		<issue>AC_CrossSleeving</issue>
 		<label>despised</label>
-		<description>One's gender at birth is sacred and should not be switched between.</description>
+		<description>One's gender at birth is sacred and should not be changed.</description>
 		<impact>Low</impact>
 		<displayOrderInIssue>20</displayOrderInIssue>
 		<displayOrderInImpact>200</displayOrderInImpact>
@@ -566,7 +566,7 @@
 		<stages>
 			<li>
 				<label>cross sleeved</label>
-				<description>I am forced to live in a body of the opposite gender. This is horrible and against my believes.</description>
+				<description>I am forced to live in a body of the opposite gender. This is horrible and against my beliefs.</description>
 				<baseMoodEffect>-20</baseMoodEffect>
 			</li>
 		</stages>
@@ -659,7 +659,7 @@
 		<defName>AC_StackDuplicating_Horrible</defName>
 		<issue>AC_StackDuplicating</issue>
 		<label>horrible</label>
-		<description>To make a copy of oneself is a horrendous crime against not only nature, but the copy that is created.</description>
+		<description>To make a copy of oneself is a horrendous crime against not only nature, but also the copy that is created.</description>
 		<associatedMemes>
 			<li>FleshPurity</li>
 		</associatedMemes>
@@ -681,7 +681,7 @@
 		<thoughtClass>Thought_SituationalSocial</thoughtClass>
 		<stages>
 			<li>
-				<label>souless duplicate</label>
+				<label>soulless duplicate</label>
 				<baseOpinionOffset>-5</baseOpinionOffset>
 			</li>
 		</stages>
@@ -713,7 +713,7 @@
 		<defName>AC_XenoSleeving_DontCare</defName>
 		<issue>AC_XenoSleeving</issue>
 		<label>don't care</label>
-		<description>Small differences in our bodies are irrelevant, at our core we are all human.</description>
+		<description>Small differences in our bodies are irrelevant. At our core, we are all human.</description>
 		<impact>Low</impact>
 		<displayOrderInIssue>10</displayOrderInIssue>
 		<associatedMemes>
@@ -749,7 +749,7 @@
 		<stages>
 			<li>
 				<label>xeno sleeved</label>
-				<description>My body does not reflect my natural born one.</description>
+				<description>My body does not reflect the one I was born with.</description>
 				<baseMoodEffect>-5</baseMoodEffect>
 			</li>
 		</stages>
@@ -770,7 +770,7 @@
 		<defName>AC_RaceSleeving_DontCare</defName>
 		<issue>AC_RaceSleeving</issue>
 		<label>don't care</label>
-		<description>Even bigger biological changes are irrelevant, we are all sentient beings at the end..</description>
+		<description>Even bigger biological changes are irrelevant. We are all sentient beings in the end.</description>
 		<impact>Low</impact>
 		<displayOrderInIssue>10</displayOrderInIssue>
 		<associatedMemes>
@@ -806,7 +806,7 @@
 		<stages>
 			<li>
 				<label>race sleeved</label>
-				<description>My body does not reflect my natural born one.</description>
+				<description>My body does not reflect the one I was born with.</description>
 				<baseMoodEffect>-5</baseMoodEffect>
 			</li>
 		</stages>

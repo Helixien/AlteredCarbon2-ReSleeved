@@ -4,8 +4,8 @@
 	<HediffDef ParentName="InjuryBase">
 		<defName>VFEU_Deterioration</defName>
 		<label>deterioration</label>
-		<labelNoun>a deterioration</labelNoun>
-		<description>A deterioration.</description>
+		<labelNoun>deterioration</labelNoun>
+		<description>Deterioration.</description>
 		<tendable>false</tendable>
 		<comps>
 			<li Class="HediffCompProperties_Infecter">

@@ -32,6 +32,6 @@
 	
 	<HistoryEventDef>
 		<defName>AC_InstalledNeuralStackLowQualitySleeveEvent</defName>
-		<label>resleeved faction member's stack into low quality sleeve</label>
+		<label>resleeved faction member's stack into low-quality sleeve</label>
 	</HistoryEventDef>
 </Defs>

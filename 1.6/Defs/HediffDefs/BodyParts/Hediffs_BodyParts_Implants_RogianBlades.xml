@@ -33,7 +33,7 @@
 	<ThingDef ParentName="AC_RogianArmBaldes_Base">
 		<defName>AC_RogianArmBlade</defName>
 		<label>arm-blade</label>
-		<description>An advanced artificial combat focused arm. Razor-sharp, retractable and powered by silenced nano-motors which replace the radius and ulna. When extended the blade allows for devastating attacks, offering unparalleled swiftness and precision. When retracted neuromuscular synchronisation makes them appear and function like a normal arm.</description>
+		<description>An advanced, combat-focused artificial arm. Razor-sharp, retractable and powered by silenced nano-motors which replace the radius and ulna. When extended, the blade allows for devastating attacks, offering unparalleled swiftness and precision. When retracted, neuromuscular synchronisation makes it appear and function like a normal arm.</description>
 		<descriptionHyperlinks>
 			<RecipeDef>AC_InstallRogianArmBlade</RecipeDef>
 		</descriptionHyperlinks>
@@ -65,7 +65,7 @@
 		<defName>AC_RogianArmBlade</defName>
 		<label>arm-blade</label>
 		<labelNoun>an arm-blade</labelNoun>
-		<description>An installed arm-blade. Razor-sharp, retractable and powered by silenced nano-motors which replace the radius and ulna. When extended the blade allows for devastating attacks, offering unparalleled swiftness and precision. When retracted neuromuscular synchronisation makes them appear and function like a normal arm.</description>
+		<description>An installed arm-blade. Razor-sharp, retractable and powered by silenced nano-motors which replace the radius and ulna. When extended, the blade allows for devastating attacks, offering unparalleled swiftness and precision. When retracted, neuromuscular synchronisation makes it appear and function like a normal arm.</description>
 		<descriptionHyperlinks>
 			<ThingDef>AC_RogianArmBlade</ThingDef>
 		</descriptionHyperlinks>

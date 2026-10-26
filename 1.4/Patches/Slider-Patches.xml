@@ -13,8 +13,8 @@
 	</Operation>
 	<!-- ================ Tweak Archite metabolism - Archite Capsules ================ -->
 	<Operation Class="ModSettingsFramework.PatchOperationSliderFloat">
-		<label>Tweak Archite metabolism capsules cost</label>
-		<tooltip>Adjust the base archite capsules cost. Default: 2</tooltip>
+		<label>Tweak Archite metabolism capsule cost</label>
+		<tooltip>Adjust the base archite capsule cost. Default: 2</tooltip>
 		<id>AC_ArchiteMetabolismCost</id>
 		<category>AC_General</category>
 		<order>99</order>

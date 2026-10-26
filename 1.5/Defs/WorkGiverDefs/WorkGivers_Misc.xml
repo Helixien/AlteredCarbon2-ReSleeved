@@ -29,12 +29,12 @@
 	<!-- ================================ Sleeve Gestator - Start ====================== -->
 	<WorkGiverDef>
 		<defName>AC_StartGestationProcess</defName>
-		<label>Start gestating process</label>
+		<label>Start gestation process</label>
 		<giverClass>AlteredCarbon.WorkGiver_StartIncubatingProcess</giverClass>
 		<workType>BasicWorker</workType>
 		<priorityInType>50</priorityInType>
-		<verb>start gestating process</verb>
-		<gerund>starting gestating process at</gerund>
+		<verb>start gestation process</verb>
+		<gerund>starting gestation process at</gerund>
 		<requiredCapacities>
 			<li>Manipulation</li>
 		</requiredCapacities>
@@ -43,12 +43,12 @@
 	<!-- ================================ Sleeve Gestator - Cancel ====================== -->
 	<WorkGiverDef>
 		<defName>AC_CancelGestationProcess</defName>
-		<label>Cancel gestating process</label>
+		<label>Cancel gestation process</label>
 		<giverClass>AlteredCarbon.WorkGiver_CancelIncubatingProcess</giverClass>
 		<workType>BasicWorker</workType>
 		<priorityInType>50</priorityInType>
-		<verb>cancel gestating process</verb>
-		<gerund>canceling gestating process at</gerund>
+		<verb>cancel gestation process</verb>
+		<gerund>canceling gestation process at</gerund>
 		<requiredCapacities>
 			<li>Manipulation</li>
 		</requiredCapacities>

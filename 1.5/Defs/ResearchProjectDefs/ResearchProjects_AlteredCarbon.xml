@@ -13,7 +13,7 @@
 	<ResearchProjectDef ParentName="AC_ResearchBase">
 		<defName>AC_SleeveGestation</defName>
 		<label>sleeve gestation</label>
-		<description>Develop advanced biotechnologies to create highly customizable synthetic bodies called sleeves for usage with neural stacks.</description>
+		<description>Develop advanced biotechnologies to create highly customizable synthetic bodies called sleeves for use with neural stacks.</description>
 		<baseCost>6000</baseCost>
 		<researchViewX>0.00</researchViewX>
 		<researchViewY>1.50</researchViewY>
@@ -36,7 +36,7 @@
 	<ResearchProjectDef ParentName="AC_ResearchBase">
 		<defName>AC_NeuralDigitalization</defName>
 		<label>neural digitalization</label>
-		<description>Delve into neural technologies to create implants that can house a fully digitised human consciousness.\n\nYou can get the nano storage drive from quests, there is no other way to unlock this research.</description>
+		<description>Delve into neural technologies to create implants that can house a fully digitised human consciousness.\n\nYou can get the nano storage drive from quests; there is no other way to unlock this research.</description>
 		<baseCost>8000</baseCost>
 		<researchViewX>0.00</researchViewX>
 		<researchViewY>0.40</researchViewY>
@@ -84,7 +84,7 @@
 	<ResearchProjectDef ParentName="AC_ResearchBase">
 		<defName>AC_NeuralCasting</defName>
 		<label>neural casting</label>
-		<description>Research the ability for projecting a digitised consciousness by integrating psychic subwaves with short-range, high-speed communication frequencies.</description>
+		<description>Research the ability to project a digitised consciousness by integrating psychic subwaves with short-range, high-speed communication frequencies.</description>
 		<baseCost>4000</baseCost>
 		<researchViewX>1.00</researchViewX>
 		<researchViewY>0.70</researchViewY>
@@ -128,7 +128,7 @@
 	<ResearchProjectDef ParentName="AC_ResearchBase">
 		<defName>AC_ChrysalisPoweredArmor</defName>
 		<label>chrysalis armor</label>
-		<description>Craft chrysalis armor, specialised for a wide range of different battlefield scenarios and needs, while providing the most protection possible. Note that these also require advanced components.</description>
+		<description>Craft chrysalis armor, specialised for a wide range of different battlefield scenarios and needs, while providing the most protection possible. Note that this also requires advanced components.</description>
 		<baseCost>9000</baseCost>
 		<techLevel>Ultra</techLevel>
 		<requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
@@ -155,7 +155,7 @@
 	<ResearchProjectDef ParentName="AC_ResearchBase">
 		<defName>AC_AdvancedShieldBelt</defName>
 		<label>advanced shields</label>
-		<description>Develop advanced shield gear that supports the use of ranged weapons and incorporates implantable shield Auras.</description>
+		<description>Develop advanced shield gear that supports the use of ranged weapons and incorporates implantable shield auras.</description>
 		<baseCost>6000</baseCost>
 		<techLevel>Ultra</techLevel>
 		<requiredResearchFacilities>
@@ -231,7 +231,7 @@
 	<!-- ================================ REM-sleep Enchanment ====================== -->
 	<ResearchProjectDef ParentName="AC_ResearchBase">
 		<defName>AC_REMEnchanment</defName>
-		<label>REM-sleep enchanment</label>
+		<label>REM-sleep enhancement</label>
 		<description>Craft brain implants that enhance the user’s REM sleep, promoting deeper and more restorative rest.</description>
 		<baseCost>2000</baseCost>
 		<prerequisites>
@@ -257,7 +257,7 @@
 	<ResearchProjectDef ParentName="AC_ResearchBase">
 		<defName>AC_RogianArmaments</defName>
 		<label>rogian armaments</label>
-		<description>Craft specialized bionic limb replacements designed for combat that do not hinder the user’s ability to function in day to day life.</description>
+		<description>Craft specialized bionic limb replacements designed for combat that do not hinder the user’s ability to function in day-to-day life.</description>
 		<baseCost>6000</baseCost>
 		<prerequisites>
 			<li>Fabrication</li>

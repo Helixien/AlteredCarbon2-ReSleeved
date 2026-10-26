@@ -4,7 +4,7 @@
 	<HediffDef ParentName="ImplantHediffBase">
 		<defName>AC_ArchoStack</defName>
 		<label>archo stack</label>
-		<labelNoun>a archo stack</labelNoun>
+		<labelNoun>an archo stack</labelNoun>
 		<hediffClass>AlteredCarbon.Hediff_CorticalStack</hediffClass>
 		<description>An installed archo stack.</description>
 		<descriptionHyperlinks>

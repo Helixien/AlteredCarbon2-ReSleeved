@@ -4,7 +4,7 @@
 	<ThingDef ParentName="BuildingBase">
 		<defName>AC_NeuralMatrix</defName>
 		<label>neural matrix</label>
-		<description>A highly advanced and complex quantum computing array, designed for a multitude of tasks, including the storage and management natural stacks. Neural Stacks stored inside can needlecast and remotely control any sleeve with a remote stack installed.\n\nA vast number of buildings can be connected to it to expand a neural matrix's functionality.</description>
+		<description>A highly advanced and complex quantum computing array, designed for a multitude of tasks, including the storage and management of neural stacks. Neural stacks stored inside can needlecast and remotely control any sleeve with a remote stack installed.\n\nA vast number of buildings can be connected to it to expand a neural matrix's functionality.</description>
 		<descriptionHyperlinks>
 			<ThingDef>AC_ActiveNeuralStack</ThingDef>
 			<ThingDef>AC_NeuralEditor</ThingDef>
@@ -292,7 +292,7 @@
 	<ThingDef ParentName="BuildingBase">
 		<defName>AC_CastingRelay</defName>
 		<label>casting relay</label>
-		<description>A needlecasting range amplifier. Casting relays must be connected to a neural matrix to function. This will extend the needlecasting range by 5 world tiles allowing for operation further away from a neural matrix.</description>
+		<description>A needlecasting range amplifier. Casting relays must be connected to a neural matrix to function. This will extend the needlecasting range by 5 world tiles, allowing for operation further away from a neural matrix.</description>
 		<tickerType>Normal</tickerType>
 		<drawerType>MapMeshAndRealTime</drawerType>
 		<graphicData>

@@ -38,7 +38,7 @@
 				<li>place_massWeapon->a structural disintegration bacterium</li>
 				<li>place_massWeapon->a smuggled orbital bombardment targeter</li>
 				<li>place_foeLeader->pirate boss</li>
-				<li>place_foeLeader->crime loard</li>
+				<li>place_foeLeader->crime lord</li>
 				<li>place_foeSoldiers->gangster</li>
 			</rulesStrings>
 		</placeRules>

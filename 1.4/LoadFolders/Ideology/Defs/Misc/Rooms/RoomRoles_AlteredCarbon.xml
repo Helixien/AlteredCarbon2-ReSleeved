@@ -3,7 +3,7 @@
 	<!-- ================================ Laboratory Room Type ====================== -->
 	<RoomRoleDef>
 		<defName>AC_Laboratory</defName>
-		<label>laboratory Room</label>
+		<label>laboratory room</label>
 		<workerClass>AlteredCarbon.RoomRoleWorker_UltraTech</workerClass>
 		<relatedStats>
 			<li>Cleanliness</li>

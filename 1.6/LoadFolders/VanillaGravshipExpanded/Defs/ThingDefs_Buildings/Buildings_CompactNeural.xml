@@ -4,7 +4,7 @@
 	<ThingDef ParentName="BuildingBase">
 		<defName>AC_CompactNeuralEditor</defName>
 		<label>compact neural editor</label>
-		<description>A space-efficient, gravship-powered that connects to a neural matrix and allows the user to interface designed for use aboard gravships. Allows the modification of neural stacks and other complex tasks, like resetting biocoding.</description>
+		<description>A space-efficient, gravship-powered neural editor designed for use aboard gravships. It connects to a neural matrix and allows the user to modify neural stacks and perform other complex tasks, such as resetting biocoding.</description>
 		<descriptionHyperlinks>
 			<ThingDef>AC_NeuralMatrix</ThingDef>
 			<ThingDef>AC_ActiveNeuralStack</ThingDef>

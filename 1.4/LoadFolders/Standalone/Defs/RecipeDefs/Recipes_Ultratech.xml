@@ -12,7 +12,7 @@
 		<defName>VFEU_WipeFilledCorticalStack</defName>
 		<label>wipe cortical stack</label>
 		<description>Wipe a cortical stack and remove the pawn stored on it.</description>
-		<jobString>wiping cortical stack.</jobString>
+		<jobString>Wiping cortical stack.</jobString>
 		<workerClass>AlteredCarbon.Recipe_WipeFilledCorticalStack</workerClass>
 		<workAmount>12500</workAmount>
 		<ingredients>

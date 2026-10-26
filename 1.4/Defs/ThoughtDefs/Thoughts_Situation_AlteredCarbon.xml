@@ -13,32 +13,32 @@
 		<stages>
 			<li>
 				<label>Bugging feeling</label>
-				<description>Somethings bugging me, but I can't but my finger on it.</description>
+				<description>Something's bugging me, but I can't put my finger on it.</description>
 				<baseMoodEffect>-3</baseMoodEffect>
 			</li>
 			<li>
 				<label>Feeling off</label>
-				<description>Something feels off, but whenever I put my finger on it it slips away...</description>
+				<description>Something feels off, but whenever I put my finger on it, it slips away...</description>
 				<baseMoodEffect>-8</baseMoodEffect>
 			</li>
 			<li>
 				<label>Something is wrong</label>
-				<description>Something is wrong with me, this isnt right...</description>
+				<description>Something is wrong with me. This isn't right...</description>
 				<baseMoodEffect>-12</baseMoodEffect>
 			</li>
 			<li>
 				<label>Feeling unlike myself</label>
-				<description>I dont feel like myself anymore, my memory... things dont make sense!</description>
+				<description>I don't feel like myself anymore. My memory... things don't make sense!</description>
 				<baseMoodEffect>-20</baseMoodEffect>
 			</li>
 			<li>
 				<label>Not myself</label>
-				<description>My memories and who I am now dont line up, someone messed with my mind!</description>
+				<description>My memories and who I am now don't line up. Someone messed with my mind!</description>
 				<baseMoodEffect>-25</baseMoodEffect>
 			</li>
 			<li>
 				<label>Stranger to myself</label>
-				<description>I feel like a stranger to myself. What memories are my own and which ones where altered? I cant live like this!</description>
+				<description>I feel like a stranger to myself. What memories are my own and which ones were altered? I can't live like this!</description>
 				<baseMoodEffect>-50</baseMoodEffect>
 			</li>
 		</stages>
@@ -54,7 +54,7 @@
 		<stages>
 			<li>
 				<label>cortex overseer</label>
-				<description>I have no saying anymore in my life... unless I am willing to end it...</description>
+				<description>I have no say in my life anymore... unless I am willing to end it...</description>
 				<baseMoodEffect>-15</baseMoodEffect>
 			</li>
 		</stages>
@@ -70,7 +70,7 @@
 		<stages>
 			<li>
 				<label>cortex overseer</label>
-				<description>I know its deactivated, but its still inside me. I will never not feel uneasy...</description>
+				<description>I know it's deactivated, but it's still inside me. I will never not feel uneasy...</description>
 				<baseMoodEffect>-3</baseMoodEffect>
 			</li>
 		</stages>
@@ -83,7 +83,7 @@
 		<stages>
 			<li>
 				<label>Free again</label>
-				<description>My cortex overseer was removed, I am finally free again!</description>
+				<description>My cortex overseer was removed. I am finally free again!</description>
 				<baseMoodEffect>10</baseMoodEffect>
 			</li>
 		</stages>

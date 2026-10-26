@@ -63,7 +63,7 @@
 	<ThingDef ParentName="AC_HuntersArmourBase">
 		<defName>VFEU_Apparel_ProtectorArmor</defName>
 		<label>protector armor</label>
-		<description>A suit of protector-issue power armor. Improved protection over standard marine power armor, offered by molecular plasteel integration thoughout the suit as well as on-board processors to assist movement and dampen pain receptors.</description>
+		<description>A suit of protector-issue power armor. Improved protection over standard marine power armor, offered by molecular plasteel integration throughout the suit as well as on-board processors to assist movement and dampen pain receptors.</description>
 		<graphicData>
 			<texPath>Things/Pawn/Humanlike/Apparel/ProtectorArmor/ProtectorArmor</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
@@ -119,7 +119,7 @@
 	<ThingDef ParentName="AC_HuntersArmourBase">
 		<defName>AC_Apparel_FusilierArmor</defName>
 		<label>fusilier armor</label>
-		<description>A suit of powered armor, built to provide the best protection available for humanity. Every suit is manufactured at a specialized facility, which effectively prints the entirety as one piece, molecule by molecule. The result is levels of protection unmatched by military hardware, as the production costs are staggering and unsustainable for mass production.\n\nIncludes a package of pain inhibitors to ensure the user can fulfill their objective until their dying breath. The intent of the armor is to ensure their benefactor’s survival, as opposed to the user.\n\nThis model includes a powerful smokepop dispenser to obfuscate the user’s location. Primarily used by infiltration and ambush units, the extra bulk from smokepop synthesizers provides minimal protective improvements.</description>
+		<description>A suit of powered armor, built to provide the best protection available for humanity. Every suit is manufactured at a specialized facility, which effectively prints the entirety as one piece, molecule by molecule. The result is a level of protection unmatched by military hardware, as the production costs are staggering and unsustainable for mass production.\n\nIncludes a package of pain inhibitors to ensure the user can fulfill their objective until their dying breath. The intent of the armor is to ensure their benefactor’s survival, as opposed to the user’s.\n\nThis model includes a powerful smokepop dispenser to obfuscate the user’s location. Primarily used by infiltration and ambush units, the extra bulk from smokepop synthesizers provides minimal protective improvements.</description>
 		<graphicData>
 			<texPath>Things/Pawn/Humanlike/Apparel/FusilierArmor/FusilierArmor</texPath>
 			<graphicClass>Graphic_Single</graphicClass>

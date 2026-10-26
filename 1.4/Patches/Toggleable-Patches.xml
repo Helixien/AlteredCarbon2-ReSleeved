@@ -2,7 +2,7 @@
 <Patch>
 	<Operation Class="ModSettingsFramework.PatchOperationModOption">
 		<defaultValue>True</defaultValue>
-		<label>Enable new  music tracks?</label>
+		<label>Enable new music tracks?</label>
 		<tooltip>Enable a total of two new music tracks inspired by the game IXION.</tooltip>
 		<id>AC_NewIxionMusic</id>
 		<category>AC_General</category>
@@ -29,8 +29,8 @@
 	</Operation>
 	<Operation Class="ModSettingsFramework.PatchOperationModOption">
 		<defaultValue>False</defaultValue>
-		<label>Protector Armour from the TV-Show?</label>
-		<tooltip>Replace the vanilla friendly Protector armour texture with one more in line with the Altered Carbon TV-Show.</tooltip>
+		<label>Protector Armour from the TV show?</label>
+		<tooltip>Replace the vanilla-friendly Protector armour texture with one more in line with the Altered Carbon TV show.</tooltip>
 		<id>AC_AlternateProtector</id>
 		<category>AC_General</category>
 		<order>2</order>

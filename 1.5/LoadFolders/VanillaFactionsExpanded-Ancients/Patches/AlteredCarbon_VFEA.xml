@@ -7,7 +7,7 @@
 			<li Class="PatchOperationReplace">
 				<xpath>/Defs/ThingDef[defName="AC_Turret_AncientGraserTurret"]/description</xpath>
 				<value>
-					<description>An ancientportable graser turret. May explode when damaged. Its dumb AI brain can't be directly controlled, so beware of friendly fire.\n\nThis structure was built by a long forgotten civilisation and the technology can no longer be replicated. It will never suffer breakdowns, and it operates more efficiently during solar flare incidents.</description>
+					<description>An ancient portable graser turret. May explode when damaged. Its dumb AI brain can't be directly controlled, so beware of friendly fire.\n\nThis structure was built by a long-forgotten civilisation and the technology can no longer be replicated. It will never suffer breakdowns, and it operates more efficiently during solar flare incidents.</description>
 				</value>
 			</li>
 			<li Class="PatchOperationAdd">

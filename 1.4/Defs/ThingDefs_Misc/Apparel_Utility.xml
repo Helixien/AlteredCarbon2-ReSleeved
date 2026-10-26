@@ -4,7 +4,7 @@
 	<ThingDef ParentName="ApparelBase">
 		<defName>AC_CuirassierBelt</defName>
 		<label>cuirassier belt</label>
-		<description>An advanced ultratech projectile-repulsion device. It will attempt to stop incoming projectiles or shrapnel, but does nothing against melee attacks or heat. This model does not prevents the wearer from firing out, but still shuts down instantly if hit by EMP.</description>
+		<description>An advanced ultratech projectile-repulsion device. It will attempt to stop incoming projectiles or shrapnel, but does nothing against melee attacks or heat. This model does not prevent the wearer from firing out, but still shuts down instantly if hit by EMP.</description>
 		<thingClass>Apparel</thingClass>
 		<graphicData>
 			<texPath>Things/Pawn/Humanlike/Apparel/CuirassierBelt/CuirassierBelt</texPath>

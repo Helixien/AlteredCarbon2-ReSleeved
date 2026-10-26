@@ -110,7 +110,7 @@
 	</HediffDef>
 	<!-- ================================ Sleeve Quality Base - LEFTOVER ====================== -->
 	<HediffDef Name="VFEU_SleeveQualityBase" Abstract="True">
-		<description>LEFTOVER! This hediff is no longer used and only in the game for the sake of compatibility with old saves.</description>
+		<description>LEFTOVER! This hediff is no longer used and is only in the game for the sake of compatibility with old saves.</description>
 		<hediffClass>HediffWithComps</hediffClass>
 		<initialSeverity>0.001</initialSeverity>
 		<isBad>false</isBad>

@@ -9,8 +9,8 @@
 	<!-- ================ Chrysalis Armor Tweaks ================ -->
 	<Operation Class="ModSettingsFramework.PatchOperationModOption">
 		<defaultValue>False</defaultValue>
-		<label>Chrysalis armor covers hands and feets</label>
-		<tooltip>When enabled the chrysalis covers pawns hands and feets as well. (Default: False)</tooltip>
+		<label>Chrysalis armor covers hands and feet</label>
+		<tooltip>When enabled, chrysalis armor covers pawns' hands and feet as well. (Default: False)</tooltip>
 		<id>AC_ChrysalisFullBody</id>
 		<category>AC_General</category>
 		<order>20</order>
@@ -28,7 +28,7 @@
 	<Operation Class="ModSettingsFramework.PatchOperationModOption">
 		<defaultValue>True</defaultValue>
 		<label>Enable nano storage drive research requirement</label>
-		<tooltip>When enabled the two research projects to unlock sleeves and stacks requires the nano storage drive to be researched. If for some reason the intro quest that grants the item does not work for you, you can use this setting to get around it. (Default: True)</tooltip>
+		<tooltip>When enabled, the two research projects that unlock sleeves and stacks require the nano storage drive to be researched. If for some reason the intro quest that grants the item does not work for you, you can use this setting to get around it. (Default: True)</tooltip>
 		<id>AC_NanoStorageDriveResearch</id>
 		<category>AC_General</category>
 		<order>15</order>
@@ -44,7 +44,7 @@
 							<analysisDurationHours>5</analysisDurationHours>
 							<destroyedOnAnalyzed>true</destroyedOnAnalyzed>
 							<completedLetterLabel>Nano storage drive: {RESEARCH} unlocked</completedLetterLabel>
-							<completedLetter>By studying the nano storage drive data, {PAWN_labelShort} has acquired the insight needed for neural digitalization and sleeve gestation research project(s) {RESEARCH}.\n\nYour researchers can now use research benches to begin researching how to actually use the technology.</completedLetter>
+							<completedLetter>By studying the nano storage drive data, {PAWN_labelShort} has acquired the insight needed for the neural digitalization and sleeve gestation research projects: {RESEARCH}.\n\nYour researchers can now use research benches to begin researching how to actually use the technology.</completedLetter>
 							<completedLetterDef>PositiveEvent</completedLetterDef>
 							<!-- Interactable -->
 							<activateTexPath>UI/Icons/Study</activateTexPath>
@@ -77,7 +77,7 @@
 	<Operation Class="ModSettingsFramework.PatchOperationModOption">
 		<defaultValue>True</defaultValue>
 		<label>Stacks spawn on pirates</label>
-		<tooltip>When enabled, neural stacks will have a chance to spawn on higher tier pirates. (Default: True)</tooltip>
+		<tooltip>When enabled, neural stacks will have a chance to spawn on higher-tier pirates. (Default: True)</tooltip>
 		<id>AC_StackSpawningPirates</id>
 		<category>AC_StackSpawning</category>
 		<order>5</order>
@@ -120,7 +120,7 @@
 	</Operation>
 	<Operation Class="ModSettingsFramework.PatchOperationModOption">
 		<defaultValue>True</defaultValue>
-		<label>Stacks spawn on ancients and spacer</label>
+		<label>Stacks spawn on ancients and spacers</label>
 		<tooltip>When enabled, neural stacks will have a chance to spawn on ancients and spacer pawns. (Default: True)</tooltip>
 		<id>AC_StackSpawningAncientSpacer</id>
 		<category>AC_StackSpawning</category>
@@ -208,7 +208,7 @@
 	<!--	<Operation Class="ModSettingsFramework.PatchOperationModOption">
 		<defaultValue>False</defaultValue>
 		<label>Alternative Protector Armour</label>
-		<tooltip>Replace the vanilla friendly Protector armour texture with one more in line with the Altered Carbon TV-Show. (Default: False)</tooltip>
+		<tooltip>Replace the vanilla-friendly Protector armour texture with one more in line with the Altered Carbon TV show. (Default: False)</tooltip>
 		<id>AC_AlternateProtector</id>
 		<category>AC_Textures</category>
 		<order>10</order>

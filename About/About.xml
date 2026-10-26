@@ -10,7 +10,7 @@
 	</supportedVersions>
 	<modVersion IgnoreIfNoMatchingField="True">6.1-Sov-rev2</modVersion>
 	<packageId>hlx.UltratechAlteredCarbon</packageId>
-	<description>This module adds ultratech technology, predominantly from “Altered Carbon”, the popular Netflix show and book series by Richard K. Morgan, into Rimworld.</description>
+	<description>This module adds ultratech technology, predominantly from “Altered Carbon”, the popular Netflix show and book series by Richard K. Morgan, to RimWorld.</description>
 	<url>https://steamcommunity.com/sharedfiles/filedetails/?id=2196278117</url>
 	<modDependencies>
 		<li>

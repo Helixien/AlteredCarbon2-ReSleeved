@@ -12,7 +12,7 @@
 		<stages>
 			<li>
 				<label>shell body</label>
-				<description>I am in an android body, this feels so different. I will need time to get used to it.</description>
+				<description>I am in an android body. This feels so different. I will need time to get used to it.</description>
 				<baseMoodEffect>-6</baseMoodEffect>
 			</li>
 		</stages>
@@ -31,7 +31,7 @@
 		<stages>
 			<li>
 				<label>different shell gender</label>
-				<description>The gender of my shell is not my own, this feels wrong.</description>
+				<description>The gender of my shell is not my own. This feels wrong.</description>
 				<baseMoodEffect>-5</baseMoodEffect>
 			</li>
 		</stages>
@@ -44,7 +44,7 @@
 		<stages>
 			<li>
 				<label>New shell</label>
-				<description>I am not in an android body, this feels so different. I will need time to get used to it.</description>
+				<description>I am not in an android body. This feels so different. I will need time to get used to it.</description>
 				<baseMoodEffect>-8</baseMoodEffect>
 			</li>
 		</stages>

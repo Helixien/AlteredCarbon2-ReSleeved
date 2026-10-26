@@ -4,7 +4,7 @@
 	<ThingDef ParentName="BuildingBase">
 		<defName>AC_StackArray</defName>
 		<label>stack array</label>
-		<description>A quantum computing array, designed to store cortical stacks and make backups of them that can be restored if needed. Cortical stacks can be duplicated, when placed inside the array. Backups are synced between arrays, allowing for multiple ones to be built. \n\nStack Arrays will make an automatic backup of any colony cortical stacks that are installed on the local map every 24 hours. Backups are restored to empty cortical stacks if the original stack is destroyed.</description>
+		<description>A quantum computing array, designed to store cortical stacks and make backups of them that can be restored if needed. Cortical stacks can be duplicated when placed inside the array. Backups are synced between arrays, allowing for multiple ones to be built. \n\nStack Arrays will make an automatic backup of any colony cortical stacks that are installed on the local map every 24 hours. Backups are restored to empty cortical stacks if the original stack is destroyed.</description>
 		<thingClass>AlteredCarbon.Building_StackStorage</thingClass>
 		<tickerType>Normal</tickerType>
 		<drawerType>RealtimeOnly</drawerType>
@@ -228,7 +228,7 @@
 	<ThingDef ParentName="GeneBuildingBase">
 		<defName>AC_GeneVault</defName>
 		<label>gene vault</label>
-		<description>A combination gene processor combined with two advanced gene banks. This building, when placed near a gene assembler, increases the maximum genetic complexity of the xenogerms you can assemble, as well as access a plethora of stored genepacks during their creation.\n\nWhen powered, gene vaults prevent genepacks from deteriorating and will slow repair deterioration.</description>
+		<description>A gene processor combined with two advanced gene banks. This building, when placed near a gene assembler, increases the maximum genetic complexity of the xenogerms you can assemble and provides access to a plethora of stored genepacks during their creation.\n\nWhen powered, gene vaults prevent genepacks from deteriorating and will slowly repair deterioration.</description>
 		<graphicData>
 			<texPath>Things/Building/Misc/GeneVault/GeneVault</texPath>
 			<graphicClass>Graphic_Multi</graphicClass>
@@ -291,7 +291,7 @@
 	<ThingDef ParentName="BuildingBase">
 		<defName>AC_XenoGermDuplicator</defName>
 		<label>xenogerm duplicator</label>
-		<description>A deceptively simple machine that synthesises genetic material in order to mass manufacture an exact copy of an existing xenogerms. This building can duplicate any existing xenogerm, including any present archite genes, as long as it is supplied with the required amount of archite capsules.</description>
+		<description>A deceptively simple machine that synthesises genetic material in order to mass manufacture an exact copy of an existing xenogerm. This building can duplicate any existing xenogerm, including any present archite genes, as long as it is supplied with the required amount of archite capsules.</description>
 		<thingClass>AlteredCarbon.Building_XenogermDuplicator</thingClass>
 		<tickerType>Normal</tickerType>
 		<passability>PassThroughOnly</passability>

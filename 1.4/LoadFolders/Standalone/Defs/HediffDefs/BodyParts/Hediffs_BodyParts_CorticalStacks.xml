@@ -60,7 +60,7 @@
 	<ThingDef ParentName="VFEU_StackBase">
 		<defName>VFEU_EmptyCorticalStack</defName>
 		<label>empty cortical stack</label>
-		<description>An empty, ultra tech implant which can store a human consciousness. Being implanted directly into a person's neck, blunt force trauma and bullets to the head and neck should be avoided at all cost. Extremely rare and hard to make.</description>
+		<description>An empty ultratech implant which can store a human consciousness. Since it is implanted directly into a person's neck, blunt force trauma and bullets to the head and neck should be avoided at all costs. Extremely rare and hard to make.</description>
 		<descriptionHyperlinks>
 			<RecipeDef>VFEU_InstallCorticalStack</RecipeDef>
 		</descriptionHyperlinks>
@@ -88,7 +88,7 @@
 	<ThingDef ParentName="VFEU_StackBase">
 		<defName>VFEU_FilledCorticalStack</defName>
 		<label>cortical stack</label>
-		<description>An ultra tech implant with a human consciousness stored on it. Can be implanted into an empty sleeve or random body to bring back the person stored on the cortical stack.</description>
+		<description>An ultratech implant with a human consciousness stored on it. Can be implanted into an empty sleeve or random body to bring back the person stored on the cortical stack.</description>
 		<descriptionHyperlinks>
 			<RecipeDef>VFEU_InstallCorticalStack</RecipeDef>
 		</descriptionHyperlinks>

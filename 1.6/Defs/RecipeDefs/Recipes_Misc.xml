@@ -92,9 +92,9 @@
 	
 	<RecipeDef ParentName="AC_RecipeNeuralEditing">
 		<defName>AC_UnboundPersona</defName>
-		<label>Unbound persona</label>
-		<description>Unbound a persona weapon from their current user, allowing for bonding with a new person.\n\nIf unsuccessful, the item may break.</description>
-		<jobString>Unbounding persona.</jobString>
+		<label>Unbind persona</label>
+		<description>Unbind a persona weapon from its current user, allowing for bonding with a new person.\n\nIf unsuccessful, the item may break.</description>
+		<jobString>Unbinding persona.</jobString>
 		<workerClass>AlteredCarbon.Recipe_UnboundPersona</workerClass>
 		<workAmount>25000</workAmount>
 		<ingredients>
