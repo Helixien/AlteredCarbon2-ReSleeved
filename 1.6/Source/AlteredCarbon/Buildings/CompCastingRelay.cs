@@ -198,8 +198,9 @@ namespace AlteredCarbon
         public override void CompTick()
         {
             PowerTrader.PowerOutput = ((tunedTo == null && tuningTo == null) ? ((float)(-Props.powerConsumptionIdle)) : (0f - PowerTrader.Props.PowerConsumption));
-            if (tunedTo != null && (tunedTo.Destroyed || tunedTo.tunedCastingRelays.Count >= Building_NeuralMatrix.MaxCastingRelaysCount))
+            if (tunedTo is not null && (tunedTo.Destroyed || tunedTo.tunedCastingRelays.Count > Building_NeuralMatrix.MaxCastingRelaysCount))
             {
+                tunedTo.tunedCastingRelays.Remove(parent);
                 tunedTo = null;
             }
             if (tuningTo != null && (tuningTo.Destroyed || tuningTo.tunedCastingRelays.Count >= Building_NeuralMatrix.MaxCastingRelaysCount))
@@ -217,6 +218,7 @@ namespace AlteredCarbon
                 tuningTimeLeft--;
                 if (tuningTimeLeft <= 0)
                 {
+                    tunedTo?.tunedCastingRelays.Remove(parent);
                     tunedTo = tuningTo;
                     tuningTo = null;
                     if (Props.tuningCompleteSound != null)

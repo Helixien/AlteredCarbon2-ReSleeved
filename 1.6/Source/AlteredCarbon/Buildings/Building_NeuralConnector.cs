@@ -567,12 +567,12 @@ namespace AlteredCarbon
 
         private SkillRecord GetRandomSkill()
         {
-            return GetAllValidSkills().RandomElement();
+            return GetAllValidSkills(Occupant).RandomElement();
         }
 
-        private IEnumerable<SkillRecord> GetAllValidSkills()
+        private IEnumerable<SkillRecord> GetAllValidSkills(Pawn pawn)
         {
-            return Occupant.skills.skills.Where(x => x.Level >= 10);
+            return pawn.skills.skills.Where(x => x.Level >= 10);
         }
 
         private void DoWorkEffects()
@@ -697,7 +697,7 @@ namespace AlteredCarbon
                             if (connectorMode == NeuralConnectorMode.CreateSkilltrainer || connectorMode == NeuralConnectorMode.CreatePsytrainer)
                             {
                                 list.Add(new FloatMenuOption(pawn.LabelShortCap + " (" + (connectorMode == NeuralConnectorMode.CreateSkilltrainer ?
-                                    GetAllValidSkills().Select(x => x.def.skillLabel) :
+                                    GetAllValidSkills(pawn).Select(x => x.def.skillLabel) :
                                     GetAllPsycastAbilities(pawn).Select(x => x.LabelCap.ToString()).ToList()).ToStringSafeEnumerable() + ")", delegate
                                 {
                                     ShowConfirmationDialog(connectorMode, pawn);
@@ -901,7 +901,7 @@ namespace AlteredCarbon
         {
             if (mode == NeuralConnectorMode.CreateSkilltrainer)
             {
-                var skillList = GetAllValidSkills().Select(x => x.def.skillLabel);
+                var skillList = GetAllValidSkills(selPawn).Select(x => x.def.skillLabel);
                 Find.WindowStack.Add(Dialog_MessageBox.CreateConfirmation("AC.ConfirmSkilltrainerPawn".Translate(
                     selPawn.Named("PAWN"), skillList.ToLineList("- ")), delegate
                 {

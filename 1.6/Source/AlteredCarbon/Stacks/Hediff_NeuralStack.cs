@@ -318,6 +318,8 @@ namespace AlteredCarbon
                 }
                 neuralStack.NeuralData.CopyFromPawn(this.pawn, stackDef);
                 neuralStack.NeuralData.CopyOriginalData(NeuralData);
+                neuralStack.NeuralData.isCopied = NeuralData.isCopied;
+                neuralStack.NeuralData.stackGroupID = NeuralData.stackGroupID;
                 mapToSpawn ??= this.pawn.MapHeld;
                 if (mapToSpawn != null)
                 {

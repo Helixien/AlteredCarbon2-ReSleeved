@@ -26,6 +26,7 @@ namespace AlteredCarbon
         public Dialog_PresetList_Save(Window_SleeveCustomization parent) : base(parent)
         {
             interactButLabel = "OverwriteButton".Translate();
+            AC_Utils.LoadPresets();
         }
         protected override bool ShouldDoTypeInField => true;
 
@@ -124,8 +125,11 @@ namespace AlteredCarbon
                     var rect2 = new Rect(rect.width - 36f, (rect.height - 36f) / 2f, 36f, 36f);
                     if (Widgets.ButtonImage(rect2, TexButton.Delete, Color.white, GenUI.SubtleMouseoverColor))
                     {
-                        Find.WindowStack.Add(Dialog_MessageBox.CreateConfirmation("ConfirmDelete".Translate(preset),
-                            delegate { AC_Utils.presets.Remove(preset); }, true));
+                        Find.WindowStack.Add(Dialog_MessageBox.CreateConfirmation("ConfirmDelete".Translate(preset), () =>
+                        {
+                            AC_Utils.presets.Remove(preset);
+                            AC_Utils.SavePresets();
+                        }, true));
                     }
 
                     Text.Font = GameFont.Small;

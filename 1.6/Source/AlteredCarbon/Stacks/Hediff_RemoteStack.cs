@@ -205,6 +205,7 @@ namespace AlteredCarbon
             originalPawnData = new NeuralData();
             AC_Utils.DebugMessage("Copying remote pawn");
             originalPawnData.CopyFromPawn(pawn, needlecastable.NeuralData.sourceStack);
+            originalPawnData.hostPawn = null;
             AC_Utils.DebugMessage("Done copying remote pawn");
             pawnOwnership = pawn.ownership.Clone();
             pawn.ownership.UnclaimAll();
@@ -212,7 +213,7 @@ namespace AlteredCarbon
             if (needlecastable is Hediff_NeuralStack source)
             {
                 this.sourceHediff = source;
-                needlePawnData.CopyFromPawn(source.Pawn, source.SourceStack);
+                needlePawnData.CopyFromPawn(source.Pawn, source.SourceStack, copyRaceGenderInfo: true);
             }
             else if (needlecastable is NeuralStack stack)
             {
@@ -289,6 +290,7 @@ namespace AlteredCarbon
             {
                 stack.needleCastingInto = null;
                 sourceStack = null;
+                stack.NeuralData.hostPawn = null;
             }
 
             originalPawnData = null;

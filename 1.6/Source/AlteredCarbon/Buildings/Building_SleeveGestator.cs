@@ -754,7 +754,7 @@ namespace AlteredCarbon
                 var missingParts = InnerPawn.GetMissingParts();
                 if (missingParts.Any())
                 {
-                    var hashInterval = (int)(remainingTime / (float)missingParts.Count());
+                    var hashInterval = Mathf.Max(1, (int)(remainingTime / (float)missingParts.Count()));
                     if (InnerPawn.IsHashIntervalTick(hashInterval))
                     {
                         var toRemove = missingParts.FirstOrDefault(x => missingParts.Any(y => x.part.GetDirectChildParts().Contains(y.Part)) is false);
@@ -765,7 +765,7 @@ namespace AlteredCarbon
                 var scars = InnerPawn.health.hediffSet.hediffs.Where(x => x.IsPermanent());
                 if (scars.Any())
                 {
-                    var hashInterval = (int)(remainingTime / (float)scars.Count());
+                    var hashInterval = Mathf.Max(1, (int)(remainingTime / (float)scars.Count()));
                     if (InnerPawn.IsHashIntervalTick(hashInterval))
                     {
                         var toRemove = scars.RandomElement();
@@ -775,7 +775,7 @@ namespace AlteredCarbon
                 var brainTraumas = InnerPawn.health.hediffSet.hediffs.Where(x => x.def == AC_DefOf.AC_BrainTrauma || x.def == AC_DefOf.TraumaSavant);
                 if (brainTraumas.Any())
                 {
-                    var hashInterval = (int)(remainingTime / (float)scars.Count());
+                    var hashInterval = Mathf.Max(1, (int)(remainingTime / (float)brainTraumas.Count()));
                     if (InnerPawn.IsHashIntervalTick(hashInterval))
                     {
                         var toRemove = brainTraumas.RandomElement();

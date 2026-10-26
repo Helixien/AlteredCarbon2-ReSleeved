@@ -76,6 +76,7 @@ namespace AlteredCarbon
             neuralData = new NeuralData();
             var toCopyFrom = thingWithStack.GetNeuralData(refresh: true);
             neuralData.CopyDataFrom(toCopyFrom);
+            neuralData.hostPawn = null;
             stackRecruitable = neuralData.recruitable;
 
             this.allChildhoodBackstories = DefDatabase<BackstoryDef>.AllDefsListForReading

@@ -119,6 +119,15 @@ namespace AlteredCarbon
             });
             ToilEffects.WithProgressBarToilDelay(doWork, TargetIndex.A, false, -0.5f);
             ToilFailConditions.FailOnDespawnedNullOrForbidden<Toil>(doWork, TargetIndex.A);
+            doWork.AddFinishAction(() =>
+            {
+                Building.PowerComp.PowerNet?.powerComps.RemoveAll(x => x.parent == Apparel);
+                if (sustainerCharging is not null)
+                {
+                    sustainerCharging.End();
+                    sustainerCharging = null;
+                }
+            });
             yield return doWork;
             yield return new Toil
             {

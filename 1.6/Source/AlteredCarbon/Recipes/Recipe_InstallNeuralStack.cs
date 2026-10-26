@@ -195,15 +195,17 @@ namespace AlteredCarbon
                     };
 
             Dictionary<FloatRange, int> ageOffsets = new()
-                    {
-                        { new FloatRange(18, 20), 5 },
-                        { new FloatRange(20, 30), 4 },
-                        { new FloatRange(30, 40), 3 },
-                        { new FloatRange(40, 50), 2 },
-                        { new FloatRange(60, 70), -2 },
-                        { new FloatRange(70, 80), -4 },
-                        { new FloatRange(80, float.MaxValue), -5 }
-                    };
+            {
+                { new FloatRange(0, 18), 5 },
+                { new FloatRange(18, 20), 5 },
+                { new FloatRange(20, 30), 4 },
+                { new FloatRange(30, 40), 3 },
+                { new FloatRange(40, 50), 2 },
+                { new FloatRange(50, 60), 0 },
+                { new FloatRange(60, 70), -2 },
+                { new FloatRange(70, 80), -4 },
+                { new FloatRange(80, float.MaxValue), -5 }
+            };
             if (pawn.genes != null)
             {
                 GeneDef matchingGene = geneOffsets.Keys.FirstOrDefault(gene => pawn.genes.HasActiveGene(gene));
@@ -214,10 +216,13 @@ namespace AlteredCarbon
             }
 
             float age = pawn.ageTracker.AgeBiologicalYearsFloat;
-            FloatRange matchingRange = ageOffsets.Keys.FirstOrDefault(range => range.Includes(age));
-            if (matchingRange != null)
+            foreach (var range in ageOffsets)
             {
-                relationshipChange += ageOffsets[matchingRange];
+                if (range.Key.Includes(age))
+                {
+                    relationshipChange += range.Value;
+                    break;
+                }
             }
             var eventDef = relationshipChange >= 0 ? AC_DefOf.AC_InstalledNeuralStackEvent : AC_DefOf.AC_InstalledNeuralStackLowQualitySleeveEvent;
             TryAffectGoodwillWith(pawn.Faction, Faction.OfPlayer, relationshipChange, true, false, eventDef, pawn);

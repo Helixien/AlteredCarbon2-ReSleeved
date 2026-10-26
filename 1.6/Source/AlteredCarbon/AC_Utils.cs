@@ -112,6 +112,10 @@ namespace AlteredCarbon
                 return matrix;
             }
             var compFacility = thing.TryGetComp<CompAffectedByFacilities>();
+            if (compFacility is null)
+            {
+                return null;
+            }
             return compFacility.LinkedFacilitiesListForReading.OfType<Building_NeuralMatrix>()
                 .FirstOrDefault(x => checkForPower is false || x.Powered);
         }

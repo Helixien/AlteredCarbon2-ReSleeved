@@ -97,6 +97,7 @@
 				<filter>
 					<thingDefs>
 						<li>AC_ActiveNeuralStack</li>
+						<li>AC_ActiveArchotechStack</li>
 					</thingDefs>
 				</filter>
 				<count>1</count>
@@ -105,11 +106,13 @@
 		<fixedIngredientFilter>
 			<thingDefs>
 				<li>AC_ActiveNeuralStack</li>
+				<li>AC_ActiveArchotechStack</li>
 			</thingDefs>
 		</fixedIngredientFilter>
 		<defaultIngredientFilter>
 			<thingDefs>
 				<li>AC_ActiveNeuralStack</li>
+				<li>AC_ActiveArchotechStack</li>
 			</thingDefs>
 		</defaultIngredientFilter>
 	</RecipeDef>
