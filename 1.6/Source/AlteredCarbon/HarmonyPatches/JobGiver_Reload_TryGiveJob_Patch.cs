@@ -24,9 +24,7 @@ namespace AlteredCarbon
                         as Building, JobDriver_ChargeCuirassierBelt.MakePowerComp(apparel)));
                     if (nearbyPowerBuilding != null)
                     {
-                        JobDef jobDef = AC_DefOf.AC_ChargeCuirassierBelt;
-                        Job job = JobMaker.MakeJob(jobDef, nearbyPowerBuilding, apparel);
-                        pawn.jobs.TryTakeOrderedJob(job, 0);
+                        __result = JobMaker.MakeJob(AC_DefOf.AC_ChargeCuirassierBelt, nearbyPowerBuilding, apparel);
                     }
                 }
             }
