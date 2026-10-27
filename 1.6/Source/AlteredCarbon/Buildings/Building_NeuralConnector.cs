@@ -274,9 +274,10 @@ namespace AlteredCarbon
                 {
                     return "CryptosleepCasketGuestsNotAllowed".Translate();
                 }
-                if (selPawn.health.hediffSet.HasHediff(HediffDefOf.ScanningSickness))
+                var scannerHediff = def.building.subcoreScannerHediff;
+                if (scannerHediff != null && selPawn.health.hediffSet.HasHediff(scannerHediff))
                 {
-                    return "SubcoreScannerPawnHasSickness".Translate(HediffDefOf.ScanningSickness.label);
+                    return "SubcoreScannerPawnHasSickness".Translate(scannerHediff.label);
                 }
                 if (selPawn.DevelopmentalStage.Baby())
                 {
