@@ -62,6 +62,8 @@ namespace AlteredCarbon
 
         public bool PowerOn => this.TryGetComp<CompPowerTrader>().PowerOn;
 
+        private CompPowerTrader compPower;
+
         public override Vector3 PawnDrawOffset
         {
             get
@@ -151,6 +153,7 @@ namespace AlteredCarbon
         public override void SpawnSetup(Map map, bool respawningAfterLoad)
         {
             base.SpawnSetup(map, respawningAfterLoad);
+            compPower = GetComp<CompPowerTrader>();
             for (int i = 0; i < def.building.subcoreScannerFixedIngredients.Count; i++)
             {
                 def.building.subcoreScannerFixedIngredients[i].ResolveReferences();
@@ -564,6 +567,9 @@ namespace AlteredCarbon
                 effectStart?.Cleanup();
                 effectStart = null;
             }
+            compPower.PowerOutput = state == SubcoreScannerState.Occupied && Find.TickManager.TicksGame - lastBillWorkTicks <= 1
+                ? 0f - compPower.Props.PowerConsumption
+                : 0f - compPower.Props.idlePowerDraw;
         }
 
         private SkillRecord GetRandomSkill()

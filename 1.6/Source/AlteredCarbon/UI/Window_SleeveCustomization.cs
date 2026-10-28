@@ -1030,9 +1030,7 @@ namespace AlteredCarbon
                     gender = Gender.Male;
                 }
             }
-            curSleeve = AC_Utils.CreateEmptyPawn(currentPawnKindDef, Faction.OfPlayer, currentPawnKindDef.race,
-                (long)Mathf.FloorToInt(18f * 3600000f), AC_DefOf.AC_Sleeveliner);
-            curSleeve.gender = gender;
+            curSleeve = AC_Utils.CreateEmptyPawn(currentPawnKindDef, Faction.OfPlayer, currentPawnKindDef.race, (long)Mathf.FloorToInt(18f * 3600000f), AC_DefOf.AC_Sleeveliner, gender);
             curSleeve.CreateEmptySleeve(keepNaturalAbilities: true, keepPsycastAbilities: true);
             curSleeve.ageTracker.AgeBiologicalTicks = (long)Mathf.FloorToInt(18 * 3600000f);
             curSleeve.ageTracker.AgeChronologicalTicks = (long)Mathf.FloorToInt(18 * 3600000f);

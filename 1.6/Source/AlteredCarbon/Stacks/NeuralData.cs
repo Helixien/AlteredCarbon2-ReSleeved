@@ -183,33 +183,39 @@ namespace AlteredCarbon
         {
             var oldDebug = AC_Utils.debug;
             AC_Utils.debug = false;
-            if (dummyPawn is null)
+            try
             {
-                long ticks = (long)Mathf.FloorToInt(18f * 3600000f);
-                if (ageBiologicalTicks != default)
+                if (dummyPawn is null)
                 {
-                    ticks = ageBiologicalTicks;
-                }
-                else if (hostPawn != null)
-                {
-                    ticks = ageBiologicalTicks = hostPawn.ageTracker.AgeBiologicalTicks;
-                }
-                dummyPawn = AC_Utils.CreateEmptyPawn(hostPawn?.kindDef ?? kindDef ?? PawnKindDefOf.Colonist,
-                    Faction, OriginalRace ?? ThingDefOf.Human, ticks, OriginalXenotypeDef != null
-                    ? OriginalXenotypeDef : XenotypeDefOf.Baseliner);
-                dummyPawn.gender = OriginalGender;
-            }
-            dummyPawns[dummyPawn] = host;
+                    var ticks = (long)Mathf.FloorToInt(18f * 3600000f);
+                    if (ageBiologicalTicks != default)
+                    {
+                        ticks = ageBiologicalTicks;
+                    }
+                    else if (hostPawn is not null)
+                    {
+                        ticks = ageBiologicalTicks = hostPawn.ageTracker.AgeBiologicalTicks;
+                    }
+                    var pawn = AC_Utils.CreateEmptyPawn(hostPawn?.kindDef ?? kindDef ?? PawnKindDefOf.Colonist, Faction, OriginalRace ?? ThingDefOf.Human, ticks, OriginalXenotypeDef ?? XenotypeDefOf.Baseliner, OriginalGender);
 
-            OverwritePawn(dummyPawn, changeGlobalData: false);
-            if (hostPawn != null)
-            {
-                AC_Utils.CopyBody(hostPawn, dummyPawn, copyAgeInfo: true, copyGenesFully: true);
-                dummyPawn.RefreshGraphic();
+                    pawn.gender = OriginalGender;
+                    dummyPawn = pawn;
+                }
+                dummyPawns[dummyPawn] = host;
+
+                OverwritePawn(dummyPawn, changeGlobalData: false);
+                if (hostPawn is not null)
+                {
+                    AC_Utils.CopyBody(hostPawn, dummyPawn, copyAgeInfo: true, copyGenesFully: true);
+                    dummyPawn.RefreshGraphic();
+                }
+                DummyPawnCleanup();
+                AssignDummyPawnReferences();
             }
-            DummyPawnCleanup();
-            AssignDummyPawnReferences();
-            AC_Utils.debug = oldDebug;
+            finally
+            {
+                AC_Utils.debug = oldDebug;
+            }
         }
 
         private void DummyPawnCleanup()

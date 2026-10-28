@@ -123,6 +123,7 @@
 			<ThingDef>AC_ActiveNeuralStack</ThingDef>
 		</descriptionHyperlinks>
 		<thingClass>AlteredCarbon.Building_NeuralEditor</thingClass>
+		<tickerType>Rare</tickerType>
 		<graphicData>
 			<texPath>Things/Building/Misc/NeuralEditor</texPath>
 			<graphicClass>Graphic_Multi</graphicClass>

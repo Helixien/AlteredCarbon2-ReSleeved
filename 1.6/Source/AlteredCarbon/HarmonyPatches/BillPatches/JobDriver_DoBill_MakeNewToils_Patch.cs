@@ -90,8 +90,9 @@ namespace AlteredCarbon
             bool failIfStackCountLessThanJobCount = true, bool placeInBillGiver = false)
         {
             var extractTarget = Toils_JobTransforms.ExtractNextTargetFromQueue(ingredientInd);
-            Toil getToHaulTarget = Toils_Goto.GotoThing(ingredientInd, PathEndMode.ClosestTouch)
-                .FailOnDespawnedNullOrForbidden(ingredientInd).FailOnSomeonePhysicallyInteracting(ingredientInd);
+
+            var getToHaulTarget = Toils_Goto.GotoThing(ingredientInd, PathEndMode.ClosestTouch, canGotoSpawnedParent: true)
+                .FailOnForbidden(ingredientInd).FailOnSomeonePhysicallyInteracting(ingredientInd);
             var changeTargetToNeuralCacheIfNotSpawned = ToilMaker.MakeToil("Do");
             var gotoWorkbench = Toils_Goto.GotoThing(billGiverInd, PathEndMode.InteractionCell).FailOnDestroyedOrNull(ingredientInd); ;
             var jumpIfHaveTargetInQueue = Toils_Jump.JumpIfHaveTargetInQueue(ingredientInd, changeTargetToNeuralCacheIfNotSpawned);
@@ -123,18 +124,15 @@ namespace AlteredCarbon
                 if (targetQueue.Any())
                 {
                     var target = targetQueue[0].Thing;
-                    if (target.Spawned is false)
+                    if (target.Spawned is false && target.ParentHolder is CompNeuralCache comp)
                     {
-                        if (target.ParentHolder is CompNeuralCache comp)
-                        {
-                            jobdriver.job.SetTarget(ingredientInd, comp.parent);
-                        }
+                        jobdriver.job.SetTarget(ingredientInd, comp.parent);
                         jobdriver.JumpToToil(decideShouldCarryItem);
                     }
                 }
             };
 
-            var carryItem = Toils_Haul.StartCarryThing(ingredientInd, putRemainderInQueue: true, subtractNumTakenFromJobCount, failIfStackCountLessThanJobCount, reserve: false);
+            var carryItem = Toils_Haul.StartCarryThing(ingredientInd, putRemainderInQueue: true, subtractNumTakenFromJobCount, failIfStackCountLessThanJobCount, reserve: false, canTakeFromInventory: true);
             var tryDropStackFromCache = Toils_General.Do(delegate
             {
                 var target = jobdriver.job.GetTarget(ingredientInd).Thing;

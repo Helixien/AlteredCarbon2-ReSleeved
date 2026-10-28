@@ -98,10 +98,7 @@ namespace AlteredCarbon
                 yield return new Command_Action
                 {
                     defaultLabel = "DEV: Duplicate stack",
-                    action = () =>
-                    {
-                        Recipe_DuplicateNeuralStack.DuplicateStack(pawn.Position + pawn.Rotation.FacingCell, pawn.Map, NeuralData);
-                    }
+                    action = () => Recipe_DuplicateNeuralStack.DuplicateStack(pawn.Position + pawn.Rotation.FacingCell, pawn.Map, pawn.GetNeuralData(refresh: true))
                 };
                 yield return new Command_Action
                 {
@@ -109,7 +106,7 @@ namespace AlteredCarbon
                     action = () =>
                     {
                         var copy = AC_Utils.ClonePawn(pawn);
-                        var copyStack = Recipe_DuplicateNeuralStack.DuplicateStack(pawn.Position + pawn.Rotation.FacingCell, pawn.Map, NeuralData);
+                        var copyStack = Recipe_DuplicateNeuralStack.DuplicateStack(pawn.Position + pawn.Rotation.FacingCell, pawn.Map, pawn.GetNeuralData(refresh: true));
                         Recipe_InstallActiveNeuralStack.ApplyNeuralStack(def, copy, copy.GetNeck(), copyStack);
                         copyStack.DestroyNoKill();
                         GenPlace.TryPlaceThing(copy, pawn.Position + pawn.Rotation.FacingCell, pawn.Map, ThingPlaceMode.Near);

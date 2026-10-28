@@ -33,12 +33,37 @@ namespace AlteredCarbon
         private CompAffectedByFacilities _compAffectedByFacilities;
         public CompAffectedByFacilities CompAffectedByFacilities =>
             _compAffectedByFacilities ??= GetComp<CompAffectedByFacilities>();
-        public bool Powered => this.compPower.PowerOn;
+        public bool Powered => compPower is null || compPower.PowerOn;
         private CompPowerTrader compPower;
+        private int lastUsedTick = -99999;
         public override void SpawnSetup(Map map, bool respawningAfterLoad)
         {
             base.SpawnSetup(map, respawningAfterLoad);
             compPower = GetComp<CompPowerTrader>();
+            UpdatePowerOutput();
+        }
+
+        public override void UsedThisTick()
+        {
+            base.UsedThisTick();
+            lastUsedTick = Find.TickManager.TicksGame;
+            UpdatePowerOutput();
+        }
+
+        public override void TickRare()
+        {
+            base.TickRare();
+            UpdatePowerOutput();
+        }
+
+        private void UpdatePowerOutput()
+        {
+            if (compPower is not null)
+            {
+                compPower.PowerOutput = Find.TickManager.TicksGame - lastUsedTick <= GenTicks.TickRareInterval
+                    ? 0f - compPower.Props.PowerConsumption
+                    : 0f - compPower.Props.idlePowerDraw;
+            }
         }
         public override IEnumerable<Gizmo> GetGizmos()
         {

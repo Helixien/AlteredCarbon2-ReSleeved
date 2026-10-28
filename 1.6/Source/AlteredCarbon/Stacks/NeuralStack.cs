@@ -132,7 +132,8 @@ namespace AlteredCarbon
         {
             try
             {
-                if (!respawningAfterLoad && !NeuralData.ContainsData && IsActiveStack)
+                if (respawningAfterLoad is false && NeuralData.ContainsData is false
+                    && Bill_Medical_Notify_IterationCompleted_Patch.TryDeferSpawnedStack(this) is false && IsActiveStack)
                 {
                     CreateInnerPawn();
                 }

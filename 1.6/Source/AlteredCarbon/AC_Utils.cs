@@ -151,7 +151,6 @@ namespace AlteredCarbon
                     return true;
                 }
                 return def == AC_DefOf.AC_SleeveGestator
-                    || def == AC_DefOf.AC_SleeveCasket || def == AC_DefOf.AC_SleeveCasket
                     || def == AC_DefOf.AC_NeuralMatrix
                     || def.IsNeuralEditor();
             }
@@ -315,21 +314,17 @@ namespace AlteredCarbon
             SetupIngredients(AC_DefOf.AC_ResetBiocodedThings, typeof(CompBiocodable), typeof(ThingFilterBiocodable));
             SetupIngredients(AC_DefOf.AC_UnboundPersona, typeof(CompBladelinkWeapon), typeof(ThingFilterBladelink));
 
-            foreach (var storyteller in DefDatabase<StorytellerDef>.AllDefs)
+            foreach (var storyteller in DefDatabase<StorytellerDef>.AllDefs.Where(x => x.tutorialMode is false))
             {
-                var compIndex = storyteller.comps.FindIndex(x => x is StorytellerCompProperties_SingleOnceFixed);
-                if (compIndex >= 0)
+                storyteller.comps.Add(new StorytellerCompProperties_SingleOnceRetrying
                 {
-                    storyteller.comps.Insert(compIndex + 1, new StorytellerCompProperties_SingleOnceFixed
+                    fireAfterDaysPassed = 50,
+                    incident = AC_DefOf.AC_GiveQuest_Intro_Researcher,
+                    allowedTargetTags = new List<IncidentTargetTagDef>
                     {
-                        fireAfterDaysPassed = 50,
-                        incident = AC_DefOf.AC_GiveQuest_Intro_Researcher,
-                        allowedTargetTags = new List<IncidentTargetTagDef>
-                        {
-                            IncidentTargetTagDefOf.World
-                        }
-                    });
-                }
+                        IncidentTargetTagDefOf.World
+                    }
+                });
             }
         }
 
@@ -503,7 +498,7 @@ namespace AlteredCarbon
             });
         }
 
-        public static Pawn CreateEmptyPawn(PawnKindDef kindDef, Faction faction, ThingDef race = null, long ageBiologicalTicks = default, XenotypeDef xenotypeDef = null)
+        public static Pawn CreateEmptyPawn(PawnKindDef kindDef, Faction faction, ThingDef race = null, long ageBiologicalTicks = default, XenotypeDef xenotypeDef = null, Gender gender = Gender.None)
         {
             Pawn pawn = (Pawn)ThingMaker.MakeThing(race ?? kindDef.race ?? ThingDefOf.Human);
             pawn.kindDef = kindDef;
@@ -514,6 +509,15 @@ namespace AlteredCarbon
                 pawn.ageTracker.ageBiologicalTicksInt = ageBiologicalTicks;
                 pawn.ageTracker.RecalculateLifeStageIndex();
             }
+
+            pawn.gender = gender;
+            pawn.story.bodyType = pawn.DevelopmentalStage.Baby() ? BodyTypeDefOf.Baby
+                : pawn.DevelopmentalStage.Child() ? BodyTypeDefOf.Child
+                : gender == Gender.Female ? BodyTypeDefOf.Female : BodyTypeDefOf.Male;
+            if (pawn.story.TryGetRandomHeadFromSet(DefDatabase<HeadTypeDef>.AllDefs.Where(x => x.randomChosen)) is false)
+            {
+                pawn.story.headType = DefDatabase<HeadTypeDef>.AllDefs.FirstOrDefault(x => x.randomChosen);
+            }
             if (xenotypeDef != null)
             {
                 pawn.genes.SetXenotype(xenotypeDef);
@@ -523,7 +527,7 @@ namespace AlteredCarbon
 
         public static Pawn ClonePawn(Pawn source, bool copyTattoos = false)
         {
-            var clone = CreateEmptyPawn(source.kindDef, source.Faction);
+            var clone = CreateEmptyPawn(source.kindDef, source.Faction, gender: source.gender);
             if (source.IsCreepJoiner)
             {
                 clone.creepjoiner = new Pawn_CreepJoinerTracker(clone)
