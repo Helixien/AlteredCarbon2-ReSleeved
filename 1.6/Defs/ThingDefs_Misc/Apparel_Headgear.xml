@@ -28,6 +28,12 @@
 		<thingCategories>
 			<li>ArmorHeadgear</li>
 		</thingCategories>
+		<tradeTags>
+			<li>ChrysalisArmor</li>
+			<li>UltraTechArmor</li>
+			<li>HiTechArmor</li>
+			<li>Armor</li>
+		</tradeTags>
 		<costList>
 			<ComponentSpacer>2</ComponentSpacer>
 			<Plasteel>60</Plasteel>

@@ -34,6 +34,7 @@
 			<SlaveSuppressionOffset MayRequire="Ludeon.RimWorld.Ideology">-0.8</SlaveSuppressionOffset>
 			<ToxicResistance>1</ToxicResistance>
 			<ToxicEnvironmentResistance MayRequire="Ludeon.RimWorld.Biotech">1</ToxicEnvironmentResistance>
+			<VacuumResistance MayRequire="Ludeon.RimWorld.Odyssey">0.3</VacuumResistance>
 		</equippedStatOffsets>
 		<thingCategories>
 			<li>ArmorHeadgear</li>
@@ -130,6 +131,7 @@
 			<ShootingAccuracyPawn>15</ShootingAccuracyPawn>
 			<ToxicResistance>1</ToxicResistance>
 			<ToxicEnvironmentResistance MayRequire="Ludeon.RimWorld.Biotech">1</ToxicEnvironmentResistance>
+			<VacuumResistance MayRequire="Ludeon.RimWorld.Odyssey">0.67</VacuumResistance>
 		</equippedStatOffsets>
 		<thingCategories>
 			<li>ArmorHeadgear</li>
