@@ -1049,7 +1049,7 @@ namespace AlteredCarbon
 
         public static bool IsDummyPawn(this Pawn pawn)
         {
-            return NeuralData.dummyPawns.KeyExists(pawn);
+            return NeuralData.dummyPawns.TryGetValue(pawn, out _);
         }
 
         public static void MakeEmptySleeve(this Pawn pawn)

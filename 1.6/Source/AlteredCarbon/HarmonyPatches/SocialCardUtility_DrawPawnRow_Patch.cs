@@ -32,13 +32,10 @@ namespace AlteredCarbon
 
         public static void TrySendMessageOrSelectStack(string text, MessageTypeDef def, bool historical, Pawn otherPawn)
         {
-            if (NeuralData.dummyPawns.TryGetValue(otherPawn, out var stack))
+            if (NeuralData.dummyPawns.TryGetValue(otherPawn, out var box) && box.Value is not null)
             {
-                if (stack != null)
-                {
-                    Messages.Message("AC.PawnHasNoSleeve".Translate(otherPawn.Named("PAWN")), stack, def);
-                    CameraJumper.TryJumpAndSelect(stack);
-                }
+                Messages.Message("AC.PawnHasNoSleeve".Translate(otherPawn.Named("PAWN")), box.Value, def);
+                CameraJumper.TryJumpAndSelect(box.Value);
             }
             else
             {

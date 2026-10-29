@@ -83,6 +83,18 @@ namespace AlteredCarbon
         public static void ApplyNeuralStack(HediffDef stackHediff, Pawn pawn, BodyPartRecord part, NeuralStack neuralStack)
         {
             pawnToInstallStack = pawn;
+            try
+            {
+                ApplyNeuralStackInternal(stackHediff, pawn, part, neuralStack);
+            }
+            finally
+            {
+                pawnToInstallStack = null;
+            }
+        }
+
+        private static void ApplyNeuralStackInternal(HediffDef stackHediff, Pawn pawn, BodyPartRecord part, NeuralStack neuralStack)
+        {
             var hediff = HediffMaker.MakeHediff(stackHediff, pawn) as Hediff_NeuralStack;
             if (neuralStack.NeuralData.ContainsData)
             {

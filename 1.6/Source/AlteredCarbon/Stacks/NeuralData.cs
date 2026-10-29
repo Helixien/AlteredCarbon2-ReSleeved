@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Reflection;
+using System.Runtime.CompilerServices;
 using System.Text;
 using UnityEngine;
 using Verse;
@@ -104,7 +105,7 @@ namespace AlteredCarbon
 
         public bool ContainsData => hostPawn != null || name != null;
 
-        public static Dictionary<Pawn, ThingWithNeuralData> dummyPawns = new();
+        public static readonly ConditionalWeakTable<Pawn, StrongBox<ThingWithNeuralData>> dummyPawns = new();
         // original pawn data before sleeving
         private Gender originalGender;
         private ThingDef originalRace;
@@ -201,7 +202,8 @@ namespace AlteredCarbon
                     pawn.gender = OriginalGender;
                     dummyPawn = pawn;
                 }
-                dummyPawns[dummyPawn] = host;
+                dummyPawns.Remove(dummyPawn);
+                dummyPawns.Add(dummyPawn, new StrongBox<ThingWithNeuralData> { Value = host });
 
                 OverwritePawn(dummyPawn, changeGlobalData: false);
                 if (hostPawn is not null)
@@ -917,6 +919,19 @@ namespace AlteredCarbon
             AC_Utils.DebugMessage("OverwritePawn: -----------------------------------------");
             AC_Utils.DebugMessage("OverwritePawn: " + pawn.GetFullName() + " - pawn id: " + pawnID + " - name: " + name?.ToStringShort);
             overwriting = pawn;
+            try
+            {
+                OverwritePawnInternal(pawn, changeGlobalData);
+            }
+            finally
+            {
+                overwriting = null;
+            }
+            AC_Utils.DebugMessage("OverwritePawn: -----------------------------------------");
+        }
+
+        private void OverwritePawnInternal(Pawn pawn, bool changeGlobalData)
+        {
             pawn.Name = GetNameCopy(name);
             if (kindDef != null)
             {
@@ -999,7 +1014,6 @@ namespace AlteredCarbon
             {
                 modEntry.SetData(pawn);
             }
-            overwriting = null;
             AC_Utils.DebugMessage("OverwritePawn: -----------------------------------------");
         }
 
@@ -1941,7 +1955,8 @@ namespace AlteredCarbon
                 }
                 if (dummyPawn != null)
                 {
-                    dummyPawns[dummyPawn] = host;
+                    dummyPawns.Remove(dummyPawn);
+                    dummyPawns.Add(dummyPawn, new StrongBox<ThingWithNeuralData> { Value = host });
                 }
             }
         }
@@ -1954,7 +1969,7 @@ namespace AlteredCarbon
         {
             if (pawn != null)
             {
-                return pawn == dummyPawn || dummyPawns.ContainsKey(pawn);
+                return pawn == dummyPawn || dummyPawns.TryGetValue(pawn, out _);
             }
             return false;
         }

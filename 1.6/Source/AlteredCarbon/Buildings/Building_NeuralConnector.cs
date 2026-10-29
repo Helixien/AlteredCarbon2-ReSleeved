@@ -213,6 +213,11 @@ namespace AlteredCarbon
             {
                 return "CannotUseNoPower".Translate();
             }
+            var scannerHediff = def.building.subcoreScannerHediff;
+            if (scannerHediff is not null && selPawn.health.hediffSet.HasHediff(scannerHediff))
+            {
+                return "SubcoreScannerPawnHasSickness".Translate(scannerHediff.label);
+            }
             if (IsRequiredForBills(selPawn))
             {
                 return true;
@@ -276,11 +281,6 @@ namespace AlteredCarbon
                 if (selPawn.IsQuestLodger())
                 {
                     return "CryptosleepCasketGuestsNotAllowed".Translate();
-                }
-                var scannerHediff = def.building.subcoreScannerHediff;
-                if (scannerHediff != null && selPawn.health.hediffSet.HasHediff(scannerHediff))
-                {
-                    return "SubcoreScannerPawnHasSickness".Translate(scannerHediff.label);
                 }
                 if (selPawn.DevelopmentalStage.Baby())
                 {
@@ -492,7 +492,7 @@ namespace AlteredCarbon
             if (state == SubcoreScannerState.Occupied)
             {
                 occupant.Tick();
-                if (connectorMode != NeuralConnectorMode.NotSet)
+                if (connectorMode != NeuralConnectorMode.NotSet && PowerOn && ConnectedMatrix?.Powered is true)
                 {
                     lastBillWorkTicks = Find.TickManager.TicksGame;
                     fabricationTicksLeft--;
@@ -534,14 +534,10 @@ namespace AlteredCarbon
                         }
                     }
                 }
-                else
+                else if (connectorMode == NeuralConnectorMode.NotSet && IsRequiredForBills(Occupant) is false)
                 {
-                    if (IsRequiredForBills(Occupant) is false)
-                    {
-                        EjectContents();
-                    }
+                    EjectContents();
                 }
-
                 if (lastBillWorkTicks >= Find.TickManager.TicksGame)
                 {
                     DoWorkEffects();
