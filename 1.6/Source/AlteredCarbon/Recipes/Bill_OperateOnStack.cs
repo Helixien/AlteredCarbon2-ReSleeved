@@ -32,7 +32,7 @@ namespace AlteredCarbon
             }
         }
 
-        public override string Label => base.Label + " (" + (targetThing.GetNeuralData()?.PawnNameColored ?? "Destroyed".Translate()) + ")";
+        public override string Label => base.Label + " (" + (targetThing.GetNeuralData()?.PawnNameColored ?? "AC.Destroyed".Translate()) + ")";
     }
 }
 

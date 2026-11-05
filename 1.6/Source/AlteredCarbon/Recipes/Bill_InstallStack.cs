@@ -15,8 +15,8 @@ namespace AlteredCarbon
 		{
 			stackToInstall = neuralStack;
 		}
-		public override string Label => this.stackToInstall.IsActiveStack 
-			? base.Label + " (" + (stackToInstall?.NeuralData?.PawnNameColored ?? "Destroyed".Translate()) + ")" : base.Label;
+		public override string Label => this.stackToInstall.IsActiveStack
+			? base.Label + " (" + (stackToInstall?.NeuralData?.PawnNameColored ?? "AC.Destroyed".Translate()) + ")" : base.Label;
 		public override void ExposeData()
 		{
 			base.ExposeData();

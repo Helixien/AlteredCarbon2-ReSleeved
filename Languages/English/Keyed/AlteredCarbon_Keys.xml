@@ -329,4 +329,5 @@ Scanning {PAWN_nameDef} will create a psytrainer for one of the following abilit
 	<!-- ================================ Biocoding ====================== -->
 	<AC.BiocodableEquipWarning>Once imprinted to a user, the weapon cannot be used by anyone else until its biocoding is reset again. Are you sure you want to equip this item?</AC.BiocodableEquipWarning>
 	<AC.BiocodingNotYetImprinted>Biocoding: Ready to imprint.</AC.BiocodingNotYetImprinted>
+	<AC.Destroyed>Destroyed</AC.Destroyed>
 </LanguageData>

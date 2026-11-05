@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Verse;
 
-namespace AlteredCarbon
+namespace PawnSnapshot
 {
     public class VanillaAnomalyInsanityCompatibilityEntry : ModCompatibilityEntry
     {
@@ -24,7 +24,7 @@ namespace AlteredCarbon
             {
                 shouldBeVisible = need.shouldBeVisible;
                 records = need.records.Cast<IExposable>().ToList();
-                killedShamblers = need.killedShamblers?.ToHashSet() ?? new HashSet<Pawn>();
+                killedShamblers = need.killedShamblers != null ? new HashSet<Pawn>(need.killedShamblers) : new HashSet<Pawn>();
                 rehumanizedTrait = need.rehumanizedTrait;
                 curLevel = need.CurLevel;
             }
@@ -37,7 +37,7 @@ namespace AlteredCarbon
             {
                 need.shouldBeVisible = shouldBeVisible;
                 need.records = records.Cast<VAEInsanity.SanityChangeRecord>().ToList();
-                need.killedShamblers = killedShamblers.ToHashSet() ?? new HashSet<Pawn>();
+                need.killedShamblers = new HashSet<Pawn>(killedShamblers);
                 need.rehumanizedTrait = rehumanizedTrait;
                 need.CurLevel = curLevel;
             }
@@ -59,7 +59,7 @@ namespace AlteredCarbon
             curLevel = otherData.curLevel;
             shouldBeVisible = otherData.shouldBeVisible;
             records = otherData.records.CopyList();
-            killedShamblers = otherData.killedShamblers?.ToHashSet() ?? new HashSet<Pawn>();
+            killedShamblers = otherData.killedShamblers != null ? new HashSet<Pawn>(otherData.killedShamblers) : new HashSet<Pawn>();
             rehumanizedTrait = otherData.rehumanizedTrait;
         }
     }

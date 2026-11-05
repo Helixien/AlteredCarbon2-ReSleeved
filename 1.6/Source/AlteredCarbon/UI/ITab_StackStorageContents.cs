@@ -84,7 +84,7 @@ namespace AlteredCarbon
             installStackRect.x -= 28;
 
             TooltipHandler.TipRegion(installStackRect, neuralStack.IsArchotechStack ? "AC.InstallArchoStack".Translate() : "AC.InstallStack".Translate());
-            if (Widgets.ButtonImage(installStackRect, ContentFinder<Texture2D>.Get("UI/Icons/Install", true)))
+            if (Widgets.ButtonImage(installStackRect, ContentFinder<Texture2D>.Get("UI/Icons/InstallStack", true)))
             {
                 SoundDefOf.Tick_High.PlayOneShotOnCamera();
                 Find.Targeter.BeginTargeting(neuralStack.ForPawn(), delegate (LocalTargetInfo x)

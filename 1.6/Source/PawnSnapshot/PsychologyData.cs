@@ -9,7 +9,7 @@ using UnityEngine;
 using Verse;
 using Verse.AI;
 
-namespace AlteredCarbon
+namespace PawnSnapshot
 {
     public class PsychologyData : IExposable
     {

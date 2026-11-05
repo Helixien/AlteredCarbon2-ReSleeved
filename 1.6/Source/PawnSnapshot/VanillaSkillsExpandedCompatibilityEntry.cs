@@ -2,7 +2,7 @@
 using System.Linq;
 using Verse;
 
-namespace AlteredCarbon
+namespace PawnSnapshot
 {
     public class VanillaSkillsExpandedCompatibilityEntry : ModCompatibilityEntry
     {

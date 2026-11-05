@@ -1,6 +1,6 @@
 ﻿using Verse;
 
-namespace AlteredCarbon
+namespace PawnSnapshot
 {
     public abstract class ModCompatibilityEntry : IExposable
     {

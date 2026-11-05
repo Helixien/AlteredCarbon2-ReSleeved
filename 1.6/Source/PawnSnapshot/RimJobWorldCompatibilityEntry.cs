@@ -3,7 +3,7 @@ using System;
 using System.Reflection;
 using Verse;
 
-namespace AlteredCarbon
+namespace PawnSnapshot
 {
     public class RimJobWorldCompatibilityEntry : ModCompatibilityEntry
     {

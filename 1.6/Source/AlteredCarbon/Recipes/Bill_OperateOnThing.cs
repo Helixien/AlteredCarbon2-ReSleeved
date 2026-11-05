@@ -18,8 +18,8 @@ namespace AlteredCarbon
             targetThing.SetForbidden(false, warnOnFail: false);
         }
 
-        public override string Label => this is not Bill_OperateOnStack 
-            ?  base.Label + " (" + (targetThing?.LabelCap ?? "Destroyed".Translate()) + ")" : base.Label;
+        public override string Label => this is not Bill_OperateOnStack
+            ?  base.Label + " (" + (targetThing?.LabelCap ?? "AC.Destroyed".Translate()) + ")" : base.Label;
 
         public override void ExposeData()
         {

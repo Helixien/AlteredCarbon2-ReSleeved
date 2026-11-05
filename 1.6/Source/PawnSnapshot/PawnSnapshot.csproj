@@ -1,0 +1,76 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net48</TargetFramework>
+    <RootNamespace>PawnSnapshot</RootNamespace>
+    <AssemblyName>PawnSnapshot</AssemblyName>
+    <LangVersion>latest</LangVersion>
+    <Nullable>disable</Nullable>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <DebugType>None</DebugType>
+    <GenerateDependencyFile>false</GenerateDependencyFile>
+    <Version>1.0.0</Version>
+    <AssemblyVersion>1.0.0.0</AssemblyVersion>
+    <FileVersion>1.0.0</FileVersion>
+    <InformationalVersion>1.0.0</InformationalVersion>
+    <NoWarn>$(NoWarn);NU1701</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Krafs.Publicizer" Version="2.*" PrivateAssets="all">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Lib.Harmony">
+      <Version>*</Version>
+      <ExcludeAssets>runtime</ExcludeAssets>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Assembly-CSharp">
+      <HintPath>..\..\..\..\..\Assembly-CSharp.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="RimWorld">
+      <HintPath>..\..\..\..\..\RimWorld.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityStubs">
+      <HintPath>..\..\..\..\..\UnityStubs.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="VEF">
+      <HintPath>..\..\..\..\VanillaExpandedFramework\1.6\Assemblies\VEF.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="RJW">
+      <HintPath>..\..\..\..\rjw\1.6\Assemblies\RJW.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="VAEInsanity">
+      <HintPath>..\..\..\..\VanillaAnomalyExpanded-Insanity\1.6\Assemblies\VAEInsanity.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\workshop\content\294100\3342412435\1.6\Assemblies\VAEInsanity.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="VAspirE">
+      <HintPath>..\..\..\..\..\..\..\workshop\content\294100\3268401022\1.6\Assemblies\VAspirE.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="SyrTraits">
+      <HintPath>..\..\..\..\..\..\..\workshop\content\294100\3253596705\1.6\Assemblies\SyrTraits.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Psychology">
+      <HintPath>..\..\..\..\..\..\..\workshop\content\294100\2016263135\1.5\Assemblies\Psychology.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="VSE">
+      <HintPath>..\..\..\..\..\..\..\workshop\content\294100\3400246558\1.6\Assemblies\VSE.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Publicize Include="Assembly-CSharp;VAspirE;RJW" />
+  </ItemGroup>
+  <Target Name="DeployToMods" AfterTargets="Build">
+    <Copy SourceFiles="$(TargetPath)" DestinationFiles="$(MSBuildThisFileDirectory)..\..\Assemblies\PawnSnapshot.dll" />
+    <Copy SourceFiles="$(TargetPath)" DestinationFiles="$(MSBuildThisFileDirectory)..\..\..\..\VanillaFactionsExpanded-Ultratech\1.7\Assemblies\PawnSnapshot.dll" />
+  </Target>
+</Project>
